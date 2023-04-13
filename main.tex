@@ -1,0 +1,64 @@
+\documentclass{report}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{csquotes}
+\usepackage[hidelinks]{hyperref}
+\usepackage{cleveref}
+\usepackage[english]{babel}
+\usepackage{biblatex}
+\usepackage[a4paper]{geometry}
+
+\addbibresource{bibliography.bib}
+\setcounter{tocdepth}{1}
+
+\title{Thesis Title}
+\author{Roland Bernard}
+\date{July 2023}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+\input{parts/00.abstract}
+\end{abstract}
+
+\tableofcontents
+
+\chapter{Introduction}
+
+\input{parts/10.introduction}
+
+\chapter{Background}
+
+\section{Software Bugs vs Ontology Bugs}
+
+\input{parts/20.bugs}
+
+\section{Ontologies and Description Logics}
+
+\input{parts/21.dl}
+
+\subsection{The $\mathcal{SROIQ}$ Description Logic}
+
+\input{parts/22.sroiq}
+
+\subsection{The Web Ontology Language}
+
+\input{parts/23.owl}
+
+\section{Ontology Repair}
+
+\input{parts/25.repair}
+
+\section{Axiom Weakening}
+
+\input{parts/24.weakening}
+
+\chapter{??}
+
+\printbibliography
+
+\end{document}
