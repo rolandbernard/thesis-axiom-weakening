@@ -1,0 +1,21 @@
+
+### Latex ###
+*.synctex.gz
+*.aux
+*.fls
+*.out
+*.toc
+*.log
+*.bbl
+*.bcf
+*.blg
+*.run.xml
+*.fdb_latexmk
+*.synctex*
+
+### Vscode ###
+.vscode/
+
+### Vim ###
+.vim/
+
