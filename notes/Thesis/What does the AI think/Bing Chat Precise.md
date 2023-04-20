@@ -1,0 +1,5 @@
+# Bing Chat Precise
+
+A bachelor thesis about axiom weakening in description logics would typically follow the structure of a standard bachelor thesis. [The structure of a bachelor thesis usually includes several sections such as an introduction, literature review, data collection, analysis, and conclusions](https://www.mos.ed.tum.de/en/tb/lehre/theses/structure/). In the introduction, you should provide context for your topic and define the focus and scope of your research. The literature review should survey existing studies on your topic. In the data collection and analysis sections, you should describe your methodology and present your findings. Finally, in the conclusions section, you should summarize your results and discuss their implications.
+
+You may also want to include an overview of axiom weakening in description logics as part of your introduction or literature review. [Axiom weakening is a method for repairing Description Logic ontologies by weakening axioms instead of deleting them](https://www.researchgate.net/publication/326764648_Repairing_Description_Logic_Ontologies_by_Weakening_Axioms).
