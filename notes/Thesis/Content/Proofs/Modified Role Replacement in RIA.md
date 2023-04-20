@@ -21,14 +21,14 @@ Let $\mathcal{R}$ be the regular RBox of the $\mathcal{SROIQ}$ ontology $\mathca
 
 Proof: The proof is similar to the one in [Entailed RIA depend on RBox](Entailed%20RIA%20depend%20on%20RBox.md), however, the universal, empty, and inverse roles must be considered.
 
-**Lemma:** For all ****$r' \in \mathrm{UpCover}_\mathcal{O}^*(r)$ and every model $M$ of $\mathcal{O}$, $r^M \subseteq r'^M$.
+**Lemma:** For all $r' \in \mathrm{UpCover}_\mathcal{O}^*(r)$ and every model $M$ of $\mathcal{O}$, $r^M \subseteq r'^M$.
 
 Proof:
 
 1. Following the definition, $r \sqsubseteq_\mathcal{O}^* r’$ holds and using [**Lemma:** If $s \sqsubseteq_\mathcal{O}^* r$ then every model $M$ of $\mathcal{O}$ satisfies the axiom $s \sqsubseteq r$.](Modified%20Role%20Replacement%20in%20RIA.md)  we know that $r \sqsubseteq r’$ holds in every model $M$ of $\mathcal{O}$. Since $M \vDash r \sqsubseteq r’$, by definition $r^M \subseteq r’^M$ must be true.
-2. The rest of the proof goes analogous to the one for $\mathrm{UpCover}_\mathcal{O}(\cdot)$ in [Role Replacement in RIA](Role%20Replacement%20in%20RIA%208d083d4d92294353bd1af01d985c0f91.md).
+2. The rest of the proof goes analogous to the one for $\mathrm{UpCover}_\mathcal{O}(\cdot)$ in [Role Replacement in RIA](Role%20Replacement%20in%20RIA.md).
 
-**Lemma:** For all ****$r' \in \mathrm{DownCover}_\mathcal{O}^*(r)$ and every model $M$ of $\mathcal{O}$, $r'^M \subseteq r^M$.
+**Lemma:** For all $r' \in \mathrm{DownCover}_\mathcal{O}^*(r)$ and every model $M$ of $\mathcal{O}$, $r'^M \subseteq r^M$.
 
 Proof:
 
@@ -37,11 +37,11 @@ Proof:
 
 **Lemma:** The RBox $\mathcal{R}’$, obtained by replacing any RIA $s_1 \circ \cdots \circ s_n \sqsubseteq r$ in $\mathcal{R}$ with a RIA $s_1 \circ \cdots \circ s_n \sqsubseteq r'$ where $r’ \in \mathrm{UpCover}_\mathcal{O}^*(r)$, is entailed by $\mathcal{R}$.
 
-Proof: The proof goes analogous to the one for $\mathrm{UpCover}_\mathcal{O}(\cdot)$ in [Role Replacement in RIA](Role%20Replacement%20in%20RIA.md) using [**Lemma:** For all ****$r' \in \mathrm{UpCover}_\mathcal{O}^*(r)$ and every model $M$ of $\mathcal{O}$, $r^M \subseteq r'^M$.](Modified%20Role%20Replacement%20in%20RIA.md).
+Proof: The proof goes analogous to the one for $\mathrm{UpCover}_\mathcal{O}(\cdot)$ in [Role Replacement in RIA](Role%20Replacement%20in%20RIA.md) using [**Lemma:** For all $r' \in \mathrm{UpCover}_\mathcal{O}^*(r)$ and every model $M$ of $\mathcal{O}$, $r^M \subseteq r'^M$.](Modified%20Role%20Replacement%20in%20RIA.md).
 
 **Lemma:** The RBox $\mathcal{R}’$, obtained by replacing any RIA $s_1 \circ \cdots \circ s_i' \circ \cdots \circ s_n \sqsubseteq r$ in $\mathcal{R}$ with a RIA $s_1 \circ \cdots \circ s_i' \circ \cdots \circ s_n \sqsubseteq r$ where $s’ \in \mathrm{DownCover}_\mathcal{O}^*(s_i)$, is entailed by $\mathcal{R}$.
 
-Proof: The proof goes analogous to the one for $\mathrm{DownCover}_\mathcal{O}(\cdot)$ in [Role Replacement in RIA](Role%20Replacement%20in%20RIA.md) using [**Lemma:** For all ****$r' \in \mathrm{DownCover}_\mathcal{O}^*(r)$ and every model $M$ of $\mathcal{O}$, $r'^M \subseteq r^M$.](Modified%20Role%20Replacement%20in%20RIA.md).
+Proof: The proof goes analogous to the one for $\mathrm{DownCover}_\mathcal{O}(\cdot)$ in [Role Replacement in RIA](Role%20Replacement%20in%20RIA.md) using [**Lemma:** For all $r' \in \mathrm{DownCover}_\mathcal{O}^*(r)$ and every model $M$ of $\mathcal{O}$, $r'^M \subseteq r^M$.](Modified%20Role%20Replacement%20in%20RIA.md).
 
 **~~Lemma:** The RBox $\mathcal{R}’$, obtained by replacing any RIA $s_1 \circ \cdots \circ s_n \sqsubseteq r$ in $\mathcal{R}$ with a RIA $s_1 \circ \cdots \circ s_n \sqsubseteq r'$ where $r’ \in \mathrm{UpCover}_\mathcal{O}^*(r)$, is regular.~~
 

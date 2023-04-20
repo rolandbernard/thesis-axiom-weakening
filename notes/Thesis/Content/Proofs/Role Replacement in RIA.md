@@ -10,11 +10,11 @@ $$
 
 Let $\mathcal{R}$ be the regular RBox of the $\mathcal{SROIQ}$ ontology $\mathcal{O}$. A model of a $\mathcal{R}$ is an interpretation that satisfies all axioms in $\mathcal{R}$. We say that an $\mathcal{R}$ entails another RBox $\mathcal{R}’$(or $\mathcal{R}’$ is entailed by $\mathcal{R}$), if every model of $\mathcal{R}$ is also a model of $\mathcal{R}’$.
 
-**Lemma:** For all ****$r' \in \mathrm{UpCover}_\mathcal{O}(r)$ and every model $M$ of $\mathcal{O}$, $r^M \subseteq r'^M$.
+**Lemma:** For all $r' \in \mathrm{UpCover}_\mathcal{O}(r)$ and every model $M$ of $\mathcal{O}$, $r^M \subseteq r'^M$.
 
 Proof: Following the definition of $\mathrm{UpCover}_\mathcal{O}(\cdot)$, $r \sqsubseteq_\mathcal{O} r’$ holds and by definition $r^M \subseteq r’^M$ must therefore be true in every model.
 
-**Lemma:** For all ****$r' \in \mathrm{DownCover}_\mathcal{O}(r)$ and every model $M$ of $\mathcal{O}$, $r'^M \subseteq r^M$.
+**Lemma:** For all $r' \in \mathrm{DownCover}_\mathcal{O}(r)$ and every model $M$ of $\mathcal{O}$, $r'^M \subseteq r^M$.
 
 Proof: Following the definition of $\mathrm{DownCover}_\mathcal{O}(\cdot)$, $r' \sqsubseteq_\mathcal{O} r$ holds and by definition $r'^M \subseteq r^M$ must therefore be true in every model.
 
@@ -24,7 +24,7 @@ Proof:
 
 1. Take an arbitrary model $M$ of $\mathcal{R}$.
 2. All axioms in $\mathcal{R}’$ that are also in $\mathcal{R}$ are satisfied by $M$ because $M$ satisfies all axioms in $\mathcal{R}$.
-3. We know using [**Lemma:** For all ****$r' \in \mathrm{UpCover}_\mathcal{O}(r)$ and every model $M$ of $\mathcal{O}$, $r^M \subseteq r'^M$.](Role%20Replacement%20in%20RIA.md) that $r^M \subseteq r’^M$.
+3. We know using [**Lemma:** For all $r' \in \mathrm{UpCover}_\mathcal{O}(r)$ and every model $M$ of $\mathcal{O}$, $r^M \subseteq r'^M$.](Role%20Replacement%20in%20RIA.md) that $r^M \subseteq r’^M$.
 4. Since $M$ satisfies all axioms in $\mathcal{R}$, it satisfies $s_1 \circ \cdots \circ s_n \sqsubseteq r$ meaning $s_1^M \circ \cdots \circ s_n^M \subseteq r^M$.
 5. Using the transitivity of the subset relation on sets, we obtain $s_1^M \circ \cdots \circ s_n^M \subseteq r’^M$.
 6. By definition, it follows that $M$ satisfies $s_1 \circ \cdots \circ s_n \sqsubseteq r'$.
@@ -36,7 +36,7 @@ Proof:
 
 1. Take an arbitrary model $M$ of $\mathcal{R}$.
 2. All axioms in $\mathcal{R}’$ that are also in $\mathcal{R}$ are satisfied by $M$ because $M$ satisfies all axioms in $\mathcal{R}$.
-3. We know using [**Lemma:** For all ****$r' \in \mathrm{DownCover}_\mathcal{O}(r)$ and every model $M$ of $\mathcal{O}$, $r'^M \subseteq r^M$.](Role%20Replacement%20in%20RIA.md) that $s_i’^M \subseteq s_i^M$.
+3. We know using [**Lemma:** For all $r' \in \mathrm{DownCover}_\mathcal{O}(r)$ and every model $M$ of $\mathcal{O}$, $r'^M \subseteq r^M$.](Role%20Replacement%20in%20RIA.md) that $s_i’^M \subseteq s_i^M$.
 4. Since $M$ satisfies all axioms in $\mathcal{R}$, it satisfies $s_1 \circ \cdots \circ s_i \circ \cdots \circ s_n \sqsubseteq r$ meaning $s_1^M \circ \cdots \circ s_i^M \circ \cdots \circ s_n^M \subseteq r^M$.
 5. From $s_i’^M \subseteq s_i^M$ it follows that $s_1^M \circ \cdots \circ s_i’^M \circ \cdots \circ s_n^M \subseteq s_1^M \circ \cdots \circ s_i^M \circ \cdots \circ s_n^M$.
 6. Using transitivity of the subset relation on sets, we obtain $s_1^M \circ \cdots \circ s_i’^M \circ \cdots \circ s_n^M \subseteq r^M$.
