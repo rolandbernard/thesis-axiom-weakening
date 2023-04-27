@@ -1,64 +1,82 @@
-\documentclass{report}
+\documentclass[10pt,a4paper]{report}
 \usepackage{graphicx}
 \usepackage{amsfonts}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{setspace}
 \usepackage{csquotes}
 \usepackage[hidelinks]{hyperref}
 \usepackage{cleveref}
 \usepackage[english]{babel}
 \usepackage{biblatex}
-\usepackage[a4paper]{geometry}
 
 \addbibresource{bibliography.bib}
 \setcounter{tocdepth}{1}
 
-\title{Thesis Title}
+\title{Extending Axiom Weakening for Automated Repair of Ontologies in Expressive Description Logics}
 \author{Roland Bernard}
 \date{July 2023}
+
+\makeatletter
+\def\maketitle{
+    \vfill
+    \vspace*{-20mm}
+    \hspace*{-25mm}
+    \begin{tabular}{p{25.5mm}ll}
+        \multicolumn{3}{l}{\includegraphics[width=0.75\linewidth]{resources/unibz-logo.png}} \\
+        \vspace*{20mm} \\
+        & \multicolumn{2}{p{\linewidth}}{\raggedright Bachelor Thesis} \\
+        \vspace*{1mm} \\
+        & \multicolumn{2}{p{\linewidth}}{\raggedright \LARGE \bf \@title} \\
+        \vspace*{30mm} \\
+        &       Candidate    &     \@author     \\
+        \vspace*{5mm} \\
+        &     Supervisors      &    Oliver Kutz     \\
+        &           &    Nicolas Troquard     \\
+        \vspace*{30mm} \\
+        & \multicolumn{2}{p{\linewidth}}{\@date}
+    \end{tabular}
+    \vfill
+}
 
 \begin{document}
 
 \maketitle
 
 \begin{abstract}
-\input{parts/00.abstract}
+    \input{sections/00.abstract}
 \end{abstract}
 
 \tableofcontents
 
 \chapter{Introduction}
 
-\input{parts/10.introduction}
+\input{sections/10.introduction}
 
-\chapter{Background}
+\chapter{Background and Related Work}
 
-\section{Software Bugs vs Ontology Bugs}
+\input{sections/20.background}
 
-\input{parts/20.bugs}
+\chapter{Theoretical Foundations}
 
-\section{Ontologies and Description Logics}
+\input{sections/30.theory}
 
-\input{parts/21.dl}
+\chapter{Implementation}
 
-\subsection{The $\mathcal{SROIQ}$ Description Logic}
+\input{sections/40.implementation}
 
-\input{parts/22.sroiq}
+\chapter{Evaluation}
 
-\subsection{The Web Ontology Language}
+\input{sections/50.evaluation}
 
-\input{parts/23.owl}
+\chapter{Conclusion and Future Work}
 
-\section{Ontology Repair}
-
-\input{parts/25.repair}
-
-\section{Axiom Weakening}
-
-\input{parts/24.weakening}
-
-\chapter{??}
+\input{sections/60.conclution}
 
 \printbibliography
+
+\appendix
+
+\chapter{A}
 
 \end{document}
