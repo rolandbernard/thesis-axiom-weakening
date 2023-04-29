@@ -24,33 +24,34 @@
 17.04.2023 - 23.04.2023
 
 - [x]  20.04.2023 - Insert thesis title and make sure supervisor approves
-- [ ]  Implement $\mathcal{SROIQ}$ support in the prototype
-- [ ]  Make sure to add tests that check the functionality
+- [x]  Implement $\mathcal{SROIQ}$ support in the prototype
+- [x]  Make sure to add tests that check the functionality
 - [x]  Start to think about refinement of role hierarchies
+- [x]  Continue to think about refinement of role hierarchies
+- [x]  Start to think about refinement of role assertions
+- [x]  Implement the refinement to the RBox in the prototype
+
+24.04.2023 - 30.04.2023
+
+- [ ]  Make sure to add tests that check the functionality
+- [ ]  Implement a protégé plugin doing axiom weakening using the prototype
 - [ ]  Start writing the background sections of the thesis
     - [ ]  About axiom weakening
     - [ ]  About ontology repair
     - [ ]  About problems with expressivity
 
-24.04.2023 - 30.04.2023
+01.05.2023 - 07.05.2023
 
-- [ ]  Continue to think about refinement of role hierarchies
-- [ ]  Start to think about refinement of role assertions
-- [ ]  Implement the refinement to the RBox in the prototype
+- [ ]  Clean up the implementation of the prototype
 - [ ]  Make sure to add tests that check the functionality
 - [ ]  Start writing the background sections of the thesis
     - [ ]  About software bugs and ontology bugs
     - [ ]  About OWL
     - [ ]  Introduction
 
-01.05.2023 - 07.05.2023
-
-- [ ]  Clean up the implementation of the prototype
-- [ ]  Make sure to add tests that check the functionality
-- [ ]  Implement a protégé plugin doing axiom weakening using the prototype
-
 08.05.2023 - 14.05.2023
 
+- [ ]  Make request for final exam
 - [ ]  Clean up the implementation of the protégé plugin
 - [ ]  Think about using heuristics during the repair process
 - [ ]  Rewrite the background sections of the thesis
@@ -65,6 +66,7 @@
 - [ ]  Rewrite the background sections of the thesis
     - [ ]  Introduction about knowledge representation
     - [ ]  About ontology repair
+- [ ]  20.06.2023 - Make request for final exam
 
 22.05.2023 - 28.05.2023
 
@@ -99,7 +101,6 @@
 
 19.06.2023 - 25.06.2023
 
-- [ ]  20.06.2023 - Make request for final exam
 - [ ]  Finish up writing the new sections of the thesis
     - [ ]  About role hierarchy refinement
     - [ ]  About heuristics used during ontology repair

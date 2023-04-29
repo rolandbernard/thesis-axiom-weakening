@@ -1,5 +1,11 @@
 # Proofs
 
+Successful:
+
+[Role hierarchy weakening](Proofs/Role%20hierarchy%20weakening.md)
+
+Failed:
+
 [Entailed RIA depend on RBox](Proofs/Entailed%20RIA%20depend%20on%20RBox.md)
 
 [Role Replacement in RIA](Proofs/Role%20Replacement%20in%20RIA.md)

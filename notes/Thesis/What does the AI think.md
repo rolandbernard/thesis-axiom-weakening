@@ -11,3 +11,9 @@
 [ChatGPT](What%20does%20the%20AI%20think/ChatGPT.md)
 
 [ChatGPT Index](What%20does%20the%20AI%20think/ChatGPT%20Index.md)
+
+[ChatGPT Index 2](What%20does%20the%20AI%20think/ChatGPT%20Index%202.md)
+
+[ChatGPT Index 3](What%20does%20the%20AI%20think/ChatGPT%20Index%203.md)
+
+[ChatGPT Index 4](What%20does%20the%20AI%20think/ChatGPT%20Index%204.md)

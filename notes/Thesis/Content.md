@@ -4,10 +4,6 @@
     
     [Title](Content/Title.md)
     
-- Acknowledgements
-    
-    [Acknowledgements](Content/Acknowledgements.md)
-    
 - Abstract
     
     [Abstract](Content/Abstract.md)
@@ -69,9 +65,16 @@
     [Conclusion and Outlook](Content/Conclusion%20and%20Outlook.md)
     
 
+- Acknowledgements
+    
+    [Acknowledgements](Content/Acknowledgements.md)
+    
+
 - Appendix
     
     [Proofs](Content/Proofs.md)
+    
+    [Weakening OWL 2 DL](Content/Weakening%20OWL%202%20DL.md)
     
 
 - User guides

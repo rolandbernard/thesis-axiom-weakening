@@ -5,7 +5,7 @@ We take $s \sqsubseteq_\mathcal{O} r$ to hold if in every model $M$ of the ontol
 We define the upward and downward cover of roles based on these relations as follows:
 
 $$
-\mathrm{UpCover}_\mathcal{O}(r) = \{ \, s \in \mathbf{R}^S \mid r \sqsubseteq_\mathcal{O} s \land \lnot \exists s' \in \mathbf{R}^S \, . \, r \sqsubset_\mathcal{O} s' \sqsubset_\mathcal{O} s \, \} \\ \mathrm{DownCover}_\mathcal{O}(r) = \{ \, s \in \mathbf{R}^S \mid s \sqsubseteq_\mathcal{O} r \land \lnot \exists s' \in \mathbf{R}^S \, . \, s \sqsubset_\mathcal{O} s' \sqsubset_\mathcal{O} r \, \}
+\mathrm{UpCover}_\mathcal{O}(r) = \{ s \in \mathbf{R}^S \mid r \sqsubseteq_\mathcal{O} s \land \lnot \exists s' \in \mathbf{R}^S \, . \, r \sqsubset_\mathcal{O} s' \sqsubset_\mathcal{O} s \} \\ \mathrm{DownCover}_\mathcal{O}(r) = \{ s \in \mathbf{R}^S \mid s \sqsubseteq_\mathcal{O} r \land \lnot \exists s' \in \mathbf{R}^S \, . \, s \sqsubset_\mathcal{O} s' \sqsubset_\mathcal{O} r \}
 $$
 
 Let $\mathcal{R}$ be the regular RBox of the $\mathcal{SROIQ}$ ontology $\mathcal{O}$. A model of a $\mathcal{R}$ is an interpretation that satisfies all axioms in $\mathcal{R}$. We say that an $\mathcal{R}$ entails another RBox $\mathcal{R}’$(or $\mathcal{R}’$ is entailed by $\mathcal{R}$), if every model of $\mathcal{R}$ is also a model of $\mathcal{R}’$.
@@ -63,7 +63,7 @@ Proof:
 
 1. ~~For example, take the following ontology $\mathcal{O}$:~~
     - ~~$a \circ b \circ a \sqsubseteq c$~~
-    - ~~$\top \sqsubseteq \{ \, i \, \}$~~
+    - ~~$\top \sqsubseteq \{ i \}$~~
     - ~~$c (i, i)$~~
     - ~~$b(i, i)$~~
 2. ~~Following the same reasoning as above, we obtain that $c \equiv_\mathcal{O} b$.~~
@@ -75,4 +75,4 @@ The above example does not consider that $c$ must be simple.
 
 **Lemma:** The RBox $\mathcal{R}’$, obtained by replacing any RIA $s_1 \circ \cdots \circ s_i' \circ \cdots \circ s_n \sqsubseteq r$ in $\mathcal{R}$ with a RIA $s_1 \circ \cdots \circ s_i' \circ \cdots \circ s_n \sqsubseteq r$ where $s’ \in \mathrm{DownCover}_\mathcal{O}(s_i)$, is regular.
 
-Proof: This is not true for the definition of regular presented here, but it holds trivially for the definition in [Foundations of Description Logics](https://www.semanticscholar.org/paper/Foundations-of-Description-Logics-Rudolph/f665b256ade2d5ebf742a5491fe8bf9a20c23963) since all $s’$ will be simple, and simple roles are not considered in the restriction.
+Proof: This is not true for the definition of regular presented here, but it holds trivially for the definition in [Foundations of Description Logics](https://www.notion.so/Foundations-of-Description-Logics-fb0f3971a7df408a9259fbd62c32ff9f) since all $s’$ will be simple, and simple roles are not considered in the restriction.

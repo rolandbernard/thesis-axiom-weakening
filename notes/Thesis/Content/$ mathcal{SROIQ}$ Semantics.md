@@ -12,22 +12,22 @@ An interpretation maps the universal role $u$ to $u^\mathcal{I} = \Delta^\mathca
 
 - The top concept is true for every individual in the domain, therefore $\top^\mathcal{I} = \Delta^\mathcal{I}$.
 - The bottom concept is true for no individual, hence $\bot^\mathcal{I} = \empty$ where $\empty$ represents the empty set.
-- Nominal concepts contain exactly the specified individuals, that is $\{\, a_1, \dots, a_n \, \}^\mathcal{I} = \{ \, a_1^\mathcal{I}, \dots, a_n^\mathcal{I} \, \}$.
+- Nominal concepts contain exactly the specified individuals, that is $\{ a_1, \dots, a_n \}^\mathcal{I} = \{ a_1^\mathcal{I}, \dots, a_n^\mathcal{I} \}$.
 - $\lnot C$ yields the complement of the extension of $C$, thus $(\lnot C)^\mathcal{I} = \Delta^\mathcal{I} \setminus C^\mathcal{I}$.
 - $C \sqcup D$ denotes all individuals that are in either the extension of $C$ or in that of $D$, hence $(C \sqcup D)^\mathcal{I} = C^\mathcal{I} \cup D^\mathcal{I}$.
 - $C \sqcap D$ on the other hand, denotes all elements of the domain that are in the extension of both $C$ and $D$, which can be expressed as $(C \sqcap D)^\mathcal{I} = C^\mathcal{I} \cap D^\mathcal{I}$.
-- $\exists r . C$ holds for all individuals that are connected by some element in the extension of $r$ to an individual in the extension of $C$, formally $(\exists r . C)^\mathcal{I} = \{ \, \delta_1 \in \Delta^\mathcal{I} \mid \exists \delta_2 \in \Delta^\mathcal{I} \, . \; \lang \delta_1, \delta_2 \rang \in r^\mathcal{I} \, \land \, \delta_2 \in C^\mathcal{I} \, \}$ .
-- $\forall r . C$ refers to all domain elements for which all elements in the extension of $r$ connect them to elements in the extension of $C$, that is $(\forall r . C)^\mathcal{I} = \{ \, \delta_1 \in \Delta^\mathcal{I} \mid \forall \delta_2 \in \Delta^\mathcal{I} \, . \; \lang \delta_1, \delta_2 \rang \in r^\mathcal{I} \to \delta_2 \in C^\mathcal{I} \, \}$ .
-- $\exists r . \mathrm{Self}$ indicates all individuals that the extension of $r$ connects to themselves, hence we let $(\exists r . \mathrm{Self})^\mathcal{I} = \{ \, \delta \in \Delta^\mathcal{I} \mid \lang \delta, \delta \rang \in r^\mathcal{I} \, \}$.
-- $\leq n r . C$ represents those individuals that have at most $n$ other individuals they are $r$-related to in the concept extension of $C$, that is  $(\leq n r . C)^\mathcal{I} = \{ \, \delta_1 \in \Delta^\mathcal{I} \mid \left| \{ \, \delta_2 \in \Delta^\mathcal{I} \mid \lang \delta_1, \delta_2 \rang \in r^\mathcal{I} \, \land \; \delta_2 \in C^\mathcal{I} \, \} \right| \leq n \}$ where $|S|$ denotes the cardinality of a set $S$.
-- $\geq n r.C$ corollary to the case above indicates those domain elements that have at least $N$ such $r$-related elements, $(\geq n r . C)^\mathcal{I} = \{ \, \delta_1 \in \Delta^\mathcal{I} \mid \left| \{ \, \delta_2 \in \Delta^\mathcal{I} \mid \lang \delta_1, \delta_2 \rang \in r^\mathcal{I} \, \land \; \delta_2 \in C^\mathcal{I} \, \} \right| \geq n \}$.
+- $\exists r . C$ holds for all individuals that are connected by some element in the extension of $r$ to an individual in the extension of $C$, formally $(\exists r . C)^\mathcal{I} = \{ \delta_1 \in \Delta^\mathcal{I} \mid \exists \delta_2 \in \Delta^\mathcal{I} \, . \; \lang \delta_1, \delta_2 \rang \in r^\mathcal{I} \, \land \, \delta_2 \in C^\mathcal{I}  \}$ .
+- $\forall r . C$ refers to all domain elements for which all elements in the extension of $r$ connect them to elements in the extension of $C$, that is $(\forall r . C)^\mathcal{I} = \{ \delta_1 \in \Delta^\mathcal{I} \mid \forall \delta_2 \in \Delta^\mathcal{I} \, . \; \lang \delta_1, \delta_2 \rang \in r^\mathcal{I} \to \delta_2 \in C^\mathcal{I} \}$ .
+- $\exists r . \mathrm{Self}$ indicates all individuals that the extension of $r$ connects to themselves, hence we let $(\exists r . \mathrm{Self})^\mathcal{I} = \{ \delta \in \Delta^\mathcal{I} \mid \lang \delta, \delta \rang \in r^\mathcal{I}\}$.
+- $\leq n r . C$ represents those individuals that have at most $n$ other individuals they are $r$-related to in the concept extension of $C$, that is  $(\leq n r . C)^\mathcal{I} = \{ \delta_1 \in \Delta^\mathcal{I} \mid \left| \{ \delta_2 \in \Delta^\mathcal{I} \mid \lang \delta_1, \delta_2 \rang \in r^\mathcal{I} \, \land \; \delta_2 \in C^\mathcal{I} \} \right| \leq n \}$ where $|S|$ denotes the cardinality of a set $S$.
+- $\geq n r.C$ corollary to the case above indicates those domain elements that have at least $N$ such $r$-related elements, $(\geq n r . C)^\mathcal{I} = \{ \delta_1 \in \Delta^\mathcal{I} \mid \left| \{ \delta_2 \in \Delta^\mathcal{I} \mid \lang \delta_1, \delta_2 \rang \in r^\mathcal{I} \, \land \; \delta_2 \in C^\mathcal{I} \} \right| \geq n \}$.
 
 ## Satisfaction of Axioms
 
 The purpose of the (extended) interpretation function is mainly to determine satisfaction of axioms. We define in the following when an axiom $\alpha$ is true, or holds, in a specific interpretation $\mathcal{I}$. If this is the case, the interpretation $\mathcal{I}$ satisfies $\alpha$, written $\mathcal{I} \vDash \alpha$. If an interpretation $\mathcal{I}$ satisfies an axiom $\alpha$, we also say that $\mathcal{I}$ is a model of $\alpha$.
 
 - A role inclusion axiom $s_1 \circ \cdots \circ s_n \sqsubseteq r$ holds in $\mathcal{I}$ if and only if for each sequence $\delta_1, \dots, \delta_{n + 1} \in \Delta^\mathcal{I}$ for which $\lang \delta_i , \delta_{i + 1} \rang \in s_i^\mathcal{I}$ for all $i = 1, \cdots, n$, also $\lang \delta_1 , \delta_n \rang \in r^\mathcal{i}$ is satisfied. Equivalently, we can write $\mathcal{I} \vDash s_1 \circ \cdots \circ s_n \sqsubseteq r \iff s_1^\mathcal{I} \circ \cdots \circ s_n^\mathcal{I} \subseteq r^\mathcal{I}$ where $\circ$ denotes the composition of the relations.
-- A role reflexivity axiom $\mathrm{Ref}(r)$ hold iff for each element of the domain $\delta \in \Delta^\mathcal{I}$ the condition $\lang \delta , \delta \rang \in r^\mathcal{I}$ is satisfied. In other words, $\mathcal{I} \vDash \mathrm{Ref}(r) \iff \{ \, \lang \delta, \delta \rang \mid \delta \in \Delta^\mathcal{I} \, \} \subseteq r^\mathcal{I}$.
+- A role reflexivity axiom $\mathrm{Ref}(r)$ hold iff for each element of the domain $\delta \in \Delta^\mathcal{I}$ the condition $\lang \delta , \delta \rang \in r^\mathcal{I}$ is satisfied. In other words, $\mathcal{I} \vDash \mathrm{Ref}(r) \iff \{ \lang \delta, \delta \rang \mid \delta \in \Delta^\mathcal{I} \} \subseteq r^\mathcal{I}$.
 - A role asymmetry axioms $\mathrm{Asy}(r)$ is holds $\mathcal{I} \vDash \mathrm{Asy}(r)$ iff $\lang \delta_1 , \delta_2 \rang \in r^\mathcal{I}$ implies that $\lang \delta_2, \delta_1 \rang \not\in r^\mathcal{I}$.
 - A role disjointness axiom $\mathrm{Dis}(s, r)$ hold iff the extensions of $r$ and $s$ are disjoint, formally $\mathcal{I} \vDash \mathrm{Dis}(s, r) \iff s^\mathrm{I} \cap r^\mathrm{I} = \empty$.
 - A general concept inclusion axiom $C \sqsubseteq D$ is true iff the extension of $C$ is fully contained in the extension of $D$, hence $\mathcal{I} \vDash C \sqsubseteq D \iff C^\mathcal{I} \subseteq D^\mathcal{I}$.
@@ -56,8 +56,6 @@ The problem of axiom entailment can be reduced to determining for the satisfiabi
 | $\alpha$ | $\Beta$ |
 | --- | --- |
 | $s_1 \circ \cdots \circ s_n \sqsubseteq r$ | $s_1(a_1, a_2)$, $\dots$, $s_n(a_n, a_{n + 1})$, and $\lnot r(a_1, a_{n + 1})$ |
-| $\mathrm{Asy}(r)$ | $r(a, b)$ and $r(b, a)$ |
-| $\mathrm{Ref}(r)$ | $\lnot r(a, a)$ |
 | $\mathrm{Dis}(s, r)$ | $s(a, b)$ and $r(a, b)$ |
 | $C \sqsubseteq D$ | $(C \sqcap \lnot D)(a)$ |
 | $C (a)$ | $\lnot C (a)$ |

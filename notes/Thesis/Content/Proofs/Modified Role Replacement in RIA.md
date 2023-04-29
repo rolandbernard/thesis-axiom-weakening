@@ -12,7 +12,7 @@ We define $s \equiv_\mathcal{O}^* r$ iff both $s \sqsubseteq_\mathcal{O}^* r$ an
 We define the upward and downward cover of roles based on these relations as follows:
 
 $$
-\mathrm{UpCover}_\mathcal{O}^*(r) = \{ \, s \in \mathbf{R} \mid r \sqsubseteq_\mathcal{O}^* s \land \lnot \exists s' \in \mathbf{R} \, . \, r \sqsubset_\mathcal{O}^* s' \sqsubset_\mathcal{O}^* s \, \} \\ \mathrm{DownCover}_\mathcal{O}^*(r) = \{ \, s \in \mathbf{R} \mid s \sqsubseteq_\mathcal{O}^* r \land \lnot \exists s' \in \mathbf{R} \, . \, s \sqsubset_\mathcal{O}^* s' \sqsubset_\mathcal{O}^* r \, \}
+\mathrm{UpCover}_\mathcal{O}^*(r) = \{ s \in \mathbf{R} \mid r \sqsubseteq_\mathcal{O}^* s \land \lnot \exists s' \in \mathbf{R} \, . \, r \sqsubset_\mathcal{O}^* s' \sqsubset_\mathcal{O}^* s \} \\ \mathrm{DownCover}_\mathcal{O}^*(r) = \{ s \in \mathbf{R} \mid s \sqsubseteq_\mathcal{O}^* r \land \lnot \exists s' \in \mathbf{R} \, . \, s \sqsubset_\mathcal{O}^* s' \sqsubset_\mathcal{O}^* r \}
 $$
 
 Let $\mathcal{R}$ be the regular RBox of the $\mathcal{SROIQ}$ ontology $\mathcal{O}$.
@@ -63,10 +63,10 @@ Proof: The proof goes analogous to the one for $\mathrm{DownCover}_\mathcal{O}(\
 
 **Counterexample:**
 
-1. Take the RBox $\mathcal{R} = \{ \, r \circ r \sqsubseteq r, r \sqsubseteq r^- \, \}$.
+1. Take the RBox $\mathcal{R} = \{ r \circ r \sqsubseteq r, r \sqsubseteq r^- \}$.
 2. Since $r \sqsubseteq r^-$ is in $\mathcal{R}$, $r \sqsubseteq_\mathcal{R}^* r^-$ holds.
 3. $r^- \in \mathrm{UpCover}_\mathcal{O}^*(r)$.
-4. Replacing $\mathcal{R}$ with $\mathcal{R}’ = \{ \, r \circ r \sqsubseteq r^- , r \sqsubseteq r^- \, \}.$
+4. Replacing $\mathcal{R}$ with $\mathcal{R}’ = \{ r \circ r \sqsubseteq r^- , r \sqsubseteq r^- \}.$
 5. Using the definition of regularity, there must be a regular strict pre-order (i.e. an irreflexive and transitive relation) $\prec$ over $\mathbf{R}$. Since $r \circ r \sqsubseteq r^-$ does not follow any of the other rules,  $r \prec r^-$ must hold. However, since $\prec$ is regular, this implies $r^- \prec r^-$ which contradicts our assumption that $\prec$ is irreflexive. 
 6. It follows that $\mathcal{R}’$ is not regular.
 

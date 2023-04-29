@@ -10,7 +10,7 @@ Intuitively, this relation encodes the dependencies between roles.
 We define the upward and downward cover of roles based on this relation as follows:
 
 $$
-\mathrm{UpCover}_\mathcal{O}^\triangle(r) = \{r,  \, s \in \mathbf{R} \mid  r \sqsubseteq_\mathcal{O} s \land \lnot (s \rightarrow_\mathcal{O}^* r) \land \lnot \exists s' \in \mathbf{R} \, . \, r \sqsubset_\mathcal{O} s' \sqsubset_\mathcal{O} s \, \} \\ \mathrm{DownCover}_\mathcal{O}^\triangle(r) = \{r,  \, s \in \mathbf{R} \mid s \sqsubseteq_\mathcal{O} r \land \lnot (r \rightarrow_\mathcal{O}^* s) \land \lnot \exists s' \in \mathbf{R} \, . \, s \sqsubset_\mathcal{O} s' \sqsubset_\mathcal{O} r \, \}
+\mathrm{UpCover}_\mathcal{O}^\triangle(r) = \{r,  \, s \in \mathbf{R} \mid  r \sqsubseteq_\mathcal{O} s \land \lnot (s \rightarrow_\mathcal{O}^* r) \land \lnot \exists s' \in \mathbf{R} \, . \, r \sqsubset_\mathcal{O} s' \sqsubset_\mathcal{O} s  \} \\ \mathrm{DownCover}_\mathcal{O}^\triangle(r) = \{r,  \, s \in \mathbf{R} \mid s \sqsubseteq_\mathcal{O} r \land \lnot (r \rightarrow_\mathcal{O}^* s) \land \lnot \exists s' \in \mathbf{R} \, . \, s \sqsubset_\mathcal{O} s' \sqsubset_\mathcal{O} r \}
 $$
 
 Let $\mathcal{R}$ be the regular RBox of the $\mathcal{SROIQ}$ ontology $\mathcal{O}$.

@@ -14,7 +14,7 @@ The statement I wanted to proof is not true. Since the ontology can be restricte
 
 **Counterexample:** Nominals can be used, the following ontology $\mathcal{O}$ entails $s \sqsubseteq r$ without any TBox axioms:
 
-- $\top \sqsubseteq \{ \, a \, \}$
+- $\top \sqsubseteq \{ a \}$
 - $\lnot s (u, u)$
 - $r(u, u)$
 
