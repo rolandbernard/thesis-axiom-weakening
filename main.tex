@@ -1,7 +1,9 @@
 \documentclass[10pt,a4paper]{report}
 \usepackage{graphicx, tabularx}
 \usepackage{amsthm, amsfonts, amsmath, amssymb}
-\usepackage{mathtools, ulem}
+\usepackage{mathtools}
+\usepackage{sectsty}
+\usepackage[inline]{enumitem}
 \usepackage{csquotes}
 \usepackage{listings}
 \usepackage{xcolor}
@@ -9,7 +11,6 @@
 \usepackage{cleveref}
 \usepackage[english]{babel}
 \usepackage{biblatex}
-\usepackage[a4paper,margin=30mm]{geometry}
 
 \theoremstyle{plain}
 \newtheorem{theorem}{Theorem}
@@ -27,6 +28,8 @@
 
 \allowdisplaybreaks
 \setcounter{tocdepth}{1}
+\chapternumberfont{\LARGE}
+\chaptertitlefont{\huge}
 
 \title{Extending Axiom Weakening for Automated Repair of Ontologies in Expressive Description Logics}
 \author{Roland Bernard}
@@ -55,41 +58,52 @@
 \maketitle
 
 \begin{abstract}
-    \input{sections/0.abstract}
+    \input{sections/0.abstract.tex}
 \end{abstract}
 
 \tableofcontents
 
-\chapter{Introduction}
+\begingroup
+\renewcommand{\abstractname}{Acknowledgements}
+\begin{abstract}
+    \input{sections/0.acknowledgments.tex}
+\end{abstract}
+\endgroup
 
-\input{sections/1.introduction}
+\chapter{Introduction} \label{introduction}
 
-\chapter{Background and Related Work}
+\input{sections/1.introduction.tex}
 
-\input{sections/2.background}
+\chapter{Background and Related Work} \label{background}
 
-\chapter{Theoretical Foundations}
+\input{sections/2.background.tex}
 
-\input{sections/3.theory}
+\chapter{Theoretical Foundations} \label{theory}
 
-\chapter{Implementation}
+\input{sections/3.theory.tex}
 
-\input{sections/4.implementation}
+\chapter{Implementation} \label{implementation}
 
-\chapter{Experiments and Evaluation}
+\input{sections/4.implementation.tex}
 
-\input{sections/5.evaluation}
+\chapter{Experiments and Evaluation} \label{evaluation}
 
-\chapter{Conclusion and Future Work}
+\input{sections/5.evaluation.tex}
 
-\input{sections/6.conclution}
+\chapter{Conclusion and Future Work} \label{conclusion}
+
+\input{sections/6.conclution.tex}
 
 \printbibliography
 
 \appendix
 
+\chapter{Correctness of Axiom Weakening} \label{proof-weakening}
+
+\input{sections/a.proof-weakening.tex}
+
 \chapter{Axiom Weakening in OWL 2 DL} \label{weakening-owl-2-dl}
 
-\input{sections/a.owl2weakening.tex}
+\input{sections/b.owl2weakening.tex}
 
 \end{document}

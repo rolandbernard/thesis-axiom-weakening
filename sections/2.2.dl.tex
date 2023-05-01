@@ -1,0 +1,16 @@
+
+While ontologies can be represented using a number of different formalisms, for the use in automated reasoning a trade-off must be made between expressivity and practicality. For example, first-order logic (FOL) is more expressive than propositional logic, but this added expressivity comes at the cost of decidability. In addition to decidability, scalability must also be considered in the choice and design of the used representation of the knowledge.
+
+\emph{Description logics} (DL) are often used for building ontologies. They encompass a family of related knowledge representation languages and are often fragments of FOL\footnote{While description logics are fragments of FOL in the sense that for every knowledge base in a given description logic, there exists a FOL theory that has the same models, the syntax used by description logics is different from the syntax used in FOL, and as such a DL axiom is not a valid FOL sentence.} with equality, as is the case with the description logics $\mathcal{SROIQ}$ which is the main focus of this work. DLs are almost always designed to be decidable, and generally offer a favourable trade-off between expressivity and complexity of reasoning tasks. Different description logics have been developed for different applications, that feature varying levels of expressivity.
+
+Description logics are also the basis of the \emph{Web Ontology Language} (OWL) \cite{hitzler2009owl_primer,motik2009owl_spec}, which is a World Wide Web Consortium (W3C) recommendation and is extensively used as part of the semantic web. While the OWL 2 language is based on $\mathcal{SROIQ}$, OWL 2 also defines three so-called profiles that are fragments of the full OWL 2 language that trade-off expressive power for more efficient reasoning \cite{motik2009owl_profiles,motik2009owl_spec}. The OWL 2 DL profile, which is the most expressive of the profiles that is still decidable\footnote{The most expressive profile, OWL 2 Full, is not decidable.}, is based on $\mathcal{SROIQ}$.
+
+The following sections will introduce the description logic $\mathcal{SROIQ}$ and the OWL 2 language. The relation between the two will also be discussed. The description is also loosely based on the description in \cite{rudolph2011foundations}.
+
+\subsection{The \texorpdfstring{$\mathcal{SROIQ}$}{SROIQ} Description Logic} \label{sroiq-def}
+
+\input{sections/2.2.1.sroiq.tex}
+
+\subsection{The Web Ontology Language} \label{owl-def}
+
+\input{sections/2.2.2.owl.tex}

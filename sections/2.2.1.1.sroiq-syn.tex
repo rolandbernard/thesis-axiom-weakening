@@ -1,0 +1,88 @@
+
+This section describes the syntax of the $\mathcal{SROIQ}$ description logic \cite{horrocks2006even}.
+
+The \emph{vocabulary}\footnote{There are no strict rules for how to write down different elements of the vocabulary. However, there is a convention of using PascalCase for concept names and camelCase for names referring to roles and individuals.} $\mathrm{N} = \mathrm{N}_I \cup \mathrm{N}_C \cup \mathrm{N}_R$ of a $\mathcal{SROIQ}$ knowledge base is made up of three disjoint sets:
+
+\begin{itemize}
+    \item The set of \emph{individual names} $\mathrm{N}_I$ used to refer to single elements in the domain of discourse.
+    \item The set of \emph{concept names} $\mathrm{N}_C$ used to refer to classes that elements of the domain may be a part of.
+    \item The set of \emph{role names} $\mathrm{N}_R$ used to refer to binary relations that may hold between the elements of the domain.
+\end{itemize}
+
+A $\mathcal{SROIQ}$ knowledge base $\mathcal{KB} = \mathcal{A} \cup \mathcal{T} \cup \mathcal{R}$ is the union of an \emph{ABox} $\mathcal{A}$, a \emph{TBox} $\mathcal{T}$, and a regular \emph{RBox} $\mathcal{R}$. The elements of $\mathcal{KB}$ are called axioms.
+
+\paragraph{RBox} \label{rbox}
+
+The RBox $\mathcal{R}$ describes the relationship between different roles in the knowledge base. It consists of two disjoint parts, a role hierarchy $\mathcal{R}_h$ and a set of role assertions $\mathcal{R}_a$.
+
+Given the set of role names $\mathrm{N}_R$, a \emph{role} is either the \emph{universal role} $u$ or of the form $r$ or $r^-$ for some role names $r \in \mathrm{N}_R$, where $r^-$ is called the \emph{inverse role or} $r$. For convenience in the latter definitions, and to avoid roles like $r^{--}$, we define a function $\mathrm{Inv}$ such that $\mathrm{Inv}(r) = r^-$ and $\mathrm{Inv}(r^-) = r$. We denote the set of all roles as $\mathbf{R} = \mathrm{N}_R \cup \{ u \} \cup \{ r^- \mid r \in \mathrm{N}_R \}$.
+
+A \emph{role inclusion axiom} (RIA) is a statement of the form $r_1 \circ \cdots \circ r_n \sqsubseteq r$ where $r, r_1, \dots r_n \in \mathbf{R}$ are roles. For the case in which $n = 1$, we obtain a \emph{simple role inclusion}, which has the form $r \sqsubseteq s$ where $s$ and $r$ are role names (the case where $n > 1$ is called a \emph{complex role inclusion}). A finite set of RIAs is called a \emph{role hierarchy}, denoted $\mathcal{R}_h$.
+
+Roles can be partitioned into two disjoint sets, simple roles and non-simple roles. Intuitively, non-simple roles are those that are implied by the composition of two or more other roles. In order to preserve decidability, $\mathcal{SROIQ}$ requires that in parts of expressions only simple roles are used. We define the set of \emph{non-simple roles} as the smallest set such that:
+
+\begin{itemize}
+    \item the universal role $u$ is non-simple,
+    \item any role $r$ that appears in a RIA of the form $r_1 \circ \cdots \circ r_n \sqsubseteq r$ where $n > 1$ is non-simple,
+    \item any role $r$ that appears in a simple role inclusion $s \sqsubseteq r$ where $s$ is non-simple is itself non-simple, and
+    \item if a role $r$ is non-simple, then $\mathrm{Inv}(r)$ is also non-simple.
+\end{itemize}
+
+All roles which are not non-simple are \emph{simple roles}. We denote the set of all non-simple roles with $\mathbf{R}^N$ and the set of simple roles with $\mathbf{R}^S = \mathbf{R} \setminus \mathbf{R}^N$.
+
+\begin{example}
+% TODO
+\end{example}
+
+There is an additional restriction that is placed upon the role hierarchy in a $SROIQ$ knowledge base. The role hierarchy in $\mathcal{SROIQ}$ must be regular. A role hierarchy $\mathcal{R}_h$ is \emph{regular} if there exists a strict partial order $\prec$ (that is, an irreflexive and transitive relation) on the set of roles $\mathbf{R}$, such that $s \prec r \iff \mathrm{Inv}(s) \prec r$ and $s \prec r \iff \mathrm{Inv}(s) \prec \mathrm{Inv}(r)$ for all roles $r$ and $s$, and all RIA in $\mathcal{R}_h$ are $\prec$-regular. A RIA is defined to be $\prec$\emph{-regular} if it is of one of the following forms:
+
+\begin{itemize}
+    \item $r \circ r \sqsubseteq r$,
+    \item $\mathrm{Inv}(r) \sqsubseteq r$,
+    \item $r \circ s_1 \circ \cdots \circ s_n \sqsubseteq r$,
+    \item $s_1 \circ \cdots \circ s_n \circ r \sqsubseteq r$, or
+    \item $s_1 \circ \cdots \circ s_n \sqsubseteq r$,
+\end{itemize}
+
+such that $s_1, \dots, s_n, r \in \mathbf{R}$ are roles, and $s_i$ is simple or $s_i \prec r$ for all $i = 1, \dots, n$.
+
+This condition on the role hierarchy prevents cyclic definitions with role inclusion axioms that include role chains. These types of cyclic definition could otherwise lead to undecidability of the logic.
+
+\begin{example}
+% TODO
+\end{example}
+
+\begin{example}
+% TODO
+\end{example}
+
+To make axiom weakening simpler, this definition is slightly more general than necessary. The definition of regularity presented here is more permissive than the one in \cite{horrocks2006even} in that it always allows simple roles on the left-hand side. Additionally, it is more permissive than stated in \cite{rudolph2011foundations} in that it allows for inverse roles on the right-hand side. 
+
+The set of \emph{role assertions} $\mathcal{R}_a$ is a finite set of statements with the form $\mathrm{Dis}(s_1, s_2)$ (\emph{disjointness}) where $s_1$, and $s_2$ are simple roles in $\mathcal{R}_h$. In \cite{horrocks2006even} the authors define additionally the role assertions $\mathrm{Sym}(r)$ (\emph{symmetry}), $\mathrm{Asy}(s)$ (\emph{asymmetry}), $\mathrm{Tra}(r)$ (\emph{transitivity}), $\mathrm{Ref}(r)$ (\emph{reflexivity}), and $\mathrm{Irr}(r)$ (\emph{irreflexivity}). These additional assertions can, however, be written using the alternative sets of axioms $\{ r^- \sqsubseteq r \}$, $\{ \mathrm{Dis}(r, r^-) \}$, $\{ r \circ r \sqsubseteq r \}$, $\{ r' \sqsubseteq r , \top \sqsubseteq \exists r'. \mathrm{Self} \}$, and $\{ \top \sqsubseteq \lnot \exists r . \mathrm{Self} \}$ respectively. Note that the asymmetry assertion requires a simple role, and that $r'$ in the case of reflexivity must be a role name not otherwise used in the ontology \footnote{This is necessary to allow the use of non-simple roles in a reflexivity assertion. Multiple assertions can share the same role name $r'$.}.
+
+\paragraph{TBox} \label{tbox}
+
+The TBox $\mathcal{T}$ describes the relationship between different concepts. In $\mathcal{SROIQ}$, the set of \emph{concept expressions} (or simply \emph{concepts}) given an RBox $\mathcal{R}$ is inductively defined as the smallest set such that:
+
+\begin{itemize}
+    \item $\top$ and $\bot$ are concepts, respectively called \emph{top concept} and \emph{bottom concept},
+    \item all concept names $C \in \mathrm{N}_C$ are concept, called \emph{atomic concepts},
+    \item all finite subsets of individual names $\{ a_1, \dots, a_n \} \subseteq \mathrm{N}_I$ are concepts, called \emph{nominal concepts,}
+    \item if $C$ and $D$ are concepts, the $\lnot C$ (\emph{negation}), $C \sqcup D$ (\emph{union}), and $C \sqcap D$ (\emph{intersection}) are also concepts,
+    \item if $C$ is a concept and $r \in \mathbf{R}$ a (possible non-simple) role, then $\exists r . C$ (\emph{existential quantification}) and $\forall r . C$ (\emph{universal quantification}) are also concepts, and
+    \item if $C$ is a concept, $s \in \mathbf{R}^S$ a simple role and $n \in \mathbb{N}_0$ a non-negative number, then $\exists r . \mathrm{Self}$ (\emph{self restriction}), $\leq n s . C$ (\emph{at-most restriction}), and $\geq n s. C$ (\emph{at-least restriction}) are concepts, the last two may together be referred to as \emph{qualified number restrictions.}
+\end{itemize}
+
+Given two concepts $C$ and $D$, a \emph{general concept inclusion axiom} (GCI) is a statement of the form $C \sqsubseteq D$. The TBox $\mathcal{T}$ is a finite set of general concept inclusion axioms.
+
+\paragraph{ABox} \label{abox}
+
+The ABox $\mathcal{A}$ contains statements about single individuals called individual assertions. An \emph{individual assertion} has one of the following forms:
+
+\begin{itemize}
+    \item $C(a)$ (\emph{concept assertion}) for some concept $C$ and individual name $a \in \mathrm{N}_I$,
+    \item $r(a, b)$ (\emph{role assertion}) or $\lnot r (a, b)$ (\emph{negative role assertion}) for some role $r \in \mathbf{R}$ and individual names $a, b \in \mathrm{N}_I$, or
+    \item $a = b$ (\emph{equality}) or $a \not = b$ (\emph{inequality}) for some individual names $a \in \mathrm{N}_I$.
+\end{itemize}
+
+An ABox $\mathcal{A}$ is a finite set of individual assertions. In $\mathcal{SROIQ}$ due to the inclusion of nominal concepts, all ABox axioms can be rewritten into TBox axioms.
