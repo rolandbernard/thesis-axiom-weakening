@@ -1,4 +1,7 @@
 
+tmp.*
+notes-tex
+
 ### Latex ###
 *.synctex.gz
 *.aux
