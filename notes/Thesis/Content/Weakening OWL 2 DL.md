@@ -1,14 +1,14 @@
 # Weakening OWL 2 DL
 
-Since OWL 2 DL is reducible to $\mathcal{SROIQ}$ it would be sufficient to perform this normalization and then apply the weakening as described to the resulting $\mathcal{SROIQ}$ ontology. However, while this transformation is unproblematic in some contexts in which the result is only to be used for automatic reasoning tasks, if the output must be further manipulated by a user of the system it could lead to the introduction of unnecessary noise. Further, weakening OWL 2 DL ontologies directly can be seen as a heuristic as to which weakening might make sense from a modelling perspective.
+Since OWL 2 DL is reducible to $\mathcal{SROIQ}$ it would be sufficient to perform this normalization and then apply the weakening as described to the resulting $\mathcal{SROIQ}$ ontology. This transformation is unproblematic in some contexts, for example if the result is only going to be used for automatic reasoning tasks. However, if the output must be further manipulated by a user of the system, the added noise introduced by the normalization may cause confuting and hinder understanding. Further, weakening OWL 2 DL ontologies directly can be seen as a heuristic, giving an indication as to which weakening might make sense from a modelling perspective.
 
 Example: OWL has an axiom $\mathrm{DisjointClasses}(C_1, \dots, C_n)$ that allows specifying that a set of classes all are pairwise disjoint. $C_i \sqcap C_j \sqsubseteq \bot$ for all $i \not= j = 1, \dots, n$. One reasonable approach to weakening the OWL axiom is to replace any of the classes $C_i$ with a more specific class $C_i' \in \rho_\mathcal{O}(C_i)$. In contrast, after normalization, there will be $n - 1$ occurrences of $C_i$. It is unlikely, increasingly so with growing $n$, that all such occurrences will be weakened to the same concept. After weakening the normalized ontology, it is thus in general not possible to reconstruct the disjointness axiom.
 
-It should be noted that working directly with OWL 2 axioms will make repairs less granular. For some axiom types, it is not obvious how they could reasonably be weakened to a single axiom.
+It should be noted that working directly with OWL 2 axioms will make repairs less gentle. For some axiom types, it is not obvious how they could reasonably be weakened to another single axiom. For these kinds of axioms, removal is the only available weakening.
 
 Example: The OWL axiom $\mathrm{EquivalentClasses}(C_1, \dots, C_n)$ can not easily be weakened. One option for weakening is removing one of the arguments. The axiom would be normalized to a set of $\mathrm{SubClassOf}$ axioms, for which both the subclass and superclasses can be modified. It is evident that this is more gentle than completely removing arguments.
 
-We define the refinement operator $\zeta_{\uparrow,\downarrow}$ for OWL 2 as follows:
+For OWL 2 DL we must follow the same restrictions, when it comes to regularity and simplicity of roles, as for $\mathcal{SROIQ}$. The same definitions for the upward and downward covers, $\mathrm{UpCover}_\mathcal{O}$ **and **$\mathrm{DownCover}_\mathcal{O}$, are used. We define the refinement operator $\zeta_{\uparrow,\downarrow}$ for OWL 2 DL as follows:
 
 - $\zeta_{\uparrow, \downarrow}(A) = \; \uparrow (A)$ for $A \in \mathrm{N}_c \cup \mathbf{R} \cup \{ \top , \bot \}$
 - $\zeta_{\uparrow, \downarrow}(\mathrm{ObjectComplementOf}(C)) = \; \uparrow (\mathrm{ObjectComplementOf}(C)) \cup \{ \mathrm{ObjectComplementOf}(C')  \mid C' \in \zeta_{\downarrow, \uparrow} (C) \}$
@@ -23,7 +23,7 @@ We define the refinement operator $\zeta_{\uparrow,\downarrow}$ for OWL 2 as fol
 - $\zeta_{\uparrow, \downarrow}(\mathrm{ObjectExactCardinality}(n, r, C)) = \; \uparrow (\mathrm{ObjectExactCardinality}(n, r, C)) \cup \{ \phi_1 \sqcap \phi_2   \mid \phi_1 \in \zeta_{\uparrow, \downarrow} (\mathrm{ObjectMaxCardinality}(n, r, C)) \land \phi_2 \in \zeta_{\uparrow, \downarrow} (\mathrm{ObjectMinCardinality}(n, r, C)) \}$
 - $\zeta_{\uparrow, \downarrow}(\mathrm{ObjectOneOf}(a_1, \dots, a_n)) = \; \uparrow (\mathrm{ObjectOneOf}(a_1, \dots, a_n))$
 
-We define the axiom weakening operator $g_\mathcal{O}$ for OWL 2 axioms as follows:
+Using this abstract refinement operator, we build two concrete refinement operators, a generalization operator $\gamma_\mathcal{O} = \zeta_{\mathrm{UpCover}\mathcal{O}, \mathrm{DownCover}\mathrm{O}}$ and a specialization operator $\rho_\mathcal{O} = \zeta_{\mathrm{DownCover}\mathcal{O}, \mathrm{UpCover}\mathcal{O}}$. Using these generalization and specialization operators, we then define the axiom weakening operator $g_\mathcal{O}$ for OWL 2 DL axioms as follows:
 
 - $g_\mathcal{O}(\mathrm{SubClassOf}(C, D)) = \{\mathrm{SubClassOf}(C', D) \mid C' \in \rho_\mathcal{O} (C)\} \cup \{\mathrm{SubClassOf}(C, D') \mid D' \in \gamma_\mathcal{O}  (D)\}$
 - $g_\mathcal{O}(\mathrm{ClassAssertion}(C, a)) = \{\mathrm{ClassAssertion}(C', a) \mid C' \in \gamma_\mathcal{O}  (C)\}$

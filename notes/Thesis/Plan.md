@@ -37,7 +37,7 @@
 - [x]  Implement a basic protégé plugin doing axiom weakening
 - [x]  Start writing the background sections of the thesis
     - [x]  About ontology repair
-- [ ]  Copy everything to LaTeX
+- [x]  Copy everything to LaTeX
 
 01.05.2023 - 07.05.2023
 

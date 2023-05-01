@@ -4,8 +4,8 @@ Front (3.5)
 
 - Title (1)
 - Abstract (1)
-- Acknowledgments (0.5)
 - Table of contents (1)
+- Acknowledgments (0.5)
 
 Main (33)
 

@@ -1,6 +1,6 @@
 # $\mathcal{SROIQ}$ Syntax
 
-This section describes the syntax for $\mathcal{SROIQ}$ [The Even More Irresistible $\mathcal{SROIQ}$]().
+This section describes the syntax of the $\mathcal{SROIQ}$ description logic [The Even More Irresistible $\mathcal{SROIQ}$]().
 
 The *vocabulary* $\mathrm{N} = \mathrm{N}_I \cup \mathrm{N}_C \cup \mathrm{N}_R$ of a $\mathcal{SROIQ}$ knowledge base is made up of three disjoint sets:
 

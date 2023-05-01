@@ -37,7 +37,7 @@ The purpose of the (extended) interpretation function is mainly to determine sat
 - An equality assertion $a = b$ holds iff the individuals identified by $a$ and $b$ are the same element of the domain, formally written $\mathcal{I} \vDash a = b \iff a^\mathcal{I} = b^\mathcal{I}$.
 - Dual to the above, $a \not = b$ holds iff the names $a$ and $b$ denote different elements, accordingly $\mathcal{I} \vDash a \not= b \iff a^\mathcal{I} \not= b^\mathcal{I}$.
 
-We say a set of axioms holds in an interpretation $\mathcal{I}$ iff every axiom of the set hold in $\mathcal{I}$. Accordingly, $\mathcal{I}$ satisfies a knowledge base $\mathcal{KB}$, written $\mathcal{I} \vDash \mathcal{KB}$, iff $\mathcal{I}$ satisfies every axiom $\alpha \in \mathcal{KB}$ of the knowledgeable, i.e. $\mathcal{I} \vDash \mathcal{KB} \iff \forall \alpha \in \mathcal{KB} \, . \; \mathcal{I} \vDash \alpha$. If $\mathcal{I}$ satisfies $\mathcal{KB}$ we say $\mathcal{I}$ is a model of $\mathcal{KB}$.
+We say a set of axioms holds in an interpretation $\mathcal{I}$ iff every axiom of the set hold in $\mathcal{I}$. Accordingly, $\mathcal{I}$ satisfies a knowledge base $\mathcal{KB}$, written $\mathcal{I} \vDash \mathcal{KB}$, iff $\mathcal{I}$ satisfies every axiom $\alpha \in \mathcal{KB}$ of the knowledgeable, i.e., $\mathcal{I} \vDash \mathcal{KB} \iff \forall \alpha \in \mathcal{KB} \, . \; \mathcal{I} \vDash \alpha$. If $\mathcal{I}$ satisfies $\mathcal{KB}$ we say $\mathcal{I}$ is a model of $\mathcal{KB}$.
 
 # Reasoning tasks
 
@@ -45,7 +45,7 @@ In general, logic-based knowledge representation is useful for the ability to pe
 
 ## Knowledge base satisfiability
 
-A knowledge $\mathcal{KB}$ base is satisfiable iff there exists a model $\mathcal{I} \vDash \mathcal{KB}$ for $\mathcal{KB}$. Otherwise, the knowledge base is called unsatisfiable, inconsistent, or contradictory. As discussed in [Ontology Bugs](Ontology%20Bugs.md) an inconsistent knowledge base can be a sign of modelling errors. An inconsistent knowledge base entailed every statement, and as such all information extracted from it is useless. Therefore, an unsatisfiable knowledge base is generally undesirable. Furthermore, both the task of deciding concept satisfiability and axiom entailment can be reduced to deciding knowledge base consistency.
+A knowledge $\mathcal{KB}$ base is satisfiable iff there exists a model $\mathcal{I} \vDash \mathcal{KB}$ for $\mathcal{KB}$. Otherwise, the knowledge base is called unsatisfiable, inconsistent, or contradictory. As discussed in [Ontology Bugs](Ontology%20Bugs.md), an inconsistent knowledge base can be a sign of modelling errors. An inconsistent knowledge base entailed every statement, and as such all information extracted from it is useless. Therefore, an unsatisfiable knowledge base is generally undesirable. Furthermore, both the task of deciding concept satisfiability and axiom entailment can be reduced to deciding knowledge base consistency.
 
 ## Axiom entailment
 
@@ -53,7 +53,7 @@ An axiom $\alpha$ is entailed by $\mathcal{KB}$ if every model $\mathcal{I} \vDa
 
 The problem of axiom entailment can be reduced to determining for the satisfiability of a modified knowledge base. This is achieved by using an axiom $\beta$ that imposes the opposite restriction to $\alpha$, to be more precise, for all interpretations $\mathcal{I} \vDash \alpha \iff \mathcal{I} \not\vDash \beta$. If $\alpha$ is entailed by $\mathcal{KB}$, it must hold in every model of $\mathcal{KB}$, hence $\beta$ must not hold in any model. It follows that the extended knowledge base $\mathcal{KB} \cup \{ \, \beta \, \}$ has no new model, and is therefore unsatisfiable. We can consequently solve the axiom entailment problem by testing for satisfiability of a modified knowledge base, if we can find such an opposing axiom for $\alpha$. For some cases in $\mathcal{SROIQ}$ finding such an opposite is obvious, for others the desired behaviour must be emulated with a set of axioms. []($%20mathcal%7BSROIQ%7D$%20Semantics.md) shows the correspondence for every type of $\mathcal{SROIQ}$ axiom.
 
-| $\alpha$ | $\Beta$ |
+| $\alpha$ | $B$ |
 | --- | --- |
 | $s_1 \circ \cdots \circ s_n \sqsubseteq r$ | $s_1(a_1, a_2)$, $\dots$, $s_n(a_n, a_{n + 1})$, and $\lnot r(a_1, a_{n + 1})$ |
 | $\mathrm{Dis}(s, r)$ | $s(a, b)$ and $r(a, b)$ |
@@ -66,6 +66,6 @@ The problem of axiom entailment can be reduced to determining for the satisfiabi
 
 ## Concept satisfiability
 
-A concept $C$ is satisfiable with respect to $\mathcal{KB}$ iff there exists a model of the knowledge base $\mathcal{I} \vDash \mathcal{KB}$ such that the extension of $C$ is not empty, i.e. $C^\mathcal{I} \not= \empty$. A concept which is not satisfiable is called unsatisfiable. Clearly, some concepts are unsatisfiable with respect to every knowledge base, for example $\bot$ or $A \sqcap \lnot A$. However, similar to an unsatisfiable knowledge base, an unsatisfiable atomic concept may be an indication of a modelling mistake.
+A concept $C$ is satisfiable with respect to $\mathcal{KB}$ iff there exists a model of the knowledge base $\mathcal{I} \vDash \mathcal{KB}$ such that the extension of $C$ is not empty, i.e., $C^\mathcal{I} \not= \empty$. A concept which is not satisfiable is called unsatisfiable. Clearly, some concepts are unsatisfiable with respect to every knowledge base, for example $\bot$ or $A \sqcap \lnot A$. However, similar to an unsatisfiable knowledge base, an unsatisfiable atomic concept may be an indication of a modelling mistake.
 
 Like axiom entailment, concept satisfiability can be reduced to knowledge base satisfiability. If a concept is unsatisfiable, every model $\mathcal{I} \vDash \mathcal{KB}$ maps the concept to the empty set, that is $C^\mathcal{I} = \empty$. Since the other direction is trivial, we can rewrite this as $C^\mathcal{I} \subseteq \empty$. It follows that since $\bot^\mathcal{I} = \empty$ the every such model satisfies $\mathcal{I} \vDash C \sqsubseteq \bot$, meaning $\mathcal{KB} \vDash C \sqsubseteq \bot$. We conclude that we can test for unsatisfiability of a concept $C$ by checking for entailment of $C \sqsubseteq \bot$.

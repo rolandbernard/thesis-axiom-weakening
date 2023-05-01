@@ -8,8 +8,6 @@ $$
 \mathrm{UpCover}_\mathcal{O}(r) = \{ s \in \mathbf{R}^S \mid r \sqsubseteq_\mathcal{O} s \land \lnot \exists s' \in \mathbf{R}^S \, . \, r \sqsubset_\mathcal{O} s' \sqsubset_\mathcal{O} s \} \\ \mathrm{DownCover}_\mathcal{O}(r) = \{ s \in \mathbf{R}^S \mid s \sqsubseteq_\mathcal{O} r \land \lnot \exists s' \in \mathbf{R}^S \, . \, s \sqsubset_\mathcal{O} s' \sqsubset_\mathcal{O} r \}
 $$
 
-Let $\mathcal{R}$ be the regular RBox of the $\mathcal{SROIQ}$ ontology $\mathcal{O}$. A model of a $\mathcal{R}$ is an interpretation that satisfies all axioms in $\mathcal{R}$. We say that an $\mathcal{R}$ entails another RBox $\mathcal{R}'$(or $\mathcal{R}'$ is entailed by $\mathcal{R}$), if every model of $\mathcal{R}$ is also a model of $\mathcal{R}'$.
-
 **Lemma:** For all $r' \in \mathrm{UpCover}_\mathcal{O}(r)$ and every model $M$ of $\mathcal{O}$, $r^M \subseteq r'^M$.
 
 Proof: Following the definition of $\mathrm{UpCover}_\mathcal{O}(\cdot)$, $r \sqsubseteq_\mathcal{O} r'$ holds and by definition $r^M \subseteq r'^M$ must therefore be true in every model.
@@ -18,7 +16,7 @@ Proof: Following the definition of $\mathrm{UpCover}_\mathcal{O}(\cdot)$, $r \sq
 
 Proof: Following the definition of $\mathrm{DownCover}_\mathcal{O}(\cdot)$, $r' \sqsubseteq_\mathcal{O} r$ holds and by definition $r'^M \subseteq r^M$ must therefore be true in every model.
 
-**Lemma:** The RBox $\mathcal{R}'$, obtained by replacing any RIA $\phi = s_1 \circ \cdots \circ s_n \sqsubseteq r$ in $\mathcal{R}$ with a RIA $\phi' = s_1 \circ \cdots \circ s_n \sqsubseteq r'$ where $r \sqsubseteq_\mathcal{O} r'$, is entailed by $\mathcal{R}$.
+**Lemma:** The RBox $\mathcal{R}'$, obtained by replacing any RIA $\phi = s_1 \circ \cdots \circ s_n \sqsubseteq r$ in the regular RBox $\mathcal{R}$ with a RIA $\phi' = s_1 \circ \cdots \circ s_n \sqsubseteq r'$ where $r \sqsubseteq_\mathcal{O} r'$, is entailed by $\mathcal{R}$.
 
 Proof:
 
@@ -30,7 +28,7 @@ Proof:
 6. By definition, it follows that $M$ satisfies $\phi'$.
 7. Since all other axioms of $\mathcal{R}'$ are also in $\mathcal{R}$, $M$ satisfies all axioms of $\mathcal{R}'$ and is therefore a model for $\mathcal{R}'$.
 
-**Lemma:** The RBox $\mathcal{R}'$, obtained by replacing any RIA $\phi = s_1 \circ \cdots \circ s_i' \circ \cdots \circ s_n \sqsubseteq r$ in $\mathcal{R}$ with a RIA $\phi' = s_1 \circ \cdots \circ s_i' \circ \cdots \circ s_n \sqsubseteq r$ where $s_i' \sqsubseteq_\mathcal{O} s_i$, is entailed by $\mathcal{R}$.
+**Lemma:** The RBox $\mathcal{R}'$, obtained by replacing any RIA $\phi = s_1 \circ \cdots \circ s_i' \circ \cdots \circ s_n \sqsubseteq r$ in the regular RBox $\mathcal{R}$ with a RIA $\phi' = s_1 \circ \cdots \circ s_i' \circ \cdots \circ s_n \sqsubseteq r$ where $s_i' \sqsubseteq_\mathcal{O} s_i$, is entailed by $\mathcal{R}$.
 
 Proof:
 
@@ -43,7 +41,7 @@ Proof:
 7. By definition, it follows that $M$ satisfies $\phi'$.
 8. Since all other axioms of $\mathcal{R}'$ are also in $\mathcal{R}$, $M$ satisfies all axioms of $\mathcal{R}'$ and is therefore a model for $\mathcal{R}'$.
 
-**Lemma:** The RBox $\mathcal{R}'$, obtained by replacing any role assertion $\phi = \mathrm{Dis}(s_1, s_2)$ in $\mathcal{R}$ with a RIA $\phi' = \mathrm{Dis}(s_1', s_2')$ where $s_1' \sqsubseteq_\mathcal{O} s_1$ and $s_2' \sqsubseteq_\mathcal{O} s_2$, is entailed by $\mathcal{R}$.
+**Lemma:** The RBox $\mathcal{R}'$, obtained by replacing any role assertion $\phi = \mathrm{Dis}(s_1, s_2)$ in the regular RBox $\mathcal{R}$ with a RIA $\phi' = \mathrm{Dis}(s_1', s_2')$ where $s_1' \sqsubseteq_\mathcal{O} s_1$ and $s_2' \sqsubseteq_\mathcal{O} s_2$, is entailed by $\mathcal{R}$.
 
 Proof:
 
@@ -55,7 +53,7 @@ Proof:
 6. By definition, it follows that $M$ satisfies $\phi'$.
 7. Since all other axioms of $\mathcal{R}'$ are also in $\mathcal{R}$, $M$ satisfies all axioms of $\mathcal{R}'$ and is therefore a model for $\mathcal{R}'$.
 
-**Lemma:** The RBox $\mathcal{R}'$, obtained by replacing any simple RIA $\phi = s \sqsubseteq r$ in $\mathcal{R}$ for which $s$ is simple with a RIA $\phi' = s \sqsubseteq r'$ where $r' \in \mathbf{R}$, is regular.
+**Lemma:** The RBox $\mathcal{R}'$, obtained by replacing any simple RIA $\phi = s \sqsubseteq r$ in the regular RBox $\mathcal{R}$ for which $s$ is simple with a RIA $\phi' = s \sqsubseteq r'$ where $r' \in \mathbf{R}$, is regular.
 
 Proof:
 
@@ -65,7 +63,7 @@ Proof:
 4. Since $\mathcal{R}'$ contains no other axioms, all axioms in $\mathcal{R}'$ are $\prec$-regular.
 5. $\mathcal{R}'$ is regular since $\prec$ is an admissible regular order.
 
-**Lemma:** The RBox $\mathcal{R}'$, obtained by replacing any RIA $\phi = s_1 \circ \cdots \circ s' \circ \cdots \circ s_n \sqsubseteq r$ in $\mathcal{R}$ with a RIA $\phi' = s_1 \circ \cdots \circ s' \circ \cdots \circ s_n \sqsubseteq r$ where $s'$ is simple, is regular.
+**Lemma:** The RBox $\mathcal{R}'$, obtained by replacing any RIA $\phi = s_1 \circ \cdots \circ s' \circ \cdots \circ s_n \sqsubseteq r$ in the regular RBox $\mathcal{R}$ with a RIA $\phi' = s_1 \circ \cdots \circ s' \circ \cdots \circ s_n \sqsubseteq r$ where $s'$ is simple, is regular.
 
 Proof:
 
@@ -80,7 +78,7 @@ Proof:
 5. Since $\mathcal{R}'$ contains no other axioms, all axioms in $\mathcal{R}'$ are $\prec$-regular.
 6. $\mathcal{R}'$ is regular since $\prec$ is an admissible regular order.
 
-**Lemma:** The RBox $\mathcal{R}'$ is obtained by replacing any simple RIA $\phi = s \sqsubseteq r$ in $\mathcal{R}$ for which $s$ is simple with a RIA $\phi' = s \sqsubseteq r'$ where $r' \in \mathbf{R}$. All roles that are simple in $\mathcal{R}$ are also simple in $\mathcal{R}'$.
+**Lemma:** The RBox $\mathcal{R}'$ is obtained by replacing any simple RIA $\phi = s \sqsubseteq r$ in the regular RBox $\mathcal{R}$ for which $s$ is simple with a RIA $\phi' = s \sqsubseteq r'$ where $r' \in \mathbf{R}$. All roles that are simple in $\mathcal{R}$ are also simple in $\mathcal{R}'$.
 
 Proof:
 
@@ -92,7 +90,7 @@ Proof:
     4. $\mathrm{Inv}(t)$ is simple because it is simple in $\mathcal{R}$ and the above three points hold also for $\mathrm{Inv}(t)$.
 3. Since $t$ is an arbitrary simple role from $\mathcal{R}$, all simple roles in $\mathcal{R}$ are simple in $\mathcal{R}'$.
 
-**Lemma:** The RBox $\mathcal{R}'$ is obtained by replacing any RIA $\phi = s_1 \circ \cdots \circ s' \circ \cdots \circ s_n \sqsubseteq r$ in $\mathcal{R}$ with a RIA $\phi' = s_1 \circ \cdots \circ s' \circ \cdots \circ s_n \sqsubseteq r$ where $s'$ is simple. All roles that are simple in $\mathcal{R}$ are also simple in $\mathcal{R}'$.
+**Lemma:** The RBox $\mathcal{R}'$ is obtained by replacing any RIA $\phi = s_1 \circ \cdots \circ s' \circ \cdots \circ s_n \sqsubseteq r$ in the regular RBox $\mathcal{R}$ with a RIA $\phi' = s_1 \circ \cdots \circ s' \circ \cdots \circ s_n \sqsubseteq r$ where $s'$ is simple. All roles that are simple in $\mathcal{R}$ are also simple in $\mathcal{R}'$.
 
 Proof:
 
@@ -103,3 +101,18 @@ Proof:
     3. $t$ does not appear in a simple RIA where the left-hand side is non-simple. The only new axiom in $\mathcal{R}'$ is $\phi'$. The left-hand side of $\phi'$, $s'$, is simple.
     4. $\mathrm{Inv}(t)$ is simple because it is simple in $\mathcal{R}$ and the above three points hold also for $\mathrm{Inv}(t)$.
 3. Since $t$ is an arbitrary simple role from $\mathcal{R}$, all simple roles in $\mathcal{R}$ are simple in $\mathcal{R}'$.
+
+**Theorem:** The set of well-formed $\mathcal{SROIQ}$ ontologies is closed under axiom weakening. That is, given a valid $\mathcal{SROIQ}$ ontology $\mathcal{O}$ with a regular RBox $\mathcal{R}$, the ontology $\mathcal{O}' = \mathcal{O} \setminus \{\alpha\} \cup \{\alpha'\}$ obtained by replacing any axiom $\alpha \in \mathcal{O}$ with a weakening $\alpha' \in g_\mathcal{O}(a)$ is also a valid $\mathcal{SROIQ}$ ontology.
+
+Proof: We must show that the axioms resulting from weakening are syntactically correct, that no non-simple role is used in disjoint role axioms, cardinality restrictions, or self restrictions, and that the resulting RBox is regular.
+
+Regularity of the RBox follows from lemma X and lemma X, since those are the only types of transformations performed on the RIAs, and regularity depends only on the RIAs. Similarly, it follows from lemma X and lemma X that all roles simple in $\mathcal{O}$ are also simple in $\mathcal{O}'$. This means all cardinality or self restriction for which the role is not changed, still use a simple role.
+
+Numbers and roles in the axioms are replaced, if at all, always with either a number or role respectively. This is ensured by the definition of the upward and downward cover. The covers return only non-negative numbers, roles that appear in the signature of the ontology, or the inverse of those roles. Since all roles returned by the upward and downward covers are simple in $\mathcal{O}$ and therefore still simple in $\mathcal{O}'$, it is not possible to replace a simple role with a non-simple role in a disjoint role axiom.
+
+Concepts are replaced always with another valid concept, since the refinement operator, given a well-formed concept, returns only well-formed concept expressions. By induction, the refinement operator returns either:
+
+- The result of the upward or downward covers. These are by definition subconcepts of the original ontology, which, since it appears in the original ontology, must be well-formed.
+- An expression in which one part of the input is replaced:
+    - A number or role is replaced with a role from the upward or downward cover. As mentioned above, the covers return only respectively valid numbers or roles. Since all roles returned are simple in $\mathcal{O}'$ it is not possible that a non-simple role is used in a cardinality or self restriction.
+    - A concept is replaced with the output of applying the refinement operator to the concept, that it replaces. Since the concept that is replaced is in the original ontology it is well-formed, and the replacement is a well-formed concept expression given our inductive hypothesis.

@@ -18,8 +18,8 @@ def filterContent(file: Path):
     content = re.sub('%20[0-9a-f]{32}', '', content)
     content = content.replace('****', '')
     content = content.replace('’', '\'')
-    content = content.replace('\\lang', '\\langle')
-    content = content.replace('\\rang', '\\rangle')
+    content = re.sub('\\\\lang(?!le)', '\\\\langle', content)
+    content = re.sub('\\\\rang(?!le)', '\\\\rangle', content)
     content = content.replace('\\Beta', 'B')
     if content[-1] != '\n':
         content += '\n'
