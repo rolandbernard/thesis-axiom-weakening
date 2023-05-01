@@ -1,16 +1,31 @@
 \documentclass[10pt,a4paper]{report}
-\usepackage{graphicx}
-\usepackage{amsfonts}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{setspace}
+\usepackage{graphicx, tabularx}
+\usepackage{amsthm, amsfonts, amsmath, amssymb}
+\usepackage{mathtools, ulem}
 \usepackage{csquotes}
+\usepackage{listings}
+\usepackage{xcolor}
 \usepackage[hidelinks]{hyperref}
 \usepackage{cleveref}
 \usepackage[english]{babel}
 \usepackage{biblatex}
+\usepackage[a4paper,margin=30mm]{geometry}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{example}{Example}
+
+\theoremstyle{remark}
+\newtheorem*{note}{Note}
+\newtheorem*{remark}{Remark}
 
 \addbibresource{bibliography.bib}
+
+\allowdisplaybreaks
 \setcounter{tocdepth}{1}
 
 \title{Extending Axiom Weakening for Automated Repair of Ontologies in Expressive Description Logics}
@@ -19,24 +34,20 @@
 
 \makeatletter
 \def\maketitle{
-    \vfill
-    \vspace*{-20mm}
-    \hspace*{-25mm}
-    \begin{tabular}{p{25.5mm}ll}
-        \multicolumn{3}{l}{\includegraphics[width=0.75\linewidth]{resources/unibz-logo.png}} \\
-        \vspace*{20mm} \\
-        & \multicolumn{2}{p{\linewidth}}{\raggedright Bachelor Thesis} \\
+    \begin{tabular}{ll}
+        \multicolumn{2}{r}{\includegraphics[width=0.5\linewidth]{resources/unibz-logo.png}} \\
+        \vspace*{40mm} \\
+        \multicolumn{2}{l}{\raggedright Bachelor Thesis} \\
         \vspace*{1mm} \\
-        & \multicolumn{2}{p{\linewidth}}{\raggedright \LARGE \bf \@title} \\
+        \multicolumn{2}{p{\linewidth}}{\raggedright \huge \bf \@title} \\
         \vspace*{30mm} \\
-        &       Candidate    &     \@author     \\
+        Candidate   & \@author \\
         \vspace*{5mm} \\
-        &     Supervisors      &    Oliver Kutz     \\
-        &           &    Nicolas Troquard     \\
-        \vspace*{30mm} \\
-        & \multicolumn{2}{p{\linewidth}}{\@date}
+        Supervisors & Oliver Kutz \\
+                    & Nicolas Troquard \\
+        \vspace*{20mm} \\
+        \multicolumn{2}{p{\linewidth}}{\@date}
     \end{tabular}
-    \vfill
 }
 
 \begin{document}
@@ -44,39 +55,41 @@
 \maketitle
 
 \begin{abstract}
-    \input{sections/00.abstract}
+    \input{sections/0.abstract}
 \end{abstract}
 
 \tableofcontents
 
 \chapter{Introduction}
 
-\input{sections/10.introduction}
+\input{sections/1.introduction}
 
 \chapter{Background and Related Work}
 
-\input{sections/20.background}
+\input{sections/2.background}
 
 \chapter{Theoretical Foundations}
 
-\input{sections/30.theory}
+\input{sections/3.theory}
 
 \chapter{Implementation}
 
-\input{sections/40.implementation}
+\input{sections/4.implementation}
 
-\chapter{Evaluation}
+\chapter{Experiments and Evaluation}
 
-\input{sections/50.evaluation}
+\input{sections/5.evaluation}
 
 \chapter{Conclusion and Future Work}
 
-\input{sections/60.conclution}
+\input{sections/6.conclution}
 
 \printbibliography
 
 \appendix
 
-\chapter{A}
+\chapter{Axiom Weakening in OWL 2 DL} \label{weakening-owl-2-dl}
+
+\input{sections/a.owl2weakening.tex}
 
 \end{document}
