@@ -15,33 +15,33 @@ $$
 
 Let $\mathcal{R}$ be the regular RBox of the $\mathcal{SROIQ}$ ontology $\mathcal{O}$.
 
-**Lemma:** The RBox $\mathcal{R}’$, obtained by replacing any RIA $s_1 \circ \cdots \circ s_n \sqsubseteq r$ in $\mathcal{R}$ with a RIA $s_1 \circ \cdots \circ s_n \sqsubseteq r'$ where $r’ \in \mathrm{UpCover}_\mathcal{O}^\triangle(r)$, is regular.
+**Lemma:** The RBox $\mathcal{R}'$, obtained by replacing any RIA $s_1 \circ \cdots \circ s_n \sqsubseteq r$ in $\mathcal{R}$ with a RIA $s_1 \circ \cdots \circ s_n \sqsubseteq r'$ where $r' \in \mathrm{UpCover}_\mathcal{O}^\triangle(r)$, is regular.
 
 Proof:
 
 1. Since $\mathcal{R}$ is regular, there exists a strict regular pre-order $\prec$ on the set of roles $\mathbf{R}$. Let $\prec$ be the minimal such relation.
 2. Note that by definition $\prec$ is a subset of $\rightarrow_\mathcal{O}^*$.
-3. All axiom in $\mathcal{R}’$ that are also in $\mathcal{R}$ are $\prec$-regular.
-4. We show that the new axiom is $\prec'$-regular for some regular strict pre-order $\prec’ \supseteq \prec$.
+3. All axiom in $\mathcal{R}'$ that are also in $\mathcal{R}$ are $\prec$-regular.
+4. We show that the new axiom is $\prec'$-regular for some regular strict pre-order $\prec' \supseteq \prec$.
 5. If $r = r'$, the replacement is trivial and the axiom is $\prec$-regular.
-6. If $r \not= r’$, we must show that $s_1 \prec' r', \dots, s_n \prec' r'$.
+6. If $r \not= r'$, we must show that $s_1 \prec' r', \dots, s_n \prec' r'$.
     1. 
     2. 
-7. Since all other axioms of $\mathcal{R}'$ are also in $\mathcal{R}$, all axioms of $\mathcal{R}’$ are $\prec'$-regular. If follows that $\mathcal{R}'$ is regular.
+7. Since all other axioms of $\mathcal{R}'$ are also in $\mathcal{R}$, all axioms of $\mathcal{R}'$ are $\prec'$-regular. If follows that $\mathcal{R}'$ is regular.
 
-**Lemma:** The RBox $\mathcal{R}’$, obtained by replacing any RIA $s_1 \circ \cdots \circ s_i' \circ \cdots \circ s_n \sqsubseteq r$ in $\mathcal{R}$ with a RIA $s_1 \circ \cdots \circ s_i' \circ \cdots \circ s_n \sqsubseteq r$ where $s’ \in \mathrm{DownCover}_\mathcal{O}^\triangle(s_i)$, is regular.
-
-Proof:
-
-1. 
-
-**Lemma:** The RBox $\mathcal{R}’$ is obtained by replacing any RIA $s_1 \circ \cdots \circ s_n \sqsubseteq r$ in $\mathcal{R}$ with a RIA $s_1 \circ \cdots \circ s_n \sqsubseteq r'$ where $r’ \in \mathrm{UpCover}_\mathcal{O}^\triangle(r)$. All roles that are simple in $\mathcal{R}$ are also simple in $\mathcal{R}’$.
+**Lemma:** The RBox $\mathcal{R}'$, obtained by replacing any RIA $s_1 \circ \cdots \circ s_i' \circ \cdots \circ s_n \sqsubseteq r$ in $\mathcal{R}$ with a RIA $s_1 \circ \cdots \circ s_i' \circ \cdots \circ s_n \sqsubseteq r$ where $s' \in \mathrm{DownCover}_\mathcal{O}^\triangle(s_i)$, is regular.
 
 Proof:
 
 1. 
 
-**Lemma:** The RBox $\mathcal{R}’$ is obtained by replacing any RIA $s_1 \circ \cdots \circ s_i' \circ \cdots \circ s_n \sqsubseteq r$ in $\mathcal{R}$ with a RIA $s_1 \circ \cdots \circ s_i' \circ \cdots \circ s_n \sqsubseteq r$ where $s’ \in \mathrm{DownCover}_\mathcal{O}^\triangle(s_i)$. All roles that are simple in $\mathcal{R}$ are also simple in $\mathcal{R}’$.
+**Lemma:** The RBox $\mathcal{R}'$ is obtained by replacing any RIA $s_1 \circ \cdots \circ s_n \sqsubseteq r$ in $\mathcal{R}$ with a RIA $s_1 \circ \cdots \circ s_n \sqsubseteq r'$ where $r' \in \mathrm{UpCover}_\mathcal{O}^\triangle(r)$. All roles that are simple in $\mathcal{R}$ are also simple in $\mathcal{R}'$.
+
+Proof:
+
+1. 
+
+**Lemma:** The RBox $\mathcal{R}'$ is obtained by replacing any RIA $s_1 \circ \cdots \circ s_i' \circ \cdots \circ s_n \sqsubseteq r$ in $\mathcal{R}$ with a RIA $s_1 \circ \cdots \circ s_i' \circ \cdots \circ s_n \sqsubseteq r$ where $s' \in \mathrm{DownCover}_\mathcal{O}^\triangle(s_i)$. All roles that are simple in $\mathcal{R}$ are also simple in $\mathcal{R}'$.
 
 Proof:
 

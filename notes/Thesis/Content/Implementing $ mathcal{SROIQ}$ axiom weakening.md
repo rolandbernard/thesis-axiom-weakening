@@ -1,1 +1,0 @@
-# Implementing $\mathcal{SROIQ}$ axiom weakening

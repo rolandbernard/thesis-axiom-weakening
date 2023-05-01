@@ -15,6 +15,8 @@ The general topic of the thesis is on the concept of axiom weakening and its app
 
 [Plan](Thesis/Plan.md)
 
+[Content Ideas](Thesis/Content%20Ideas.md)
+
 [Content](Thesis/Content.md)
 
 [Questions](Thesis/Questions.md)

@@ -1,0 +1,51 @@
+# Ontology Repair
+
+As established in [Ontology Bugs](Ontology%20Bugs.md), maintaining the consistency and correctness of ontologies can be a difficult task. Ontology repair is the process of automatically correcting these inconsistencies or errors in ontologies. Several approaches have been proposed for ontology repair.  This section will explore some of these approaches and their underlying principles.
+
+## Basic Definitions
+
+We define a repair as proposed in [Making repairs in description logics more gentle](). It is assumed, as is the case for most description logics, that there exists a monotone consequence operator $\vDash$ such that for any two ontologies $\mathcal{O}_1 \subseteq \mathcal{O}_2$ and axiom $\alpha$, $\mathcal{O}_1 \vDash \alpha$ implies $\mathcal{O}_2 \vDash \alpha$. Additionally, $\mathrm{Con}(\mathcal{O})$ shall contain all consequences of $\mathcal{O}$, that is $\mathrm{Con}(\mathcal{O}) = \{ \alpha \mid \mathcal{O} \vDash \alpha \}$. We split the ontology further into two disjoint sets $\mathcal{O} = \mathcal{O}_s \cup \mathcal{O}_r$ of *static axioms* $\mathcal{O}_s$ and *refutable axioms* $\mathcal{O}_r$. Static axioms are assumed to be correct and may not be touched by the repair procedure, while refutable axioms are possibly be erroneous. This separation is useful for example if the static part of the ontology is hand-crafted, while the refutable part is automatically generated. Similarly, it is applicable in case multiple ontologies are combined, and some sources are seen as less trustworthy than others.
+
+Definition: Given an ontology $\mathcal{O} = \mathcal{O}_s \cup \mathcal{O}_r$ and an unintended consequence $\mathcal{O} \vDash \alpha$, $\mathcal{O}_s \not\vDash \alpha$, the ontology $\mathcal{O}_s \subseteq \mathcal{O}'$ is a *repair* of $\mathcal{O}$ with respect to $\alpha$ if $\mathrm{Con}(\mathcal{O}') \subseteq \mathrm{Con}(\mathcal{O}) \setminus \{\alpha\}.$ A repair $\mathcal{O}'$ is an *optimal repair* of $\mathcal{O}$ with respect to $\alpha$ if there exists no other repair $\mathcal{O}_s \subseteq \mathcal{O}''$ such that $\mathrm{Con}(\mathcal{O}') \subset \mathrm{Con}(\mathcal{O}'') \subseteq \mathrm{Con}(\mathcal{O}) \setminus \{\alpha\}$.
+
+Given that $\mathcal{O}_s \not\vDash \alpha$, a repair is guaranteed to exist, since $\mathcal{O}_s$ is one such repair. In contrast, generally an optimal repair does not need to exist.
+
+Example: 
+
+It should be noted also that there exists an infinite number of possible repairs, as adding tautologies to a repair will yield another valid repair. In the case that we are interested in making an inconsistent ontology consistent, we can use as $\alpha$ an unsatisfiable axiom, e.g. $\top \sqsubseteq \bot$. Since all axioms, including unsatisfiable axioms, are entailed by inconsistent ontologies, a repair that does not entail $\alpha$ is consistent. Notice also that in this case where $\mathcal{O}$ is inconsistent, any consistent ontology that does not entail $\alpha$, even if completely unrelated to $\mathcal{O}$, will be a repair of $\mathcal{O}$.
+
+In contrast, the classical approach to repair consists of locating and removing problematic axioms. As such, a classical repair is always a subset of the original ontology and the number of classical repairs for any pair $\mathcal{O}$ and $\alpha$ is necessarily finite.
+
+Definition: Given an ontology $\mathcal{O} = \mathcal{O}_s \cup \mathcal{O}_r$ and an unintended consequence $\mathcal{O} \vDash \alpha$, $\mathcal{O}_s \not\vDash \alpha$ , the ontology $\mathcal{O}_s \subseteq \mathcal{O}' \subseteq \mathcal{O}$ is a *classical repair* of $\mathcal{O}$ with respect to $\alpha$ if $\mathrm{Con}(\mathcal{O}') \subseteq \mathrm{Con}(\mathcal{O}) \setminus \{\alpha\}.$ A classical repair $\mathcal{O}'$ is an *optimal classical repair* of $\mathcal{O}$ with respect to $\alpha$ if there exists no other classical repair $\mathcal{O}_s \subseteq \mathcal{O}'' \subseteq \mathcal{O}$ such that $\mathrm{Con}(\mathcal{O}') \subset \mathrm{Con}(\mathcal{O}'') \subseteq \mathrm{Con}(\mathcal{O}) \setminus \{\alpha\}$.
+
+We can observe that every classical repair is in fact a valid repair. If follows that also a classical repair is guaranteed to exist. Unlike for the general case of optimal repairs, an optimal classical repair is always guaranteed to exist. This follows from the fact that the set of classical repairs is finite, and the $\subset$ relation is a strict partial order, so there can not be an infinite sequence of classical repairs $\mathcal{O}^{(1)}, \mathcal{O}^{(2)}, \dots$  such that $\mathrm{Con}(\mathcal{O}^{(i)}) \subset \mathrm{Con}(\mathcal{O}^{(i + 1)})$.
+
+## Repair Approaches
+
+### Classical Repairs
+
+Generating a classical repair can be achieved in a number of equivalent ways. One way to compute an optimal classical repair is using justifications and hitting sets [A theory of diagnosis from first principles.]().
+
+Definition: Given an ontology $\mathcal{O} = \mathcal{O}_s \cup \mathcal{O}_r$ and an axiom $\mathcal{O} \vDash \alpha$, $\mathcal{O}_s \not\vDash \alpha$, a *justification* for $\alpha$ in $\mathcal{O}$ is a minimal subset $J \subseteq \mathcal{O}_r$ such that $J \cup \mathcal{O}_s \vDash \alpha$. Given the set of all justifications $J_1, \dots, J_n$ **for $\alpha$ in $\mathcal{O}$, a *hitting set* $H$ for these justifications is a set of axioms such that $H \cap J_i \not= \empty$ for $i = 1, \dots, n$. $H$ is a *minimal hitting* set if it does not strictly contain another hitting set.
+
+Example:
+
+Justifications are necessarily non-empty since $\mathcal{O}_s \not\vDash \alpha$, and therefore hitting sets and minimal hitting sets always exist. Given any minimal hitting set $H$ for the justification $J_1, \dots, J_n$ of $\alpha$ in $\mathcal{O}$, the ontology $\mathcal{O}' = \mathcal{O} \setminus H$ is an optimal classical repair of $\mathcal{O}$ with respect to $\alpha$.
+
+This algorithm for computing optimal classical repairs requires the computation of all justifications, which can in general be very computationally intensive. Black-box approaches for computing justifications have been proposed ([Finding all justifications of OWL DL entailments](), [Non-standard reasoning services for the debugging of description logic terminologies](), [Debugging incoherent terminologies]()) that compute justifications by repeatedly making calls to pre-existing highly-optimized reasoners. These may however, in the worst-case, need to make an exponential number of calls to the reasoner. Nevertheless, in practice they may often be fast enough, as for example the hitting set tree base algorithm presented in [Finding all justifications of OWL DL entailments](), which conveniently can compute both all justifications and all hitting sets. There exist also glass-box approach to computing justifications ([Finding all justifications of OWL DL entailments]()), that require only a single reasoning request to find justifications, but they also require specialized, generally less efficient, reasoners.
+
+An alternative to computing all justification is to directly find a minimal correction subset $C$ of $\mathcal{O}_r$ such that $\mathcal{O} \setminus C \not\vDash \alpha$. Finding a single such set can be done efficiently using similar algorithms to the ones for finding single justifications. Algorithms for solving the minimal subsets over monotone predicate problem, such as the QuickXplain algorithm [Preferred Explanations and Relaxations for Over-Constrained Problems]() or a progression-based algorithm [Minimal Sets over Monotone Predicates in Boolean Formulae]() may be used. A subset of all such sets can be found efficiently using the MergeXplain algorithm [MERGEXPLAIN: Fast Computation of Multiple Conflicts for Diagnosis](). Of course, computing all minimal correction subsets directly is also possible, using similar algorithms to the ones used for computing all justifications ([Maximal consistent subsets]()).
+
+### More Gentle Repairs
+
+While the classical approach is sufficient to guarantee finding a repair of the ontology, it can lead to information loss. That is, the repaired ontology might be missing some consequences of the original ontology that were actually desirable.
+
+Example:
+
+Since ideally, one wants to retain as much information as possible, alternative methods for repairing ontologies have been proposed that are able to preserve more information than the classical approach.
+
+One option is to first modify the original ontology and afterwards apply the classical repair approach. The intuition is that in the modified ontology the individual axioms contain less information, and therefore the removal of axioms can be more granular relative to the unmodified ontology. In [Laconic and Precise Justifications in OWL]() the authors propose a structural transformation, that replaces axioms with a set of weaker axioms that are semantically equivalent.
+
+Example:
+
+Another approach to repairing ontologies more gently that has been proposed in the literature is using *axiom weakening* ([Repairing Ontologies via Axiom Weakening](), [Towards Even More Irresistible Axiom Weakening](), [Making repairs in description logics more gentle](), [A fine-grained approach to resolving unsatisfiable ontologies]()). Instead of removing axioms, they are replaced with weaker axioms. In [A fine-grained approach to resolving unsatisfiable ontologies]() the authors show a method for pinpointing the causes for unsatisfiability a within axioms, and propose a way of weakening axioms guided by this information. The authors of [Making repairs in description logics more gentle]() show general theoretical results for repair using axiom weakening, and propose a concrete weakening relation for the $\mathcal{EL}$ description logics. They further show that the repair algorithm using the proposed axiom weakening terminates in at most an exponential number of weakening steps. [Repairing Ontologies via Axiom Weakening]() presents the repair of inconsistent ontologies using axiom weakening with the help of a refinement operator. This approach is extended in [Towards Even More Irresistible Axiom Weakening]() to cover more expressive description logics and a proof of almost sure termination.

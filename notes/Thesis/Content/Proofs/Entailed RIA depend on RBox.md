@@ -35,10 +35,10 @@ The if-direction follows from the definition of axiom satisfaction in $\mathcal{
 
 1. 
 
-**Lemma~~:** Let $\mathcal{O}$ be a $\mathcal{SROIQ}$ ontology that entails an axiom of the form $s \sqsubseteq r$ for two roles $s$ and $r$. The ontology $\mathcal{O}’$ obtained by removing all axioms from $\mathcal{O}$ that are not simple role inclusion axioms also entails $s \sqsubseteq r$.~~
+**Lemma~~:** Let $\mathcal{O}$ be a $\mathcal{SROIQ}$ ontology that entails an axiom of the form $s \sqsubseteq r$ for two roles $s$ and $r$. The ontology $\mathcal{O}'$ obtained by removing all axioms from $\mathcal{O}$ that are not simple role inclusion axioms also entails $s \sqsubseteq r$.~~
 
 ~~Proof:~~
 
-1. ~~By contradiction, assume that $\mathcal{O}’$ does not entail $s \sqsubseteq r$.~~
-2. ~~Since $\mathcal{O}’ \not\vDash s \sqsubseteq r$ the exists a model $M \vDash \mathcal{O}'$ that does not satisfy $s \sqsubseteq r$.~~
+1. ~~By contradiction, assume that $\mathcal{O}'$ does not entail $s \sqsubseteq r$.~~
+2. ~~Since $\mathcal{O}' \not\vDash s \sqsubseteq r$ the exists a model $M \vDash \mathcal{O}'$ that does not satisfy $s \sqsubseteq r$.~~
 3.

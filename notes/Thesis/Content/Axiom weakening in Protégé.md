@@ -1,1 +1,0 @@
-# Axiom weakening in Protégé

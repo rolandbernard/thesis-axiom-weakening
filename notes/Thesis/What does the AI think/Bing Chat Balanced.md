@@ -1,6 +1,6 @@
 # Bing Chat Balanced
 
-Structuring a bachelor thesis can be challenging but it’s also an opportunity to showcase your research skills. [Here’s a typical structure of a bachelor thesis that you can use as a starting point](https://www.mos.ed.tum.de/en/tb/lehre/theses/structure/):
+Structuring a bachelor thesis can be challenging but it's also an opportunity to showcase your research skills. [Here's a typical structure of a bachelor thesis that you can use as a starting point](https://www.mos.ed.tum.de/en/tb/lehre/theses/structure/):
 
 1. Introduction
     - Provide an entryway to your topic
@@ -13,4 +13,4 @@ Structuring a bachelor thesis can be challenging but it’s also an opportunity 
 
 You can also check out this [guideline](https://www.mos.ed.tum.de/en/tb/lehre/theses/structure/) for more information on how to structure your thesis.
 
-I hope this helps! Let me know if you have any other questions or if there’s anything else I can help you with.
+I hope this helps! Let me know if you have any other questions or if there's anything else I can help you with.

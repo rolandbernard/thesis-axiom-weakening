@@ -33,3 +33,5 @@
         df.getOWLSubClassOfAxiom(df.getOWLThing(), df.getOWLObjectHasSelf(df.getOWLObjectProperty("super")))
     ));
     ```
+    
+- [ ]  How come not of the reasoners be sound and complete? There seem to be many missing entailments/bugs.
