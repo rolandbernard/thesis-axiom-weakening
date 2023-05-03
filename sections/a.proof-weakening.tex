@@ -124,7 +124,7 @@ Since $t$ is an arbitrary simple role from $\mathcal{R}$, all simple roles in $\
 \end{proof}
 
 \begin{theorem} \label{the:closed}
-The set of well-formed $\mathcal{SROIQ}$ ontologies is closed under axiom weakening. That is, given a valid $\mathcal{SROIQ}$ ontology $\mathcal{O}$ with a regular RBox $\mathcal{R}$, the ontology $\mathcal{O}' = \mathcal{O} \setminus \{\alpha\} \cup \{\alpha'\}$ obtained by replacing any axiom $\alpha \in \mathcal{O}$ with a weakening $\alpha' \in g_\mathcal{O}(a)$ is also a valid $\mathcal{SROIQ}$ ontology.
+The set of well-formed $\mathcal{SROIQ}$ ontologies is closed under axiom weakening. That is, given a valid $\mathcal{SROIQ}$ ontology $\mathcal{O}$ with a regular RBox $\mathcal{R}$, the ontology $\mathcal{O}' = \mathcal{O} \setminus \{\alpha\} \cup \{\alpha'\}$ obtained by replacing any axiom $\alpha \in \mathcal{O}$ with a weakening $\alpha' \in g_\mathcal{O}(\alpha)$ is also a valid $\mathcal{SROIQ}$ ontology.
 \end{theorem}
 
 \begin{proof}
@@ -142,7 +142,7 @@ By induction, the refinement operator returns either:
     \item An expression in which one part of the input is replaced:
         \begin{itemize}
             \item A number or role is replaced with a role from the upward or downward cover. As mentioned above, the covers return only respectively valid numbers or roles. Since all roles returned are simple in $\mathcal{O}'$ it is not possible that a non-simple role is used in a cardinality or self restriction.
-            \item A concept is replaced with the output of applying the refinement operator to the concept, that it replaces. Since the concept that is replaced is in the original ontology it is well-formed, and the replacement is a well-formed concept expression given our inductive hypothesis.
+            \item A concept is replaced with the output of applying the refinement operator to the concept, that it replaces. Since the concept that is replaced is in the original ontology, it is well-formed, and the replacement is a well-formed concept expression given our inductive hypothesis.
         \end{itemize}
 \end{enumerate}
 \end{proof}

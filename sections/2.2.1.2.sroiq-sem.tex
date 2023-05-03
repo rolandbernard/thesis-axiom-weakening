@@ -41,7 +41,7 @@ The purpose of the (extended) interpretation function is mainly to determine sat
     \item Dual to the above, $a \not = b$ holds iff the names $a$ and $b$ denote different elements, accordingly $\mathcal{I} \vDash a \not= b \iff a^\mathcal{I} \not= b^\mathcal{I}$.
 \end{itemize}
 
-We say a set of axioms holds in an interpretation $\mathcal{I}$ iff every axiom of the set hold in $\mathcal{I}$. Accordingly, $\mathcal{I}$ satisfies a knowledge base $\mathcal{KB}$, written $\mathcal{I} \vDash \mathcal{KB}$, iff $\mathcal{I}$ satisfies every axiom $\alpha \in \mathcal{KB}$ of the knowledgeable, i.e., $\mathcal{I} \vDash \mathcal{KB} \iff \forall \alpha \in \mathcal{KB} \, . \; \mathcal{I} \vDash \alpha$. If $\mathcal{I}$ satisfies $\mathcal{KB}$, we say $\mathcal{I}$ is a model of $\mathcal{KB}$.
+We say a set of axioms holds in an interpretation $\mathcal{I}$ iff every axiom of the set hold in $\mathcal{I}$. Accordingly, $\mathcal{I}$ satisfies a knowledge base $\mathcal{KB}$, written $\mathcal{I} \vDash \mathcal{KB}$, iff $\mathcal{I}$ satisfies every axiom $\alpha \in \mathcal{KB}$ of the knowledge base, i.e., $\mathcal{I} \vDash \mathcal{KB} \iff \forall \alpha \in \mathcal{KB} \, . \; \mathcal{I} \vDash \alpha$. If $\mathcal{I}$ satisfies $\mathcal{KB}$, we say $\mathcal{I}$ is a model of $\mathcal{KB}$.
 
 \subsubsection{Reasoning tasks} \label{reasoning-tasks}
 
@@ -58,6 +58,7 @@ An axiom $\alpha$ is entailed by $\mathcal{KB}$ if every model $\mathcal{I} \vDa
 The problem of axiom entailment can be reduced to determining for the satisfiability of a modified knowledge base. This is achieved by using an axiom $\beta$ that imposes the opposite restriction to $\alpha$, to be more precise, for all interpretations $\mathcal{I} \vDash \alpha \iff \mathcal{I} \not\vDash \beta$. If $\alpha$ is entailed by $\mathcal{KB}$, it must hold in every model of $\mathcal{KB}$, hence $\beta$ must not hold in any model. It follows that the extended knowledge base $\mathcal{KB} \cup \{ \, \beta \, \}$ has no new model, and is therefore unsatisfiable. We can consequently solve the axiom entailment problem by testing for satisfiability of a modified knowledge base, if we can find such an opposing axiom for $\alpha$. For some cases in $\mathcal{SROIQ}$ finding such an opposite is obvious, for others the desired behaviour must be emulated with a set of axioms. \Cref{tab:entailment-reduction} shows the correspondence for every type of $\mathcal{SROIQ}$ axiom.
 
 \begin{table}
+\begin{center}
 \begin{tabular}{l|l}
     $\alpha$ & $B$ \\
     \hline
@@ -70,6 +71,7 @@ The problem of axiom entailment can be reduced to determining for the satisfiabi
     $a = b$ & $a \not= b$ \\
     $a \not= b$ & $a = b$ \\
 \end{tabular}
+\end{center}
 \label{tab:entailment-reduction}
 \caption[Axioms substitution for reduction entailment to satisfiability]{The axioms in $B$ together have the “opposite” meaning of those in $\alpha$. This means, checking entailment of $\alpha$ with respect to $\mathcal{KB}$, is equivalent to checking unsatisfiability of $\mathcal{KB} \cup B$. $a$, $a_i$, and $b$ are assumed to not appear in $\mathcal{KB}$.}
 \end{table}
