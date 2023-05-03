@@ -49,7 +49,6 @@
     - [ ]  About problems with expressivity
     - [ ]  About OWL
     - [ ]  About ontology bugs
-    - [ ]  Introduction
 
 08.05.2023 - 14.05.2023
 
