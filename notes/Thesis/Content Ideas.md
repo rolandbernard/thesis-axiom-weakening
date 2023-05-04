@@ -46,9 +46,9 @@ Main (31)
 
 Back
 
-- Appendix (15)
+- Appendix (20)
     1. The $\mathcal{SROIQ}$ Description Logic (5)
-    2. Proofs (3)
+    2. Closure over RBox Weakening (3)
     3. Weakening OWL 2 DL (2)
     4. User Guide: Java Ontology Library (5)
     5. User Guide: Protégé plugin (5)
