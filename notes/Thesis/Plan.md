@@ -42,18 +42,20 @@
 01.05.2023 - 07.05.2023
 
 - [ ]  Add features to the Protégé plugin
-- [ ]  Make sure to add tests that check the functionality
-- [ ]  Think about using heuristic search for the repair process
+- [x]  Make sure to add tests that check the functionality
+- [x]  Port the FaCT++ reasoner to OWL API 5
+- [x]  Make the prototype faster in preparation for heuristic search
 - [ ]  Start writing the background sections of the thesis
     - [ ]  About axiom weakening
     - [ ]  About problems with expressivity
     - [ ]  About OWL
     - [ ]  About ontology bugs
+    - [ ]  About RBox refinement
 
 08.05.2023 - 14.05.2023
 
 - [ ]  Make request for final exam
-- [ ]  Clean up the implementation of the protégé plugin
+- [ ]  Add features to the Protégé plugin
 - [ ]  Clean up the prototype
 - [ ]  Implement the heuristic search in the prototype
 - [ ]  Make sure to add tests that check the functionality
