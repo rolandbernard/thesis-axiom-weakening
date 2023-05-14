@@ -41,28 +41,30 @@
 
 01.05.2023 - 07.05.2023
 
-- [ ]  Add features to the Protégé plugin
+- [x]  Add features to the Protégé plugin
 - [x]  Make sure to add tests that check the functionality
 - [x]  Port the FaCT++ reasoner to OWL API 5
 - [x]  Make the prototype faster in preparation for heuristic search
 - [ ]  Start writing the background sections of the thesis
     - [ ]  About axiom weakening
     - [ ]  About problems with expressivity
-    - [ ]  About OWL
-    - [ ]  About ontology bugs
     - [ ]  About RBox refinement
 
 08.05.2023 - 14.05.2023
 
-- [ ]  Make request for final exam
-- [ ]  Add features to the Protégé plugin
-- [ ]  Clean up the prototype
-- [ ]  Implement the heuristic search in the prototype
-- [ ]  Make sure to add tests that check the functionality
+- [x]  Make request for final exam
+- [x]  Clean up the prototype
+- [x]  Implement the heuristic search in the prototype
+- [x]  Make sure to add tests that check the functionality
+- [ ]  Start writing the background sections of the thesis
+    - [ ]  About ontology bugs
+    - [ ]  About OWL
 
 15.05.2023 - 21.05.2023
 
-- [ ]  20.06.2023 - Make request for final exam
+- [x]  20.06.2023 - Make request for final exam
+- [ ]  Make sure to add tests that check the functionality
+- [ ]  Do some experiments using the implementations
 - [ ]  Rewrite the background sections of the thesis
     - [ ]  About ontology bugs
     - [ ]  About description logics
@@ -79,7 +81,7 @@
 
 29.05.2023 - 04.06.2023
 
-- [ ]  Do some experiments using the implementations
+- [ ]  Add features to the Protégé plugin
 - [ ]  Start writing the new sections of the thesis
     - [ ]  About role hierarchy refinement
     - [ ]  About heuristics used during ontology repair

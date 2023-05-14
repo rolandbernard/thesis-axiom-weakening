@@ -35,3 +35,9 @@
     ```
     
 - [ ]  How come not of the reasoners be sound and complete? There seem to be many missing entailments/bugs.
+- [ ]  What tests to run?
+
+Ontologies:
+
+- Bioportal
+- Onto
