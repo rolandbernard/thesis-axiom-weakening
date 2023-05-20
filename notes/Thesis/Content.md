@@ -31,11 +31,11 @@
     
     [Ontology Repair](Content/Ontology%20Repair.md)
     
-    [Axiom Weakening](Content/Axiom%20Weakening.md)
-    
     [Problems of Expressivity](Content/Problems%20of%20Expressivity.md)
     
 3. Theoretical Foundations
+    
+    [Axiom Weakening](Content/Axiom%20Weakening.md)
     
     [RBox Refinement](Content/RBox%20Refinement.md)
     

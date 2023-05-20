@@ -45,10 +45,7 @@
 - [x]  Make sure to add tests that check the functionality
 - [x]  Port the FaCT++ reasoner to OWL API 5
 - [x]  Make the prototype faster in preparation for heuristic search
-- [ ]  Start writing the background sections of the thesis
-    - [ ]  About axiom weakening
-    - [ ]  About problems with expressivity
-    - [ ]  About RBox refinement
+- [x]  Start writing the background sections of the thesis
 
 08.05.2023 - 14.05.2023
 
@@ -56,32 +53,38 @@
 - [x]  Clean up the prototype
 - [x]  Implement the heuristic search in the prototype
 - [x]  Make sure to add tests that check the functionality
-- [ ]  Start writing the background sections of the thesis
-    - [ ]  About ontology bugs
-    - [ ]  About OWL
+- [x]  Do some evaluation using the pizza ontology
+- [x]  Start writing the background sections of the thesis
 
 15.05.2023 - 21.05.2023
 
 - [x]  20.06.2023 - Make request for final exam
-- [ ]  Make sure to add tests that check the functionality
-- [ ]  Do some experiments using the implementations
-- [ ]  Rewrite the background sections of the thesis
+- [x]  Make sure to add tests that check the functionality
+- [x]  Do some experiments using the implementations
+- [ ]  Start writing the background sections of the thesis
     - [ ]  About ontology bugs
-    - [ ]  About description logics
+    - [ ]  About OWL
+    - [ ]  About problems with expressivity
     - [ ]  About axiom weakening
-    - [ ]  About ontology repair
+    - [ ]  About RBox refinement
 
 22.05.2023 - 28.05.2023
 
 - [ ]  Clean up the implementation of the prototype
 - [ ]  Clean up the implementation of the plugin
 - [ ]  Make sure to add tests that check the functionality
-- [ ]  Add more extensive documentation to the prototype
-- [ ]  Add more extensive documentation to the protégé plugin
+- [ ]  Add features to the Protégé plugin
+- [ ]  Rewrite the background sections of the thesis
+    - [ ]  About ontology bugs
+    - [ ]  About description logics
+    - [ ]  About axiom weakening
+    - [ ]  About ontology repair
 
 29.05.2023 - 04.06.2023
 
-- [ ]  Add features to the Protégé plugin
+- [ ]  Add more extensive documentation to the prototype
+- [ ]  Add more extensive documentation to the protégé plugin
+- [ ]  Do better experiments using the implementations
 - [ ]  Start writing the new sections of the thesis
     - [ ]  About role hierarchy refinement
     - [ ]  About heuristics used during ontology repair
@@ -107,6 +110,7 @@
     - [ ]  About the implementation of the prototype
     - [ ]  About the implementation of the protégé plugin
     - [ ]  Experiments and evaluation
+- [ ]  Send draft to profs and ask them for feedback
 
 19.06.2023 - 25.06.2023
 

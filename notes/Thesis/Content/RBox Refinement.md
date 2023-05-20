@@ -10,7 +10,9 @@ Example: As another example, take the ontology $\mathcal{O} = \{a \circ a \sqsub
 
 ### Role Hierarchies in $\mathcal{ALCH}$
 
- To avoid these complications, we will first consider the simple case of weakening role hierarchies in $\mathcal{ALCH}$. $\mathcal{ALCH}$ supports only simple RIAs, and does not have any of the restrictions that are present in $\mathcal{SROIQ}$. Also, we can note that 
+To avoid these complications, we will first consider the simple case of weakening role hierarchies in $\mathcal{ALCH}$. $\mathcal{ALCH}$ supports only simple RIAs, and does not have any of the restrictions that are present in $\mathcal{SROIQ}$.
+
+Also, we can note that any ALCH ontology is also a SROIQ ontology if we allow cycles in the RIA concerning simple roles.
 
 Explain obvious weakening
 
@@ -48,17 +50,23 @@ example
 
 an alternative approach to ensure regularly could be achieved by fixing a regular pre order and use it for selection of roles
 
+This follows closely the definition of regularity
+
 definition
 
 example
 
-this approach may further generalized by allowing all weakening and cheching the global restrictions after replacement in the ontology
+this approach may further generalized by allowing all weakening and checking the global restrictions after replacement in the ontology
+
+This approach is not further explored in this thesis.
 
 ## Weakening Disjointed Role Axioms
 
 in contrast to weakening role hierarchies, weakening disjointedness assertions is straightforward
 
 the only restriction that must be kept in mind is that the roles in role disjointedness assertions must be simple
+
+this is ensured by our choice for the cover functions, that do no contain non-simple roles
 
 definition
 

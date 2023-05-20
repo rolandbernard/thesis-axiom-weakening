@@ -36,4 +36,22 @@ These kinds of defects can in general not be detected automatically by tools. Th
 
 Mistakes by the ontology modeller
 
+These mistakes can be typos, especially in the case of syntactic errors
+
+or, especially for semantic errors and modelling errors, they might result from an oversight by the ontology developer.
+
 Combining different ontologies from separate sources
+
+Different ontologies might model the same domain in different ways
+
+This can easily lead to modelling defects.
+
+However, it could also result in semantic defects, such as unsatisfiable concepts or an inconsistent ontology
+
+Example (of how the combination of two ontologies can make a concept unsatisfiable)
+
+Additionally, the combination of ontologies can lead to violations of the global constraints of for example OWL 2 DL.
+
+Combining two OWL 2 DL ontologies might therefore yield an ontology that is no longer valid in OWL 2 DL. This then represents a syntactic defect.
+
+Example (ontology 1 using transitive isPartOf, ontology 2 using isPartOf in cardinality consraint)

@@ -51,3 +51,11 @@ One option is to first modify the original ontology and afterwards apply the cla
 Example:
 
 Another approach to repairing ontologies more gently that has been proposed in the literature is using *axiom weakening* ([Repairing Ontologies via Axiom Weakening](), [Towards Even More Irresistible Axiom Weakening](), [Making repairs in description logics more gentle](), [A fine-grained approach to resolving unsatisfiable ontologies]()). Instead of removing axioms, they are replaced with weaker axioms. In [A fine-grained approach to resolving unsatisfiable ontologies]() the authors show a method for pinpointing the causes for unsatisfiability within axioms, and propose a way of weakening axioms guided by this information. The authors of [Making repairs in description logics more gentle]() show general theoretical results for repair using axiom weakening, and propose a concrete weakening relation for the $\mathcal{EL}$ description logics. They further show that the repair algorithm using the proposed axiom weakening terminates in at most an exponential number of weakening steps. [Repairing Ontologies via Axiom Weakening]() presents the repair of inconsistent ontologies using axiom weakening with the help of a refinement operator. This approach is extended in [Towards Even More Irresistible Axiom Weakening]() to cover more expressive description logics, and a proof of almost sure termination of the repair algorithm using the is given.
+
+The approach presented in this thesis is based on the algorithm discussed in (sroiq weakening).
+
+The basic idea behind this method is to define two Refinement operators, a generalization operator and a specialization operator.
+
+these functions return, for a concept or role in the input, a set of concepts or roles that are more general or more specific.
+
+Example: (example for sroiq axiom weakening)
