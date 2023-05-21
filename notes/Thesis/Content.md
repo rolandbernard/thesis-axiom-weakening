@@ -31,15 +31,15 @@
     
     [Ontology Repair](Content/Ontology%20Repair.md)
     
-    [Problems of Expressivity](Content/Problems%20of%20Expressivity.md)
-    
 3. Theoretical Foundations
+    
+    [Problems of Expressivity](Content/Problems%20of%20Expressivity.md)
     
     [Axiom Weakening](Content/Axiom%20Weakening.md)
     
     [RBox Refinement](Content/RBox%20Refinement.md)
     
-    [Repair using Heuristic Search](Content/Repair%20using%20Heuristic%20Search.md)
+    [Finding the Best Repairs](Content/Finding%20the%20Best%20Repairs.md)
     
 4. Implementation
     
@@ -65,3 +65,9 @@
     [User Guide: Java Implementation](Content/User%20Guide%20Java%20Implementation.md)
     
     [User Guide: Protégé Plugin](Content/User%20Guide%20Prote%CC%81ge%CC%81%20Plugin.md)
+    
+    [The $\mathcal{SROIQ}$ Description Logic](Content/The%20$%20mathcal%7BSROIQ%7D$%20Description%20Logic.md)
+    
+    [OWL 2 Functional Syntax](Content/OWL%202%20Functional%20Syntax.md)
+    
+    [Mapping between SROIQ and OWL 2 DL](Content/Mapping%20between%20SROIQ%20and%20OWL%202%20DL.md)

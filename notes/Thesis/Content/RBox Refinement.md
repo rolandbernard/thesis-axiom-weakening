@@ -48,7 +48,7 @@ example
 
 ### An alternative approach
 
-an alternative approach to ensure regularly could be achieved by fixing a regular pre order and use it for selection of roles
+an alternative approach to ensure regularly could be achieved by fixing a regular pre-order and use it for selection of roles
 
 This follows closely the definition of regularity
 
@@ -56,7 +56,7 @@ definition
 
 example
 
-this approach may further generalized by allowing all weakening and checking the global restrictions after replacement in the ontology
+this approach may further generalize by allowing all weakening and checking the global restrictions after replacement in the ontology
 
 This approach is not further explored in this thesis.
 
@@ -70,4 +70,8 @@ this is ensured by our choice for the cover functions, that do no contain non-si
 
 definition
 
-example
+example 
+
+## Closure under Axiom Weakening
+
+show that the weakening of a SROIQ ontology produces another valid SROIQ ontology
