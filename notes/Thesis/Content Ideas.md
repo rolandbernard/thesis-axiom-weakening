@@ -46,11 +46,10 @@ Main (34)
 Back
 
 - Appendix (21)
-    1. The $\mathcal{SROIQ}$ Description Logic (5)
-    2. Weakening OWL 2 DL (2)
-    3. OWL 2 Functional Syntax (2)
-    4. Mapping between SROIQ and OWL 2 DL (2)
-    5. User Guide: Java Ontology Library (5)
-    6. User Guide: Protégé plugin (5)
-    
-    1. ~~Closure over RBox Weakening (3)~~
+    1. Proofs (3)
+    2. The $\mathcal{SROIQ}$ Description Logic (5)
+    3. Weakening OWL 2 DL (2)
+    4. OWL 2 Functional Syntax (2)
+    5. Mapping between SROIQ and OWL 2 DL (2)
+    6. User Guide: Java Ontology Library (5)
+    7. User Guide: Protégé plugin (5)

@@ -60,6 +60,6 @@ these functions return, for a concept or role in the input, a set of concepts or
 
 Example: (example for sroiq refinements)
 
-the refinement operators can then be used for generating weaker (or stronger axioms). Using this mechanism for generating repairs is done my repeatedly replacing axioms in the ontology by weaker versions of themselves. 
+the refinement operators can then be used for generating weaker (or stronger axioms). Using this mechanism for generating repairs is done by repeatedly replacing axioms in the ontology by weaker versions of themselves. 
 
 Example: (example of weakening subsumptions)

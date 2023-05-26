@@ -8,7 +8,7 @@ The main changes that were made are that the covers now have as parameters not o
 
 ## Upward and Downward Covers
 
-intuitively the upward and downward covers select from the set of allowed concepts or roles those which are the least .
+intuitively, the upward and downward covers select from the set of allowed concepts or roles those which are the least.
 
 ## Refinement Operators
 

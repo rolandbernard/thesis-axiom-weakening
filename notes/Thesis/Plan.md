@@ -70,10 +70,8 @@
 
 22.05.2023 - 28.05.2023
 
-- [ ]  Clean up the implementation of the prototype
-- [ ]  Clean up the implementation of the plugin
-- [ ]  Make sure to add tests that check the functionality
-- [ ]  Add features to the Protégé plugin
+- [x]  Clean up the implementation of the prototype
+- [x]  Make sure to add tests that check the functionality
 - [ ]  Rewrite the background sections of the thesis
     - [ ]  About ontology bugs
     - [ ]  About description logics
@@ -82,25 +80,25 @@
 
 29.05.2023 - 04.06.2023
 
-- [ ]  Add more extensive documentation to the prototype
-- [ ]  Add more extensive documentation to the protégé plugin
+- [ ]  Add features to the Protégé plugin
+- [ ]  Clean up the implementation of the plugin
+- [ ]  Finish up writing the background sections of the thesis
+    - [ ]  Experiments and evaluation
+    - [ ]  Introduction about knowledge representation
+    - [ ]  About software bugs and ontology bugs
+    - [ ]  About description logics
+    - [ ]  About axiom weakening
+    - [ ]  About ontology repair
+
+05.06.2023 - 11.06.2023
+
 - [ ]  Do better experiments using the implementations
 - [ ]  Start writing the new sections of the thesis
     - [ ]  About role hierarchy refinement
     - [ ]  About heuristics used during ontology repair
     - [ ]  About the implementation of the prototype
     - [ ]  About the implementation of the protégé plugin
-    - [ ]  Experiments and evaluation
     - [ ]  Introduction
-
-05.06.2023 - 11.06.2023
-
-- [ ]  Finish up writing the background sections of the thesis
-    - [ ]  Introduction about knowledge representation
-    - [ ]  About software bugs and ontology bugs
-    - [ ]  About description logics
-    - [ ]  About axiom weakening
-    - [ ]  About ontology repair
 
 12.06.2023 - 18.06.2023
 
@@ -110,10 +108,12 @@
     - [ ]  About the implementation of the prototype
     - [ ]  About the implementation of the protégé plugin
     - [ ]  Experiments and evaluation
-- [ ]  Send draft to profs and ask them for feedback
 
 19.06.2023 - 25.06.2023
 
+- [ ]  Send draft to profs and ask them for feedback
+- [ ]  Add more extensive documentation to the prototype
+- [ ]  Add more extensive documentation to the protégé plugin
 - [ ]  Polishing the thesis
 
 26.06.2023 - 02.07.2023

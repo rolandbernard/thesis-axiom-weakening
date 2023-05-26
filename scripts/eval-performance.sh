@@ -1,3 +1,4 @@
+#!/bin/bash
 
 jar=$1
 fast=$3

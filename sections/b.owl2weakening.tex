@@ -15,18 +15,19 @@ For OWL 2 DL we must follow the same restrictions, when it comes to regularity a
 \begingroup
 \scriptsize
 \begin{align*}
-    \zeta_{\uparrow, \downarrow}(A) = \;& \uparrow (A) \qquad \text{for } A \in \mathrm{N}_c \cup \mathbf{R} \cup \{ \top , \bot \} \\
-    \zeta_{\uparrow, \downarrow}(\mathrm{ObjectComplementOf}(C)) = \;& \uparrow (\mathrm{ObjectComplementOf}(C)) \\& \cup \{ \mathrm{ObjectComplementOf}(C')  \mid C' \in \zeta_{\downarrow, \uparrow} (C) \} \\
-    \zeta_{\uparrow, \downarrow}(\mathrm{ObjectIntersectionOf}(C_1, \dots, C_n)) = \;& \uparrow (\mathrm{ObjectIntersectionOf}(C_1, \dots, C_n)) \\& \cup \bigcup_{i=1}^n \{\mathrm{ObjectIntersectionOf}(C_1, \dots, C_i', \dots C_n)  \mid C_i' \in \zeta_{\uparrow, \downarrow} (C_i) \} \\
-    \zeta_{\uparrow, \downarrow}(\mathrm{ObjectUnionOf}(C_1, \dots, C_n)) = \;& \uparrow (\mathrm{ObjectUnionOf}(C_1, \dots, C_n)) \\& \cup \bigcup_{i=1}^n  \{ \mathrm{ObjectUnionOf}(C_1, \dots, C_i', \dots C_n)  \mid C_i' \in \zeta_{\uparrow, \downarrow} (C_i)\} \\
-    \zeta_{\uparrow, \downarrow}(\mathrm{ObjectAllValuesFrom}(r, C)) = \;& \uparrow (\mathrm{ObjectAllValuesFrom}(r, C)) \\& \cup \{\mathrm{ObjectAllValuesFrom}(r', C) \mid r' \in \zeta_{\downarrow, \uparrow} (r)\} \\& \cup \{\mathrm{ObjectAllValuesFrom}(r, C') \mid C' \in \zeta_{\uparrow, \downarrow}  (C)\} \\
-    \zeta_{\uparrow, \downarrow}(\mathrm{ObjectSomeValuesFrom}(r, C)) = \;& \uparrow (\mathrm{ObjectSomeValuesFrom}(r, C)) \\&  \cup \{\mathrm{ObjectSomeValuesFrom}(r', C) \mid r' \in \zeta_{\uparrow, \downarrow} (r)\} \\& \cup \{\mathrm{ObjectSomeValuesFrom}(r, C') \mid C' \in \zeta_{\uparrow, \downarrow}  (C)\} \\
-    \zeta_{\uparrow, \downarrow}(\mathrm{ObjectHasSelf}(r)) = \;& \uparrow (\mathrm{ObjectHasSelf}(r)) \\&  \cup \{\mathrm{ObjectHasSelf}(r') \mid r' \in \zeta_{\uparrow, \downarrow}(r)\} \\
-    \zeta_{\uparrow, \downarrow}(\mathrm{ObjectHasValue}(r, a)) = \;& \uparrow (\mathrm{ObjectHasValue}(r, a)) \\&  \cup \{\mathrm{ObjectHasValue}(r', a) \mid r' \in \zeta_{\uparrow, \downarrow} (r)\} \\&  \cup \{\mathrm{ObjectSomeValuesFrom}(r, A) \mid A \in \zeta_{\uparrow, \downarrow}  (\{a\})\} \\
-    \zeta_{\uparrow, \downarrow}(\mathrm{ObjectMaxCardinality}(n, r, C)) = \;& \uparrow (\mathrm{ObjectMaxCardinality}(n, r, C)) \\&  \cup \{\mathrm{ObjectMaxCardinality}(n', r, C) \mid n' \in \; \uparrow (n)\} \\&   \cup \{\mathrm{ObjectMaxCardinality}(n, r', C) \mid r' \in \zeta_{\downarrow, \uparrow}(r)\} \\&  \cup \{\mathrm{ObjectMaxCardinality}(n, r, C') \mid C' \in \zeta_{\downarrow, \uparrow} (C)\} \\
-    \zeta_{\uparrow, \downarrow}(\mathrm{ObjectMinCardinality}(n, r, C)) = \;& \uparrow (\mathrm{ObjectMinCardinality}(n, r, C)) \\& \cup \{\mathrm{ObjectMinCardinality}(n', r, C) \mid n' \in \; \downarrow (n)\} \\& \cup \{\mathrm{ObjectMinCardinality}(n, r', C) \mid r' \in \zeta_{\uparrow, \downarrow}(r)\} \\& \cup \{\mathrm{ObjectMinCardinality}(n, r, C') \mid C' \in \zeta_{\uparrow, \downarrow} (C)\} \\
-    \zeta_{\uparrow, \downarrow}(\mathrm{ObjectExactCardinality}(n, r, C)) = \;& \uparrow (\mathrm{ObjectExactCardinality}(n, r, C)) \\& \cup \{ \phi_1 \sqcap \phi_2   \mid \phi_1 \in \zeta_{\uparrow, \downarrow} (\mathrm{ObjectMaxCardinality}(n, r, C)) \\ \;& \qquad \land \phi_2 \in \zeta_{\uparrow, \downarrow} (\mathrm{ObjectMinCardinality}(n, r, C)) \} \\
-    \zeta_{\uparrow, \downarrow}(\mathrm{ObjectOneOf}(a_1, \dots, a_n)) = \;& \uparrow (\mathrm{ObjectOneOf}(a_1, \dots, a_n))
+    \zeta_{\uparrow, \downarrow}(A) ={} & \uparrow (A) \qquad \text{for } A \in \mathrm{N}_c \cup \mathbf{R} \cup \{ \top , \bot \} \\
+    \zeta_{\uparrow, \downarrow}(\mathrm{ObjectComplementOf}(C)) ={} & \uparrow (\mathrm{ObjectComplementOf}(C)) \\& \cup \{ \mathrm{ObjectComplementOf}(C')  \mid C' \in \zeta_{\downarrow, \uparrow} (C) \} \\
+    \zeta_{\uparrow, \downarrow}(\mathrm{ObjectIntersectionOf}(C_1, \dots, C_n)) ={} & \uparrow (\mathrm{ObjectIntersectionOf}(C_1, \dots, C_n)) \\& \cup \bigcup_{i=1}^n \{\mathrm{ObjectIntersectionOf}(C_1, \dots, C_i', \dots C_n)  \mid C_i' \in \zeta_{\uparrow, \downarrow} (C_i) \} \\
+    \zeta_{\uparrow, \downarrow}(\mathrm{ObjectUnionOf}(C_1, \dots, C_n)) ={} & \uparrow (\mathrm{ObjectUnionOf}(C_1, \dots, C_n)) \\& \cup \bigcup_{i=1}^n  \{ \mathrm{ObjectUnionOf}(C_1, \dots, C_i', \dots C_n)  \mid C_i' \in \zeta_{\uparrow, \downarrow} (C_i)\} \\
+    \zeta_{\uparrow, \downarrow}(\mathrm{ObjectAllValuesFrom}(r, C)) ={} & \uparrow (\mathrm{ObjectAllValuesFrom}(r, C)) \\& \cup \{\mathrm{ObjectAllValuesFrom}(r', C) \mid r' \in \zeta_{\downarrow, \uparrow} (r)\} \\& \cup \{\mathrm{ObjectAllValuesFrom}(r, C') \mid C' \in \zeta_{\uparrow, \downarrow}  (C)\} \\
+    \zeta_{\uparrow, \downarrow}(\mathrm{ObjectSomeValuesFrom}(r, C)) ={} & \uparrow (\mathrm{ObjectSomeValuesFrom}(r, C)) \\&  \cup \{\mathrm{ObjectSomeValuesFrom}(r', C) \mid r' \in \zeta_{\uparrow, \downarrow} (r)\} \\& \cup \{\mathrm{ObjectSomeValuesFrom}(r, C') \mid C' \in \zeta_{\uparrow, \downarrow}  (C)\} \\
+    \zeta_{\uparrow, \downarrow}(\mathrm{ObjectHasSelf}(r)) ={} & \uparrow (\mathrm{ObjectHasSelf}(r)) \\&  \cup \{\mathrm{ObjectHasSelf}(r') \mid r' \in \zeta_{\uparrow, \downarrow}(r)\} \\
+    \zeta_{\uparrow, \downarrow}(\mathrm{ObjectMaxCardinality}(n, r, C)) ={} & \uparrow (\mathrm{ObjectMaxCardinality}(n, r, C)) \\&  \cup \{\mathrm{ObjectMaxCardinality}(n', r, C) \mid n' \in \; \uparrow (n)\} \\&   \cup \{\mathrm{ObjectMaxCardinality}(n, r', C) \mid r' \in \zeta_{\downarrow, \uparrow}(r)\} \\&  \cup \{\mathrm{ObjectMaxCardinality}(n, r, C') \mid C' \in \zeta_{\downarrow, \uparrow} (C)\} \\
+    \zeta_{\uparrow, \downarrow}(\mathrm{ObjectMinCardinality}(n, r, C)) ={} & \uparrow (\mathrm{ObjectMinCardinality}(n, r, C)) \\& \cup \{\mathrm{ObjectMinCardinality}(n', r, C) \mid n' \in \; \downarrow (n)\} \\& \cup \{\mathrm{ObjectMinCardinality}(n, r', C) \mid r' \in \zeta_{\uparrow, \downarrow}(r)\} \\& \cup \{\mathrm{ObjectMinCardinality}(n, r, C') \mid C' \in \zeta_{\uparrow, \downarrow} (C)\} \\
+    \zeta_{\uparrow, \downarrow}(\mathrm{ObjectOneOf}(a_1, \dots, a_n)) ={} & \uparrow (\mathrm{ObjectOneOf}(a_1, \dots, a_n)) \\
+    \text{OWL 2 concepts:} \quad & \\
+    \zeta_{\uparrow, \downarrow}(\mathrm{ObjectExactCardinality}(n, r, C)) ={} & \uparrow (\mathrm{ObjectExactCardinality}(n, r, C)) \\& \cup \{ \phi_1 \sqcap \phi_2   \mid \phi_1 \in \zeta_{\uparrow, \downarrow} (\mathrm{ObjectMaxCardinality}(n, r, C)) \\ \;& \qquad \land \phi_2 \in \zeta_{\uparrow, \downarrow} (\mathrm{ObjectMinCardinality}(n, r, C)) \} \\
+    \zeta_{\uparrow, \downarrow}(\mathrm{ObjectHasValue}(r, a)) ={} & \uparrow (\mathrm{ObjectHasValue}(r, a)) \\&  \cup \{\mathrm{ObjectHasValue}(r', a) \mid r' \in \zeta_{\uparrow, \downarrow} (r)\} \\&  \cup \{\mathrm{ObjectSomeValuesFrom}(r, A) \mid A \in \zeta_{\uparrow, \downarrow}  (\{a\})\}
 \end{align*}
 \endgroup
 
@@ -41,22 +42,23 @@ Using this abstract refinement operator, we build two concrete refinement operat
     g_\mathcal{O}(\mathrm{NegativeObjectPropertyAssertion}(r, a)) =& \{\mathrm{NegativeObjectPropertyAssertion}(r', a) \mid r' \in \rho_\mathcal{O}  (r)\} \\& \cup \{\mathrm{NegativeObjectPropertyAssertion}(r, a), \bot \sqsubseteq \top \} \\
     g_\mathcal{O}(\mathrm{SameIndividual}(a_1, \dots, a_n)) =& \bigcup_{i=1}^n \{ \mathrm{SameIndividual}(\{a_1, \dots, a_n\} \setminus \{a_i\}) \} \\& \cup \{ \mathrm{SameIndividual}(a_1, \dots, a_n)\} \\
     g_\mathcal{O}(\mathrm{DifferentIndividuals}(a_1, \dots, a_n)) =& \bigcup_{i=1}^n \{ \mathrm{DifferentIndividuals}(\{a_1, \dots, a_n\} \setminus \{a_i\}) \} \\& \cup \{ \mathrm{DifferentIndividuals}(a_1, \dots, a_n)\} \\
+    g_\mathcal{O}(\mathrm{DisjointObjectProperties}(r_1, \dots, r_n)) ={} & \bigcup_{i=1}^n \{ \mathrm{DisjointObjectProperties}(r_1, \dots, r_i', \dots, r_n) \mid r_i' \in \rho_\mathcal{O}(r_i) \} \\
+    g_\mathcal{O}(\mathrm{SubObjectPropertyOf}(s, r)) ={} & \{\mathrm{SubObjectPropertyOf}(s', r) \mid s' \in \rho_\mathcal{O} (s)\} \\& \cup \{\mathrm{SubObjectPropertyOf}(s, r') \mid r' \in \gamma_\mathcal{O}  (r) \land r \text{ is simple}\} \\& \cup \{ \bot \sqsubseteq \top \} \\
+    g_\mathcal{O}(\mathrm{SubObjectPropertyOf}(\qquad \qquad \qquad \qquad &\\\mathrm{ObjectPropertyChain}(s_1, \dots, s_n), r)) ={} & \{\mathrm{SubObjectPropertyOf}( \\& \qquad \mathrm{ObjectPropertyChain}(s_1, \dots, s_i', \dots, s_n), r) \mid s_i' \in \rho_\mathcal{O} (s_i)\} \\& \cup \{\mathrm{SubObjectPropertyOf}( \\& \quad \qquad \mathrm{ObjectPropertyChain}(s_1, \dots, s_n), r)\} \\
+    \text{OWL 2 axioms:} \quad & \\
     g_\mathcal{O}(\mathrm{EquivalentClasses}(C_1, \dots, C_n)) =& \bigcup_{i=1}^n \{ \mathrm{EquivalentClasses}(\{C_1, \dots, C_n\} \setminus \{C_i\}) \} \\& \cup \{ \mathrm{EquivalentClasses}(C_1, \dots, C_n) \} \\
     g_\mathcal{O}(\mathrm{DisjointClasses}(C_1, \dots, C_n)) =& \bigcup_{i=1}^n \{ \mathrm{DisjointClasses}(C_1, \dots, C_i', \dots, C_n) \mid C_i' \in \rho_\mathcal{O}(C_i) \} \\
     g_\mathcal{O}(\mathrm{DisjointUnion}(D, C_1, \dots, C_n)) =& \{ \mathrm{DisjointUnion}(D, C_1, \dots, C_n), \bot \sqsubseteq \top \} \\
     g_\mathcal{O}(\mathrm{EquivalentObjectProperties}(r_1, \dots, r_n)) =& \bigcup_{i=1}^n \{ \mathrm{EquivalentObjectProperties}(\{r_1, \dots, r_n\} \setminus \{r_i\}) \} \\& \cup \{ \mathrm{EquivalentObjectProperties}(r_1, \dots, r_n) \} \\
-    g_\mathcal{O}(\mathrm{InverseObjectProperties}(s, r)) =& \{ \mathrm{InverseObjectProperties}(s, r), \bot \sqsubseteq \top \} \\
-    g_\mathcal{O}(\mathrm{FunctionalObjectProperty}(r)) =& \{ \mathrm{FunctionalObjectProperty}(r), \bot \sqsubseteq \top \} \\
-    g_\mathcal{O}(\mathrm{InverseFunctionalObjectProperty}(r)) =& \{ \mathrm{InverseFunctionalObjectPro}(r), \bot \sqsubseteq \top \} \\
-    g_\mathcal{O}(\mathrm{SymmetricObjectProperty}(r)) =& \{ \mathrm{SymmetricObjectProperty}(r), \bot \sqsubseteq \top \} \\
-    g_\mathcal{O}(\mathrm{AsymmetricObjectProperty}(r)) =& \{ \mathrm{AsymmetricObjectProperty}(r), \bot \sqsubseteq \top \} \\
-    g_\mathcal{O}(\mathrm{TransitiveObjectProperty}(r)) =& \{ \mathrm{TransitiveObjectProperty}(r), \bot \sqsubseteq \top \} \\
-    g_\mathcal{O}(\mathrm{ReflexiveObjectProperty}(r)) =& \{ \mathrm{ReflexiveObjectProperty}(r), \bot \sqsubseteq \top \} \\
-    g_\mathcal{O}(\mathrm{IrreflexiveObjectProperty}(r)) =& \{ \mathrm{IrreflexiveObjectProperty}(r), \bot \sqsubseteq \top \} \\
-    g_\mathcal{O}(\mathrm{ObjectPropertyDomain}(r, C)) =& \{\mathrm{ObjectPropertyDomain}(r, C') \mid C' \in \gamma_\mathcal{O}  (C)\} \\
-    g_\mathcal{O}(\mathrm{ObjectPropertyRange}(r, C)) =& \{\mathrm{ObjectPropertyRange}(r, C') \mid C' \in \gamma_\mathcal{O}  (C)\} \\
-    g_\mathcal{O}(\mathrm{SubObjectPropertyOf}(s, r)) =& \{\mathrm{SubObjectPropertyOf}(s', r) \mid s' \in \rho_\mathcal{O} (s)\} \\& \cup \{\mathrm{SubObjectPropertyOf}(s, r') \mid r' \in \gamma_\mathcal{O}  (r) \land r \text{ is simple}\} \\& \cup \{ \bot \sqsubseteq \top \} \\
-    g_\mathcal{O}(\mathrm{SubObjectPropertyOf}(\qquad \qquad \qquad \qquad &\\\mathrm{ObjectPropertyChain}(s_1, \dots, s_n), r)) =& \{\mathrm{SubObjectPropertyOf}( \\& \qquad \mathrm{ObjectPropertyChain}(s_1, \dots, s_i', \dots, s_n), r) \mid s_i' \in \rho_\mathcal{O} (s_i)\} \\& \cup \{\mathrm{SubObjectPropertyOf}( \\& \quad \qquad \mathrm{ObjectPropertyChain}(s_1, \dots, s_n), r)\} \\
-    g_\mathcal{O}(\mathrm{DisjointObjectProperties}(r_1, \dots, r_n)) =& \bigcup_{i=1}^n \{ \mathrm{DisjointObjectProperties}(r_1, \dots, r_i', \dots, r_n) \mid r_i' \in \rho_\mathcal{O}(r_i) \}
+    g_\mathcal{O}(\mathrm{InverseObjectProperties}(s, r)) ={} & \{ \mathrm{InverseObjectProperties}(s, r), \bot \sqsubseteq \top \} \\
+    g_\mathcal{O}(\mathrm{FunctionalObjectProperty}(r)) ={} & \{ \mathrm{FunctionalObjectProperty}(r), \bot \sqsubseteq \top \} \\
+    g_\mathcal{O}(\mathrm{InverseFunctionalObjectProperty}(r)) ={} & \{ \mathrm{InverseFunctionalObjectPro}(r), \bot \sqsubseteq \top \} \\
+    g_\mathcal{O}(\mathrm{SymmetricObjectProperty}(r)) ={} & \{ \mathrm{SymmetricObjectProperty}(r), \bot \sqsubseteq \top \} \\
+    g_\mathcal{O}(\mathrm{AsymmetricObjectProperty}(r)) ={} & \{ \mathrm{AsymmetricObjectProperty}(r), \bot \sqsubseteq \top \} \\
+    g_\mathcal{O}(\mathrm{TransitiveObjectProperty}(r)) ={} & \{ \mathrm{TransitiveObjectProperty}(r), \bot \sqsubseteq \top \} \\
+    g_\mathcal{O}(\mathrm{ReflexiveObjectProperty}(r)) ={} & \{ \mathrm{ReflexiveObjectProperty}(r), \bot \sqsubseteq \top \} \\
+    g_\mathcal{O}(\mathrm{IrreflexiveObjectProperty}(r)) ={} & \{ \mathrm{IrreflexiveObjectProperty}(r), \bot \sqsubseteq \top \} \\
+    g_\mathcal{O}(\mathrm{ObjectPropertyDomain}(r, C)) ={} & \{\mathrm{ObjectPropertyDomain}(r, C') \mid C' \in \gamma_\mathcal{O}  (C)\} \\
+    g_\mathcal{O}(\mathrm{ObjectPropertyRange}(r, C)) ={} & \{\mathrm{ObjectPropertyRange}(r, C') \mid C' \in \gamma_\mathcal{O}  (C)\}
 \end{align*}
 \endgroup

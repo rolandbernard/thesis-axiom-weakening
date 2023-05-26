@@ -62,12 +62,12 @@
     
     [Weakening OWL 2 DL](Content/Weakening%20OWL%202%20DL.md)
     
-    [User Guide: Java Implementation](Content/User%20Guide%20Java%20Implementation.md)
-    
-    [User Guide: Protégé Plugin](Content/User%20Guide%20Prote%CC%81ge%CC%81%20Plugin.md)
-    
     [The $\mathcal{SROIQ}$ Description Logic](Content/The%20$%20mathcal%7BSROIQ%7D$%20Description%20Logic.md)
     
     [OWL 2 Functional Syntax](Content/OWL%202%20Functional%20Syntax.md)
     
     [Mapping between SROIQ and OWL 2 DL](Content/Mapping%20between%20SROIQ%20and%20OWL%202%20DL.md)
+    
+    [User Guide: Java Implementation](Content/User%20Guide%20Java%20Implementation.md)
+    
+    [User Guide: Protégé Plugin](Content/User%20Guide%20Prote%CC%81ge%CC%81%20Plugin.md)

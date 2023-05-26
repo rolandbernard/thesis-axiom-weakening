@@ -1,3 +1,4 @@
+#!/bin/python
 # The notes are exported from Notion and cleand up using this script.
 
 import re

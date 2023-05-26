@@ -31,8 +31,8 @@ Example:
 
 There is an additional restriction that is placed upon the role hierarchy in a $SROIQ$ knowledge base. The role hierarchy in $\mathcal{SROIQ}$ must be regular. A role hierarchy $\mathcal{R}_h$ is *regular* if there exists a strict partial order $\prec$ (that is, an irreflexive and transitive relation) on the set of roles $\mathbf{R}$, such that $s \prec r \iff \mathrm{Inv}(s) \prec r$ and $s \prec r \iff \mathrm{Inv}(s) \prec \mathrm{Inv}(r)$ for all roles $r$ and $s$, and all RIA in $\mathcal{R}_h$ are $\prec$-regular. A RIA is defined to be $\prec$*-regular* if it is of one of the following forms:
 
-- $r \circ r \sqsubseteq r$,
 - $\mathrm{Inv}(r) \sqsubseteq r$,
+- $r \circ r \sqsubseteq r$,
 - $r \circ s_1 \circ \cdots \circ s_n \sqsubseteq r$,
 - $s_1 \circ \cdots \circ s_n \circ r \sqsubseteq r$, or
 - $s_1 \circ \cdots \circ s_n \sqsubseteq r$,

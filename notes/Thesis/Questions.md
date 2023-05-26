@@ -16,7 +16,7 @@
     
 - [x]  Different definitions disagree on whether the universal role is allowed in the role hierarchy and role assertions.
 - [x]  Also rewrite $\mathrm{Asy}(s)$ and $\mathrm{Ref}(r)$ in terms of other constructs?
-- [ ]  What is going on here? (Missing entailment.)
+- [x]  What is going on here? (Missing entailment.)
     
     ```java
     OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
@@ -34,10 +34,33 @@
     ));
     ```
     
-- [ ]  How come not of the reasoners be sound and complete? There seem to be many missing entailments/bugs.
+    It's a bug.
+    
+- [x]  How come not of the reasoners be sound and complete? There seem to be many missing entailments/bugs.
+    
+    FaCT++ seams to be the best so far. After fixing some issues with concurrency.
+    
+- [x]  You can not use this axiom with HermiT: $\top \sqsubseteq \bot$.
+    
+    ```java
+    OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
+    OWLDataFactory df = manager.getOWLDataFactory();
+    OWLOntology ontology = manager.createOntology();
+    ontology.addAxioms(
+        df.getOWLSubClassOfAxiom(df.getOWLThing(), df.getOWLNothing())
+    );
+    OWLReasoner reasoner = (new ReasonerFactory()).createReasoner(ontology);
+    System.out.println(reasoner.isConsistent());
+    ```
+    
+    Fixed by downgrading owlapi version.
+    
 - [ ]  What tests to run?
-
-Ontologies:
-
-- Bioportal
-- Onto
+    1. Take some ontologies.
+    2. Make them inconsistent 10 times.
+        1. Generate all optimal classical repairs.
+        2. Generate 100 repairs by weakening.
+    
+    Monitor all execution times and number of reasoner calls. Save all the inconsistent and repaired ontologies created.
+    
+    Ontologies: Find them on OntoHub.
