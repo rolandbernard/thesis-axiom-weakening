@@ -1,6 +1,4 @@
 
-This section describes the syntax of the $\mathcal{SROIQ}$ description logic \cite{horrocks2006even}.
-
 The \emph{vocabulary}\footnote{There are no strict rules for how to write down different elements of the vocabulary. However, there is a convention of using PascalCase for concept names and camelCase for names referring to roles and individuals.} $\mathrm{N} = \mathrm{N}_I \cup \mathrm{N}_C \cup \mathrm{N}_R$ of a $\mathcal{SROIQ}$ knowledge base is made up of three disjoint sets:
 
 \begin{itemize}
@@ -11,7 +9,7 @@ The \emph{vocabulary}\footnote{There are no strict rules for how to write down d
 
 A $\mathcal{SROIQ}$ knowledge base $\mathcal{KB} = \mathcal{A} \cup \mathcal{T} \cup \mathcal{R}$ is the union of an \emph{ABox} $\mathcal{A}$, a \emph{TBox} $\mathcal{T}$, and a regular \emph{RBox} $\mathcal{R}$. The elements of $\mathcal{KB}$ are called axioms.
 
-\paragraph{RBox} \label{rbox}
+\subsubsection{RBox} \label{rbox}
 
 The RBox $\mathcal{R}$ describes the relationship between different roles in the knowledge base. It consists of two disjoint parts, a role hierarchy $\mathcal{R}_h$ and a set of role assertions $\mathcal{R}_a$.
 
@@ -60,7 +58,7 @@ To make axiom weakening simpler, this definition is slightly more general than n
 
 The set of \emph{role assertions} $\mathcal{R}_a$ is a finite set of statements with the form $\mathrm{Dis}(s_1, s_2)$ (\emph{disjointness}) where $s_1$, and $s_2$ are simple roles in $\mathcal{R}_h$. In \cite{horrocks2006even} the authors define additionally the role assertions $\mathrm{Sym}(r)$ (\emph{symmetry}), $\mathrm{Asy}(s)$ (\emph{asymmetry}), $\mathrm{Tra}(r)$ (\emph{transitivity}), $\mathrm{Ref}(r)$ (\emph{reflexivity}), and $\mathrm{Irr}(r)$ (\emph{irreflexivity}). These additional assertions can, however, be written using the alternative sets of axioms $\{ r^- \sqsubseteq r \}$, $\{ \mathrm{Dis}(r, r^-) \}$, $\{ r \circ r \sqsubseteq r \}$, $\{ r' \sqsubseteq r , \top \sqsubseteq \exists r'. \mathrm{Self} \}$, and $\{ \top \sqsubseteq \lnot \exists r . \mathrm{Self} \}$ respectively. Note that the asymmetry assertion requires a simple role, and that $r'$ in the case of reflexivity must be a role name not otherwise used in the ontology \footnote{This is necessary to allow the use of non-simple roles in a reflexivity assertion. Multiple assertions can share the same role name $r'$.}.
 
-\paragraph{TBox} \label{tbox}
+\subsubsection{TBox} \label{tbox}
 
 The TBox $\mathcal{T}$ describes the relationship between different concepts. In $\mathcal{SROIQ}$, the set of \emph{concept expressions} (or simply \emph{concepts}) given an RBox $\mathcal{R}$ is inductively defined as the smallest set such that:
 
@@ -75,7 +73,7 @@ The TBox $\mathcal{T}$ describes the relationship between different concepts. In
 
 Given two concepts $C$ and $D$, a \emph{general concept inclusion axiom} (GCI) is a statement of the form $C \sqsubseteq D$. The TBox $\mathcal{T}$ is a finite set of general concept inclusion axioms.
 
-\paragraph{ABox} \label{abox}
+\subsubsection{ABox} \label{abox}
 
 The ABox $\mathcal{A}$ contains statements about single individuals called individual assertions. An \emph{individual assertion} has one of the following forms:
 
