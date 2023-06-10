@@ -7,6 +7,7 @@ The general topic of the thesis is on the concept of axiom weakening and its app
 - [x]  13 April 2023 - get in contact with the academic person and start the project
 - [x]  20 April 2023 - insert the title of the thesis; make sure that the supervisor approves the title
 - [x]  20 May 2023 - request for final exam; pay for exam
+- [ ]  16 June 2023 - DL workshop submission deadline
 - [ ]  05 July 2023 - upload a digital copy of the thesis
 - [ ]  10 July 2023 - the necessary credit points must be achieved
 - [ ]  13 July 2023 - make sure that the thesis supervisor approves your admission to the final exam

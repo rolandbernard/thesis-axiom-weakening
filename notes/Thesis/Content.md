@@ -39,8 +39,6 @@
     
     [RBox Refinement](Content/RBox%20Refinement.md)
     
-    [Finding the Best Repairs](Content/Finding%20the%20Best%20Repairs.md)
-    
 4. Implementation
     
     [Implementing $\mathcal{SROIQ}$ Axiom Weakening](Content/Implementing%20$%20mathcal%7BSROIQ%7D$%20Axiom%20Weakening.md)

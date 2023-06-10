@@ -65,8 +65,8 @@
     - [ ]  About ontology bugs
     - [ ]  About OWL
     - [ ]  About problems with expressivity
-    - [ ]  About axiom weakening
-    - [ ]  About RBox refinement
+    - [x]  About axiom weakening
+    - [x]  About RBox refinement
 
 22.05.2023 - 28.05.2023
 
@@ -80,8 +80,6 @@
 
 29.05.2023 - 04.06.2023
 
-- [ ]  Add features to the Protégé plugin
-- [ ]  Clean up the implementation of the plugin
 - [ ]  Finish up writing the background sections of the thesis
     - [ ]  Experiments and evaluation
     - [ ]  Introduction about knowledge representation
@@ -92,29 +90,31 @@
 
 05.06.2023 - 11.06.2023
 
-- [ ]  Do better experiments using the implementations
+- [x]  Do better experiments using the implementations
 - [ ]  Start writing the new sections of the thesis
-    - [ ]  About role hierarchy refinement
-    - [ ]  About heuristics used during ontology repair
+    - [x]  About role hierarchy refinement
+    - [ ]  ~~About heuristics used during ontology repai~~r
     - [ ]  About the implementation of the prototype
     - [ ]  About the implementation of the protégé plugin
     - [ ]  Introduction
 
 12.06.2023 - 18.06.2023
 
+- [ ]  Add features to the Protégé plugin
 - [ ]  Finish up writing the new sections of the thesis
     - [ ]  About role hierarchy refinement
-    - [ ]  About heuristics used during ontology repair
+    - [ ]  ~~About heuristics used during ontology repair~~
     - [ ]  About the implementation of the prototype
     - [ ]  About the implementation of the protégé plugin
     - [ ]  Experiments and evaluation
 
 19.06.2023 - 25.06.2023
 
-- [ ]  Send draft to profs and ask them for feedback
+- [ ]  Clean up the implementation of the plugin
 - [ ]  Add more extensive documentation to the prototype
 - [ ]  Add more extensive documentation to the protégé plugin
 - [ ]  Polishing the thesis
+- [ ]  Send draft to profs and ask them for feedback
 
 26.06.2023 - 02.07.2023
 
@@ -125,6 +125,7 @@
 
 - [ ]  Finish polishing the thesis
 - [ ]  05.07.2023 - Submit the thesis
+- [ ]  06.07.2023 - Submit the better thesis
 - [ ]  Start creating slides for the presentation
 
 10.07.2023 - 16.07.2023
