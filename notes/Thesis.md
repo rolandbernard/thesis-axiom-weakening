@@ -20,6 +20,8 @@ The general topic of the thesis is on the concept of axiom weakening and its app
 
 [Content](Thesis/Content.md)
 
+[Paper](Thesis/Paper.md)
+
 [Questions](Thesis/Questions.md)
 
 [What does the AI think](Thesis/What%20does%20the%20AI%20think.md)

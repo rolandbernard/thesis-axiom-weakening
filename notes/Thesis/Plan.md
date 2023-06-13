@@ -96,6 +96,7 @@
     - [ ]  ~~About heuristics used during ontology repai~~r
     - [ ]  About the implementation of the prototype
     - [ ]  About the implementation of the protégé plugin
+    - [x]  Experiments and evaluation
     - [ ]  Introduction
 
 12.06.2023 - 18.06.2023
