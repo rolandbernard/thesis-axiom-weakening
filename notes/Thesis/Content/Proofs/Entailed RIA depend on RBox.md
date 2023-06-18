@@ -18,6 +18,11 @@ The statement I wanted to proof is not true. Since the ontology can be restricte
 - $\lnot s (u, u)$
 - $r(u, u)$
 
+**Examples of weakening, breaking regularity:**
+
+- O = { r ∘ r ⊑ r, r⁻ ⊑ r }, since r and r⁻ are equivalent, weakening r ∘ r ⊑ r to r ∘ r ⊑ r⁻ may be considered.
+- O = { r ∘ s ∘ r ⊑ t, ⊤ ⊑ ∀t.{a, b, c}, ⊤ ⊑ ≥3s.{a, b, c} }, the domain of t is only {a, b, c} and every element is connected to via s to a, b, and c. Therefore, weakening r ∘ s ∘ r ⊑ t to r ∘ s ∘ r ⊑ s is reasonable.
+
 **Lemma:** Let $\mathcal{O}$ be a $\mathcal{SROIQ}$ ontology. $\mathcal{O}$ entails $s \sqsubseteq r$ for two roles $s$ and $r$ if ~~and only if~~ there exists a path $a_1, \dots, a_n \in \mathcal{O}$ of simple role inclusion axioms $a_i = s_i \sqsubseteq r_i$ such that $s_1 = s$, $r_n = r$ and $r_i = s_{i + 1}$ for $i = 1, \dots, n - 1$.
 
 Proof (if-direction):

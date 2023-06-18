@@ -101,7 +101,7 @@
 
 12.06.2023 - 18.06.2023
 
-- [ ]  Add features to the Protégé plugin
+- [x]  Add features to the Protégé plugin
 - [ ]  Finish up writing the new sections of the thesis
     - [ ]  About role hierarchy refinement
     - [ ]  ~~About heuristics used during ontology repair~~

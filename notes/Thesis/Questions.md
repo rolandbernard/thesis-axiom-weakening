@@ -55,7 +55,7 @@
     
     Fixed by downgrading owlapi version.
     
-- [ ]  What tests to run?
+- [x]  What tests to run?
     1. Take some ontologies.
     2. Make them inconsistent 10 times.
         1. Generate all optimal classical repairs.

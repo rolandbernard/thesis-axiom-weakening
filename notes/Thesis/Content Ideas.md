@@ -23,6 +23,7 @@ Main (32)
         1. Basic Definitions (1)
         2. Classical Repair (1)
         3. Gentle Repair (1)
+    5. Axiom Weakening in ALC
 3. Theoretical Foundations (10)
     1. Problems with Expressivity (1)
     2. Upward and Downward Covers (1)
