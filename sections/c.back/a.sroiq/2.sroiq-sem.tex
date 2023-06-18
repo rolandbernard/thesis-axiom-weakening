@@ -1,4 +1,4 @@
-\subsubsection{Interpretations} \label{interpretations}
+\subsection{Interpretations} \label{interpretations}
 
 The semantics of $\mathcal{SROIQ}$, similar to other description logics, are defined in a model-theoretic way. Therefore, a central notion in that of the interpretations. And \emph{interpretation} $\mathcal{I} = \langle \Delta^\mathcal{I}, \cdot^\mathcal{I} \rangle$ consists of a set $\Delta^\mathcal{I}$ called the \emph{domain} of $\mathcal{I}$, and an \emph{interpretation function} $\cdot^\mathcal{I}$. The interpretation function maps the vocabulary elements as follows:
 
@@ -24,7 +24,7 @@ An interpretation maps the universal role $u$ to $u^\mathcal{I} = \Delta^\mathca
     \item $\geq n r.C$ corollary to the case above indicates those domain elements that have at least $N$ such $r$-related elements, \\$(\geq n r . C)^\mathcal{I} = \{ \delta_1 \in \Delta^\mathcal{I} \mid \left| \{ \delta_2 \in \Delta^\mathcal{I} \mid \langle \delta_1, \delta_2 \rangle \in r^\mathcal{I} \, \land \; \delta_2 \in C^\mathcal{I} \} \right| \geq n \}$.
 \end{itemize}
 
-\subsubsection{Satisfaction of Axioms} \label{satisfaction-of-axioms}
+\subsection{Satisfaction of Axioms} \label{satisfaction-of-axioms}
 
 The purpose of the (extended) interpretation function is mainly to determine satisfaction of axioms. We define in the following when an axiom $\alpha$ is true, or holds, in a specific interpretation $\mathcal{I}$. If this is the case, the interpretation $\mathcal{I}$ satisfies $\alpha$, written $\mathcal{I} \vDash \alpha$. If an interpretation $\mathcal{I}$ satisfies an axiom $\alpha$, we also say that $\mathcal{I}$ is a model of $\alpha$.
 
@@ -43,15 +43,15 @@ The purpose of the (extended) interpretation function is mainly to determine sat
 
 We say a set of axioms holds in an interpretation $\mathcal{I}$ iff every axiom of the set hold in $\mathcal{I}$. Accordingly, $\mathcal{I}$ satisfies a knowledge base $\mathcal{KB}$, written $\mathcal{I} \vDash \mathcal{KB}$, iff $\mathcal{I}$ satisfies every axiom $\alpha \in \mathcal{KB}$ of the knowledge base, i.e., $\mathcal{I} \vDash \mathcal{KB} \iff \forall \alpha \in \mathcal{KB} \, . \; \mathcal{I} \vDash \alpha$. If $\mathcal{I}$ satisfies $\mathcal{KB}$, we say $\mathcal{I}$ is a model of $\mathcal{KB}$.
 
-\subsubsection{Reasoning tasks} \label{reasoning-tasks}
+\subsection{Reasoning tasks} \label{reasoning-tasks}
 
 In general, logic-based knowledge representation is useful for the ability to perform reasoning task on knowledge bases. There are a number of reasoning tasks that can be performed by a reasoner in description logics. In this section, we will take a look at three basic reasoning tasks, and how they can be reduced to each other. While there exists other reasoning task, this section will focus on \emph{knowledge base satisfiability,} \emph{axiom entailment, and concept satisfiability}.
 
-\paragraph{Knowledge base satisfiability} \label{knowledge-base-satisfiability}
+\subsubsection{Knowledge base satisfiability} \label{knowledge-base-satisfiability}
 
 A knowledge $\mathcal{KB}$ base is satisfiable iff there exists a model $\mathcal{I} \vDash \mathcal{KB}$ for $\mathcal{KB}$. Otherwise, the knowledge base is called unsatisfiable, inconsistent, or contradictory. As discussed in \cref{ontology-bugs}, an inconsistent knowledge base can be a sign of modelling errors. An inconsistent knowledge base entailed every statement, and as such all information extracted from it is useless. Therefore, an unsatisfiable knowledge base is generally undesirable. Furthermore, both the task of deciding concept satisfiability and axiom entailment can be reduced to deciding knowledge base consistency.
 
-\paragraph{Axiom entailment} \label{axiom-entailment}
+\subsubsection{Axiom entailment} \label{axiom-entailment}
 
 An axiom $\alpha$ is entailed by $\mathcal{KB}$ if every model $\mathcal{I} \vDash \mathcal{KB}$ of the knowledge base also satisfies the axiom $\mathcal{I} \vDash \alpha$. We also write this as $\mathcal{KB} \vDash \alpha$ and say that $\alpha$ is a consequence of $\mathcal{KB}$. Deciding axiom entailment is an important task in order to derive new information from the collected knowledge. If $\alpha$ is entailed by the empty knowledge base, $\alpha$ is said to be a \emph{tautology}. Further, the \emph{set of consequences} of $\mathcal{KB}$ if the set of all axioms which are entailed by $\mathcal{KB}$, we write $\mathrm{Con}(\mathcal{KB}) = \{ \alpha \mid \mathcal{KB} \vDash \alpha \}.$ It is clear that the set of consequences will always be infinite, since there is an infinite number of tautologies.
 
@@ -73,10 +73,10 @@ The problem of axiom entailment can be reduced to determining for the satisfiabi
 \end{tabular}
 \end{center}
 \label{tab:entailment-reduction}
-\caption[Axioms substitution for reduction entailment to satisfiability]{The axioms in $B$ together have the “opposite” meaning of those in $\alpha$. This means, checking entailment of $\alpha$ with respect to $\mathcal{KB}$, is equivalent to checking unsatisfiability of $\mathcal{KB} \cup B$. $a$, $a_i$, and $b$ are assumed to not appear in $\mathcal{KB}$.}
+\caption[Axioms substitution for reducing entailment to satisfiability]{The axioms in $B$ together have the “opposite” meaning of those in $\alpha$. This means, checking entailment of $\alpha$ with respect to $\mathcal{KB}$, is equivalent to checking unsatisfiability of $\mathcal{KB} \cup B$. $a$, $a_i$, and $b$ are assumed to not appear in $\mathcal{KB}$.}
 \end{table}
 
-\paragraph{Concept satisfiability} \label{concept-satisfiability}
+\subsubsection{Concept satisfiability} \label{concept-satisfiability}
 
 A concept $C$ is satisfiable with respect to $\mathcal{KB}$ iff there exists a model of the knowledge base $\mathcal{I} \vDash \mathcal{KB}$ such that the extension of $C$ is not empty, i.e., $C^\mathcal{I} \not= \empty$. A concept which is not satisfiable is called unsatisfiable. Clearly, some concepts are unsatisfiable with respect to every knowledge base, for example $\bot$ or $A \sqcap \lnot A$. However, similar to an unsatisfiable knowledge base, an unsatisfiable atomic concept may be an indication of a modelling mistake.
 

@@ -9,11 +9,11 @@ The \emph{vocabulary}\footnote{There are no strict rules for how to write down d
 
 A $\mathcal{SROIQ}$ knowledge base $\mathcal{KB} = \mathcal{A} \cup \mathcal{T} \cup \mathcal{R}$ is the union of an \emph{ABox} $\mathcal{A}$, a \emph{TBox} $\mathcal{T}$, and a regular \emph{RBox} $\mathcal{R}$. The elements of $\mathcal{KB}$ are called axioms.
 
-\subsubsection{RBox} \label{rbox}
+\subsection{RBox} \label{rbox}
 
 The RBox $\mathcal{R}$ describes the relationship between different roles in the knowledge base. It consists of two disjoint parts, a role hierarchy $\mathcal{R}_h$ and a set of role assertions $\mathcal{R}_a$.
 
-Given the set of role names $\mathrm{N}_R$, a \emph{role} is either the \emph{universal role} $u$ or of the form $r$ or $r^-$ for some role names $r \in \mathrm{N}_R$, where $r^-$ is called the \emph{inverse role or} $r$. For convenience in the latter definitions, and to avoid roles like $r^{--}$, we define a function $\mathrm{Inv}$ such that $\mathrm{Inv}(r) = r^-$ and $\mathrm{Inv}(r^-) = r$. We denote the set of all roles as $\mathbf{R} = \mathrm{N}_R \cup \{ u \} \cup \{ r^- \mid r \in \mathrm{N}_R \}$.
+Given the set of role names $\mathrm{N}_R$, a \emph{role} is either the \emph{universal role} $u$ or of the form $r$ or $r^-$ for some role names $r \in \mathrm{N}_R$, where $r^-$ is called the \emph{inverse role or} $r$. For convenience in the latter definitions, and to avoid roles like $r^{--}$, which are not valid in $\mathcal{SROIQ}$, we define a function $\mathrm{Inv}$ such that $\mathrm{Inv}(r) = r^-$ and $\mathrm{Inv}(r^-) = r$. We denote the set of all roles as $\mathbf{R} = \mathrm{N}_R \cup \{ u \} \cup \{ r^- \mid r \in \mathrm{N}_R \}$.
 
 A \emph{role inclusion axiom} (RIA) is a statement of the form $r_1 \circ \cdots \circ r_n \sqsubseteq r$ where $r, r_1, \dots r_n \in \mathbf{R}$ are roles. For the case in which $n = 1$, we obtain a \emph{simple role inclusion}, which has the form $r \sqsubseteq s$ where $s$ and $r$ are role names (the case where $n > 1$ is called a \emph{complex role inclusion}). A finite set of RIAs is called a \emph{role hierarchy}, denoted $\mathcal{R}_h$.
 
@@ -58,7 +58,7 @@ To make axiom weakening simpler, this definition is slightly more general than n
 
 The set of \emph{role assertions} $\mathcal{R}_a$ is a finite set of statements with the form $\mathrm{Dis}(s_1, s_2)$ (\emph{disjointness}) where $s_1$, and $s_2$ are simple roles in $\mathcal{R}_h$. In \cite{horrocks2006even} the authors define additionally the role assertions $\mathrm{Sym}(r)$ (\emph{symmetry}), $\mathrm{Asy}(s)$ (\emph{asymmetry}), $\mathrm{Tra}(r)$ (\emph{transitivity}), $\mathrm{Ref}(r)$ (\emph{reflexivity}), and $\mathrm{Irr}(r)$ (\emph{irreflexivity}). These additional assertions can, however, be written using the alternative sets of axioms $\{ r^- \sqsubseteq r \}$, $\{ \mathrm{Dis}(r, r^-) \}$, $\{ r \circ r \sqsubseteq r \}$, $\{ r' \sqsubseteq r , \top \sqsubseteq \exists r'. \mathrm{Self} \}$, and $\{ \top \sqsubseteq \lnot \exists r . \mathrm{Self} \}$ respectively. Note that the asymmetry assertion requires a simple role, and that $r'$ in the case of reflexivity must be a role name not otherwise used in the ontology \footnote{This is necessary to allow the use of non-simple roles in a reflexivity assertion. Multiple assertions can share the same role name $r'$.}.
 
-\subsubsection{TBox} \label{tbox}
+\subsection{TBox} \label{tbox}
 
 The TBox $\mathcal{T}$ describes the relationship between different concepts. In $\mathcal{SROIQ}$, the set of \emph{concept expressions} (or simply \emph{concepts}) given an RBox $\mathcal{R}$ is inductively defined as the smallest set such that:
 
@@ -73,7 +73,7 @@ The TBox $\mathcal{T}$ describes the relationship between different concepts. In
 
 Given two concepts $C$ and $D$, a \emph{general concept inclusion axiom} (GCI) is a statement of the form $C \sqsubseteq D$. The TBox $\mathcal{T}$ is a finite set of general concept inclusion axioms.
 
-\subsubsection{ABox} \label{abox}
+\subsection{ABox} \label{abox}
 
 The ABox $\mathcal{A}$ contains statements about single individuals called individual assertions. An \emph{individual assertion} has one of the following forms:
 

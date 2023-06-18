@@ -8,7 +8,7 @@
 \usepackage{listings}
 \usepackage{xcolor}
 \usepackage[hidelinks]{hyperref}
-\usepackage{cleveref}
+\usepackage[capitalise]{cleveref}
 \usepackage[english]{babel}
 \usepackage{biblatex}
 \usepackage{libertinus}
@@ -31,6 +31,8 @@
 \setcounter{tocdepth}{1}
 \chapternumberfont{\LARGE}
 \chaptertitlefont{\huge}
+\sloppy
+\interfootnotelinepenalty=10000
 
 \title{Extending Axiom Weakening for Automated Repair of Ontologies in Expressive Description Logics}
 \author{Roland Bernard}
@@ -59,7 +61,7 @@
 \maketitle
 
 \begin{abstract}
-    \input{sections/0.abstract.tex}
+    \input{sections/a.front/abstract.tex}
 \end{abstract}
 
 \tableofcontents
@@ -67,44 +69,44 @@
 \begingroup
 \renewcommand{\abstractname}{Acknowledgements}
 \begin{abstract}
-    \input{sections/0.acknowledgments.tex}
+    \input{sections/a.front/acknowledgments.tex}
 \end{abstract}
 \endgroup
 
 \chapter{Introduction} \label{introduction}
 
-\input{sections/1.introduction.tex}
+\input{sections/b.main/1.introduction.tex}
 
 \chapter{Background and Related Work} \label{background}
 
-\input{sections/2.background.tex}
+\input{sections/b.main/2.background.tex}
 
 \chapter{Theoretical Foundations} \label{theory}
 
-\input{sections/3.theory.tex}
+\input{sections/b.main/3.theory.tex}
 
 \chapter{Implementation} \label{implementation}
 
-\input{sections/4.implementation.tex}
+\input{sections/b.main/4.implementation.tex}
 
 \chapter{Experiments and Evaluation} \label{evaluation}
 
-\input{sections/5.evaluation.tex}
+\input{sections/b.main/5.evaluation.tex}
 
 \chapter{Conclusion and Future Work} \label{conclusion}
 
-\input{sections/6.conclution.tex}
+\input{sections/b.main/6.conclution.tex}
 
 \printbibliography
 
 \appendix
 
-\chapter{Closure over RBox Weakening} \label{proof-weakening}
+\chapter{The \texorpdfstring{$\mathcal{SROIQ}$}{SROIQ} Description Logic} \label{sroiq-appendix}
 
-\input{sections/a.proof-weakening.tex}
+\input{sections/c.back/a.sroiq.tex}
 
 \chapter{Axiom Weakening in OWL 2 DL} \label{weakening-owl-2-dl}
 
-\input{sections/b.owl2weakening.tex}
+\input{sections/c.back/b.owl2weakening.tex}
 
 \end{document}

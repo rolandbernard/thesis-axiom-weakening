@@ -9,6 +9,8 @@ notes-tex
 *.out
 *.toc
 *.log
+*.lof
+*.lot
 *.bbl
 *.bcf
 *.blg
