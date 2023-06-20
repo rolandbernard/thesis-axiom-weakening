@@ -36,7 +36,7 @@ Given an ontology $\Omc = \Omc_s \cup \Omc_r$ and an axiom $\Omc \models \alpha$
 \end{definition}
 
 \begin{example}
-Given the vocabulary $N_C = \{ C, D \}$ and $N_I = \{ a \}$, the ontology $\Omc = \Omc_r = \{ D \sqsubseteq \lnot C, D(a), C(a) \}$ is inconsistent. A possible (optimal) classical repair to restore the consistency is $\Omc' = \{ D(a), C(a) \}$.
+Given the vocabulary $N_C = \{ C, D \}$ and $N_I = \{ a \}$, the ontology $\Omc = \{ D \sqsubseteq \lnot C, D(a), C(a) \}$ is inconsistent. A possible (optimal) classical repair to restore the consistency is $\Omc' = \{ D(a), C(a) \}$.
 \end{example}
 
 Justifications are necessarily non-empty since $\Omc_s \not\models \alpha$, and therefore hitting sets and minimal hitting sets always exist. Given any minimal hitting set $H$ for the justification $J_1, \dots, J_n$ of $\alpha$ in $\Omc$, the ontology $\Omc' = \Omc \setminus H$ is an optimal classical repair of $\Omc$ with respect to $\alpha$.
@@ -50,6 +50,7 @@ An alternative to computing all justification is to directly find a minimal corr
 While the classical approach is obviously sufficient to guarantee that a possible repair is found, it can lead to unnecessary information loss. That is, the repaired ontology might be missing some consequences of the original ontology that were actually desirable, and did not necessarily have to be removed in order to find a repair.
 
 \begin{example}
+Given the inconsistent ontology $\Omc = \{ \top \sqsubseteq C \sqcap D, C \sqcap D \sqsubseteq \bot \}$, we want to repair it such that it becomes consistent. To repair this ontology using a classical repair, we have to remove one of the two axioms. However, to make the ontology consistent it would be sufficient to remove one of the disjuncts in first axiom.
 \end{example}
 
 Since ideally, one wants to retain as much information as possible, alternative methods for repairing ontologies have been proposed that are able to preserve more information than the classical approach (e.g., \cite{du2014practical,AMAI-2018,baader2018making,troquard2018repairing,confalonieri2020towards,horridge2008laconic,lam2008fine}).
@@ -57,7 +58,7 @@ Since ideally, one wants to retain as much information as possible, alternative 
 One option is to first modify the original ontology and afterwards apply the classical repair approach. The intuition is that in the modified ontology the individual axioms should contain less information, and therefore, the removal of axioms leads to less information loos relative to the unmodified ontology. In \cite{horridge2008laconic} the authors propose a structural transformation, that replaces axioms with a set of weaker axioms that are semantically equivalent, but on their own contain less information.
 
 \begin{example}
-Given the inconsistent ontology $\Omc = \Omc_r = \{ A \sqsubseteq B \sqcup \lnot C, B \sqsubseteq C, A(a) \}$, we want to repair it such that it becomes consistent. To repair this ontology using a classical repair, we have to remove one of the three axioms. However, we can transform it into the equivalent ontology $\Omc' = \{ A \sqsubseteq B, A \sqsubseteq \lnot C, B \sqsubseteq C, A(a) \}$. Now, we have some additional possibilities. We could for example remove only the axiom $A \sqsubseteq \lnot C$ and retain the consequence $C(a)$ which would otherwise have always been lost.
+Given the inconsistent ontology $\Omc = \{ A \sqsubseteq B \sqcup \lnot C, B \sqsubseteq C, A(a) \}$, we want to repair it such that it becomes consistent. To repair this ontology using a classical repair, we have to remove one of the three axioms. However, we can transform it into the equivalent ontology $\Omc' = \{ A \sqsubseteq B, A \sqsubseteq \lnot C, B \sqsubseteq C, A(a) \}$. Now, we have some additional possibilities. We could for example remove only the axiom $A \sqsubseteq \lnot C$ and retain the consequence $C(a)$ which would otherwise have always been lost.
 \end{example}
 
 Another approach to repairing ontologies more gently that has been proposed in the literature is using \emph{axiom weakening} \cite{troquard2018repairing,confalonieri2020towards,confalonieri2022irresistible,baader2018making,lam2008fine}. Instead of removing axioms, they are replaced with weaker axioms. Replacing an axiom with a weaker axiom can not cause new consequences, but may diminish the set of consequences.

@@ -5,3 +5,20 @@ Formally, an ontology is a set of statements expressed in a suitable logical lan
 
 In this section will briefly introduce the description logic $\SROIQ$ \cite{horrocks2006even, rudolph2011foundations, baader_horrocks_lutz_sattler_2017}. A more detailed description, containing more information about the semantics, can be found in \cref{sroiq-appendix}.
 
+\subsubsection{The Syntax of \SROIQ}
+
+% TODO
+% TODO argue for my version of regularity
+
+\subsubsection{The Semantics of \SROIQ}
+
+% TODO
+
+\subsubsection{The \ALC Description Logic}
+
+Since \ALC will be used for part of the discussion on related work, this is a brief section discussing what features are included in \ALC, and which are not. \ALC is a much less expressive description logic compared to \SROIQ. The vocabulary in \ALC consists of the same components $N_C$, $N_R$, and $N_I$ as in \SROIQ. In \ALC, concept expressions are formed only using the following grammar.
+\begin{alignat*}{2}
+  C &::= && \bot \mid \top \mid A \mid \neg C \mid C \sqcap C \mid C \sqcup C \mid \forall R.C \mid \exists R.C \enspace,
+\end{alignat*}
+where $A \in N_C$ is a concept name and $r \in N_R$ is a role name. The universal role, or inverse roles are not part of \ALC. Further, \ALC supports only two types of axioms, concept inclusion axioms of the form $C \sqsubseteq D$ and class assertions $C(a)$ where $C$ and $D$ are concepts and $a \in N_I$ is an individual name. It should be noted that \ALC has the unique name assumption, meaning that two different individual names must necessarily refer to different elements of the domain in every interpretation. Aside from that, the axioms and concepts have the same semantic meaning as their direct counterparts in \SROIQ.
+

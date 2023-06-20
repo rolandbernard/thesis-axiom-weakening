@@ -1,13 +1,25 @@
 Let us now consider the weakening of RBox axioms, starting with the weakening of role hierarchies. Weakening role hierarchies in $\SROIQ$ becomes complicated due to global restrictions that are placed on the ontology. Adding an axiom to a valid $\SROIQ$ ontology, even if the axiom on its one may be valid, does not guarantee that the resulting ontology is still valid. Both the restrictions in the usage of simple roles and the regularity constraint on the RBox need to be considered if we want to ensure that a resulting ontology adheres to the restrictions in $\SROIQ$.
 
-\begin{example}
-Take as an example the ontology $\Omc = \{a \circ b \circ a \sqsubseteq c\}$ that defines the simple roles $a$ and $b$, and a non-simple role $c$. Adding the axiom $c \sqsubseteq b$, even if it is correct in isolation, will result in an ontology that is not regular.
-\end{example}
-
-\begin{example}
-As another example, take the ontology $\Omc = \{a \circ a \sqsubseteq a, \top \sqsubseteq \exists c . \self \}$ that defines the transitive role $a$ and simple role $c$ used in a self-assertion. Adding the axiom $a \sqsubseteq c$, even if it may be correct in isolation, will result in a violation of the restrictions because $c$ will become non-simple and non-simple roles may not be used in self-assertions.
-\end{example}
-
-\subsection{Weakening role hierarchies in $\mathcal{ALCH}$} \label{weakening-role-hierarchies-in-mathcal-alch-}
+\subsection{Weakening role hierarchies in $\mathcal{ALCH}$} \label{weakening-rbox-alch}
 
 To avoid these complications, we will first consider the simple case of weakening role hierarchies in $\mathcal{ALCH}$. $\mathcal{ALCH}$ supports only simple RIAs, and does not have any of the restrictions that are present in $\SROIQ$. Also, we can note that
+
+\begin{example}
+%TODO possible weakening
+\end{example}
+
+\subsection{Weakening role hierarchies in $\mathcal{SROIQ}$} \label{weakening-rbox-SROIQ}
+
+\begin{example}
+%TODO illegal weakening
+\end{example}
+
+\begin{example}
+%TODO illegal weakening
+\end{example}
+
+\begin{example}
+%TODO possible weakening
+\end{example}
+
+% TODO
