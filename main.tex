@@ -7,6 +7,7 @@
 \usepackage{csquotes}
 \usepackage{listings}
 \usepackage{xcolor}
+\usepackage{xspace}
 \usepackage[hidelinks]{hyperref}
 \usepackage[capitalise]{cleveref}
 \usepackage[english]{babel}
@@ -25,13 +26,38 @@
 \newtheorem*{note}{Note}
 \newtheorem*{remark}{Remark}
 
+\newcommand{\ALC}{\ensuremath{\texorpdfstring{\mathcal{ALC}}{ALC}}\xspace}
+\newcommand{\SROIQ}{\ensuremath{\texorpdfstring{\mathcal{SROIQ}}{SROIQ}}\xspace}
+
+\newcommand{\Lmc}{\ensuremath{\mathcal{L}}\xspace}
+\newcommand{\Imc}{\ensuremath{\mathcal{I}}\xspace}
+\newcommand{\Tmc}{\ensuremath{\mathcal{T}}\xspace}
+\newcommand{\Amc}{\ensuremath{\mathcal{A}}\xspace}
+\newcommand{\Rmc}{\ensuremath{\mathcal{R}}\xspace}
+\newcommand{\Omc}{\ensuremath{\mathcal{O}}\xspace}
+\newcommand{\Omcref}{\ensuremath{{\mathcal{O}^\textnormal{ref}}}\xspace}
+\newcommand{\Omcfull}{\ensuremath{{\mathcal{O}^\textnormal{full}}}\xspace}
+
+\newcommand{\Inf}{{\ensuremath{\mathsf{Inf}}}\xspace}
+\newcommand{\qual}{{\ensuremath{\mathsf{IIC}}}\xspace}
+\newcommand{\UpC}{{\ensuremath{\mathsf{UpCover}}}\xspace}
+\newcommand{\DownC}{{\ensuremath{\mathsf{DownCover}}}\xspace}
+\newcommand{\inv}{\ensuremath{\mathit{inv}}\xspace}
+\newcommand{\refine}{\ensuremath{\mathop{\uparrow}}\xspace}
+\newcommand{\corefine}{\ensuremath{\mathop{\downarrow}}\xspace}
+
+\newcommand{\disjoint}{\ensuremath{\mathit{disjoint}}\xspace}
+\newcommand{\self}{\ensuremath{\mathit{Self}}\xspace}
+\newcommand{\less}[2]{\ensuremath{\leq #1~#2}\xspace}
+\newcommand{\more}[2]{\ensuremath{\geq #1~#2}\xspace}
+\newcommand{\nominal}[1]{\ensuremath{\{#1\}}\xspace}
+
 \addbibresource{biblio.bib}
 
 \allowdisplaybreaks
 \setcounter{tocdepth}{1}
 \chapternumberfont{\LARGE}
 \chaptertitlefont{\huge}
-\sloppy
 \interfootnotelinepenalty=10000
 
 \title{Extending Axiom Weakening for Automated Repair of Ontologies in Expressive Description Logics}
