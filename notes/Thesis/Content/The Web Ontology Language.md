@@ -16,4 +16,6 @@ The Turtle syntax.
 
 highly optimized reasons for owl 2 exist. some reasoners support only some of the more restrictive profiles, while others support OWL 2 DL.
 
-in this thesis owl 2 dl reasoners are used for evaluation of the proposed approach to axiom weakening in SROIQ
+in this thesis owl 2 dl reasoners are used for evaluation of the proposed approach to axiom weakening in SROIQ and the owl api is used to interface with them 
+
+say something about protege

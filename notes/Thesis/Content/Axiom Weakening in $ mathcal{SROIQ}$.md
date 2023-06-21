@@ -1,4 +1,4 @@
-# Axiom Weakening
+# Axiom Weakening in $\mathcal{SROIQ}$
 
 We build upon the axiom weakening approaches presented in (ALC weakening) and (SROIQ weakening)
 

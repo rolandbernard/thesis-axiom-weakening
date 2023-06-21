@@ -45,7 +45,7 @@ In general, logic-based knowledge representation is useful for the ability to pe
 
 ## Knowledge base satisfiability
 
-A knowledge $\mathcal{KB}$ base is satisfiable iff there exists a model $\mathcal{I} \vDash \mathcal{KB}$ for $\mathcal{KB}$. Otherwise, the knowledge base is called unsatisfiable, inconsistent, or contradictory. As discussed in [Ontology Bugs](Ontology%20Bugs.md), an inconsistent knowledge base can be a sign of modelling errors. An inconsistent knowledge base entailed every statement, and as such all information extracted from it is useless. Therefore, an unsatisfiable knowledge base is generally undesirable. Furthermore, both the task of deciding concept satisfiability and axiom entailment can be reduced to deciding knowledge base consistency.
+A knowledge $\mathcal{KB}$ base is satisfiable iff there exists a model $\mathcal{I} \vDash \mathcal{KB}$ for $\mathcal{KB}$. Otherwise, the knowledge base is called unsatisfiable, inconsistent, or contradictory. As discussed in [Ontology Bugs](../Ontology%20Bugs.md), an inconsistent knowledge base can be a sign of modelling errors. An inconsistent knowledge base entailed every statement, and as such all information extracted from it is useless. Therefore, an unsatisfiable knowledge base is generally undesirable. Furthermore, both the task of deciding concept satisfiability and axiom entailment can be reduced to deciding knowledge base consistency.
 
 ## Axiom entailment
 

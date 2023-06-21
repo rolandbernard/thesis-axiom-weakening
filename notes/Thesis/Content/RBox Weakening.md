@@ -1,4 +1,4 @@
-# RBox Refinement
+# RBox Weakening
 
 Let us now consider the weakening of RBox axioms, starting with the weakening of role hierarchies. Weakening role hierarchies in $\mathcal{SROIQ}$ becomes complicated due to global restrictions that are placed on the ontology. Adding an axiom to a valid $\mathcal{SROIQ}$ ontology, even if the axiom on its one may be valid, does not guarantee that the resulting ontology is still valid. Both the restrictions in the usage of simple roles and the regularity constraint on the RBox need to be considered if we want to ensure that a resulting ontology adheres to the restrictions in $\mathcal{SROIQ}$.
 

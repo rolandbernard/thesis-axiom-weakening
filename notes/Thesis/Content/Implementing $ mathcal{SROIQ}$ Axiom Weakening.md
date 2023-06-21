@@ -10,6 +10,14 @@ computing upward and downward covers
 
 effective caching for subsumption queries
 
+finding “best” repairs
+
+mcts
+
 enabling parallelism
+
+fact++
+
+configurabile repairs
 
 testing

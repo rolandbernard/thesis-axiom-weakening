@@ -19,25 +19,23 @@
     
 2. Background and Related Work
     
-    [Ontology Bugs](Content/Ontology%20Bugs.md)
-    
-    [Ontologies in Description Logics](Content/Ontologies%20in%20Description%20Logics.md)
-    
-    [$\mathcal{SROIQ}$ Syntax](Content/$%20mathcal%7BSROIQ%7D$%20Syntax.md)
-    
-    [$\mathcal{SROIQ}$ Semantics](Content/$%20mathcal%7BSROIQ%7D$%20Semantics.md)
+    [The $\mathcal{SROIQ}$ Description Logic](Content/The%20$%20mathcal%7BSROIQ%7D$%20Description%20Logic.md)
     
     [The Web Ontology Language](Content/The%20Web%20Ontology%20Language.md)
     
+    [Ontology Bugs](Content/Ontology%20Bugs.md)
+    
     [Ontology Repair](Content/Ontology%20Repair.md)
+    
+    [Axiom weakening in $\mathcal{ALC}$](Content/Axiom%20weakening%20in%20$%20mathcal%7BALC%7D$.md)
     
 3. Theoretical Foundations
     
     [Problems of Expressivity](Content/Problems%20of%20Expressivity.md)
     
-    [Axiom Weakening](Content/Axiom%20Weakening.md)
+    [RBox Weakening](Content/RBox%20Weakening.md)
     
-    [RBox Refinement](Content/RBox%20Refinement.md)
+    [Axiom Weakening in $\mathcal{SROIQ}$](Content/Axiom%20Weakening%20in%20$%20mathcal%7BSROIQ%7D$.md)
     
 4. Implementation
     
