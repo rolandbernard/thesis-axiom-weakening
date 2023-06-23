@@ -7,6 +7,7 @@
 \usepackage[capitalise]{cleveref}
 \usepackage[inline]{enumitem}
 \usepackage[english]{babel}
+\usepackage[T1]{fontenc}
 \usepackage{libertinus}
 \usepackage{biblatex}
 
@@ -57,6 +58,7 @@
 \setcounter{tocdepth}{1}
 \chapternumberfont{\LARGE}
 \chaptertitlefont{\huge}
+\sloppy
 \interfootnotelinepenalty=10000
 
 \title{Knowledge Refinement in Expressive Description Logics}
@@ -135,11 +137,11 @@
 
 \input{sections/c.back/b.owl2weakening.tex}
 
-\chapter{Mapping between OWL 2 DL and \SROIQ} \label{owl-to-sroiq}
+\chapter{Mapping from OWL 2 DL to \SROIQ} \label{owl-to-sroiq}
 
 \input{sections/c.back/c.owl2sroiq.tex}
 
-\chapter{User Guide: Java Axiom Weakening Library} \label{guide-prototype}
+\chapter{User Guide: OntologyUtils} \label{guide-prototype}
 
 \input{sections/c.back/d.prototype.tex}
 

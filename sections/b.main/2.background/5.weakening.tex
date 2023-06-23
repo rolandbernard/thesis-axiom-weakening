@@ -26,7 +26,7 @@ We begin by giving the definition for subconcepts. We will immediately also exte
 % define upward and downward covers
 Let us now define the so-called upward and downward cover sets for concepts. The upward cover for a given concept is the set of the most specific generalizations from the (fixed) set of subconcepts, while the downward cover set contains the most general specializations from the same set of subconcepts. (It should be noted that the related open search for e.g., a least common subsumer is in general a harder problem \cite{baader2003least}.)
 
-\begin{definition} \label{def:covers}
+\begin{definition} \label{def:alc-covers}
   Let $\Omc$ be an \ALC ontologies that using the vocabulary $N_C$, $N_R$, and $N_I$. The \emph{upward cover} and \emph{downward cover} for a concept $C$ are given by
   \begin{alignat*}{2}
     \UpC_\Omc(C) &= \{ &&D \in \sub(\Omc) \mid C \sqsubseteq_\Omc D \text{ and } \\
