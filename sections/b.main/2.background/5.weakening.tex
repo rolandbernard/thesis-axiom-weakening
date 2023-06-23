@@ -37,8 +37,8 @@ Let us now define the so-called upward and downward cover sets for concepts. The
 \end{definition}
 
 Note here that the upward and downward covers will only yield useful results if the ontology $\Omc$ is consistent. Since they operate only over the subconcepts of $\Omc$, on their own, the upward and downward covers of concepts are missing some interesting refinements.
-\begin{example} \label{exa:up-cover-alc}
-  Let $N_C = \{A, B, C\}$, $N_R = \{ r, s \}$, and $\Omc = \{A \sqsubseteq B, r \sqsubseteq s\}$. $\sub(\Omc) = \{\top, \bot, A, B\}$. The upward cover of $C \sqcup A$ is equal to $\UpC_\Omc(C \sqcup A) = \{ \top \}$. The potentiality refinement to $C \sqcup B$ will be missed even by iterated application of the upward cover because $C \sqcup B \not\in \sub(\Omc)$. Similarly, $\UpC_\Omc(\forall r.A) = \{ \top \}$, even if \  $\forall r.B$ and $\forall s.A$ are reasonable generalizations.
+\begin{example} \label{ex:up-cover-alc}
+  Let $N_C = \{ A, B, C \}$, $N_R = \{ r \}$, and $\Omc = \{ A \sqsubseteq B \}$. $\sub(\Omc) = \{\top, \bot, A, B\}$. The upward cover of $C \sqcup A$ is equal to $\UpC_\Omc(C \sqcup A) = \{ \top \}$. The potential refinement to $C \sqcup B$ will be missed even by iterated application of the upward cover because $C \sqcup B \not\in \sub(\Omc)$. Similarly, $\UpC_\Omc(\forall r.A) = \{ \top \}$, even though $\forall r.B$ is a reasonable generalization.
 \end{example}
 
 % define the abstract refinement operator
@@ -67,24 +67,24 @@ To additionally capture these omissions, we define generalization and specializa
   \end{align*}
 \end{definition}
 
-If we again revisit the example in \Cref{exa:up-cover-alc}, we can observe that $\gamma_\Omc(C \sqcup A) = \{ \top, \top \sqcup A, C \sqcup A, C \sqcup B \}$ does contain the possible refinement $C \sqcup B$. Similarly, $\gamma_\Omc(\forall r.A) = \{ \top, \forall r.A, \forall s.A, \forall r.B \}$ contains $\forall r.B$. Some basic properties of $\gamma_\Omc$ and $\rho_\Omc$ are shown in \cite{troquard2018repairing}. Most relevant of these is the fact that $\gamma_\Omc$ and $\rho_\Omc$ do in fact return, respectively, generalizations and specializations of the given concepts. Formally, for all concepts $C$ and $D$, if $D \in \gamma_\Omc(C)$ then $C \sqsubseteq_\Omc D$. Similarly, if $D \in \rho_\Omc$ then $D \sqsubseteq_\Omc C$. Another important property to take not of is that both concrete refinement operators only return finite sets of refinements.
+If we again revisit the example in \cref{ex:up-cover-alc}, we can observe that $\gamma_\Omc(C \sqcup A) = \{ \top, \top \sqcup A, C \sqcup A, C \sqcup B \}$ does contain the possible refinement $C \sqcup B$. Similarly, $\gamma_\Omc(\forall r.A) = \{ \top, \forall r.A, \forall s.A, \forall r.B \}$ contains $\forall r.B$. Some basic properties of $\gamma_\Omc$ and $\rho_\Omc$ are shown in \cite{troquard2018repairing}. Most relevant of these is the fact that $\gamma_\Omc$ and $\rho_\Omc$ do in fact return, respectively, generalizations and specializations of the given concepts. Formally, for all concepts $C$ and $D$, if $D \in \gamma_\Omc(C)$ then $C \sqsubseteq_\Omc D$. Similarly, if $D \in \rho_\Omc$ then $D \sqsubseteq_\Omc C$. Another important property to take not of is that both concrete refinement operators only return finite sets of refinements.
 
 % define the weakening operator
 We define now the \emph{axiom weakening operator} using these generalization and specialization operators.
 
 \begin{definition}
-  Given an axiom $\alpha$, the set of \emph{weakenings} with respect to the reference ontology $\Omcref$ and full ontology $\Omcfull$, written $g_{\Omcref,\Omcfull}(\alpha)$ is defined such that
+  Given an axiom $\alpha$, the set of \emph{weakenings} with respect to the ontology $\Omc$, written $g_\Omc(\alpha)$ is defined such that
   \begin{alignat*}{2}
     g_\Omc(C \sqsubseteq D) &={} &&\{ C' \sqsubseteq D \mid C' \in \rho_\Omc (C) \} \\
-    &&& \cup \{ C \sqsubseteq D' \mid D' \in \gamma_{\Omcref,\Omcfull}(D) \} \enspace, \\
-    g_{\Omcref,\Omcfull}(C(a)) &={} && \{ C'(a) \mid C' \in \gamma_{\Omcref,\Omcfull}(C) \} \enspace.
+    &&& \cup \{ C \sqsubseteq D' \mid D' \in \gamma_\Omc(D) \} \enspace, \\
+    g_\Omc(C(a)) &={} && \{ C'(a) \mid C' \in \gamma_\Omc(C) \} \enspace.
   \end{alignat*}
 \end{definition}
 
 The axioms in the set $g_\Omc(\alpha)$ are indeed weaker than $\alpha$ for every axiom $\alpha$, in the sense that, given the reference ontology $\Omc$, $\alpha$ entails them and the opposite in not necessarily true. That is, for each axiom $\alpha' \in g_\Omc(\alpha)$, $\alpha \sqsubseteq_\Omc \alpha'$ holds.
 
 \begin{example}
-% TODO
+Let $N_C = \{ A, B, C \}$, $N_I = \{ a \}$ and $\Omc = \{ A \sqsubseteq B, A \sqsubseteq C \}$. $\sub(\Omc) = \{\top, \bot, A, B, C\}$. $\gamma_\Omc(A) = \{ A, B, C \}$ and $\rho_\Omc(B) = \{ B, A \}$. The weakenings of $B \sqsubseteq A$ with respect to $\Omc$ are therefore $g_\Omc(B \sqsubseteq A) = \{ B \sqsubseteq A, B \sqsubseteq B, B \sqsubseteq C, A \sqsubseteq A \}$. Similarly, $g_\Omc(A(a)) = \{ A(a), B(a), C(a) \}$.
 \end{example}
 
 In order to apply the weakening operator to the problem of repairing inconsistent ontologies, we follow the algorithm depicted in \cref{algo:repair-weaken-alc}. First, as mention above, the computation of a non-trivial upward and downward cover set is only possible when using a consistent ontology. We therefore need to first find a consistent subontology $\Omcref$ of $\Omc$ to serve as \emph{reference ontology}. One possibility outlined in \cite{troquard2018repairing} is to select a random maximal consistent subset of $\Omc$. Another option is to choose the intersection of some or all maximal consistent subsets of $\mathcal{O}$ (e.g., \cite{LLRRS10}). This latter option has the advantage of using only information for the weakening that is likely to be correct. On the other hand, it will lead to diminished upward and downward covers and therefore can reduce the number of possible weakening.
@@ -105,6 +105,8 @@ Once a reference ontology has been chosen, and as long as $\Omc$ is inconsistent
 \label{algo:repair-weaken-alc}
 \end{algorithm}
 
-\begin{example}
-% TODO
+\begin{example}\label{ex:alc-weakening}
+Given the inconsistent ontology $\Omc = \{ A \sqsubseteq B \sqcap \lnot C, B \sqsubseteq C, A(a) \}$, we want to repair it such that it becomes consistent. We select first a maximal consistent subset as reference ontology $\Omcref = \{ B \sqsubseteq C, A(a) \}$. To find a bad axiom, we sample all minimal inconsistent subsets. Since removing any of the axioms makes it consistent, there is only one minimal inconsistent subset $J_1 = \Omc$. Say we choose the axiom $A \sqsubseteq B \sqcap \lnot C$ and weaken it to $A \sqsubseteq C \sqcap \lnot C$. The ontology is still inconsistent, with the single minimal inconsistent subset $J_1 = \{ A \sqsubseteq C \sqcap \lnot C, A(a) \}$. Let us choose to weaken $A(a)$ to $\top(a)$. The ontology is not consistent.
 \end{example}
+
+While the repair using axiom weakening is capable of preserving more information than removal, as has been empirically shown in \cite{troquard2018repairing}, this is influenced significantly by the choice of which axioms to weaken and which weaker axioms to use. In fact, computing a maximal consistent subset may in some cases lead to a more gentle repair than applying the procedure outlined above in \cref{algo:repair-weaken-alc}. This can be seen in \cref{ex:alc-weakening}, where the last replacement alone would have restored consistency, and the information lost in the previous replacement could have been preserved.
