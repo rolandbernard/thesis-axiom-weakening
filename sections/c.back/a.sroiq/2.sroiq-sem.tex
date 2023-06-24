@@ -54,20 +54,21 @@ An axiom $\alpha$ is entailed by $\Omc$ if every model $\Imc \models \Omc$ of th
 
 The problem of axiom entailment can be reduced to determining for the satisfiability of a modified ontology. This is achieved by using an axiom $\beta$ that imposes the opposite restriction to $\alpha$, to be more precise, for all interpretations $\Imc \models \alpha \iff \Imc \not\models \beta$. If $\alpha$ is entailed by $\Omc$, it must hold in every model of $\Omc$, hence $\beta$ must not hold in any model. It follows that the extended ontology $\Omc \cup \{ \, \beta \, \}$ has no new model, and is therefore unsatisfiable. We can consequently solve the axiom entailment problem by testing for satisfiability of a modified ontology, if we can find such an opposing axiom for $\alpha$. For some cases in $\SROIQ$ finding such an opposite is obvious, for others the desired behaviour must be emulated with a set of axioms. \Cref{tab:entailment-reduction} shows the correspondence for every type of $\SROIQ$ axiom.
 \begin{table}[ht]
-  \begin{center}
-    \begin{tabular}{l|l}
-      $\alpha$ & $B$ \\
-      \hline
-      $S_1 \circ \cdots \circ S_n \sqsubseteq R$ & $S_1(a_1, a_2)$, $\dots$, $S_n(a_n, a_{n + 1})$, and $\lnot R(a_1, a_{n + 1})$ \\
-      $\disjoint(S, R)$ & $S(a, b)$ and $R(a, b)$ \\
-      $C \sqsubseteq D$ & $(C \sqcap \lnot D)(a)$ \\
-      $C(a)$ & $\lnot C(a)$ \\
-      $R(a, b)$ & $\lnot R(a, b)$ \\
-      $\lnot R(a, b)$ & $R(a, b)$ \\
-      $a = b$ & $a \not= b$ \\
-      $a \not= b$ & $a = b$ \\
-    \end{tabular}
-  \end{center}
+  \centering
+  \begin{tabular}{|l|l|}
+    \hline
+    $\alpha$ & $B$ \\
+    \hline
+    $S_1 \circ \cdots \circ S_n \sqsubseteq R$ & $S_1(a_1, a_2)$, $\dots$, $S_n(a_n, a_{n + 1})$, and $\lnot R(a_1, a_{n + 1})$ \\
+    $\disjoint(S, R)$ & $S(a, b)$ and $R(a, b)$ \\
+    $C \sqsubseteq D$ & $(C \sqcap \lnot D)(a)$ \\
+    $C(a)$ & $\lnot C(a)$ \\
+    $R(a, b)$ & $\lnot R(a, b)$ \\
+    $\lnot R(a, b)$ & $R(a, b)$ \\
+    $a = b$ & $a \not= b$ \\
+    $a \not= b$ & $a = b$ \\
+    \hline
+  \end{tabular}
   \label{tab:entailment-reduction}
   \caption[Axioms substitution for reducing entailment to satisfiability]{The axioms in $B$ together have the “opposite” meaning of those in $\alpha$. This means, checking entailment of $\alpha$ with respect to $\Omc$, is equivalent to checking unsatisfiability of $\Omc \cup B$. $a$, $a_i$, and $b$ are assumed to not appear in $\Omc$.}
 \end{table}

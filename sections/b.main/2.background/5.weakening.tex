@@ -9,18 +9,21 @@ We begin by giving the definition for subconcepts. We will immediately also exte
     \sub(\Omc) = \{\top, \bot\} \cup \bigcup_{C(a) \in \Omc} \sub(C) \cup \bigcup_{C \sqsubseteq D \in \Omc} ( \sub(C) \cup \sub(D) ) \enspace,
   \end{align*}
   where $\sub(C)$ is the set of \emph{subconcepts} in $C$ given by
-  \begin{align*}
-    \sub(A) &= \{ A \} \quad , A \in N_C \cup \{ \top, \bot \} \enspace, &
-    \sub(\lnot C) &= \{ \lnot C \} \cup \sub(C) \enspace, \\
-    \sub(C \sqcup D) &= \{ C \sqcup D \} \cup \sub(C) \cup \sub(D) \enspace, &
-    \sub(\forall R.C) &= \{ \forall R.C \} \cup \sub(C) \enspace, \\
-    \sub(C \sqcap D) &= \{ C \sqcap D \} \cup \sub(C) \cup \sub(D) \enspace, &
-    \sub(\exists R.C) &= \{ \exists R.C \} \cup \sub(C) \enspace, \\
-    \sub(\more n R.C) &= \{ \more n R.C \} \cup \sub(C) \enspace, &
-    \sub(\less n R.C) &= \{ \less n R.C \} \cup \sub(C) \enspace, \\
-    \sub(\exists R.\self) &= \{ \exists R.\self \} \enspace, &
-    \sub(\nominal i) &= \{ \nominal i \} \enspace.
-  \end{align*}
+  \begin{widepage}
+    \vspace{-5mm}
+    \begin{align*}
+      \sub(A) &= \{ A \} \quad , A \in N_C \cup \{ \top, \bot \} \enspace, &
+      \sub(\lnot C) &= \{ \lnot C \} \cup \sub(C) \enspace, \\
+      \sub(C \sqcup D) &= \{ C \sqcup D \} \cup \sub(C) \cup \sub(D) \enspace, &
+      \sub(\forall R.C) &= \{ \forall R.C \} \cup \sub(C) \enspace, \\
+      \sub(C \sqcap D) &= \{ C \sqcap D \} \cup \sub(C) \cup \sub(D) \enspace, &
+      \sub(\exists R.C) &= \{ \exists R.C \} \cup \sub(C) \enspace, \\
+      \sub(\more n R.C) &= \{ \more n R.C \} \cup \sub(C) \enspace, &
+      \sub(\less n R.C) &= \{ \less n R.C \} \cup \sub(C) \enspace, \\
+      \sub(\exists R.\self) &= \{ \exists R.\self \} \enspace, &
+      \sub(\nominal i) &= \{ \nominal i \} \enspace.
+    \end{align*}
+  \end{widepage}
 \end{definition}
 
 % define upward and downward covers

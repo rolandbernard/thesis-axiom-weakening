@@ -2,7 +2,7 @@
 \usepackage{amsthm, amsfonts, amsmath, amssymb, mathtools}
 \usepackage{algorithm, algpseudocode, listings}
 \usepackage{sectsty, csquotes, xcolor, xspace}
-\usepackage{graphicx, tabularx}
+\usepackage{graphicx, tabularx, changepage}
 \usepackage[hidelinks]{hyperref}
 \usepackage[capitalise]{cleveref}
 \usepackage[inline]{enumitem}
@@ -10,6 +10,8 @@
 \usepackage[T1]{fontenc}
 \usepackage{libertinus}
 \usepackage{biblatex}
+
+\makeatletter
 
 \theoremstyle{plain}
 \newtheorem{theorem}{Theorem}
@@ -56,6 +58,13 @@
 \algnewcommand{\IElse}[1]{\algorithmicelse\ #1}
 \algnewcommand{\EndIIf}{\unskip\ \algorithmicend\ \algorithmicif}
 
+\newlength{\offsetpage}
+\setlength{\offsetpage}{1cm}
+\newenvironment{widepage}{
+  \begin{adjustwidth}{-\offsetpage}{-\offsetpage}
+  \addtolength{\textwidth}{2\offsetpage}
+}{\end{adjustwidth}}
+
 \addbibresource{biblio.bib}
 
 \allowdisplaybreaks
@@ -69,7 +78,6 @@
 \author{Roland Bernard}
 \date{July 2023}
 
-\makeatletter
 \def\maketitle{
   \begin{tabular}{ll}
     \multicolumn{2}{r}{\includegraphics[width=0.5\linewidth]{resources/unibz-logo.png}} \\
@@ -152,5 +160,9 @@
 \chapter{User Guide: Protégé Plugin} \label{guide-plugin}
 
 \input{sections/c.back/e.plugin.tex}
+
+\chapter{Additional Evaluation Results} \label{eval-appendix}
+
+\input{sections/c.back/f.eval.tex}
 
 \end{document}
