@@ -4,7 +4,7 @@ Axiom weakening, as discussed in this thesis, is based on the approach presented
 We begin by giving the definition for subconcepts. We will immediately also extend the definition to \SROIQ concepts, since we will need it for later definitions of axiom weakening in \SROIQ.
 
 \begin{definition}
-  Let $\Omc$ be an \ALC or \SROIQ ontology. The set of \emph{subconcepts} of $\Omc$ is given by 
+  Let $\Omc$ be an \ALC or \SROIQ ontology. The set of \emph{subconcepts} of $\Omc$ is given by
   \begin{align*}
     \sub(\Omc) = \{\top, \bot\} \cup \bigcup_{C(a) \in \Omc} \sub(C) \cup \bigcup_{C \sqsubseteq D \in \Omc} ( \sub(C) \cup \sub(D) ) \enspace,
   \end{align*}
@@ -29,10 +29,10 @@ Let us now define the so-called upward and downward cover sets for concepts. The
 \begin{definition} \label{def:alc-covers}
   Let $\Omc$ be an \ALC ontologies that using the vocabulary $N_C$, $N_R$, and $N_I$. The \emph{upward cover} and \emph{downward cover} for a concept $C$ are given by
   \begin{alignat*}{2}
-    \UpC_\Omc(C) &= \{ &&D \in \sub(\Omc) \mid C \sqsubseteq_\Omc D \text{ and } \\
-    &&&\nexists D' \in \sub(\Omc) \text{ with } C \sqsubset_\Omc D' \sqsubset_\Omc D \} \enspace, \\
-    \DownC_\Omc(C) &= \{ &&D \in \sub(\Omc) \mid D \sqsubseteq_\Omc C \text{ and } \\
-    &&&\nexists D' \in \sub(\Omc) \text{ with } D \sqsubset_\Omc D' \sqsubset_\Omc C \} \enspace.
+    \UpC_\Omc(C) &= \{ && D \in \sub(\Omc) \mid C \sqsubseteq_\Omc D \text{ and } \\
+    &&& \nexists D' \in \sub(\Omc) \text{ with } C \sqsubset_\Omc D' \sqsubset_\Omc D \} \enspace, \\
+    \DownC_\Omc(C) &= \{ && D \in \sub(\Omc) \mid D \sqsubseteq_\Omc C \text{ and } \\
+    &&& \nexists D' \in \sub(\Omc) \text{ with } D \sqsubset_\Omc D' \sqsubset_\Omc C \} \enspace.
   \end{alignat*}
 \end{definition}
 
@@ -49,15 +49,15 @@ To additionally capture these omissions, we define generalization and specializa
   Let $\refine$ and $\corefine$ be two functions taking concept expressions as parameters and mapping them to finite sets of concepts.
   The \emph{abstract refinement operator} is defined recursively by induction on the structure of concept expressions as follows.
   \begin{alignat*}{2}
-    \zeta_{\refine,\corefine}(A) &= &&\refine(A) \quad, A \in N_C \cup \{\top, \bot\} \enspace, \\
-    \zeta_{\refine,\corefine}(\lnot C) &= &&\refine(\lnot C) \cup \{ \lnot C' \mid C' \in \zeta_{\corefine,\refine}(C) \} \enspace, \\
-    \zeta_{\refine,\corefine}(C \sqcap D) &= &&\refine(C \sqcap D) \cup \{ C' \sqcap D \mid C' \in \zeta_{\refine,\corefine}(C) \} \\
+    \zeta_{\refine,\corefine}(A) &= && \refine(A) \quad, A \in N_C \cup \{\top, \bot\} \enspace, \\
+    \zeta_{\refine,\corefine}(\lnot C) &= && \refine(\lnot C) \cup \{ \lnot C' \mid C' \in \zeta_{\corefine,\refine}(C) \} \enspace, \\
+    \zeta_{\refine,\corefine}(C \sqcap D) &= && \refine(C \sqcap D) \cup \{ C' \sqcap D \mid C' \in \zeta_{\refine,\corefine}(C) \} \\
     &&& \cup \{ C \sqcap D' \mid D' \in \zeta_{\refine,\corefine}(D) \} \enspace, \\
-    \zeta_{\refine,\corefine}(C \sqcup D) &= &&\refine(C \sqcup D) \cup \{ C' \sqcup D \mid C' \in \zeta_{\refine,\corefine}(C) \} \\
+    \zeta_{\refine,\corefine}(C \sqcup D) &= && \refine(C \sqcup D) \cup \{ C' \sqcup D \mid C' \in \zeta_{\refine,\corefine}(C) \} \\
     &&& \cup \{ C \sqcup D' \mid D' \in \zeta_{\refine,\corefine}(D) \} \enspace, \\
-    \zeta_{\refine,\corefine}(\forall R.C) &= &&\refine(\forall R.C)
+    \zeta_{\refine,\corefine}(\forall R.C) &= && \refine(\forall R.C)
     \cup \{ \forall R.C' \mid C' \in \zeta_{\refine,\corefine}(C) \} \enspace, \\
-    \zeta_{\refine,\corefine}(\exists R.C) &= &&\refine(\exists R.C)
+    \zeta_{\refine,\corefine}(\exists R.C) &= && \refine(\exists R.C)
     \cup \{ \exists R.C' \mid C' \in \zeta_{\refine,\corefine}(C) \} \enspace.
   \end{alignat*}
   Using the abstract refinement operator $\zeta_{\refine,\corefine}$, we build two concrete refinement operators. The \emph{generalization operator} and \emph{specialization operator} are, respectively, defined as
@@ -75,7 +75,7 @@ We define now the \emph{axiom weakening operator} using these generalization and
 \begin{definition}
   Given an axiom $\alpha$, the set of \emph{weakenings} with respect to the ontology $\Omc$, written $g_\Omc(\alpha)$ is defined such that
   \begin{alignat*}{2}
-    g_\Omc(C \sqsubseteq D) &={} &&\{ C' \sqsubseteq D \mid C' \in \rho_\Omc (C) \} \\
+    g_\Omc(C \sqsubseteq D) &={} && \{ C' \sqsubseteq D \mid C' \in \rho_\Omc (C) \} \\
     &&& \cup \{ C \sqsubseteq D' \mid D' \in \gamma_\Omc(D) \} \enspace, \\
     g_\Omc(C(a)) &={} && \{ C'(a) \mid C' \in \gamma_\Omc(C) \} \enspace.
   \end{alignat*}
@@ -84,29 +84,29 @@ We define now the \emph{axiom weakening operator} using these generalization and
 The axioms in the set $g_\Omc(\alpha)$ are indeed weaker than $\alpha$ for every axiom $\alpha$, in the sense that, given the reference ontology $\Omc$, $\alpha$ entails them and the opposite in not necessarily true. That is, for each axiom $\alpha' \in g_\Omc(\alpha)$, $\alpha \sqsubseteq_\Omc \alpha'$ holds.
 
 \begin{example}
-Let $N_C = \{ A, B, C \}$, $N_I = \{ a \}$ and $\Omc = \{ A \sqsubseteq B, A \sqsubseteq C \}$. $\sub(\Omc) = \{\top, \bot, A, B, C\}$. $\gamma_\Omc(A) = \{ A, B, C \}$ and $\rho_\Omc(B) = \{ B, A \}$. The weakenings of $B \sqsubseteq A$ with respect to $\Omc$ are therefore $g_\Omc(B \sqsubseteq A) = \{ B \sqsubseteq A, B \sqsubseteq B, B \sqsubseteq C, A \sqsubseteq A \}$. Similarly, $g_\Omc(A(a)) = \{ A(a), B(a), C(a) \}$.
+  Let $N_C = \{ A, B, C \}$, $N_I = \{ a \}$ and $\Omc = \{ A \sqsubseteq B, A \sqsubseteq C \}$. $\sub(\Omc) = \{\top, \bot, A, B, C\}$. $\gamma_\Omc(A) = \{ A, B, C \}$ and $\rho_\Omc(B) = \{ B, A \}$. The weakenings of $B \sqsubseteq A$ with respect to $\Omc$ are therefore $g_\Omc(B \sqsubseteq A) = \{ B \sqsubseteq A, B \sqsubseteq B, B \sqsubseteq C, A \sqsubseteq A \}$. Similarly, $g_\Omc(A(a)) = \{ A(a), B(a), C(a) \}$.
 \end{example}
 
 In order to apply the weakening operator to the problem of repairing inconsistent ontologies, we follow the algorithm depicted in \cref{algo:repair-weaken-alc}. First, as mention above, the computation of a non-trivial upward and downward cover set is only possible when using a consistent ontology. We therefore need to first find a consistent subontology $\Omcref$ of $\Omc$ to serve as \emph{reference ontology}. One possibility outlined in \cite{troquard2018repairing} is to select a random maximal consistent subset of $\Omc$. Another option is to choose the intersection of some or all maximal consistent subsets of $\mathcal{O}$ (e.g., \cite{LLRRS10}). This latter option has the advantage of using only information for the weakening that is likely to be correct. On the other hand, it will lead to diminished upward and downward covers and therefore can reduce the number of possible weakening.
 
 Once a reference ontology has been chosen, and as long as $\Omc$ is inconsistent, we continue by selecting a ``bad'' axiom $\alpha$, remove it from $\Omc$, and replace it with a weaker axiom from $g_\Omcref(\alpha)$. Like for the choice of reference ontology, there are also multiple options for the selection of bad axioms. \cite{troquard2018repairing} proposes two different implementations. One based on choosing axioms at random, and another implementation that randomly samples a number of (or all the) minimal inconsistent subsets of axioms $J_1, J_2, \dots, J_k \subseteq \Omc$ and return one axiom in $\Omc$ from the ones occurring the most often. The weaker axiom is chosen form the set of weakening by selecting one uniformly at random. While there may be better heuristics for choosing the weakening, termination of the algorithm is not generally guaranteed. It has, however, been shown in \cite{confalonieri2020towards}, that when selecting among the weakening at random using a uniform distribution, the algorithm is almost surely going to terminate. A similar effect of almost sure termination could also be achieved by maintaining a constant (small but positive) probability of removing the axiom at each step.
 
-\begin{algorithm}[t]
-\begin{algorithmic}
-  \State $\Omcref \gets \textnormal{FindConsistentSubset(\Omc)}$
-  \While{$\Omc$ is inconsistent}
-    \State $\alpha_\textnormal{bad} \gets \textnormal{FindBadAxiom}(\Omc)$
-    \State $\alpha_\textnormal{weaker} \gets \textnormal{SelectWeakerAxiom}(g_\Omcref(\alpha_\textnormal{bad}))$
-    \State $\Omc \gets (\Omc \setminus \{\alpha_\textnormal{bad}\}) \cup \{\alpha_\textnormal{weaker}\}$
-  \EndWhile
-  \State Return $\Omc$
-\end{algorithmic}
-\caption{RepairOntologyWeaken($\Omc$)}
-\label{algo:repair-weaken-alc}
+\begin{algorithm}[ht]
+  \begin{algorithmic}
+    \State $\Omcref \gets \textsc{FindConsistentSubset(\Omc)}$
+    \While{$\Omc$ is inconsistent}
+    \State $\alpha_\textnormal{bad} \gets \textsc{FindBadAxiom}(\Omc)$
+    \State $\alpha_\textnormal{weaker} \gets \textsc{SelectWeakerAxiom}(g_\Omcref(\alpha_\textnormal{bad}))$
+    \State $\Omc \gets (\Omc \setminus \{\alpha_\textsc{bad}\}) \cup \{\alpha_\textnormal{weaker}\}$
+    \EndWhile
+    \State Return $\Omc$
+  \end{algorithmic}
+  \caption{\textsc{RepairOntologyWeaken}($\Omc$)}
+  \label{algo:repair-weaken-alc}
 \end{algorithm}
 
 \begin{example}\label{ex:alc-weakening}
-Given the inconsistent ontology $\Omc = \{ A \sqsubseteq B \sqcap \lnot C, B \sqsubseteq C, A(a) \}$, we want to repair it such that it becomes consistent. We select first a maximal consistent subset as reference ontology $\Omcref = \{ B \sqsubseteq C, A(a) \}$. To find a bad axiom, we sample all minimal inconsistent subsets. Since removing any of the axioms makes it consistent, there is only one minimal inconsistent subset $J_1 = \Omc$. Say we choose the axiom $A \sqsubseteq B \sqcap \lnot C$ and weaken it to $A \sqsubseteq C \sqcap \lnot C$. The ontology is still inconsistent, with the single minimal inconsistent subset $J_1 = \{ A \sqsubseteq C \sqcap \lnot C, A(a) \}$. Let us choose to weaken $A(a)$ to $\top(a)$. The ontology is not consistent.
+  Given the inconsistent ontology $\Omc = \{ A \sqsubseteq B \sqcap \lnot C, B \sqsubseteq C, A(a) \}$, we want to repair it such that it becomes consistent. We select first a maximal consistent subset as reference ontology $\Omcref = \{ B \sqsubseteq C, A(a) \}$. To find a bad axiom, we sample all minimal inconsistent subsets. Since removing any of the axioms makes it consistent, there is only one minimal inconsistent subset $J_1 = \Omc$. Say we choose the axiom $A \sqsubseteq B \sqcap \lnot C$ and weaken it to $A \sqsubseteq C \sqcap \lnot C$. The ontology is still inconsistent, with the single minimal inconsistent subset $J_1 = \{ A \sqsubseteq C \sqcap \lnot C, A(a) \}$. Let us choose to weaken $A(a)$ to $\top(a)$. The ontology is not consistent.
 \end{example}
 
 While the repair using axiom weakening is capable of preserving more information than removal, as has been empirically shown in \cite{troquard2018repairing}, this is influenced significantly by the choice of which axioms to weaken and which weaker axioms to use. In fact, computing a maximal consistent subset may in some cases lead to a more gentle repair than applying the procedure outlined above in \cref{algo:repair-weaken-alc}. This can be seen in \cref{ex:alc-weakening}, where the last replacement alone would have restored consistency, and the information lost in the previous replacement could have been preserved.

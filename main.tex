@@ -52,6 +52,10 @@
 \newcommand{\more}[2]{\ensuremath{\geq #1~#2}\xspace}
 \newcommand{\nominal}[1]{\ensuremath{\{#1\}}\xspace}
 
+\algnewcommand{\IIf}[1]{\State \algorithmicif\ #1\ \algorithmicthen}
+\algnewcommand{\IElse}[1]{\algorithmicelse\ #1}
+\algnewcommand{\EndIIf}{\unskip\ \algorithmicend\ \algorithmicif}
+
 \addbibresource{biblio.bib}
 
 \allowdisplaybreaks
@@ -67,20 +71,20 @@
 
 \makeatletter
 \def\maketitle{
-    \begin{tabular}{ll}
-        \multicolumn{2}{r}{\includegraphics[width=0.5\linewidth]{resources/unibz-logo.png}} \\
-        \vspace*{40mm} \\
-        \multicolumn{2}{l}{\raggedright Bachelor Thesis} \\
-        \vspace*{1mm} \\
-        \multicolumn{2}{p{\linewidth}}{\raggedright \huge \bf \@title} \\
-        \vspace*{30mm} \\
-        Candidate   & \@author \\
-        \vspace*{5mm} \\
-        Supervisors & Oliver Kutz \\
-                    & Nicolas Troquard \\
-        \vspace*{20mm} \\
-        \multicolumn{2}{p{\linewidth}}{\@date}
-    \end{tabular}
+  \begin{tabular}{ll}
+    \multicolumn{2}{r}{\includegraphics[width=0.5\linewidth]{resources/unibz-logo.png}} \\
+    \vspace*{40mm} \\
+    \multicolumn{2}{l}{\raggedright Bachelor Thesis} \\
+    \vspace*{1mm} \\
+    \multicolumn{2}{p{\linewidth}}{\raggedright \huge \bf \@title} \\
+    \vspace*{30mm} \\
+    Candidate   & \@author \\
+    \vspace*{5mm} \\
+    Supervisors & Oliver Kutz \\
+                & Nicolas Troquard \\
+    \vspace*{20mm} \\
+    \multicolumn{2}{p{\linewidth}}{\@date}
+  \end{tabular}
 }
 
 \begin{document}
@@ -88,7 +92,7 @@
 \maketitle
 
 \begin{abstract}
-    \input{sections/a.front/abstract.tex}
+  \input{sections/a.front/abstract.tex}
 \end{abstract}
 
 \tableofcontents
@@ -96,7 +100,7 @@
 \begingroup
 \renewcommand{\abstractname}{Acknowledgements}
 \begin{abstract}
-    \input{sections/a.front/acknowledgments.tex}
+  \input{sections/a.front/acknowledgments.tex}
 \end{abstract}
 \endgroup
 

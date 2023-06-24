@@ -2,111 +2,111 @@
 We will now give the extended definitions for the cover sets, refinement operators, and axiom weakening operator in \SROIQ. We build on the approaches presented in \cite{confalonieri2020towards} and introduce further the weakening of RIAs as well a separation between $\Omcref$ and $\Omcfull$. We begin by defining the upward and downward cover sets. These are now defined for both concepts and roles. The set of subconcepts is taken from $\Omcfull$ as opposed to $\Omcref$, as it is likely to contain more subconcepts, thus improving the granularity of the cover sets. Further, the cover sets for roles are computed over the set of simple roles in $\Omcfull$. Additionally, we define the upward and downward cover also for non-negative integers, as they will be useful for the refinement of cardinality constraints.
 
 \begin{definition} \label{def:covers}
-Let $\Omcfull$ and $\Omcref \subseteq \Omcfull$ be two \SROIQ ontologies that share the same vocabulary $N_C$, $N_R$, and $N_I$. The \emph{upward cover} and \emph{downward cover} for a concept $C$ are given by
-\begin{alignat*}{2}
-    \UpC_{\Omcref,\Omcfull}(C) &= \{ &&D \in \sub(\Omcfull) \mid C \sqsubseteq_\Omcref D \text{ and } \\
-    &&&\nexists D' \in \sub(\Omcfull) \text{ with } C \sqsubset_\Omcref D' \sqsubset_\Omcref D \} \enspace, \\
-    \DownC_{\Omcref,\Omcfull}(C) &= \{ &&D \in \sub(\Omcfull) \mid D \sqsubseteq_\Omcref C \text{ and } \\
-    &&&\nexists D' \in \sub(\Omcfull) \text{ with } D \sqsubset_\Omcref D' \sqsubset_\Omcref C \} \enspace.
-\end{alignat*}
-The upward and downward covers for a role $R$ are given by
-\begin{alignat*}{2}
-    \UpC_{\Omcref,\Omcfull}(R) &= \{ &&S \in \Lmc(N_R) \mid R \sqsubseteq_\Omcref S \text{ and } \\
+  Let $\Omcfull$ and $\Omcref \subseteq \Omcfull$ be two \SROIQ ontologies that share the same vocabulary $N_C$, $N_R$, and $N_I$. The \emph{upward cover} and \emph{downward cover} for a concept $C$ are given by
+  \begin{alignat*}{2}
+    \UpC_{\Omcref,\Omcfull}(C) &= \{ && D \in \sub(\Omcfull) \mid C \sqsubseteq_\Omcref D \text{ and } \\
+    &&& \nexists D' \in \sub(\Omcfull) \text{ with } C \sqsubset_\Omcref D' \sqsubset_\Omcref D \} \enspace, \\
+    \DownC_{\Omcref,\Omcfull}(C) &= \{ && D \in \sub(\Omcfull) \mid D \sqsubseteq_\Omcref C \text{ and } \\
+    &&& \nexists D' \in \sub(\Omcfull) \text{ with } D \sqsubset_\Omcref D' \sqsubset_\Omcref C \} \enspace.
+  \end{alignat*}
+  The upward and downward covers for a role $R$ are given by
+  \begin{alignat*}{2}
+    \UpC_{\Omcref,\Omcfull}(R) &= \{ && S \in \Lmc(N_R) \mid R \sqsubseteq_\Omcref S \text{ and } \\
     &&& \nexists S' \in \Lmc(N_R) \text{ with } R \sqsubset_\Omcref S' \sqsubset_\Omcref S \text{ and } \\
     &&& S, S' \text{ are simple in } \Omcfull \} \enspace, \\
-    \DownC_{\Omcref,\Omcfull}(R) &= \{ &&S \in \Lmc(N_R) \mid S \sqsubseteq_\Omcref R \text{ and } \\
-    &&&\nexists S' \in \Lmc(N_R) \text{ with } S \sqsubset_\Omcref S' \sqsubset_\Omcref R \text{ and } \\
+    \DownC_{\Omcref,\Omcfull}(R) &= \{ && S \in \Lmc(N_R) \mid S \sqsubseteq_\Omcref R \text{ and } \\
+    &&& \nexists S' \in \Lmc(N_R) \text{ with } S \sqsubset_\Omcref S' \sqsubset_\Omcref R \text{ and } \\
     &&& S, S' \text{ are simple in } \Omcfull \} \enspace.
-\end{alignat*}
-The upward and downward covers for a non-negative integer $n$ are given by
-\begin{alignat*}{2}
+  \end{alignat*}
+  The upward and downward covers for a non-negative integer $n$ are given by
+  \begin{alignat*}{2}
     \UpC_{\Omcref,\Omcfull}(n) &= \{ n, n + 1 \} \enspace, \\
     \DownC_{\Omcref,\Omcfull}(R) &=
     \begin{cases*}
       \{ n \} & \text{ if } $n = 0$ \\
       \{ n, n - 1 \} & \text{ if } $n > 0$
     \end{cases*} \enspace.
-\end{alignat*}
+  \end{alignat*}
 \end{definition}
 
 As has already been observer in \cref{ex:up-cover-alc}, on their own, the upward and downward covers of concepts are missing some interesting refinements. Since they operate only over the subconcepts of $\Omcfull$, some rather obvious refinements, like for example removing conjuncts will often be missed.
 \begin{example} \label{exa:up-cover}
-Let $N_C = \{A, B, C\}$, $N_R = \{ r, s \}$, and $\Omc = \{A \sqsubseteq B, r \sqsubseteq s\}$. $\sub(\Omc) = \{\top, \bot, A, B\}$. The upward cover of $C \sqcup A$ is equal to $\UpC_{\Omc,\Omc}(C \sqcup A) = \{ \top \}$. The potentiality refinement to $C \sqcup B$ will be missed by all upward and downward covers, because $C \sqcup B \not\in \sub(\Omc)$. Further, $\UpC_{\Omc,\Omc}(\forall r.A) = \{ \top \}$, even if $\forall r.B$ and $\forall s.A$ are both possible generalizations.
+  Let $N_C = \{A, B, C\}$, $N_R = \{ r, s \}$, and $\Omc = \{A \sqsubseteq B, r \sqsubseteq s\}$. $\sub(\Omc) = \{\top, \bot, A, B\}$. The upward cover of $C \sqcup A$ is equal to $\UpC_{\Omc,\Omc}(C \sqcup A) = \{ \top \}$. The potentiality refinement to $C \sqcup B$ will be missed by all upward and downward covers, because $C \sqcup B \not\in \sub(\Omc)$. Further, $\UpC_{\Omc,\Omc}(\forall r.A) = \{ \top \}$, even if $\forall r.B$ and $\forall s.A$ are both possible generalizations.
 \end{example}
 
 To also address some of these omissions, we define generalization and specialization operators that exploit the recursive structure of the concept being refined to generate more complex refinements. For convenience, we also define these operators for roles, even though their refinement operators are fully equivalent to the upward and downward cover functions.
 
 \begin{definition}
-Let $\refine$ and $\corefine$ be two functions with domain $\Lmc(N_C, N_R, N_I) \cup \Lmc(N_C) \cup \mathbb{N}_0$. They map every concept to a finite subset of $\Lmc(N_C, N_R, N_I)$, every role to a subset of $\Lmc(N_C)$, and every non-negative integer to a finite subset of $\mathbb{N}_0$.
-The \emph{abstract refinement operator} is defined recursively by induction on the structure of concepts as follows.
-\begin{alignat*}{2}
-    \zeta_{\refine,\corefine}(A) &= &&\refine(A) \quad, A \in N_C \cup \{\top, \bot\} \enspace, \\
-    \zeta_{\refine,\corefine}(\lnot C) &= &&\refine(\lnot C) \cup \{ \lnot C' \mid C' \in \zeta_{\corefine,\refine}(C) \} \enspace, \\
-    \zeta_{\refine,\corefine}(C \sqcap D) &= &&\refine(C \sqcap D) \cup \{ C' \sqcap D \mid C' \in \zeta_{\refine,\corefine}(C) \}
+  Let $\refine$ and $\corefine$ be two functions with domain $\Lmc(N_C, N_R, N_I) \cup \Lmc(N_C) \cup \mathbb{N}_0$. They map every concept to a finite subset of $\Lmc(N_C, N_R, N_I)$, every role to a subset of $\Lmc(N_C)$, and every non-negative integer to a finite subset of $\mathbb{N}_0$.
+  The \emph{abstract refinement operator} is defined recursively by induction on the structure of concepts as follows.
+  \begin{alignat*}{2}
+    \zeta_{\refine,\corefine}(A) &= && \refine(A) \quad, A \in N_C \cup \{\top, \bot\} \enspace, \\
+    \zeta_{\refine,\corefine}(\lnot C) &= && \refine(\lnot C) \cup \{ \lnot C' \mid C' \in \zeta_{\corefine,\refine}(C) \} \enspace, \\
+    \zeta_{\refine,\corefine}(C \sqcap D) &= && \refine(C \sqcap D) \cup \{ C' \sqcap D \mid C' \in \zeta_{\refine,\corefine}(C) \}
     \cup \{ C \sqcap D' \mid D' \in \zeta_{\refine,\corefine}(D) \} \enspace, \\
-    \zeta_{\refine,\corefine}(C \sqcup D) &= &&\refine(C \sqcup D) \cup \{ C' \sqcup D \mid C' \in \zeta_{\refine,\corefine}(C) \}
+    \zeta_{\refine,\corefine}(C \sqcup D) &= && \refine(C \sqcup D) \cup \{ C' \sqcup D \mid C' \in \zeta_{\refine,\corefine}(C) \}
     \cup \{ C \sqcup D' \mid D' \in \zeta_{\refine,\corefine}(D) \} \enspace, \\
-    \zeta_{\refine,\corefine}(\forall R.C) &= &&\refine(\forall R.C) \cup \{ \forall R'.C \mid R' \in \zeta_{\corefine,\refine}(R) \} 
+    \zeta_{\refine,\corefine}(\forall R.C) &= && \refine(\forall R.C) \cup \{ \forall R'.C \mid R' \in \zeta_{\corefine,\refine}(R) \}
     \cup \{ \forall R.C' \mid C' \in \zeta_{\refine,\corefine}(C) \} \enspace, \\
-    \zeta_{\refine,\corefine}(\exists R.C) &= &&\refine(\exists R.C) \cup \{ \exists R'.C \mid R' \in \zeta_{\refine,\corefine}(R) \}
+    \zeta_{\refine,\corefine}(\exists R.C) &= && \refine(\exists R.C) \cup \{ \exists R'.C \mid R' \in \zeta_{\refine,\corefine}(R) \}
     \cup \{ \exists R.C' \mid C' \in \zeta_{\refine,\corefine}(C) \} \enspace, \\
     &&& \text{\SROIQ concepts:} \\
-    \zeta_{\refine,\corefine}(\nominal i) &= &&\refine(\nominal i) \enspace, \\
-    \zeta_{\refine,\corefine}(\exists R.\self) &= &&\refine(\exists R.\self) \cup \{ \exists R'.\self \mid R' \in \zeta_{\refine,\corefine}(R) \} \enspace, \\
-    \zeta_{\refine,\corefine}(\more n R.C) &= &&\refine(\more n R.C) \cup \{ \more n R'.C \mid R' \in \zeta_{\refine,\corefine}(R) \} \\
+    \zeta_{\refine,\corefine}(\nominal i) &= && \refine(\nominal i) \enspace, \\
+    \zeta_{\refine,\corefine}(\exists R.\self) &= && \refine(\exists R.\self) \cup \{ \exists R'.\self \mid R' \in \zeta_{\refine,\corefine}(R) \} \enspace, \\
+    \zeta_{\refine,\corefine}(\more n R.C) &= && \refine(\more n R.C) \cup \{ \more n R'.C \mid R' \in \zeta_{\refine,\corefine}(R) \} \\
     &&& \cup \{ \more n R.C' \mid C' \in \zeta_{\refine,\corefine}(C) \}
     \cup \{ \more n' R.C \mid n' \in \corefine(n) \} \enspace, \\
-    \zeta_{\refine,\corefine}(\less n R.C) &= &&\refine(\less n R.C) \cup \{ \less n R'.C \mid R' \in \zeta_{\corefine,\refine}(R) \} \\
+    \zeta_{\refine,\corefine}(\less n R.C) &= && \refine(\less n R.C) \cup \{ \less n R'.C \mid R' \in \zeta_{\corefine,\refine}(R) \} \\
     &&& \cup \{ \less n R.C' \mid C' \in \zeta_{\corefine,\refine}(C) \}
     \cup \{ \less n' R.C \mid n' \in \refine(n) \} \enspace, \\
     &&& \text{\SROIQ roles:} \\
-    \zeta_{\refine,\corefine}(R) &= &&\refine(R) \enspace.
-\end{alignat*}
-From the abstract refinement operator $\zeta_{\refine,\corefine}$, two concrete refinement operators, the \emph{generalization operator} and \emph{specialization operator} are, respectively, defined as
-\begin{align*}
+    \zeta_{\refine,\corefine}(R) &= && \refine(R) \enspace.
+  \end{alignat*}
+  From the abstract refinement operator $\zeta_{\refine,\corefine}$, two concrete refinement operators, the \emph{generalization operator} and \emph{specialization operator} are, respectively, defined as
+  \begin{align*}
     \gamma_{\Omcref,\Omcfull} &= \zeta_{\UpC_{\Omcref,\Omcfull},\DownC_{\Omcref,\Omcfull}} \enspace \text{and} \\
     \rho_{\Omcref,\Omcfull} &= \zeta_{\DownC_{\Omcref,\Omcfull},\UpC_{\Omcref,\Omcfull}} \enspace.
-\end{align*}
+  \end{align*}
 \end{definition}
 
 Revisiting the case in \Cref{exa:up-cover} we observe that $\gamma_{\Omc,\Omc}(C \sqcup A) = \{ \top, \top \sqcup A, C \sqcup A, C \sqcup B \}$ does contain $C \sqcup B$ as a possible refinement. Further, $\gamma_{\Omc,\Omc}(\forall r.A) = \{ \top, \forall r.A, \forall s.A, \forall r.B \}$ contains both $\forall r.B$ and $\forall s.A$. We will now show some basic properties of $\gamma_{\Omcref,\Omcfull}$ and $\rho_{\Omcref,\Omcfull}$ that will prove useful in the remainder of this thesis. For one, the sets of generalizations or specializations produced by the concrete refinement operators are finite. This is important for the implementation of the operator to be able to compute all refinements. Further, we show that the concrete refinement operators are in fact generalization and specialization operators.
 
 \begin{lemma}\label{lem:basic}
-For every pair of \SROIQ ontologies $\Omcref, \Omcfull$ and every pair of concepts or roles $X, Y \in \Lmc(N_C, N_R, N_I) \cup \Lmc(N_R)$:
-\newcommand\litem[1]{\item{\bfseries #1:\enspace }}
-\begin{enumerate}
+  For every pair of \SROIQ ontologies $\Omcref, \Omcfull$ and every pair of concepts or roles $X, Y \in \Lmc(N_C, N_R, N_I) \cup \Lmc(N_R)$:
+  \newcommand\litem[1]{\item{\bfseries #1:\enspace }}
+  \begin{enumerate}
     \litem{generalization finiteness}\label{lem:finiteness} $\gamma_{\Omcref,\Omcfull}(X)$ is finite \\
     \textbf{specialization finiteness:\enspace} $\rho_{\Omcref,\Omcfull}(X)$ is finite
     \litem{generalization}\label{lem:generalisation} if $X \in \gamma_{\Omcref,\Omcfull}(Y)$ then $Y \sqsubseteq_{\Omcref} X$ \\
     \textbf{specialization:\enspace} if $X \in \rho_{\Omcref,\Omcfull}(Y)$ then $X \sqsubseteq_{\Omcref} Y$
-\end{enumerate}
+  \end{enumerate}
 \end{lemma}
 
 \begin{proof}
-\item \ref{lem:finiteness}.\enspace \textbf{finiteness:\enspace}
-The upward and downward cover sets for concepts, roles, and integers are always finite. The number of roles is finite, because the set of role names is finite. Since refinement of roles is equivalent to applying the upward or downward covers, the set of refinements must equally be finite. Similarly, the covers over concepts are limited to subconcepts, and since ontologies are finite sets of axioms, and all axioms have a finite size, there must be a finite number of subconcepts. We can show by structural induction on concept expressions, that the result of the refinement operators must be a finite set for all concepts. This follows directly from the fact that the result is always the union of a constant number of finite sets. 
+  \item \ref{lem:finiteness}.\enspace \textbf{finiteness:\enspace}
+  The upward and downward cover sets for concepts, roles, and integers are always finite. The number of roles is finite, because the set of role names is finite. Since refinement of roles is equivalent to applying the upward or downward covers, the set of refinements must equally be finite. Similarly, the covers over concepts are limited to subconcepts, and since ontologies are finite sets of axioms, and all axioms have a finite size, there must be a finite number of subconcepts. We can show by structural induction on concept expressions, that the result of the refinement operators must be a finite set for all concepts. This follows directly from the fact that the result is always the union of a constant number of finite sets.
 
-\item \ref{lem:generalisation}.\enspace \textbf{generalization and specialization:\enspace}
-We first observe that by definition, if $X \in \UpC_{\Omcref,\Omcfull}(Y)$ then $Y \sqsubseteq_\Omcref X$ must hold. Likewise, it follows from the definition that if $X \in \DownC_{\Omcref,\Omcfull}(X)$ then $X \sqsubseteq_\Omcref Y$. For an integer $n$, the upward cover contains only values greater or equal to $n$, while the downward cover contains only values less or equal $n$. We proceed with a proof by structural induction. We will show the proof for the generalization operator, the proof for the specialization operator can be approached analogously.
-\begin{itemize}
-  \item For $Y \in N_C \cup \Lmc(N_R) \cup \{ \nominal i \mid i \in N_I \} \cup \{ \top, \bot \}$ the generalization operator is equivalent to a simple application of the upwards cover and $Y \sqsubseteq_\Omcref X$ holds.
-  \item For $Y = \lnot C$, given any model $I$ of $\Omcref$, we know for all elements $a \in (\lnot C)^I$ that $a \not\in C^I$. By our inductive hypothesis we know that $C' \sqsubseteq_\Omcref C$ holds for $C' \in \rho_{\Omcref,\Omcfull}(C)$. It follows that $a \not\in C'^I$ and therefore $a \in (\lnot C')^I$. We conclude that $(\lnot C)^I \subseteq (\lnot C')^I$ in every model $I$ of $\Omcref$ and consequently $\lnot C \sqsubseteq_\Omcref \lnot C'$.
-  \item For $Y = C \sqcap D$, given any model $I$ of $\Omcref$, we know for all elements $a \in (C \sqcap D)^I$ that $a \in C^I$ and $a \in D^I$. By our inductive hypothesis we know that $C \sqsubseteq_\Omcref C'$ holds for $C' \in \gamma_{\Omcref,\Omcfull}(C)$ and $D \sqsubseteq_\Omcref D'$ for $D' \in \gamma_{\Omcref,\Omcfull}(D)$. It follows that $a \in C'^I$ and $a \in D'^I$, therefore $a \in (C' \sqcap D)^I$ and $a \in (C \sqcap D')^I$. We conclude that $(C \sqcap D)^I \subseteq (C' \sqcap D)^I$ and $(C \sqcap D)^I \subseteq (C \sqcap D')^I$ in every model $I$ of $\Omcref$ and consequently $C \sqcap D \sqsubseteq_\Omcref C' \sqcap D$ and $C \sqcap D \sqsubseteq_\Omcref C \sqcap D'$.
-  \item For $Y = C \sqcup D$, given any model $I$ of $\Omcref$, we know for all elements $a \in (C \sqcup D)^I$ that $a \in C^I \cup D^I$. By our inductive hypothesis we know that $C \sqsubseteq_\Omcref C'$ holds for $C' \in \gamma_{\Omcref,\Omcfull}(C)$ and $D \sqsubseteq_\Omcref D'$ for $D' \in \gamma_{\Omcref,\Omcfull}(D)$. It follows that $a \in C'^I \cup D^I$ and $a \in C^I \cup D'^I$, therefore $a \in (C' \sqcup D)^I$ and $a \in (C \sqcup D')^I$. We conclude that $(C \sqcup D)^I \subseteq (C' \sqcup D)^I$ and $(C \sqcup D)^I \subseteq (C \sqcup D')^I$ in every model $I$ of $\Omcref$ and consequently, $C \sqcup D \sqsubseteq_\Omcref C' \sqcup D$ and $C \sqcup D \sqsubseteq_\Omcref C \sqcup D'$.
-  \item For $Y = \forall R.C$, given any model $I$ of $\Omcref$, we know for all elements $a \in (\forall R.C)^I$ that for all $b$ such that $\langle a, b \rangle \in R^I$, $b \in C^I$. By our inductive hypothesis we know that $C \sqsubseteq_\Omcref C'$ holds for $C' \in \gamma_{\Omcref,\Omcfull}(C)$ and $R' \sqsubseteq_\Omcref R$ for $R' \in \rho_{\Omcref,\Omcfull}(R)$. It follows that $R'^I \subseteq R^I$, so there are no new candidates for $b$. We further know that for all elements $b \in C^I$, $b \in C'^I$. We conclude that $a \in (\forall R'.C)^I$ and $a \in (\forall R.C')^I$. Therefore, $\forall R.C \sqsubseteq_\Omcref \forall R'.C$ and $\forall R.C \sqsubseteq_\Omcref \forall R.C'$.
-  \item For $Y = \exists R.C$, given any model $I$ of $\Omcref$, we know for all elements $a \in (\exists R.C)^I$ there exists a $b$ such that $\langle a, b \rangle \in R^I$ and $b \in C^I$. By our inductive hypothesis we know that $C \sqsubseteq_\Omcref C'$ holds for $C' \in \gamma_{\Omcref,\Omcfull}(C)$ and $R \sqsubseteq_\Omcref R'$ for $R' \in \gamma_{\Omcref,\Omcfull}(R)$. It follows that $\langle a, b \rangle \in R'^I$ and $b \in C'^I$. We conclude that $a \in (\exists R'.C)^I$ and $a \in (\exists R.C')^I$. Hence, $\exists R.C \sqsubseteq_\Omcref \exists R'.C$ and $\exists R.C \sqsubseteq_\Omcref \exists R.C'$.
-  \item For $Y = \exists R.\self$, given any model $I$ of $\Omcref$, we know for all elements $a \in (\exists R.\self)^I$, $\langle a, a \rangle \in R^I$. By our inductive hypothesis we know that $R \sqsubseteq_\Omcref R'$ for $R' \in \gamma_{\Omcref,\Omcfull}(R)$. It follows that $\langle a, a \rangle \in R'^I$. We conclude that $a \in (\exists R'.\self)^I$ and thus, $\exists R.\self \sqsubseteq_\Omcref \exists R'.C\self$.
-  \item For $Y ={} \more n R.C$, given any model $I$ of $\Omcref$, we know for all elements $a \in (\more n R.C)^I$ there exist at least $n$ elements $b_1, \dots, b_n$ such that $\langle a, b_i \rangle \in R^I$ and $b_i \in C^I$ for $i = 1, \dots, n$. Since there are at least $n$ such elements, there are also at least $k \leq n$, meaning $\more n R.C \sqsubseteq_\Omcref \more k R.C$. By our inductive hypothesis we also know that $C \sqsubseteq_\Omcref C'$ holds for $C' \in \gamma_{\Omcref,\Omcfull}(C)$ and $R \sqsubseteq_\Omcref R'$ for $R' \in \gamma_{\Omcref,\Omcfull}(R)$. It follows that $\langle a, b_i \rangle \in R'^I$ and $b_i \in C'^I$ for $i = 1, \dots, n$. We conclude that $a \in (\more n R'.C)^I$ and $a \in (\more n R.C')^I$. Hence, $\more n R.C \sqsubseteq_\Omcref \more n R'.C$ and $\more n R.C \sqsubseteq_\Omcref \more n R.C'$.
-  \item For $Y ={} \less n R.C$, given any model $I$ of $\Omcref$, we know for all elements $a \in (\less n R.C)^I$ there exist at most $n$ elements $b_1, \dots, b_n$ such that $\langle a, b_i \rangle \in R^I$ and $b_i \in C^I$ for $i = 1, \dots, n$. Since there are at most $n$ such elements, there are also at most $k \geq n$, meaning $\less n R.C \sqsubseteq_\Omcref \less k R.C$. By our inductive hypothesis we also know that $C' \sqsubseteq_\Omcref C$ holds for $C' \in \rho_{\Omcref,\Omcfull}(C)$ and $R' \sqsubseteq_\Omcref R$ for $R' \in \rho_{\Omcref,\Omcfull}(R)$. It follows that there exist no other $b \not\in \{ b_1, \dots, b_n \}$ such that $\langle a, b \rangle \in R'^I$ and $b \in C$, or $\langle a, b \rangle \in R^I$ and $b \in C'^I$. We conclude that there are still at most $n$ such elements, hence, $a \in (\less n R'.C)^I$ and $a \in (\less n R.C')^I$. Hence, $\less n R.C \sqsubseteq_\Omcref \less n R'.C$ and $\less n R.C \sqsubseteq_\Omcref \less n R.C'$.
-\end{itemize}
+  \item \ref{lem:generalisation}.\enspace \textbf{generalization and specialization:\enspace}
+  We first observe that by definition, if $X \in \UpC_{\Omcref,\Omcfull}(Y)$ then $Y \sqsubseteq_\Omcref X$ must hold. Likewise, it follows from the definition that if $X \in \DownC_{\Omcref,\Omcfull}(X)$ then $X \sqsubseteq_\Omcref Y$. For an integer $n$, the upward cover contains only values greater or equal to $n$, while the downward cover contains only values less or equal $n$. We proceed with a proof by structural induction. We will show the proof for the generalization operator, the proof for the specialization operator can be approached analogously.
+  \begin{itemize}
+    \item For $Y \in N_C \cup \Lmc(N_R) \cup \{ \nominal i \mid i \in N_I \} \cup \{ \top, \bot \}$ the generalization operator is equivalent to a simple application of the upwards cover and $Y \sqsubseteq_\Omcref X$ holds.
+    \item For $Y = \lnot C$, given any model $I$ of $\Omcref$, we know for all elements $a \in (\lnot C)^I$ that $a \not\in C^I$. By our inductive hypothesis we know that $C' \sqsubseteq_\Omcref C$ holds for $C' \in \rho_{\Omcref,\Omcfull}(C)$. It follows that $a \not\in C'^I$ and therefore $a \in (\lnot C')^I$. We conclude that $(\lnot C)^I \subseteq (\lnot C')^I$ in every model $I$ of $\Omcref$ and consequently $\lnot C \sqsubseteq_\Omcref \lnot C'$.
+    \item For $Y = C \sqcap D$, given any model $I$ of $\Omcref$, we know for all elements $a \in (C \sqcap D)^I$ that $a \in C^I$ and $a \in D^I$. By our inductive hypothesis we know that $C \sqsubseteq_\Omcref C'$ holds for $C' \in \gamma_{\Omcref,\Omcfull}(C)$ and $D \sqsubseteq_\Omcref D'$ for $D' \in \gamma_{\Omcref,\Omcfull}(D)$. It follows that $a \in C'^I$ and $a \in D'^I$, therefore $a \in (C' \sqcap D)^I$ and $a \in (C \sqcap D')^I$. We conclude that $(C \sqcap D)^I \subseteq (C' \sqcap D)^I$ and $(C \sqcap D)^I \subseteq (C \sqcap D')^I$ in every model $I$ of $\Omcref$ and consequently $C \sqcap D \sqsubseteq_\Omcref C' \sqcap D$ and $C \sqcap D \sqsubseteq_\Omcref C \sqcap D'$.
+    \item For $Y = C \sqcup D$, given any model $I$ of $\Omcref$, we know for all elements $a \in (C \sqcup D)^I$ that $a \in C^I \cup D^I$. By our inductive hypothesis we know that $C \sqsubseteq_\Omcref C'$ holds for $C' \in \gamma_{\Omcref,\Omcfull}(C)$ and $D \sqsubseteq_\Omcref D'$ for $D' \in \gamma_{\Omcref,\Omcfull}(D)$. It follows that $a \in C'^I \cup D^I$ and $a \in C^I \cup D'^I$, therefore $a \in (C' \sqcup D)^I$ and $a \in (C \sqcup D')^I$. We conclude that $(C \sqcup D)^I \subseteq (C' \sqcup D)^I$ and $(C \sqcup D)^I \subseteq (C \sqcup D')^I$ in every model $I$ of $\Omcref$ and consequently, $C \sqcup D \sqsubseteq_\Omcref C' \sqcup D$ and $C \sqcup D \sqsubseteq_\Omcref C \sqcup D'$.
+    \item For $Y = \forall R.C$, given any model $I$ of $\Omcref$, we know for all elements $a \in (\forall R.C)^I$ that for all $b$ such that $\langle a, b \rangle \in R^I$, $b \in C^I$. By our inductive hypothesis we know that $C \sqsubseteq_\Omcref C'$ holds for $C' \in \gamma_{\Omcref,\Omcfull}(C)$ and $R' \sqsubseteq_\Omcref R$ for $R' \in \rho_{\Omcref,\Omcfull}(R)$. It follows that $R'^I \subseteq R^I$, so there are no new candidates for $b$. We further know that for all elements $b \in C^I$, $b \in C'^I$. We conclude that $a \in (\forall R'.C)^I$ and $a \in (\forall R.C')^I$. Therefore, $\forall R.C \sqsubseteq_\Omcref \forall R'.C$ and $\forall R.C \sqsubseteq_\Omcref \forall R.C'$.
+    \item For $Y = \exists R.C$, given any model $I$ of $\Omcref$, we know for all elements $a \in (\exists R.C)^I$ there exists a $b$ such that $\langle a, b \rangle \in R^I$ and $b \in C^I$. By our inductive hypothesis we know that $C \sqsubseteq_\Omcref C'$ holds for $C' \in \gamma_{\Omcref,\Omcfull}(C)$ and $R \sqsubseteq_\Omcref R'$ for $R' \in \gamma_{\Omcref,\Omcfull}(R)$. It follows that $\langle a, b \rangle \in R'^I$ and $b \in C'^I$. We conclude that $a \in (\exists R'.C)^I$ and $a \in (\exists R.C')^I$. Hence, $\exists R.C \sqsubseteq_\Omcref \exists R'.C$ and $\exists R.C \sqsubseteq_\Omcref \exists R.C'$.
+    \item For $Y = \exists R.\self$, given any model $I$ of $\Omcref$, we know for all elements $a \in (\exists R.\self)^I$, $\langle a, a \rangle \in R^I$. By our inductive hypothesis we know that $R \sqsubseteq_\Omcref R'$ for $R' \in \gamma_{\Omcref,\Omcfull}(R)$. It follows that $\langle a, a \rangle \in R'^I$. We conclude that $a \in (\exists R'.\self)^I$ and thus, $\exists R.\self \sqsubseteq_\Omcref \exists R'.C\self$.
+    \item For $Y ={} \more n R.C$, given any model $I$ of $\Omcref$, we know for all elements $a \in (\more n R.C)^I$ there exist at least $n$ elements $b_1, \dots, b_n$ such that $\langle a, b_i \rangle \in R^I$ and $b_i \in C^I$ for $i = 1, \dots, n$. Since there are at least $n$ such elements, there are also at least $k \leq n$, meaning $\more n R.C \sqsubseteq_\Omcref \more k R.C$. By our inductive hypothesis we also know that $C \sqsubseteq_\Omcref C'$ holds for $C' \in \gamma_{\Omcref,\Omcfull}(C)$ and $R \sqsubseteq_\Omcref R'$ for $R' \in \gamma_{\Omcref,\Omcfull}(R)$. It follows that $\langle a, b_i \rangle \in R'^I$ and $b_i \in C'^I$ for $i = 1, \dots, n$. We conclude that $a \in (\more n R'.C)^I$ and $a \in (\more n R.C')^I$. Hence, $\more n R.C \sqsubseteq_\Omcref \more n R'.C$ and $\more n R.C \sqsubseteq_\Omcref \more n R.C'$.
+    \item For $Y ={} \less n R.C$, given any model $I$ of $\Omcref$, we know for all elements $a \in (\less n R.C)^I$ there exist at most $n$ elements $b_1, \dots, b_n$ such that $\langle a, b_i \rangle \in R^I$ and $b_i \in C^I$ for $i = 1, \dots, n$. Since there are at most $n$ such elements, there are also at most $k \geq n$, meaning $\less n R.C \sqsubseteq_\Omcref \less k R.C$. By our inductive hypothesis we also know that $C' \sqsubseteq_\Omcref C$ holds for $C' \in \rho_{\Omcref,\Omcfull}(C)$ and $R' \sqsubseteq_\Omcref R$ for $R' \in \rho_{\Omcref,\Omcfull}(R)$. It follows that there exist no other $b \not\in \{ b_1, \dots, b_n \}$ such that $\langle a, b \rangle \in R'^I$ and $b \in C$, or $\langle a, b \rangle \in R^I$ and $b \in C'^I$. We conclude that there are still at most $n$ such elements, hence, $a \in (\less n R'.C)^I$ and $a \in (\less n R.C')^I$. Hence, $\less n R.C \sqsubseteq_\Omcref \less n R'.C$ and $\less n R.C \sqsubseteq_\Omcref \less n R.C'$.
+  \end{itemize}
 \end{proof}
 
 Using the specialization and generalization operators, we can now define the \emph{axiom weakening operator}.
 
-\begin{definition}
-Given an axiom $\alpha$, the set of \emph{weakenings} with respect to the reference ontology $\Omcref$ and full ontology $\Omcfull$, written $g_{\Omcref,\Omcfull}(\alpha)$ is defined such that
-\begin{alignat*}{2}
-    g_{\Omcref,\Omcfull}(C \sqsubseteq D) &={} &&\{ C' \sqsubseteq D \mid C' \in \rho_{\Omcref,\Omcfull} (C) \} \\
+\begin{definition} \label{def:weaken}
+  Given an axiom $\alpha$, the set of \emph{weakenings} with respect to the reference ontology $\Omcref$ and full ontology $\Omcfull$, written $g_{\Omcref,\Omcfull}(\alpha)$ is defined such that
+  \begin{alignat*}{2}
+    g_{\Omcref,\Omcfull}(C \sqsubseteq D) &={} && \{ C' \sqsubseteq D \mid C' \in \rho_{\Omcref,\Omcfull} (C) \} \\
     &&& \cup \{ C \sqsubseteq D' \mid D' \in \gamma_{\Omcref,\Omcfull}(D) \} \enspace, \\
     g_{\Omcref,\Omcfull}(C(a)) &={} && \{ C'(a) \mid C' \in \gamma_{\Omcref,\Omcfull}(C) \} \enspace, \\
     &&& \text{\SROIQ axioms:} \\
@@ -114,7 +114,7 @@ Given an axiom $\alpha$, the set of \emph{weakenings} with respect to the refere
     g_{\Omcref,\Omcfull}(\lnot R(a, b)) &={} && \{ \lnot R'(a, b) \mid R' \in \rho_{\Omcref,\Omcfull}(R) \} \cup \{ \lnot R(a, b), \bot \sqsubseteq \top \} \enspace, \\
     g_{\Omcref,\Omcfull}(a = b) &={} && \{ a = b, \bot \sqsubseteq \top \} \enspace, \\
     \quad g_{\Omcref,\Omcfull}(a \not= b) &={} && \{ a \not= b, \bot \sqsubseteq \top \} \enspace, \\
-    g_{\Omcref,\Omcfull}(\disjoint(R, S)) &={} &&\{ \disjoint(R', S) \mid R' \in \rho_{\Omcref,\Omcfull} (R) \} \\
+    g_{\Omcref,\Omcfull}(\disjoint(R, S)) &={} && \{ \disjoint(R', S) \mid R' \in \rho_{\Omcref,\Omcfull} (R) \} \\
     &&& \cup \{ \disjoint(R, S') \mid S' \in \rho_{\Omcref,\Omcfull}(S) \} \\
     &&& \cup \{ \disjoint (R, S), \bot \sqsubseteq \top \} \enspace, \\
     g_{\Omcref,\Omcfull}(S_1 \circ \cdots \circ S_n \sqsubseteq R) &={} && \{ S_1 \circ \cdots \circ S_i' \circ \cdots \circ S_n \sqsubseteq R \\
@@ -122,58 +122,58 @@ Given an axiom $\alpha$, the set of \emph{weakenings} with respect to the refere
     &&& \cup \{ S_1 \sqsubseteq R' \mid R' \in \gamma_{\Omcref,\Omcfull} \text{ and } n = 1 \text{ and } \\
     &&& \quad \enspace \, S_1 \text{ is simple in } \Omcfull \} \\
     &&& \cup \{ S_1 \circ \cdots \circ S_n \sqsubseteq R, \bot \sqsubseteq \top \} \enspace.
-\end{alignat*}
+  \end{alignat*}
 \end{definition}
 
 As was the case for the axiom weakening operator in \ALC, the axioms $\alpha'$ returned by $g_{\Omcref,\Omcfull}(\alpha)$ for a given axiom $\alpha$ are indeed weaker than $\alpha$ with respect to the reference ontology $\Omcref$.
 
 \begin{lemma} \label{lem:weaker}
-For every \SROIQ axiom $\alpha$, if $\alpha' \in g_{\Omcref,\Omcfull}(\alpha)$, then $\alpha \models_\Omcref \alpha'$
+  For every \SROIQ axiom $\alpha$, if $\alpha' \in g_{\Omcref,\Omcfull}(\alpha)$, then $\alpha \models_\Omcref \alpha'$
 \end{lemma}
 
 \begin{proof} We will handle each type of axiom separately.
-\begin{itemize}
+  \begin{itemize}
     \item If $\alpha = C \sqsubseteq D$, suppose $\alpha' = C' \sqsubseteq D'$. From \cref{lem:basic}.\ref{lem:generalisation} we know that $C' \sqsubseteq_\Omcref C$ and $D \sqsubseteq_\Omcref D'$. By transitivity of subsumption, we conclude that $C \sqsubseteq D \models_\Omcref C' \sqsubseteq D'$.
     \item If $\alpha = C(a)$, suppose $\alpha' = C'(a)$. From \cref{lem:basic}.\ref{lem:generalisation} we know that $C \sqsubseteq_\Omcref C'$. Given any model $I$ of $\Omcref \cup \{ \alpha \}$, $a^I \in C^I$. Since $C^I \subseteq C'^I$ in every model of $\Omcref$, $a^I \in C'^I$. We conclude that $C(a) \models_\Omcref C'(a)$.
     \item If $\alpha = R(a, b)$, suppose $\alpha' = R'(a, b)$. From \cref{lem:basic}.\ref{lem:generalisation} we know that $R \sqsubseteq_\Omcref R'$. Given any model $I$ of $\Omcref \cup \{ \alpha \}$, $\langle a^I, b^I \rangle \in R^I$. Since $R^I \subseteq R'^I$ in every model of $\Omcref$, $\langle a^I, b^I \rangle \in R'^I$. We conclude that $R(a, b) \models_\Omcref R'(a, b)$.
     \item If $\alpha = \lnot R(a, b)$, suppose $\alpha' = R'(a, b)$. From \cref{lem:basic}.\ref{lem:generalisation} we know that $R' \sqsubseteq_\Omcref R$. Given any model $I$ of $\Omcref \cup \{ \alpha \}$, $\langle a^I, b^I \rangle \not\in R^I$. Since $R'^I \subseteq R^I$ in every model of $\Omcref$, $\langle a^I, b^I \rangle \not\in R'^I$. We conclude that $\lnot R(a, b) \models_\Omcref \lnot R'(a, b)$.
     \item If $\alpha = \disjoint(R, S)$, suppose $\alpha' = \disjoint(R', S')$. From \cref{lem:basic}.\ref{lem:generalisation} we know that $R' \sqsubseteq_\Omcref R$ and $S' \sqsubseteq_\Omcref S$. Given any model $I$ of $\Omcref \cup \{ \alpha \}$, $R^I \cap S^I = \emptyset$. Since $R'^I \subseteq R^I$ and $S'^I \subseteq S^I$ in every model of $\Omcref$, $R'^I \cap S'^I = \emptyset$. We conclude that $\disjoint(R, S) \models_\Omcref \disjoint(R', S')$.
     \item If $\alpha = S_1 \circ \cdots \circ S_n \sqsubseteq R$, suppose $\alpha' = S_1' \circ \cdots \circ S_n' \sqsubseteq R'$. From \cref{lem:basic}.\ref{lem:generalisation} we know that $R \sqsubseteq_\Omcref R'$ and $S_i' \sqsubseteq_\Omcref S_i$ for $i = 1, \dots, n$. Given any model $I$ of $\Omcref \cup \{ \alpha \}$, $S_1^I \circ \cdots \circ S_n^I \subseteq R^I$. Since $R^I \subseteq R'^I$ and $S_i'^I \subseteq S_i^I$ for $i = 1, \dots, n$ in every model of $\Omcref$, $S_1'^I \circ \cdots \circ S_n'^I \subseteq R'^I$. We conclude that $S_1 \circ \cdots \circ S_n \sqsubseteq R \models_\Omcref S_1' \circ \cdots \circ S_n' \sqsubseteq R'$.
-\end{itemize}
+  \end{itemize}
 \end{proof}
 
 Clearly, replacing an axiom in the full ontology with a weakening cannot reduce the number of models of the ontology. However, for weakening to be useful in practice, we must additionally show that adding the weakened axioms to the ontology will not violate any of the global constraints that ensure the decidability of \SROIQ. To do this, we show first that all roles that are simple in $\Omcfull$ are also simple in the ontology obtained by adding the weakened axioms.
 
 \begin{lemma} \label{lem:simple-roles}
-Let $\Omc$ be an ontology such that all simple roles of $\Omcfull$ are also simple in $\Omc$. For every axiom $\alpha \in \Omc$ and role $R$, if $\alpha' \in g_{\Omcref,\Omcfull}(\alpha)$ and $R$ simple in $\Omc$, then $R$ is simple in $\Omc \cup \{ \alpha' \}$.
+  Let $\Omc$ be an ontology such that all simple roles of $\Omcfull$ are also simple in $\Omc$. For every axiom $\alpha \in \Omc$ and role $R$, if $\alpha' \in g_{\Omcref,\Omcfull}(\alpha)$ and $R$ simple in $\Omc$, then $R$ is simple in $\Omc \cup \{ \alpha' \}$.
 \end{lemma}
 
 \begin{proof}(\emph{Sketch})
-For the addition to change the simplicity of any role, it must be that $\alpha'$ is a RIA that has some role $R$ as the super role and is either complex, or for which the sub role is non-simple. Assume, by contradiction, that $R$ is a simple role in $\Omc$ and non-simple in $\Omc \cup \{ \alpha' \}$. Since $R$ is simple in $\Omc$ it is not the universal, does not appear as the super role in any complex RIA of $\Omc$, and neither on the right-hand side of a simple RIA in $\Omc$ where the sub role is non-simple. If $\alpha'$ is a complex RIA then, by definition of the weakening operator, $\alpha$ must be a complex RIA and $R$ must also be the super role in $\alpha$, making it non-simple in $\Omc$, which contradicts our assumption. Similarly, if $\alpha'$ is a simple RIA with a non-simple role as the sub role, the sub role of $\alpha$ must be equal to that of $\alpha'$ because the refinement operators return only roles simple in $\Omcfull$, and those are also simple in $\Omc$. Further, since the super role of a RIA is only refined if the sub role is simple, $\alpha' = \alpha$, which means that $R$ is non-simple in $\Omc$, which contradicts the assumptions. It follows that such a role $R$ does not exist.
+  For the addition to change the simplicity of any role, it must be that $\alpha'$ is a RIA that has some role $R$ as the super role and is either complex, or for which the sub role is non-simple. Assume, by contradiction, that $R$ is a simple role in $\Omc$ and non-simple in $\Omc \cup \{ \alpha' \}$. Since $R$ is simple in $\Omc$ it is not the universal, does not appear as the super role in any complex RIA of $\Omc$, and neither on the right-hand side of a simple RIA in $\Omc$ where the sub role is non-simple. If $\alpha'$ is a complex RIA then, by definition of the weakening operator, $\alpha$ must be a complex RIA and $R$ must also be the super role in $\alpha$, making it non-simple in $\Omc$, which contradicts our assumption. Similarly, if $\alpha'$ is a simple RIA with a non-simple role as the sub role, the sub role of $\alpha$ must be equal to that of $\alpha'$ because the refinement operators return only roles simple in $\Omcfull$, and those are also simple in $\Omc$. Further, since the super role of a RIA is only refined if the sub role is simple, $\alpha' = \alpha$, which means that $R$ is non-simple in $\Omc$, which contradicts the assumptions. It follows that such a role $R$ does not exist.
 \end{proof}
 
-Note that removal of axioms will never cause a role that was previously simple to become non-simple. Hence, all roles simple in $\Omc$ are also simple in $\Omc \setminus \{ \phi \} \cup\{ \phi' \}$. Further, it should be noted that repeated replacement of axioms with weakened axioms keeps simple roles simple. This is an important observation, since repeated weakening is required for the proposed ontology repair algorithms using axiom weakening.
+Note that removal of axioms will never cause a role that was previously simple to become non-simple. Hence, all roles simple in $\Omc$ are also simple in $\Omc \setminus \{ \alpha \} \cup\{ \alpha' \}$. Further, it should be noted that repeated replacement of axioms with weakened axioms keeps simple roles simple. This is an important observation, since repeated weakening is required for the proposed ontology repair algorithms using axiom weakening.
 
 \begin{lemma} \label{lem:regularity}
-Let $\Omc$ be an ontology such that all simple roles of $\Omcfull$ are also simple in $\Omc$. For every axiom $\alpha \in \Omc$, if $\alpha' \in g_{\Omcref,\Omcfull}(\alpha)$ and the RBox of $\Omc$ is regular, then the RBox of $\Omc \cup \{ \alpha' \}$ is also regular.
+  Let $\Omc$ be an ontology such that all simple roles of $\Omcfull$ are also simple in $\Omc$. For every axiom $\alpha \in \Omc$, if $\alpha' \in g_{\Omcref,\Omcfull}(\alpha)$ and the RBox of $\Omc$ is regular, then the RBox of $\Omc \cup \{ \alpha' \}$ is also regular.
 \end{lemma}
 
 \begin{proof}(\emph{Sketch}) \phantomsection\label{proof:regularity}
-Let us first argue that if there exists a preorder that satisfies the constraints necessary for checking regularity, then there exists $\preceq$ such that $S_1 \preceq S_2$, $S \preceq R$ and $R \not\preceq S$ for all simple roles $S, S_1, S_2$ and non-simple roles $R$. Firstly, $S_1 \not\preceq S_2$ and $S \not\preceq R$ cannot be required, because absence of a tuple is only required for complex RIAs, where the super role must not be a predecessor of the roles on the left-hand side. Since $S_1$ and $S$ are simple, they do not appear as the super role in a complex RIA. Similarly, $R \preceq S$ cannot be required. Since $S$ is simple and $R$ non-simple, it cannot be required directly through an axiom of the form $R \sqsubseteq S$. By induction, it cannot be required through transitivity, since $R \preceq T$ and $T \preceq S$ would have to be required. If $T$ is simple, $R \preceq T$ cannot be required, and if $T$ is non-simple, $T \preceq S$ cannot be required.
+  Let us first argue that if there exists a preorder that satisfies the constraints necessary for checking regularity, then there exists $\preceq$ such that $S_1 \preceq S_2$, $S \preceq R$ and $R \not\preceq S$ for all simple roles $S, S_1, S_2$ and non-simple roles $R$. Firstly, $S_1 \not\preceq S_2$ and $S \not\preceq R$ cannot be required, because absence of a tuple is only required for complex RIAs, where the super role must not be a predecessor of the roles on the left-hand side. Since $S_1$ and $S$ are simple, they do not appear as the super role in a complex RIA. Similarly, $R \preceq S$ cannot be required. Since $S$ is simple and $R$ non-simple, it cannot be required directly through an axiom of the form $R \sqsubseteq S$. By induction, it cannot be required through transitivity, since $R \preceq T$ and $T \preceq S$ would have to be required. If $T$ is simple, $R \preceq T$ cannot be required, and if $T$ is non-simple, $T \preceq S$ cannot be required.
 
-Since $\Omc$ has a regular RBox, there exists such a $\preceq$ for $\Omc$. We will show that $\preceq$ is also a witness for regularity of $\Omc \cup \{ \alpha' \}$. All RIA in $\Omc$ are of one of the allowed forms for $\preceq$. It is therefore sufficient to verify that $\alpha'$ has one of the allowed forms.
-If $\alpha' = \alpha$ or $\alpha'$ is not a RIA, it does not affect the regularity.
-Otherwise, if $\alpha'$ is a simple RIA $S \sqsubseteq R$, then by definition of the weakening operator, $S$ is simple in $\Omcfull$, and therefore also in $\Omc$. Given that $S$ is simple, $S \preceq R$ holds for simple and non-simple $R$ by our choice of $\preceq$.
-If $\alpha'$ is a complex RIA $S_1' \circ \cdots \circ S_n' \sqsubseteq R$, then $\alpha$ is also a complex RIA $S_1 \circ \cdots \circ S_n \sqsubseteq R$ and $R$ is non-simple in $\Omc$. If $S_i \preceq R$ and $S_i \not\preceq R$, then so will $S_i' \preceq R$ and $R \not\preceq S_i'$, either because $S_i = S_i'$ or because $S_i'$ is simple and $R$ is non-simple. Since $\Omc$ has a regular RBox, the only case in which $R \preceq S_i$ is if $S_i = R$. In this case, $S_i' \preceq R$ and $R \not\preceq S_i'$ will still hold if $S_i \not= R$. If $S_i = R$, either $i = 0$ or $i = n$ which is allowed. The only delicate case is if $\alpha = R \circ R \sqsubseteq R$, which will result in either $\alpha' = S_1' \circ R \sqsubseteq R$ or $R \circ S_2' \sqsubseteq R$, both of which are valid.
+  Since $\Omc$ has a regular RBox, there exists such a $\preceq$ for $\Omc$. We will show that $\preceq$ is also a witness for regularity of $\Omc \cup \{ \alpha' \}$. All RIA in $\Omc$ are of one of the allowed forms for $\preceq$. It is therefore sufficient to verify that $\alpha'$ has one of the allowed forms.
+  If $\alpha' = \alpha$ or $\alpha'$ is not a RIA, it does not affect the regularity.
+  Otherwise, if $\alpha'$ is a simple RIA $S \sqsubseteq R$, then by definition of the weakening operator, $S$ is simple in $\Omcfull$, and therefore also in $\Omc$. Given that $S$ is simple, $S \preceq R$ holds for simple and non-simple $R$ by our choice of $\preceq$.
+  If $\alpha'$ is a complex RIA $S_1' \circ \cdots \circ S_n' \sqsubseteq R$, then $\alpha$ is also a complex RIA $S_1 \circ \cdots \circ S_n \sqsubseteq R$ and $R$ is non-simple in $\Omc$. If $S_i \preceq R$ and $S_i \not\preceq R$, then so will $S_i' \preceq R$ and $R \not\preceq S_i'$, either because $S_i = S_i'$ or because $S_i'$ is simple and $R$ is non-simple. Since $\Omc$ has a regular RBox, the only case in which $R \preceq S_i$ is if $S_i = R$. In this case, $S_i' \preceq R$ and $R \not\preceq S_i'$ will still hold if $S_i \not= R$. If $S_i = R$, either $i = 0$ or $i = n$ which is allowed. The only delicate case is if $\alpha = R \circ R \sqsubseteq R$, which will result in either $\alpha' = S_1' \circ R \sqsubseteq R$ or $R \circ S_2' \sqsubseteq R$, both of which are valid.
 \end{proof}
 
 Like for the invariant on simple roles, also regularity is maintained by repeated replacement of axioms with weakenings. With the help of \cref{lem:simple-roles} and \cref{lem:regularity} we can now sketch a proof showing that adding weakened axioms to a \SROIQ ontology will yield another valid \SROIQ ontology.
 
 \begin{theorem} \label{lem:global-constraints}
-Given that $\Omcref$ and $\Omcfull$ are valid \SROIQ ontologies. For every axiom $\alpha \in \Omcfull$, if $\alpha' \in g_{\Omcref,\Omcfull}(\alpha)$, then $\Omcfull \cup \{ \alpha' \}$ is a valid \SROIQ ontology.
+  Given that $\Omcref$ and $\Omcfull$ are valid \SROIQ ontologies. For every axiom $\alpha \in \Omcfull$, if $\alpha' \in g_{\Omcref,\Omcfull}(\alpha)$, then $\Omcfull \cup \{ \alpha' \}$ is a valid \SROIQ ontology.
 \end{theorem}
 
 \begin{proof}(\emph{Sketch})
-We have established already in \cref{lem:regularity}, that the regularity of the RBox will be preserved.
-It is guaranteed by \cref{lem:simple-roles} that all roles that were simple before addition, are still simple afterwards. Therefore, all usages of roles in axioms and concepts that were not touched by the refinement do not pose a problem. The condition static that the upward and downward cover of a role contain only roles that are simple in $\Omcfull$ (and therefore by \cref{lem:simple-roles} also in $\Omcfull \cup \{ \alpha' \}$) forces that every refinement of a role is simple. This restriction to simple roles guarantees that no non-simple role may be used in disjoint role axioms, or the scope of cardinality and self constraints.
+  We have established already in \cref{lem:regularity}, that the regularity of the RBox will be preserved.
+  It is guaranteed by \cref{lem:simple-roles} that all roles that were simple before addition, are still simple afterwards. Therefore, all usages of roles in axioms and concepts that were not touched by the refinement do not pose a problem. The condition static that the upward and downward cover of a role contain only roles that are simple in $\Omcfull$ (and therefore by \cref{lem:simple-roles} also in $\Omcfull \cup \{ \alpha' \}$) forces that every refinement of a role is simple. This restriction to simple roles guarantees that no non-simple role may be used in disjoint role axioms, or the scope of cardinality and self constraints.
 \end{proof}

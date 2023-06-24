@@ -10,15 +10,15 @@ Defects, in both software systems and ontologies, can be due to a number of diff
 Syntactic defects in an ontology can be caused by a statement that does not conform to the grammar of the employed logic. Similarly, for software systems, these defects may be the result of programs that are not consistent with the grammar of the chosen programming language. These sorts of syntactic defects are easy to locate and correct. In general, tool support for these kinds of defects is able to pinpoint the location of the defect and give an explanation to the user.
 
 \begin{example}
-The axioms $C \sqsubseteq \sqsubseteq D$, $C(r(a, b))$, or $C \sqsubset D$ are all obviously not syntactically correct \SROIQ axioms. Similarly, the concepts $C \sqcup \sqcap D$, $\less 3 t.\self$, and $\self \sqcup D$ do all not match the grammar for concept expressions.
+  The axioms $C \sqsubseteq \sqsubseteq D$, $C(r(a, b))$, or $C \sqsubset D$ are all obviously not syntactically correct \SROIQ axioms. Similarly, the concepts $C \sqcup \sqcap D$, $\less 3 t.\self$, and $\self \sqcup D$ do all not match the grammar for concept expressions.
 \end{example}
 
 There may however be some additional restrictions on what constitutes a valid ontology or program that is not based solely on the grammatical rules. For ontologies, these might be for example the restrictions placed upon the form of the graph for a specific OWL profile. In the example of \SROIQ, these include the restricted use of non-simple roles and the regularity condition placed on the RBox. For programming languages, a similar restriction to this may be the requirement for definition before use or the presence of a type system\footnote{When viewed from a different perspective, a type error can also be seen as the unsatisfiability of (or ambiguity in) the type assertions. In this way, it is related to an inconsistency in the context of ontologies in the case of unsatisfiability (or missing inferences in the case of ambiguity).}. These restrictions reduce the space of valid programs. Restrictions of this kind can often be much easier to violate and harder to debug than the first kind of syntactic defects that is a violation of the grammar.
 
 \begin{example}
-Given the vocabulary $N_C = \{ C \}$ and $N_R = \{ a, b, c \}$, the \SROIQ ontology $\Omc = \{ a \sqsubseteq b, b \circ c \sqsubseteq a \}$ is not valid. This is because it does not satisfy the regularity condition in \SROIQ. This can simply be verified by showing that no preorder $\preceq$ exists for which $a \preceq b$ and $a \not\preceq b$ hold.
+  Given the vocabulary $N_C = \{ C \}$ and $N_R = \{ a, b, c \}$, the \SROIQ ontology $\Omc = \{ a \sqsubseteq b, b \circ c \sqsubseteq a \}$ is not valid. This is because it does not satisfy the regularity condition in \SROIQ. This can simply be verified by showing that no preorder $\preceq$ exists for which $a \preceq b$ and $a \not\preceq b$ hold.
 
-Similarly, the ontology $\Omc = \{ a \circ a \sqsubseteq a, \top \sqsubseteq \exists a.\self \}$ is not valid because the role $a$ is non-simple. Since roles used in \self constraints must be simple, the second axiom is not allowed.
+  Similarly, the ontology $\Omc = \{ a \circ a \sqsubseteq a, \top \sqsubseteq \exists a.\self \}$ is not valid because the role $a$ is non-simple. Since roles used in \self constraints must be simple, the second axiom is not allowed.
 \end{example}
 
 \subsubsection{Semantic Defects} \label{semantic-defects}
@@ -26,7 +26,7 @@ Similarly, the ontology $\Omc = \{ a \circ a \sqsubseteq a, \top \sqsubseteq \ex
 For ontologies, semantic defects, as defined in \cite{kalyanpur2005debugging}  are those which can be discovered by a reasoner given an ontology free of syntactic defects. This includes for example the inconsistency of the ontology, or the unsatisfiability of a concept. The presence of such defects is generally not hard to identify, given the availability of a reasoner for the logic of the ontology. It is, however, often not trivial to understand the underlying source of the defect.
 
 \begin{example}
-Given the vocabulary $N_C = \{ C, D \}$ and $N_I = \{ a \}$, the \SROIQ ontology $\Omc = \{ D \sqsubseteq \lnot C, D(a), C(a) \}$ is inconsistent. This can be seen clearly from the fact that for every interpretation $\Imc$, $a^\Imc$ must be in $D^\Imc$, but this means that $a^\Imc$ must not be in $C^\Imc$ which contradicts with the last axiom.
+  Given the vocabulary $N_C = \{ C, D \}$ and $N_I = \{ a \}$, the \SROIQ ontology $\Omc = \{ D \sqsubseteq \lnot C, D(a), C(a) \}$ is inconsistent. This can be seen clearly from the fact that for every interpretation $\Imc$, $a^\Imc$ must be in $D^\Imc$, but this means that $a^\Imc$ must not be in $C^\Imc$ which contradicts with the last axiom.
 \end{example}
 
 A close analogy to these kinds of defects from the perspective of a software system is the raising of an error during the execution. An error is an indication of a defect in the software, and depending on tooling support they may be more or less difficult to understand and rectify. In this thesis the focus will be mainly on these kinds of bugs, especially on the problem of inconsistent ontologies.
@@ -46,6 +46,6 @@ We will now briefly explore the possible causes of bugs in the context of ontolo
 Another source for bugs in ontologies may arise while merging different ontologies. This may be done, especially in the context of OWL and the semantic web, to combine the knowledge obtained from different sources. OWL even includes an axiom that can be used to import other ontologies. This can again be a case where one ontology defines a certain role as transitive, while the other assumes that it is simple. Combining the two ontologies will then obviously lead to a violation of the global constraints. In general, the combination of different ontologies can also change which profile the ontologies fall into. Also, different ontologies might make different but incompatible modelling choices when modelling the same domain. This can result is an ontology after merging that is inconsistent or has unsatisfiable concepts.
 
 \begin{example}
-Given the vocabulary $N_C = \{ C, D \}$ and $N_I = \{ a, b \}$, the two \SROIQ ontology $\Omc_1 = \{ D \sqsubseteq C, D(a) \}$ and $\Omc_2 = \{ C \sqsubseteq \lnot D, C(b) \}$ are by themselves consistent. If we merge them, however, the resulting ontology $\Omc_1 \cup \Omc_2$ is no longer consistent.
+  Given the vocabulary $N_C = \{ C, D \}$ and $N_I = \{ a, b \}$, the two \SROIQ ontology $\Omc_1 = \{ D \sqsubseteq C, D(a) \}$ and $\Omc_2 = \{ C \sqsubseteq \lnot D, C(b) \}$ are by themselves consistent. If we merge them, however, the resulting ontology $\Omc_1 \cup \Omc_2$ is no longer consistent.
 \end{example}
 

@@ -1,3 +1,14 @@
 
 % TODO
 
+\begin{algorithm}[ht]
+  \begin{algorithmic}
+    \While{$\Omc$ is inconsistent}
+    \State $\phi_\textnormal{bad} \gets \textsc{FindBadAxiom}(\Omc)$
+    \State $\Omc \gets \Omc \setminus \{\phi_\textnormal{bad}\}$
+    \EndWhile
+    \State Return $\Omc$
+  \end{algorithmic}
+  \caption{\textsc{RepairOntologyRemove}($\Omc$)}
+  \label{algo:repair-remove}
+\end{algorithm}
