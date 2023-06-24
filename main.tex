@@ -1,6 +1,7 @@
 \documentclass[10pt,a4paper]{report}
 \usepackage{amsthm, amsfonts, amsmath, amssymb, mathtools}
-\usepackage{algorithm, algpseudocode, listings}
+\usepackage[chapter]{algorithm}
+\usepackage{algpseudocode, listings}
 \usepackage{sectsty, csquotes, xcolor, xspace}
 \usepackage{graphicx, tabularx, changepage}
 \usepackage[hidelinks]{hyperref}
@@ -14,12 +15,12 @@
 \makeatletter
 
 \theoremstyle{plain}
-\newtheorem{theorem}{Theorem}
-\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}{Lemma}[chapter]
 
 \theoremstyle{definition}
-\newtheorem{definition}{Definition}
-\newtheorem{example}{Example}
+\newtheorem{definition}{Definition}[chapter]
+\newtheorem{example}{Example}[chapter]
 
 \theoremstyle{remark}
 \newtheorem*{note}{Note}
