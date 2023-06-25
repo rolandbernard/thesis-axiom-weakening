@@ -26,7 +26,7 @@ There may however be some additional restrictions on what constitutes a valid on
 For ontologies, semantic defects, as defined in \cite{kalyanpur2005debugging}  are those which can be discovered by a reasoner given an ontology free of syntactic defects. This includes for example the inconsistency of the ontology, or the unsatisfiability of a concept. The presence of such defects is generally not hard to identify, given the availability of a reasoner for the logic of the ontology. It is, however, often not trivial to understand the underlying source of the defect.
 
 \begin{example}
-  Given the vocabulary $N_C = \{ C, D \}$ and $N_I = \{ a \}$, the \SROIQ ontology $\Omc = \{ D \sqsubseteq \lnot C, D(a), C(a) \}$ is inconsistent. This can be seen clearly from the fact that for every interpretation $\Imc$, $a^\Imc$ must be in $D^\Imc$, but this means that $a^\Imc$ must not be in $C^\Imc$ which contradicts with the last axiom.
+  Given the vocabulary $N_C = \{ C, D \}$ and $N_I = \{ a \}$, the \SROIQ ontology $\Omc = \{ D \sqsubseteq \lnot C, D(a), C(a) \}$ is inconsistent. This can be seen clearly from the fact that for every interpretation $I$, $a^I$ must be in $D^I$, but this means that $a^I$ must not be in $C^I$ which contradicts with the last axiom.
 \end{example}
 
 A close analogy to these kinds of defects from the perspective of a software system is the raising of an error during the execution. An error is an indication of a defect in the software, and depending on tooling support they may be more or less difficult to understand and rectify. In this thesis the focus will be mainly on these kinds of bugs, especially on the problem of inconsistent ontologies.

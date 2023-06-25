@@ -31,12 +31,12 @@ Let us now define the so-called upward and downward cover sets for concepts. The
 
 \begin{definition} \label{def:alc-covers}
   Let $\Omc$ be an \ALC ontologies that using the vocabulary $N_C$, $N_R$, and $N_I$. The \emph{upward cover} and \emph{downward cover} for a concept $C$ are given by
-  \begin{alignat*}{2}
-    \UpC_\Omc(C) &= \{ && D \in \sub(\Omc) \mid C \sqsubseteq_\Omc D \text{ and } \\
-    &&& \nexists D' \in \sub(\Omc) \text{ with } C \sqsubset_\Omc D' \sqsubset_\Omc D \} \enspace, \\
-    \DownC_\Omc(C) &= \{ && D \in \sub(\Omc) \mid D \sqsubseteq_\Omc C \text{ and } \\
-    &&& \nexists D' \in \sub(\Omc) \text{ with } D \sqsubset_\Omc D' \sqsubset_\Omc C \} \enspace.
-  \end{alignat*}
+  \begin{align*}
+    \UpC_\Omc(C) = \{ & D \in \sub(\Omc) \mid C \sqsubseteq_\Omc D \text{ and } \\
+    & \nexists D' \in \sub(\Omc) \text{ with } C \sqsubset_\Omc D' \sqsubset_\Omc D \} \enspace, \\
+    \DownC_\Omc(C) = \{ & D \in \sub(\Omc) \mid D \sqsubseteq_\Omc C \text{ and } \\
+    & \nexists D' \in \sub(\Omc) \text{ with } D \sqsubset_\Omc D' \sqsubset_\Omc C \} \enspace.
+  \end{align*}
 \end{definition}
 
 Note here that the upward and downward covers will only yield useful results if the ontology $\Omc$ is consistent. Since they operate only over the subconcepts of $\Omc$, on their own, the upward and downward covers of concepts are missing some interesting refinements.
@@ -51,22 +51,22 @@ To additionally capture these omissions, we define generalization and specializa
 \begin{definition}
   Let $\refine$ and $\corefine$ be two functions taking concept expressions as parameters and mapping them to finite sets of concepts.
   The \emph{abstract refinement operator} is defined recursively by induction on the structure of concept expressions as follows.
-  \begin{alignat*}{2}
-    \zeta_{\refine,\corefine}(A) &= && \refine(A) \quad, A \in N_C \cup \{\top, \bot\} \enspace, \\
-    \zeta_{\refine,\corefine}(\lnot C) &= && \refine(\lnot C) \cup \{ \lnot C' \mid C' \in \zeta_{\corefine,\refine}(C) \} \enspace, \\
-    \zeta_{\refine,\corefine}(C \sqcap D) &= && \refine(C \sqcap D) \cup \{ C' \sqcap D \mid C' \in \zeta_{\refine,\corefine}(C) \} \\
-    &&& \cup \{ C \sqcap D' \mid D' \in \zeta_{\refine,\corefine}(D) \} \enspace, \\
-    \zeta_{\refine,\corefine}(C \sqcup D) &= && \refine(C \sqcup D) \cup \{ C' \sqcup D \mid C' \in \zeta_{\refine,\corefine}(C) \} \\
-    &&& \cup \{ C \sqcup D' \mid D' \in \zeta_{\refine,\corefine}(D) \} \enspace, \\
-    \zeta_{\refine,\corefine}(\forall R.C) &= && \refine(\forall R.C)
+  \begin{align*}
+    \zeta_{\refine,\corefine}(A) ={} & \refine(A) \quad, A \in N_C \cup \{\top, \bot\} \enspace, \\
+    \zeta_{\refine,\corefine}(\lnot C) ={} & \refine(\lnot C) \cup \{ \lnot C' \mid C' \in \zeta_{\corefine,\refine}(C) \} \enspace, \\
+    \zeta_{\refine,\corefine}(C \sqcap D) ={} & \refine(C \sqcap D) \cup \{ C' \sqcap D \mid C' \in \zeta_{\refine,\corefine}(C) \} \\
+    & \cup \{ C \sqcap D' \mid D' \in \zeta_{\refine,\corefine}(D) \} \enspace, \\
+    \zeta_{\refine,\corefine}(C \sqcup D) ={} & \refine(C \sqcup D) \cup \{ C' \sqcup D \mid C' \in \zeta_{\refine,\corefine}(C) \} \\
+    & \cup \{ C \sqcup D' \mid D' \in \zeta_{\refine,\corefine}(D) \} \enspace, \\
+    \zeta_{\refine,\corefine}(\forall R.C) ={} & \refine(\forall R.C)
     \cup \{ \forall R.C' \mid C' \in \zeta_{\refine,\corefine}(C) \} \enspace, \\
-    \zeta_{\refine,\corefine}(\exists R.C) &= && \refine(\exists R.C)
+    \zeta_{\refine,\corefine}(\exists R.C) ={} & \refine(\exists R.C)
     \cup \{ \exists R.C' \mid C' \in \zeta_{\refine,\corefine}(C) \} \enspace.
-  \end{alignat*}
+  \end{align*}
   Using the abstract refinement operator $\zeta_{\refine,\corefine}$, we build two concrete refinement operators. The \emph{generalization operator} and \emph{specialization operator} are, respectively, defined as
   \begin{align*}
-    \gamma_\Omc = \zeta_{\UpC_\Omc,\DownC_\Omc} \enspace \text{and} \enspace
-    \rho_\Omc = \zeta_{\DownC_\Omc,\UpC_\Omc} \enspace.
+    \gamma_\Omc &= \zeta_{\UpC_\Omc,\DownC_\Omc} \enspace \text{and} \enspace
+    \rho_\Omc &= \zeta_{\DownC_\Omc,\UpC_\Omc} \enspace.
   \end{align*}
 \end{definition}
 
@@ -77,11 +77,11 @@ We define now the \emph{axiom weakening operator} using these generalization and
 
 \begin{definition}
   Given an axiom $\alpha$, the set of \emph{weakenings} with respect to the ontology $\Omc$, written $g_\Omc(\alpha)$ is defined such that
-  \begin{alignat*}{2}
-    g_\Omc(C \sqsubseteq D) &={} && \{ C' \sqsubseteq D \mid C' \in \rho_\Omc (C) \} \\
-    &&& \cup \{ C \sqsubseteq D' \mid D' \in \gamma_\Omc(D) \} \enspace, \\
-    g_\Omc(C(a)) &={} && \{ C'(a) \mid C' \in \gamma_\Omc(C) \} \enspace.
-  \end{alignat*}
+  \begin{align*}
+    g_\Omc(C \sqsubseteq D) ={} & \{ C' \sqsubseteq D \mid C' \in \rho_\Omc (C) \} \\
+    & \cup \{ C \sqsubseteq D' \mid D' \in \gamma_\Omc(D) \} \enspace, \\
+    g_\Omc(C(a)) ={} & \{ C'(a) \mid C' \in \gamma_\Omc(C) \} \enspace.
+  \end{align*}
 \end{definition}
 
 The axioms in the set $g_\Omc(\alpha)$ are indeed weaker than $\alpha$ for every axiom $\alpha$, in the sense that, given the reference ontology $\Omc$, $\alpha$ entails them and the opposite in not necessarily true. That is, for each axiom $\alpha' \in g_\Omc(\alpha)$, $\alpha \sqsubseteq_\Omc \alpha'$ holds.

@@ -1,9 +1,9 @@
 
-The \emph{vocabulary}\footnote{There are no strict rules for how to write down different elements of the vocabulary. However, there is a convention of using PascalCase for concept names and camelCase for names referring to roles and individuals.} $\mathrm{N} = \mathrm{N}_I \cup \mathrm{N}_C \cup \mathrm{N}_R$ of a $\SROIQ$ ontology is made up of three finite disjoint sets:
+The \emph{vocabulary}\footnote{There are no strict rules for how to write down different elements of the vocabulary. However, there is a convention of using PascalCase for concept names and camelCase for names referring to roles and individuals.} $N = N_I \cup N_C \cup N_R$ of a $\SROIQ$ ontology is made up of three finite disjoint sets:
 \begin{itemize}
-  \item The set of \emph{individual names} $\mathrm{N}_I$ used to refer to single elements in the domain of discourse.
-  \item The set of \emph{concept names} $\mathrm{N}_C$ used to refer to classes that elements of the domain may be a part of.
-  \item The set of \emph{role names} $\mathrm{N}_R$ used to refer to binary relations that may hold between the elements of the domain.
+  \item The set of \emph{individual names} $N_I$ used to refer to single elements in the domain of discourse.
+  \item The set of \emph{concept names} $N_C$ used to refer to classes that elements of the domain may be a part of.
+  \item The set of \emph{role names} $N_R$ used to refer to binary relations that may hold between the elements of the domain.
 \end{itemize}
 A $\SROIQ$ ontology $\Omc = \Amc \cup \Tmc \cup \Rmc$ is the union of an \emph{ABox} $\Amc$, a \emph{TBox} $\Tmc$, and a regular \emph{RBox} $\Rmc$. The elements of $\Omc$ are called axioms.
 
@@ -11,7 +11,7 @@ A $\SROIQ$ ontology $\Omc = \Amc \cup \Tmc \cup \Rmc$ is the union of an \emph{A
 
 The RBox $\Rmc$ describes the relationship between different roles in the ontology. It consists of two disjoint parts, a role hierarchy $\Rmc_h$ and a set of role assertions $\Rmc_a$.
 
-Given the set of role names $\mathrm{N}_R$, a \emph{role} is either the \emph{universal role} $U$ or of the form $r$ or $r^-$ for some role names $r \in \mathrm{N}_R$, where $r^-$ is called the \emph{inverse role or} $r$. For convenience in the latter definitions, and to avoid roles like $r^{--}$, which are not valid in $\SROIQ$, we define a function $\inv$ such that $\inv(r) = r^-$ and $\inv(r^-) = r$. We denote the set of all roles as $\Lmc(N_R) = \mathrm{N}_R \cup \{ U \} \cup \{ r^- \mid r \in \mathrm{N}_R \}$.
+Given the set of role names $N_R$, a \emph{role} is either the \emph{universal role} $U$ or of the form $r$ or $r^-$ for some role names $r \in N_R$, where $r^-$ is called the \emph{inverse role or} $r$. For convenience in the latter definitions, and to avoid roles like $r^{--}$, which are not valid in $\SROIQ$, we define a function $\inv$ such that $\inv(U) = U$, $\inv(r) = r^-$, and $\inv(r^-) = r$. We denote the set of all roles as $\Lmc(N_R) = N_R \cup \{ U \} \cup \{ r^- \mid r \in N_R \}$.
 
 A \emph{role inclusion axiom} (RIA) is a statement of the form $R_1 \circ \cdots \circ R_n \sqsubseteq R$ where $R, R_1, \dots R_n \in \Lmc(N_R)$ are roles. For the case in which $n = 1$, we obtain a \emph{simple role inclusion}, which has the form $R \sqsubseteq S$ where $S$ and $R$ are role names (the case where $n > 1$ is called a \emph{complex role inclusion}). A finite set of RIAs is called a \emph{role hierarchy}, denoted $\Rmc_h$.
 
@@ -48,15 +48,15 @@ where $n > 1$ and $R$, $S$, $S_1, \cdots, S_n$ are roles such that $S \preceq R$
 
 To make axiom weakening simpler, this definition is slightly more general than necessary. The definition of regularity presented here is more permissive than the one in \cite{horrocks2006even} in that it always allows simple roles on the left-hand side similar to what has been described in \cite{rudolph2011foundations}. However, it is more permissive than stated in \cite{rudolph2011foundations} in that it allows for inverse roles on the right-hand side. This definition of regularity aligns more closely with the implementation of the OWL 2 DL \cite{motik2012ontology} profile checker in the OWL API \cite{horridge2011owl,owlapi}.
 
-The set of \emph{role assertions} $\Rmc_a$ is a finite set of statements with the form $\disjoint(S_1, S_2)$ (\emph{disjointness}) where $S_1$, and $S_2$ are simple roles in $\Rmc_h$. In \cite{horrocks2006even} the authors define additionally the role assertions $\mathrm{Sym}(R)$ (\emph{symmetry}), $\mathrm{Asy}(S)$ (\emph{asymmetry}), $\mathrm{Tra}(R)$ (\emph{transitivity}), $\mathrm{Ref}(R)$ (\emph{reflexivity}), and $\mathrm{Irr}(R)$ (\emph{irreflexivity}). These additional assertions can, however, be written using the alternative sets of axioms $\{ \inv(R) \sqsubseteq R \}$, $\{ \disjoint(R, \inv(R)) \}$, $\{ R \circ R \sqsubseteq R \}$, $\{ r' \sqsubseteq R , \top \sqsubseteq \exists r'.\self \}$, and $\{ \top \sqsubseteq \lnot \exists R.\self \}$ respectively. Note that the asymmetry assertion requires a simple role, and that $r'$ in the case of reflexivity must be a fresh role name not otherwise used in the ontology\footnote{This is necessary to allow the use of non-simple roles in a reflexivity assertion. Multiple assertions can share the same role name $r'$.}.
+The set of \emph{role assertions} $\Rmc_a$ is a finite set of statements with the form $\disjoint(S_1, S_2)$ (\emph{disjointness}) where $S_1$, and $S_2$ are simple roles in $\Rmc_h$. In \cite{horrocks2006even} the authors define additionally the role assertions $\op{Sym}(R)$ (\emph{symmetry}), $\op{Asy}(S)$ (\emph{asymmetry}), $\op{Tra}(R)$ (\emph{transitivity}), $\op{Ref}(R)$ (\emph{reflexivity}), and $\op{Irr}(R)$ (\emph{irreflexivity}). These additional assertions can, however, be written using the alternative sets of axioms $\{ \inv(R) \sqsubseteq R \}$, $\{ \disjoint(R, \inv(R)) \}$, $\{ R \circ R \sqsubseteq R \}$, $\{ r' \sqsubseteq R , \top \sqsubseteq \exists r'.\self \}$, and $\{ \top \sqsubseteq \lnot \exists R.\self \}$ respectively. Note that the asymmetry assertion requires a simple role, and that $r'$ in the case of reflexivity must be a fresh role name not otherwise used in the ontology\footnote{This is necessary to allow the use of non-simple roles in a reflexivity assertion. Multiple assertions can share the same role name $r'$.}.
 
 \subsection{TBox} \label{tbox}
 
 The TBox $\Tmc$ describes the relationship between different concepts. In $\SROIQ$, the set of \emph{concept expressions} (or simply \emph{concepts}) given an RBox $\Rmc$ is inductively defined as the smallest set such that:
 \begin{itemize}
   \item $\top$ and $\bot$ are concepts, respectively called \emph{top concept} and \emph{bottom concept},
-  \item all concept names $C \in \mathrm{N}_C$ are concept, called \emph{atomic concepts},
-  \item single individual names $\{ i \}$ with $i \in \mathrm{N}_I$ are concepts, called \emph{nominal concepts},
+  \item all concept names $C \in N_C$ are concept, called \emph{atomic concepts},
+  \item single individual names $\{ i \}$ with $i \in N_I$ are concepts, called \emph{nominal concepts},
   \item if $C$ and $D$ are concepts, the $\lnot C$ (\emph{negation}), $C \sqcup D$ (\emph{union}), and $C \sqcap D$ (\emph{intersection}) are also concepts,
   \item if $C$ is a concept and $R \in \Lmc(N_R)$ a (possibly non-simple) role, then $\exists R.C$ (\emph{existential quantification}) and $\forall r.C$ (\emph{universal quantification}) are also concepts, and
   \item if $C$ is a concept, $S \in \Lmc(N_R)$ a simple role and $n \in \mathbb{N}_0$ a non-negative number, then $\exists S.\self$ (\emph{\self restriction}), $\less n S.C$ (\emph{at-most restriction}), and $\more n S.C$ (\emph{at-least restriction}) are concepts, the last two may together be referred to as \emph{qualified number restrictions}.
@@ -67,8 +67,8 @@ Given two concepts $C$ and $D$, a \emph{general concept inclusion axiom} (GCI) i
 
 The ABox $\Amc$ contains statements about single individuals called individual assertions. An \emph{individual assertion} has one of the following forms:
 \begin{itemize}
-  \item $C(a)$ (\emph{concept assertion}) for some concept $C$ and individual name $a \in \mathrm{N}_I$,
-  \item $R(a, b)$ (\emph{role assertion}) or $\lnot R(a, b)$ (\emph{negative role assertion}) for some role $R \in \Lmc(N_R)$ and individual names $a, b \in \mathrm{N}_I$, or
-  \item $a = b$ (\emph{equality}) or $a \not = b$ (\emph{inequality}) for some individual names $a \in \mathrm{N}_I$.
+  \item $C(a)$ (\emph{concept assertion}) for some concept $C$ and individual name $a \in N_I$,
+  \item $R(a, b)$ (\emph{role assertion}) or $\lnot R(a, b)$ (\emph{negative role assertion}) for some role $R \in \Lmc(N_R)$ and individual names $a, b \in N_I$, or
+  \item $a = b$ (\emph{equality}) or $a \not = b$ (\emph{inequality}) for some individual names $a \in N_I$.
 \end{itemize}
 An ABox $\Amc$ is a finite set of individual assertions. In $\SROIQ$ due to the inclusion of nominal concepts, all ABox axioms can be rewritten into TBox axioms.

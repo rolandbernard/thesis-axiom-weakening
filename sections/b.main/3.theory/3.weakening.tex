@@ -3,30 +3,30 @@ We will now give the extended definitions for the cover sets, refinement operato
 
 \begin{definition} \label{def:covers}
   Let $\Omcfull$ and $\Omcref \subseteq \Omcfull$ be two \SROIQ ontologies that share the same vocabulary $N_C$, $N_R$, and $N_I$. The \emph{upward cover} and \emph{downward cover} for a concept $C$ are given by
-  \begin{alignat*}{2}
-    \UpC_{\Omcref,\Omcfull}(C) &= \{ && D \in \sub(\Omcfull) \mid C \sqsubseteq_\Omcref D \text{ and } \\
-    &&& \nexists D' \in \sub(\Omcfull) \text{ with } C \sqsubset_\Omcref D' \sqsubset_\Omcref D \} \enspace, \\
-    \DownC_{\Omcref,\Omcfull}(C) &= \{ && D \in \sub(\Omcfull) \mid D \sqsubseteq_\Omcref C \text{ and } \\
-    &&& \nexists D' \in \sub(\Omcfull) \text{ with } D \sqsubset_\Omcref D' \sqsubset_\Omcref C \} \enspace.
-  \end{alignat*}
+  \begin{align*}
+    \UpC_{\Omcref,\Omcfull}(C) = \{ & D \in \sub(\Omcfull) \mid C \sqsubseteq_\Omcref D \text{ and } \\
+    & \nexists D' \in \sub(\Omcfull) \text{ with } C \sqsubset_\Omcref D' \sqsubset_\Omcref D \} \enspace, \\
+    \DownC_{\Omcref,\Omcfull}(C) = \{ & D \in \sub(\Omcfull) \mid D \sqsubseteq_\Omcref C \text{ and } \\
+    & \nexists D' \in \sub(\Omcfull) \text{ with } D \sqsubset_\Omcref D' \sqsubset_\Omcref C \} \enspace.
+  \end{align*}
   The upward and downward covers for a role $R$ are given by
-  \begin{alignat*}{2}
-    \UpC_{\Omcref,\Omcfull}(R) &= \{ && S \in \Lmc(N_R) \mid R \sqsubseteq_\Omcref S \text{ and } \\
-    &&& \nexists S' \in \Lmc(N_R) \text{ with } R \sqsubset_\Omcref S' \sqsubset_\Omcref S \text{ and } \\
-    &&& S, S' \text{ are simple in } \Omcfull \} \enspace, \\
-    \DownC_{\Omcref,\Omcfull}(R) &= \{ && S \in \Lmc(N_R) \mid S \sqsubseteq_\Omcref R \text{ and } \\
-    &&& \nexists S' \in \Lmc(N_R) \text{ with } S \sqsubset_\Omcref S' \sqsubset_\Omcref R \text{ and } \\
-    &&& S, S' \text{ are simple in } \Omcfull \} \enspace.
-  \end{alignat*}
+  \begin{align*}
+    \UpC_{\Omcref,\Omcfull}(R) = \{ & S \in \Lmc(N_R) \mid R \sqsubseteq_\Omcref S \text{ and } \\
+    & \nexists S' \in \Lmc(N_R) \text{ with } R \sqsubset_\Omcref S' \sqsubset_\Omcref S \text{ and } \\
+    & S, S' \text{ are simple in } \Omcfull \} \enspace, \\
+    \DownC_{\Omcref,\Omcfull}(R) = \{ & S \in \Lmc(N_R) \mid S \sqsubseteq_\Omcref R \text{ and } \\
+    & \nexists S' \in \Lmc(N_R) \text{ with } S \sqsubset_\Omcref S' \sqsubset_\Omcref R \text{ and } \\
+    & S, S' \text{ are simple in } \Omcfull \} \enspace.
+  \end{align*}
   The upward and downward covers for a non-negative integer $n$ are given by
-  \begin{alignat*}{2}
+  \begin{align*}
     \UpC_{\Omcref,\Omcfull}(n) &= \{ n, n + 1 \} \enspace, \\
     \DownC_{\Omcref,\Omcfull}(R) &=
     \begin{cases*}
       \{ n \} & \text{ if } $n = 0$ \\
       \{ n, n - 1 \} & \text{ if } $n > 0$
     \end{cases*} \enspace.
-  \end{alignat*}
+  \end{align*}
 \end{definition}
 
 As has already been observer in \cref{ex:up-cover-alc}, on their own, the upward and downward covers of concepts are missing some interesting refinements. Since they operate only over the subconcepts of $\Omcfull$, some rather obvious refinements, like for example removing conjuncts will often be missed.
@@ -39,29 +39,29 @@ To also address some of these omissions, we define generalization and specializa
 \begin{definition}
   Let $\refine$ and $\corefine$ be two functions with domain $\Lmc(N_C, N_R, N_I) \cup \Lmc(N_C) \cup \mathbb{N}_0$. They map every concept to a finite subset of $\Lmc(N_C, N_R, N_I)$, every role to a subset of $\Lmc(N_C)$, and every non-negative integer to a finite subset of $\mathbb{N}_0$.
   The \emph{abstract refinement operator} is defined recursively by induction on the structure of concepts as follows.
-  \begin{alignat*}{2}
-    \zeta_{\refine,\corefine}(A) &= && \refine(A) \quad, A \in N_C \cup \{\top, \bot\} \enspace, \\
-    \zeta_{\refine,\corefine}(\lnot C) &= && \refine(\lnot C) \cup \{ \lnot C' \mid C' \in \zeta_{\corefine,\refine}(C) \} \enspace, \\
-    \zeta_{\refine,\corefine}(C \sqcap D) &= && \refine(C \sqcap D) \cup \{ C' \sqcap D \mid C' \in \zeta_{\refine,\corefine}(C) \}
+  \begin{align*}
+    \zeta_{\refine,\corefine}(A) ={} & \refine(A) \quad, A \in N_C \cup \{\top, \bot\} \enspace, \\
+    \zeta_{\refine,\corefine}(\lnot C) ={} & \refine(\lnot C) \cup \{ \lnot C' \mid C' \in \zeta_{\corefine,\refine}(C) \} \enspace, \\
+    \zeta_{\refine,\corefine}(C \sqcap D) ={} & \refine(C \sqcap D) \cup \{ C' \sqcap D \mid C' \in \zeta_{\refine,\corefine}(C) \}
     \cup \{ C \sqcap D' \mid D' \in \zeta_{\refine,\corefine}(D) \} \enspace, \\
-    \zeta_{\refine,\corefine}(C \sqcup D) &= && \refine(C \sqcup D) \cup \{ C' \sqcup D \mid C' \in \zeta_{\refine,\corefine}(C) \}
+    \zeta_{\refine,\corefine}(C \sqcup D) ={} & \refine(C \sqcup D) \cup \{ C' \sqcup D \mid C' \in \zeta_{\refine,\corefine}(C) \}
     \cup \{ C \sqcup D' \mid D' \in \zeta_{\refine,\corefine}(D) \} \enspace, \\
-    \zeta_{\refine,\corefine}(\forall R.C) &= && \refine(\forall R.C) \cup \{ \forall R'.C \mid R' \in \zeta_{\corefine,\refine}(R) \}
+    \zeta_{\refine,\corefine}(\forall R.C) ={} & \refine(\forall R.C) \cup \{ \forall R'.C \mid R' \in \zeta_{\corefine,\refine}(R) \}
     \cup \{ \forall R.C' \mid C' \in \zeta_{\refine,\corefine}(C) \} \enspace, \\
-    \zeta_{\refine,\corefine}(\exists R.C) &= && \refine(\exists R.C) \cup \{ \exists R'.C \mid R' \in \zeta_{\refine,\corefine}(R) \}
+    \zeta_{\refine,\corefine}(\exists R.C) ={} & \refine(\exists R.C) \cup \{ \exists R'.C \mid R' \in \zeta_{\refine,\corefine}(R) \}
     \cup \{ \exists R.C' \mid C' \in \zeta_{\refine,\corefine}(C) \} \enspace, \\
-    &&& \text{\SROIQ concepts:} \\
-    \zeta_{\refine,\corefine}(\nominal i) &= && \refine(\nominal i) \enspace, \\
-    \zeta_{\refine,\corefine}(\exists R.\self) &= && \refine(\exists R.\self) \cup \{ \exists R'.\self \mid R' \in \zeta_{\refine,\corefine}(R) \} \enspace, \\
-    \zeta_{\refine,\corefine}(\more n R.C) &= && \refine(\more n R.C) \cup \{ \more n R'.C \mid R' \in \zeta_{\refine,\corefine}(R) \} \\
-    &&& \cup \{ \more n R.C' \mid C' \in \zeta_{\refine,\corefine}(C) \}
+    & \text{\SROIQ concepts:} \\
+    \zeta_{\refine,\corefine}(\nominal i) ={} & \refine(\nominal i) \enspace, \\
+    \zeta_{\refine,\corefine}(\exists R.\self) ={} & \refine(\exists R.\self) \cup \{ \exists R'.\self \mid R' \in \zeta_{\refine,\corefine}(R) \} \enspace, \\
+    \zeta_{\refine,\corefine}(\more n R.C) ={} & \refine(\more n R.C) \cup \{ \more n R'.C \mid R' \in \zeta_{\refine,\corefine}(R) \} \\
+    & \cup \{ \more n R.C' \mid C' \in \zeta_{\refine,\corefine}(C) \}
     \cup \{ \more n' R.C \mid n' \in \corefine(n) \} \enspace, \\
-    \zeta_{\refine,\corefine}(\less n R.C) &= && \refine(\less n R.C) \cup \{ \less n R'.C \mid R' \in \zeta_{\corefine,\refine}(R) \} \\
-    &&& \cup \{ \less n R.C' \mid C' \in \zeta_{\corefine,\refine}(C) \}
+    \zeta_{\refine,\corefine}(\less n R.C) ={} & \refine(\less n R.C) \cup \{ \less n R'.C \mid R' \in \zeta_{\corefine,\refine}(R) \} \\
+    & \cup \{ \less n R.C' \mid C' \in \zeta_{\corefine,\refine}(C) \}
     \cup \{ \less n' R.C \mid n' \in \refine(n) \} \enspace, \\
-    &&& \text{\SROIQ roles:} \\
-    \zeta_{\refine,\corefine}(R) &= && \refine(R) \enspace.
-  \end{alignat*}
+    & \text{\SROIQ roles:} \\
+    \zeta_{\refine,\corefine}(R) ={} & \refine(R) \enspace.
+  \end{align*}
   From the abstract refinement operator $\zeta_{\refine,\corefine}$, two concrete refinement operators, the \emph{generalization operator} and \emph{specialization operator} are, respectively, defined as
   \begin{align*}
     \gamma_{\Omcref,\Omcfull} &= \zeta_{\UpC_{\Omcref,\Omcfull},\DownC_{\Omcref,\Omcfull}} \enspace \text{and} \\
@@ -105,24 +105,24 @@ Using the specialization and generalization operators, we can now define the \em
 
 \begin{definition} \label{def:weaken}
   Given an axiom $\alpha$, the set of \emph{weakenings} with respect to the reference ontology $\Omcref$ and full ontology $\Omcfull$, written $g_{\Omcref,\Omcfull}(\alpha)$ is defined such that
-  \begin{alignat*}{2}
-    g_{\Omcref,\Omcfull}(C \sqsubseteq D) &={} && \{ C' \sqsubseteq D \mid C' \in \rho_{\Omcref,\Omcfull} (C) \} \\
-    &&& \cup \{ C \sqsubseteq D' \mid D' \in \gamma_{\Omcref,\Omcfull}(D) \} \enspace, \\
-    g_{\Omcref,\Omcfull}(C(a)) &={} && \{ C'(a) \mid C' \in \gamma_{\Omcref,\Omcfull}(C) \} \enspace, \\
-    &&& \text{\SROIQ axioms:} \\
-    g_{\Omcref,\Omcfull}(R(a, b)) &={} && \{ R'(a, b) \mid R' \in \gamma_{\Omcref,\Omcfull}(R) \} \cup \{ R(a, b), \bot \sqsubseteq \top \} \enspace, \\
-    g_{\Omcref,\Omcfull}(\lnot R(a, b)) &={} && \{ \lnot R'(a, b) \mid R' \in \rho_{\Omcref,\Omcfull}(R) \} \cup \{ \lnot R(a, b), \bot \sqsubseteq \top \} \enspace, \\
-    g_{\Omcref,\Omcfull}(a = b) &={} && \{ a = b, \bot \sqsubseteq \top \} \enspace, \\
-    \quad g_{\Omcref,\Omcfull}(a \not= b) &={} && \{ a \not= b, \bot \sqsubseteq \top \} \enspace, \\
-    g_{\Omcref,\Omcfull}(\disjoint(R, S)) &={} && \{ \disjoint(R', S) \mid R' \in \rho_{\Omcref,\Omcfull} (R) \} \\
-    &&& \cup \{ \disjoint(R, S') \mid S' \in \rho_{\Omcref,\Omcfull}(S) \} \\
-    &&& \cup \{ \disjoint (R, S), \bot \sqsubseteq \top \} \enspace, \\
-    g_{\Omcref,\Omcfull}(S_1 \circ \cdots \circ S_n \sqsubseteq R) &={} && \{ S_1 \circ \cdots \circ S_i' \circ \cdots \circ S_n \sqsubseteq R \\
-    &&& \quad \mid S_i' \in \rho_{\Omcref,\Omcfull}(S_i) \text{ for } i = 1, \dots, n \} \\
-    &&& \cup \{ S_1 \sqsubseteq R' \mid R' \in \gamma_{\Omcref,\Omcfull} \text{ and } n = 1 \text{ and } \\
-    &&& \quad \enspace \, S_1 \text{ is simple in } \Omcfull \} \\
-    &&& \cup \{ S_1 \circ \cdots \circ S_n \sqsubseteq R, \bot \sqsubseteq \top \} \enspace.
-  \end{alignat*}
+  \begin{align*}
+    g_{\Omcref,\Omcfull}(C \sqsubseteq D) ={} & \{ C' \sqsubseteq D \mid C' \in \rho_{\Omcref,\Omcfull} (C) \} \\
+    & \cup \{ C \sqsubseteq D' \mid D' \in \gamma_{\Omcref,\Omcfull}(D) \} \enspace, \\
+    g_{\Omcref,\Omcfull}(C(a)) ={} & \{ C'(a) \mid C' \in \gamma_{\Omcref,\Omcfull}(C) \} \enspace, \\
+    & \text{\SROIQ axioms:} \\
+    g_{\Omcref,\Omcfull}(R(a, b)) ={} & \{ R'(a, b) \mid R' \in \gamma_{\Omcref,\Omcfull}(R) \} \cup \{ R(a, b), \bot \sqsubseteq \top \} \enspace, \\
+    g_{\Omcref,\Omcfull}(\lnot R(a, b)) ={} & \{ \lnot R'(a, b) \mid R' \in \rho_{\Omcref,\Omcfull}(R) \} \cup \{ \lnot R(a, b), \bot \sqsubseteq \top \} \enspace, \\
+    g_{\Omcref,\Omcfull}(a = b) ={} & \{ a = b, \bot \sqsubseteq \top \} \enspace, \\
+    \quad g_{\Omcref,\Omcfull}(a \not= b) ={} & \{ a \not= b, \bot \sqsubseteq \top \} \enspace, \\
+    g_{\Omcref,\Omcfull}(\disjoint(R, S)) ={} & \{ \disjoint(R', S) \mid R' \in \rho_{\Omcref,\Omcfull} (R) \} \\
+    & \cup \{ \disjoint(R, S') \mid S' \in \rho_{\Omcref,\Omcfull}(S) \} \\
+    & \cup \{ \disjoint (R, S), \bot \sqsubseteq \top \} \enspace, \\
+    g_{\Omcref,\Omcfull}(S_1 \circ \cdots \circ S_n \sqsubseteq R) ={} & \{ S_1 \circ \cdots \circ S_i' \circ \cdots \circ S_n \sqsubseteq R \\
+    & \quad \mid S_i' \in \rho_{\Omcref,\Omcfull}(S_i) \text{ for } i = 1, \dots, n \} \\
+    & \cup \{ S_1 \sqsubseteq R' \mid R' \in \gamma_{\Omcref,\Omcfull} \text{ and } n = 1 \text{ and } \\
+    & \quad \enspace \, S_1 \text{ is simple in } \Omcfull \} \\
+    & \cup \{ S_1 \circ \cdots \circ S_n \sqsubseteq R, \bot \sqsubseteq \top \} \enspace.
+  \end{align*}
 \end{definition}
 
 As was the case for the axiom weakening operator in \ALC, the axioms $\alpha'$ returned by $g_{\Omcref,\Omcfull}(\alpha)$ for a given axiom $\alpha$ are indeed weaker than $\alpha$ with respect to the reference ontology $\Omcref$.
