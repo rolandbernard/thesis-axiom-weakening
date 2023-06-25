@@ -1,3 +1,54 @@
 
-% TODO
+Since OWL 2 DL has some features that are not present in $\SROIQ$ it is neccesary to perform some normalization in order to apply the weakening as described in \cref{def:weaken}. We define to this end a translation $\pi$ that maps OWL 2 DL class expressions, object property espressions, and axioms respectovely to \SROIQ concepts, roles, and axioms. Note that a simgle OWL 2 axiom is mapped to a set of \SROIQ axioms that together have the equivalent meaning. This is neccesary because not all OWL 2 axioms can be translated into a single \SROIQ axiom. The translation does not cover annotaions or axioms relating to data properties, as those do not map directly to \SROIQ, and were removed in the preprocessing step for the evaluation. Further, declaration axioms are not mentioned here, but they are assumed to be used for generating the vocabulary $N_C$, $N_R$, and $N_I$.
 
+\begin{definition} \label{def:owl2sroiq}
+  The \emph{translation} $\pi$ from OWL 2 DL object property expressions to \SROIQ roles is give by
+  \begin{align*}
+    \pi(r) &= r \quad \text{ for } r \in N_R \cup \{ U, E \} \enspace, \\
+    \pi(\op{InverseObjectProperty}(R)) &= \inv(\pi(R)) \enspace.
+  \end{align*}
+  The translation from OWL 2 DL class espressions to \SROIQ concepts is given by
+  \begin{align*}
+    \pi(A) &= A \quad \text{ for } A \in N_C \cup \{ \top, \bot \} \enspace, \\
+    \pi(\op{ObjectComplementOf}(C)) &= \lnot \pi(C) \enspace, \\
+    \pi(\op{ObjectIntersectionOf}(C_1, \dots, C_n)) &= ((C_1 \sqcap C_2) \cdots \sqcap C_n) \enspace, \\
+    \pi(\op{ObjectUnionOf}(C_1, \dots, C_n)) &= ((C_1 \sqcup C_2) \cdots \sqcup C_n) \enspace, \\
+    \pi(\op{ObjectAllValuesFrom}(R, C)) &= \forall \pi(R).\pi(C) \enspace, \\
+    \pi(\op{ObjectSomeValuesFrom}(R, C)) &= \exists \pi(R).\pi(C) \enspace, \\
+    \pi(\op{ObjectHasSelf}(R)) &= \exists \pi(R).\self \enspace, \\
+    \pi(\op{ObjectMaxCardinality}(n, R, C)) &={} \less n {\pi(R).\pi(C)} \enspace, \\
+    \pi(\op{ObjectMinCardinality}(n, R, C)) &={} \more n {\pi(R).\pi(C)} \enspace, \\
+    \pi(\op{ObjectOneOf}(a_1, \dots, a_n)) &= ((\nominal {a_1} \sqcup \nominal {a_2}) \cdots \sqcup \nominal {a_n}) \enspace, \\
+    \pi(\op{ObjectExactCardinality}(n, R, C)) &= (\more n {\pi(R).\pi(C)}) \sqcup (\less n {\pi(R).\pi(C)}) \enspace, \\
+    \pi(\op{ObjectHasValue}(R, a)) &= \exists \pi(R).\nominal a \enspace.
+  \end{align*}
+  The translation from OWL 2 DL axioms to \SROIQ axioms is given by
+  \begin{widepage}
+    \small
+    \begin{align*}
+      \pi(\op{SubClassOf}(C, D)) ={} & \{ \pi(C) \sqsubseteq \pi(D) \} \enspace, \\
+      \pi(\op{ClassAssertion}(C, a)) ={} & \{ \pi(C)(a) \} \enspace, \\
+      \pi(\op{ObjectPropertyAssertion}(R, a, b)) ={} & \{ \pi(R)(a, b) \} \enspace, \\
+      \pi(\op{NegativeObjectPropertyAssertion}(R, a, b)) ={} & \{ \lnot \pi(R)(a, b) \} \enspace, \\
+      \pi(\op{SameIndividual}(a_1, \dots, a_n)) ={} & \{ a_i = a_j \mid 1 \leq i < j \leq n \} \enspace, \\
+      \pi(\op{DifferentIndividuals}(a_1, \dots, a_n)) ={} & \{ a_i \not= a_j \mid 1 \leq i < j \leq n \} \enspace, \\
+      \pi(\op{DisjointObjectProperties}(R_1, \dots, R_n)) ={} & \{ \disjoint(\pi(R_i), \pi(R_j)) \mid 1 \leq i < j \leq n \} \enspace, \\
+      \pi(\op{SubObjectPropertyOf}(S, R)) ={} & \{ \pi(S) \sqsubseteq \pi(R) \} \enspace, \\
+      \pi(\op{SubObjectPropertyOf}( \qquad \qquad \qquad \qquad \quad & \\ \op{ObjectPropertyChain}(S_1, \dots, S_n), R)) ={} & \{ \pi(S_1) \circ \cdots \circ \pi(S_n) \sqsubseteq \pi(R) \} \enspace, \\
+      \pi(\op{EquivalentClasses}(C_1, \dots, C_n)) ={} & \{ \pi(C_i) \sqsubseteq \pi(C_j) \mid 1 \leq i \leq n \text{ and } 1 \leq j \leq n \text{ and } i \not= j \} \enspace, \\
+      \pi(\op{DisjointClasses}(C_1, \dots, C_n)) ={} & \{ \pi(C_i) \sqcap \pi(C_j) \subseteq \bot \mid 1 \leq i < j \leq n \} \enspace, \\
+      \pi(\op{DisjointUnion}(D, C_1, \dots, C_n)) ={} & \{ \pi(C_i) \sqcap \pi(C_j) \subseteq \bot \mid 1 \leq i < j \leq n \} \\ & \cup \{ D \subseteq ((C_1 \sqcup C_2) \cdots \sqcup C_n), ((C_1 \sqcup C_2) \cdots \sqcup C_n) \sqsubseteq D \} \enspace, \\
+      \pi(\op{EquivalentObjectProperties}(R_1, \dots, R_n)) ={} & \{ \pi(R_i) \sqsubseteq \pi(R_j) \mid 1 \leq i \leq n \text{ and } 1 \leq j \leq n \text{ and } i \not= j \} \enspace, \\
+      \pi(\op{InverseObjectProperties}(S, R)) ={} & \{ \inv(\pi(S)) \sqsubseteq \pi(R), \pi(R) \sqsubseteq \inv(\pi(S)) \} \enspace, \\
+      \pi(\op{FunctionalObjectProperty}(R)) ={} & \{ \top \sqsubseteq{} \less 1 {\pi(R).\top} \} \enspace, \\
+      \pi(\op{InverseFunctionalObjectProperty}(R)) ={} & \{ \top \sqsubseteq{} \less 1 {\inv(\pi(R)).\top} \} \enspace, \\
+      \pi(\op{SymmetricObjectProperty}(R)) ={} & \{ \inv(\pi(R)) \sqsubseteq \pi(R) \} \enspace, \\
+      \pi(\op{AsymmetricObjectProperty}(R)) ={} & \{ \disjoint(\inv(\pi(R)), \pi(R)) \} \enspace, \\
+      \pi(\op{TransitiveObjectProperty}(R)) ={} & \{ \pi(R) \circ \pi(R) \sqsubseteq \pi(R) \} \enspace, \\
+      \pi(\op{ReflexiveObjectProperty}(R)) ={} & \{ \top \sqsubseteq \exists \pi(R).\self \} \enspace, \\
+      \pi(\op{IrreflexiveObjectProperty}(R)) ={} & \{ \top \sqsubseteq \lnot \exists \pi(R).\self \} \enspace, \\
+      \pi(\op{ObjectPropertyDomain}(R, C)) ={} & \{ \exists \pi(R).\top \sqsubseteq \pi(C) \} \enspace, \\
+      \pi(\op{ObjectPropertyRange}(R, C)) ={} & \{ \exists \inv(\pi(R)).\top \sqsubseteq \pi(C) \} \enspace.
+    \end{align*}
+  \end{widepage}
+\end{definition}
