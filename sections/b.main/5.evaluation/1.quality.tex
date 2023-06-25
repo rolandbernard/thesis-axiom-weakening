@@ -34,61 +34,55 @@ The evaluation starts by first making the ontologies inconsistent. This has been
   \label{algo:repair-remove}
 \end{algorithm}
 
-This process, both making the ontology inconsistent and repairing it, was repeated two hundred times for each ontology, and the IIC was computed between the results of the different repair methods. The evaluation was performed using a randomly sampled maximal consistent subset as the reference ontology and by randomly sampling $16$ minimal inconsistent subsets during the selection of bad axioms in \textsc{FindBadAxiom}(\Omc). To obtain comparable results, both \textsc{RepairOntologyRemove}($\Omc$) and \textsc{RepairOntologyWeakening}($\Omc$) use the same implementation of \textsc{FindBadAxiom}($\Omc$). While the utilized OWL 2 DL reasoners are all highly optimized, they exhibit undesirable performance in some edge cases. Mostly they are fast to perform reasoning task like checking for consistency or entailment in the selected ontologies. However, when performance pitfalls are encountered, they may require significantly more time, making the computation required for repair unreasonably slow. For this reason a timeout of 5 minutes was placed on the repairs execution and the outputs of runs that did not complete within this time limit where discarded and replaced by new runs. The results of these experiments are listed in \cref{table:results} and shown in \cref{fig:results-remove} and \cref{fig:results-mcs}.
+This process, both making the ontology inconsistent and repairing it, was repeated one hundred times for each ontology, and the IIC was computed between the results of the different repair methods. The evaluation was performed using a randomly sampled maximal consistent subset as the reference ontology and by randomly sampling $16$ minimal inconsistent subsets during the selection of bad axioms in \textsc{FindBadAxiom}(\Omc). To obtain comparable results, both \textsc{RepairOntologyRemove}($\Omc$) and \textsc{RepairOntologyWeakening}($\Omc$) use the same implementation of \textsc{FindBadAxiom}($\Omc$). While the utilized OWL 2 DL reasoners are all highly optimized, they exhibit undesirable performance in some edge cases. Mostly they are fast to perform reasoning task like checking for consistency or entailment in the selected ontologies. However, when performance pitfalls are encountered, they may require significantly more time, making the computation required for repair unreasonably slow. For this reason a timeout of 5 minutes was placed on the repairs execution and the outputs of runs that did not complete within this time limit where discarded and replaced by new runs. The results of these experiments are listed in \cref{table:results} and shown in \cref{fig:results-remove} and \cref{fig:results-mcs}.
 
 \begin{table}[ht]
   \scriptsize
-  \begin{widepage}
-    \centering
-    \begin{tabular}{|lcc|}
-      \hline
-      Abbreviation & IIC w.r.t. repair by removal & IIC w.r.t. maximal consistent subset \\
-      \hline
-      admin & 0.53 [0.47; 0.59] & 0.39 [0.31; 0.47] \\
-      ahso & 0.56 [0.50; 0.62] & 0.51 [0.44; 0.57] \\
-      cdao & 0.53 [0.44; 0.61] & 0.53 [0.45; 0.61] \\
-      cdpeo & 0.50 [0.45; 0.55] & 0.22 [0.16; 0.28] \\
-      covid19-ibo & 0.70 [0.65; 0.75] & 0.63 [0.57; 0.69] \\
-      ecp & 0.74 [0.67; 0.81] & 0.36 [0.28; 0.44] \\
-      emo & 0.69 [0.63; 0.75] & 0.60 [0.53; 0.66] \\
-      evi & 0.49 [0.43; 0.55] & 0.59 [0.53; 0.66] \\
-      falls & 0.78 [0.71; 0.85] & 0.49 [0.41; 0.58] \\
-      fo & 0.50 [0.44; 0.57] & 0.70 [0.62; 0.76] \\
-      gbm & 0.59 [0.52; 0.66] & 0.52 [0.44; 0.59] \\
-      gfvo & 0.56 [0.49; 0.62] & 0.54 [0.49; 0.60] \\
-      koro & 0.51 [0.45; 0.57] & 0.37 [0.29; 0.45] \\
-      lico & 0.55 [0.48; 0.62] & 0.53 [0.46; 0.60] \\
-      mamo & 0.52 [0.44; 0.60] & 0.68 [0.61; 0.74] \\
-      mpio & 0.70 [0.63; 0.76] & 0.73 [0.67; 0.78] \\
-      pizza & 0.56 [0.49; 0.64] & 0.61 [0.53; 0.68] \\
-      provo & 0.50 [0.43; 0.56] & 0.55 [0.49; 0.62] \\
-      qudt & 0.96 [0.93; 0.99] & 0.44 [0.35; 0.55] \\
-      trans & 0.58 [0.52; 0.64] & 0.43 [0.35; 0.52] \\
-      triage & 0.53 [0.46; 0.60] & 0.53 [0.46; 0.60] \\
-      vio & 0.46 [0.37; 0.55] & 0.49 [0.40; 0.57] \\
-      \hline
-      Overall & 0.59 [0.57; 0.61] & 0.52 [0.50; 0.54] \\
-      \hline
-    \end{tabular}
-  \end{widepage}
+  \centering
+  \begin{tabular}{|l|cc|}
+    \hline
+    & IIC w.r.t. repair by removal & IIC w.r.t. maximal consistent subset \\
+    \hline
+    admin & 0.53 [0.47; 0.59] & 0.39 [0.31; 0.47] \\
+    ahso & 0.56 [0.50; 0.62] & 0.51 [0.44; 0.57] \\
+    cdao & 0.53 [0.44; 0.61] & 0.53 [0.45; 0.61] \\
+    cdpeo & 0.50 [0.45; 0.55] & 0.22 [0.16; 0.28] \\
+    covid19-ibo & 0.70 [0.65; 0.75] & 0.63 [0.57; 0.69] \\
+    ecp & 0.74 [0.67; 0.81] & 0.36 [0.28; 0.44] \\
+    emo & 0.69 [0.63; 0.75] & 0.60 [0.53; 0.66] \\
+    evi & 0.49 [0.43; 0.55] & 0.59 [0.53; 0.66] \\
+    falls & 0.78 [0.71; 0.85] & 0.49 [0.41; 0.58] \\
+    fo & 0.50 [0.44; 0.57] & 0.70 [0.62; 0.76] \\
+    gbm & 0.59 [0.52; 0.66] & 0.52 [0.44; 0.59] \\
+    gfvo & 0.56 [0.49; 0.62] & 0.54 [0.49; 0.60] \\
+    koro & 0.51 [0.45; 0.57] & 0.37 [0.29; 0.45] \\
+    lico & 0.55 [0.48; 0.62] & 0.53 [0.46; 0.60] \\
+    mamo & 0.52 [0.44; 0.60] & 0.68 [0.61; 0.74] \\
+    mpio & 0.70 [0.63; 0.76] & 0.73 [0.67; 0.78] \\
+    pizza & 0.56 [0.49; 0.64] & 0.61 [0.53; 0.68] \\
+    provo & 0.50 [0.43; 0.56] & 0.55 [0.49; 0.62] \\
+    qudt & 0.96 [0.93; 0.99] & 0.44 [0.35; 0.55] \\
+    trans & 0.58 [0.52; 0.64] & 0.43 [0.35; 0.52] \\
+    triage & 0.53 [0.46; 0.60] & 0.53 [0.46; 0.60] \\
+    vio & 0.46 [0.37; 0.55] & 0.49 [0.40; 0.57] \\
+    \hline
+    Overall & 0.59 [0.57; 0.61] & 0.52 [0.50; 0.54] \\
+    \hline
+  \end{tabular}
   \caption{Results of the evaluation. IIC is given as mean and 95\% confidence interval in brackets.}
   \label{table:results}
 \end{table}
 
 \begin{figure}[ht]
-  \begin{widepage}
-    \centering
-    \includegraphics[width=\textwidth]{resources/iic-remove-ontology-bar.png}
-  \end{widepage}
+  \centering
+  \includegraphics[width=\textwidth]{resources/iic-remove-ontology-bar.png}
   \caption{Mean IIC with respect to repair via removal per ontology. The error bars show the 95\% confidence interval.}
   \label{fig:results-remove}
 \end{figure}
 
 \begin{figure}[ht]
-  \begin{widepage}
-    \centering
-    \includegraphics[width=\textwidth]{resources/iic-mcs-ontology-bar.png}
-  \end{widepage}
+  \centering
+  \includegraphics[width=\textwidth]{resources/iic-mcs-ontology-bar.png}
   \caption{Mean IIC with respect to a random maximal consistent subset per ontology. The error bars show the 95\% confidence interval.}
   \label{fig:results-mcs}
 \end{figure}
