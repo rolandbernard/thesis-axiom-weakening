@@ -19,13 +19,13 @@ Roles can be partitioned into two disjoint sets, simple roles and non-simple rol
 \begin{itemize}
   \item the universal role $U$ is non-simple,
   \item any role $R$ that appears in a RIA of the form $S_1 \circ \cdots \circ S_n \sqsubseteq R$ where $n > 1$ is non-simple,
-  \item any role $R$ that appears in a simple role inclusion $S \sqsubseteq R$ where $S$ is non-simple is itself non-simple, and
+  \item any role $R$ that appears in a simple RIA $S \sqsubseteq R$ where $S$ is non-simple is itself non-simple, and
   \item if a role $R$ is non-simple, then $\inv(R)$ is also non-simple.
 \end{itemize}
 All roles which are not non-simple are \emph{simple roles}.
 
 \begin{example}
-  % TODO
+  In the RBox $\Rmc = \{ r \circ s \sqsubseteq t, r \sqsubseteq s, t \sqsubseteq v^- \}$, the roles $t$ and $v^-$ are non-simple. $t$ is non-simple because it appears as the super role in the complex RIA $r \circ s \sqsubseteq t$. $v$ is non-simple because it appears on the right-hand side of the RIA $t \sqsubseteq v^-$, and $t$ is non-simple. Since $t$ and $v^-$ are non-simple, $t^-$ and $v$ are also non-simple. The roles $r$ and $s$ on the other hand are simple. Even though, $s$ appears as the super role in the RIA $r \sqsubseteq s$, since it is not a complex RIA and $r$ is simple, it does not affect the simplicity of $s$.
 \end{example}
 
 There is an additional restriction that is placed upon the role hierarchy in a $SROIQ$ ontology. The role hierarchy in $\SROIQ$ must be regular. A role hierarchy $\Rmc_h$ is \emph{regular} if there exists a preorder $\preceq$ (that is, a transitive and reflexive relation) on the set of roles $\Lmc(N_R)$, such that $S \prec R \iff \inv(S) \prec R$ for all roles $R$ and $S$, and all RIA in $\Rmc_h$ are $\preceq$-regular. A RIA is defined to be $\preceq$\emph{-regular} if it is of one of the following forms:
@@ -36,14 +36,10 @@ There is an additional restriction that is placed upon the role hierarchy in a $
   \item $S_1 \circ \cdots \circ S_n \circ R \sqsubseteq R$, or
   \item $S_1 \circ \cdots \circ S_n \sqsubseteq R$,
 \end{itemize}
-where $n > 1$ and $R$, $S$, $S_1, \cdots, S_n$ are roles such that $S \preceq R$, $S_i \preceq R$, and $R \not\preceq S_i$ for $i = 1, \dots, n$. This condition on the role hierarchy prevents cyclic definitions with role inclusion axioms that include role chains. These types of cyclic definition could otherwise lead to undecidability of the logic.
+where $n > 1$ and $R$, $S$, $S_1, \cdots, S_n$ are roles such that $S \preceq R$, $S_i \preceq R$, and $R \not\preceq S_i$ for $i = 1, \dots, n$. This condition on the role hierarchy prevents cyclic definitions with RIAs that include role chains. These types of cyclic definition could otherwise lead to undecidability of the logic.
 
 \begin{example}
-  % TODO
-\end{example}
-
-\begin{example}
-  % TODO
+  The RBox $\Rmc = \{ r \circ s \sqsubseteq t, t \sqsubseteq v, v \sqsubseteq s \}$ is not regular. Intuitively, there exists a cyclic dependency involving a complex RIA. That is, $t$ depends on $s$ via a complex RIA, $v$ subsumes $t$, and $s$ subsumes $v$. This means, $s \preceq t$, $t \preceq v$ and $v \preceq s$ must hold. By transitivity, $t \preceq s$ must also hold. However, because the first axiom is a complex RIA, $t \not\preceq s$ must hold, causing a contradiction.
 \end{example}
 
 To make axiom weakening simpler, this definition is slightly more general than necessary. The definition of regularity presented here is more permissive than the one in \cite{horrocks2006even} in that it always allows simple roles on the left-hand side similar to what has been described in \cite{rudolph2011foundations}. However, it is more permissive than stated in \cite{rudolph2011foundations} in that it allows for inverse roles on the right-hand side. This definition of regularity aligns more closely with the implementation of the OWL 2 DL \cite{motik2012ontology} profile checker in the OWL API \cite{horridge2011owl,owlapi}.
@@ -61,7 +57,7 @@ The TBox $\Tmc$ describes the relationship between different concepts. In $\SROI
   \item if $C$ is a concept and $R \in \Lmc(N_R)$ a (possibly non-simple) role, then $\exists R.C$ (\emph{existential quantification}) and $\forall r.C$ (\emph{universal quantification}) are also concepts, and
   \item if $C$ is a concept, $S \in \Lmc(N_R)$ a simple role and $n \in \mathbb{N}_0$ a non-negative number, then $\exists S.\self$ (\emph{\self restriction}), $\less n S.C$ (\emph{at-most restriction}), and $\more n S.C$ (\emph{at-least restriction}) are concepts, the last two may together be referred to as \emph{qualified number restrictions}.
 \end{itemize}
-Given two concepts $C$ and $D$, a \emph{general concept inclusion axiom} (GCI) is a statement of the form $C \sqsubseteq D$. The TBox $\Tmc$ is a finite set of general concept inclusion axioms.
+Given two concepts $C$ and $D$, a \emph{concept inclusion axiom} (GCI) is a statement of the form $C \sqsubseteq D$. The TBox $\Tmc$ is a finite set of GCIs.
 
 \subsection{ABox} \label{abox}
 

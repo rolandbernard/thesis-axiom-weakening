@@ -22,27 +22,61 @@ An interpretation maps the universal role $U$ to $U^I = \Delta^I \times \Delta^I
 \end{itemize}
 
 \begin{example}
-  % TODO
+  Given the interpretation $I = \langle \Delta^I, \cdot^I \rangle$ where $\Delta^I = \{ 1, 2, 3, 4, 5, 6, 7 \}$ and $P^I = \{ 2, 3, 5, 7 \}$, $E^I = \{ 2, 4, 6 \}$, $o^I = 1$, and $s^I = \{ \langle 1, 2 \rangle,\allowbreak \langle 2, 3 \rangle,\allowbreak \langle 3, 4 \rangle,\allowbreak \langle 4, 5 \rangle,\allowbreak \langle 5, 6 \rangle,\allowbreak \langle 6, 7 \rangle \}$, the extended interpretation function evaluates the following example as shown.
+  \begin{align*}
+    \top^I &= \{ 1, 2, 3, 4, 5, 6, 7 \} &
+    (\lnot P)^I &= \{ 1, 4, 6 \} \\
+    (P \cup E)^I &= \{ 2, 3, 4, 5, 6, 7 \} &
+    (P \cap E)^I &= \{ 2 \} \\
+    (\exists s.P)^I &= \{ 1, 2, 4, 6 \} &
+    (\exists s.E \cup \exists s^-.E)^I &= \{ 1, 3, 5, 7 \} \\
+    (\exists s^-.\nominal o)^I &= \{ 2 \} &
+    (\exists s.\nominal o)^I &= \emptyset
+  \end{align*}
 \end{example}
 
 \subsection{Satisfaction of Axioms} \label{satisfaction-of-axioms}
 
 The purpose of the (extended) interpretation function is mainly to determine satisfaction of axioms. We define in the following when an axiom $\alpha$ is true, or holds, in a specific interpretation $I$. If this is the case, the interpretation $I$ satisfies $\alpha$, written $I \models \alpha$. If an interpretation $I$ satisfies an axiom $\alpha$, we also say that $I$ is a model of $\alpha$.
 \begin{itemize}
-  \item A role inclusion axiom $S_1 \circ \cdots \circ S_n \sqsubseteq R$ holds in $I$ if and only if for each sequence $\delta_1, \dots, \delta_{n + 1} \in \Delta^I$ for which $\langle \delta_i , \delta_{i + 1} \rangle \in S_i^I$ for all $i = 1, \cdots, n$, also $\langle \delta_1 , \delta_n \rangle \in R^\mathcal{i}$ is satisfied. Equivalently, we can write $I \models S_1 \circ \cdots \circ S_n \sqsubseteq R \iff S_1^I \circ \cdots \circ S_n^I \subseteq R^I$ where $\circ$ denotes the composition of the relations.
+  \item A RIA $S_1 \circ \cdots \circ S_n \sqsubseteq R$ holds in $I$ if and only if for each sequence $\delta_1, \dots, \delta_{n + 1} \in \Delta^I$ for which $\langle \delta_i , \delta_{i + 1} \rangle \in S_i^I$ for all $i = 1, \cdots, n$, also $\langle \delta_1 , \delta_n \rangle \in R^\mathcal{i}$ is satisfied. Equivalently, we can write $I \models S_1 \circ \cdots \circ S_n \sqsubseteq R \iff S_1^I \circ \cdots \circ S_n^I \subseteq R^I$ where $\circ$ denotes the composition of the relations.
   \item A role disjointness axiom $\disjoint(S, R)$ hold iff the extensions of $R$ and $S$ are disjoint, formally $I \models \disjoint(S, R) \iff S^I \cap R^I = \empty$.
-  \item A general concept inclusion axiom $C \sqsubseteq D$ is true iff the extension of $C$ is fully contained in the extension of $D$, hence $I \models C \sqsubseteq D \iff C^I \subseteq D^I$.
+  \item A GCI $C \sqsubseteq D$ is true iff the extension of $C$ is fully contained in the extension of $D$, hence $I \models C \sqsubseteq D \iff C^I \subseteq D^I$.
   \item A concept assertion $C(a)$ holds iff the individual that $a$ is mapped to by $\cdot^I$ is in the concept extension of $C$, therefore $I \models C (a) \iff a^I \in C^I$.
   \item A role assertion $R(a, b)$ holds iff the individuals denoted by the name $a$ and $b$ are connected in the extension of $R$, thus $I \models R(a, b) \iff \langle a^I, b^I \rangle \in R^I$.
-  \item A negative role assertion $\lnot R(a, b)$ is true exactly than when the corresponding role assertion $R(a, b)$ is false. Equivalently, $I \models \lnot R(a, b) \iff \langle a^I, b^I \rangle \not\in R^I$.
+  \item A negative role assertion $\lnot R(a, b)$ is true exactly then when the corresponding role assertion $R(a, b)$ is false. Equivalently, $I \models \lnot R(a, b) \iff \langle a^I, b^I \rangle \not\in R^I$.
   \item An equality assertion $a = b$ holds iff the individuals identified by $a$ and $b$ are the same element of the domain, formally written $I \models a = b \iff a^I = b^I$.
   \item Dual to the above, $a \not = b$ holds iff the names $a$ and $b$ denote different elements, accordingly $I \models a \not= b \iff a^I \not= b^I$.
 \end{itemize}
 We say a set of axioms holds in an interpretation $I$ iff every axiom of the set hold in $I$. Accordingly, $I$ satisfies a ontology $\Omc$, written $I \models \Omc$, iff $I$ satisfies every axiom $\alpha \in \Omc$ of the ontology, i.e., $I \models \Omc \iff \forall \alpha \in \Omc \, . \; I \models \alpha$. If $I$ satisfies $\Omc$, we say $I$ is a model of $\Omc$.
 
+\begin{example}
+  Given the interpretation $I = \langle \Delta^I, \cdot^I \rangle$ where $\Delta^I = \{ 1, 2, 3, 4, 5, 6, 7 \}$ and $P^I = \{ 2, 3, 5, 7 \}$, $E^I = \{ 2, 4, 6 \}$, $o^I = 1$, $t^I = 2$, and $s^I = \{ \langle 1, 2 \rangle,\allowbreak \langle 2, 3 \rangle,\allowbreak \langle 3, 4 \rangle,\allowbreak \langle 4, 5 \rangle,\allowbreak \langle 5, 6 \rangle,\allowbreak \langle 6, 7 \rangle \}$, the following axioms are satisfied by $I$.
+  \begin{align*}
+    &P \sqsubseteq \top &
+    &P \sqcap \lnot (\exists s^-.\nominal o) \sqsubseteq \lnot E \\
+    &P \sqcup E \sqsubseteq \lnot \nominal o &
+    &\disjoint(s, s^-) \\
+    &s(o, t) &
+    &o \not= t
+  \end{align*}
+  The following axioms on the other hand are not satisfied by $I$.
+  \begin{align*}
+    &P \sqsubseteq \lnot E &
+    &\top \sqsubseteq P \sqcup E &
+    &\top \sqsubseteq \exists s.\top \\
+    &s \circ s \sqsubseteq s &
+    &s \sqsubseteq s^- &
+    &\top \sqsubseteq{} \more 1 s.E \\
+    &\lnot s(o, t) &
+    &o = t &
+    &s(t, o)
+  \end{align*}
+\end{example}
+
 \subsection{Reasoning tasks} \label{reasoning-tasks}
 
-In general, logic-based knowledge representation is useful for the ability to perform reasoning task on ontologys. There are a number of reasoning tasks that can be performed by a reasoner in description logics. In this section, we will take a look at three basic reasoning tasks, and how they can be reduced to each other. While there exists other reasoning task, this section will focus on \emph{ontology satisfiability,} \emph{axiom entailment, and concept satisfiability}.
+In general, logic-based knowledge representation is useful for the ability to perform reasoning task on ontologys. There are a number of reasoning tasks that can be performed by a reasoner in DLs. In this section, we will take a look at three basic reasoning tasks, and how they can be reduced to each other. While there exists other reasoning task, this section will focus on \emph{ontology satisfiability,} \emph{axiom entailment, and concept satisfiability}.
 
 \subsubsection{Knowledge base satisfiability} \label{knowledge-base-satisfiability}
 

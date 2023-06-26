@@ -4,32 +4,32 @@ The performance of the axiom weakening base repair algorithm shown in \cref{algo
 \begin{table}[ht]
   \scriptsize
   \centering
-  \begin{tabular}{|l|cccc|}
+  \begin{tabular}{|l|rrrr@{ }r|}
+    \cline{2-6}
+    \multicolumn{1}{l|}{} & Steps & Calls & Time [ms] & \multicolumn{2}{r|}{Failed} \\
     \hline
-    & Steps & Calls & Time [ms] & Failed \\
-    \hline
-    admin & 8.5 & 9462 & 15649 & 01\% (01\%) \\
-    ahso & 2.1 & 4783 & 11922 & 10\% (28\%) \\
-    cdao & 2.4 & 16734 & 20674 & 12\% (47\%) \\
-    cdpeo & 1.6 & 4633 & 2068 & 00\% (00\%) \\
-    covid19-ibo & 1.3 & 14632 & 2186 & 04\% (12\%) \\
-    ecp & 1.3 & 2027 & 6034 & 00\% (12\%) \\
-    emo & 1.5 & 19013 & 5624 & 00\% (02\%) \\
-    evi & 5.5 & 6405 & 4916 & 10\% (68\%) \\
-    falls & 1.6 & 1328 & 876 & 02\% (07\%) \\
-    fo & 1.5 & 1282 & 1064 & 25\% (62\%) \\
-    gbm & 1.5 & 8092 & 2911 & 00\% (00\%) \\
-    gfvo & 1.8 & 4199 & 2352 & 00\% (00\%) \\
-    koro & 1.8 & 6340 & 2277 & 00\% (00\%) \\
-    lico & 2.7 & 7013 & 3661 & 01\% (20\%) \\
-    mamo & 2.6 & 4799 & 2243 & 00\% (00\%) \\
-    mpio & 2.4 & 1987 & 999 & 08\% (30\%) \\
-    pizza & 2.0 & 7453 & 28225 & 19\% (57\%) \\
-    provo & 5.0 & 7000 & 8587 & 05\% (10\%) \\
-    qudt & 1.1 & 7150 & 6389 & 08\% (41\%) \\
-    trans & 1.7 & 3218 & 1494 & 00\% (06\%) \\
-    triage & 2.4 & 4295 & 6107 & 17\% (49\%) \\
-    vio & 2.7 & 9406 & 10955 & 04\% (07\%) \\
+    admin & 8.5 & 9462 & 15649 & 1\% & (1\%) \\
+    ahso & 2.1 & 4783 & 11922 & 10\% & (28\%) \\
+    cdao & 2.4 & 16734 & 20674 & 12\% & (47\%) \\
+    cdpeo & 1.6 & 4633 & 2068 & 0\% & (0\%) \\
+    covid19-ibo & 1.3 & 14632 & 2186 & 4\% & (12\%) \\
+    ecp & 1.3 & 2027 & 6034 & 0\% & (12\%) \\
+    emo & 1.5 & 19013 & 5624 & 0\% & (2\%) \\
+    evi & 5.5 & 6405 & 4916 & 10\% & (68\%) \\
+    falls & 1.6 & 1328 & 876 & 2\% & (7\%) \\
+    fo & 1.5 & 1282 & 1064 & 25\% & (62\%) \\
+    gbm & 1.5 & 8092 & 2911 & 0\% & (0\%) \\
+    gfvo & 1.8 & 4199 & 2352 & 0\% & (0\%) \\
+    koro & 1.8 & 6340 & 2277 & 0\% & (0\%) \\
+    lico & 2.7 & 7013 & 3661 & 1\% & (20\%) \\
+    mamo & 2.6 & 4799 & 2243 & 0\% & (0\%) \\
+    mpio & 2.4 & 1987 & 999 & 8\% & (30\%) \\
+    pizza & 2.0 & 7453 & 28225 & 19\% & (57\%) \\
+    provo & 5.0 & 7000 & 8587 & 5\% & (10\%) \\
+    qudt & 1.1 & 7150 & 6389 & 8\% & (41\%) \\
+    trans & 1.7 & 3218 & 1494 & 0\% & (6\%) \\
+    triage & 2.4 & 4295 & 6107 & 17\% & (49\%) \\
+    vio & 2.7 & 9406 & 10955 & 4\% & (7\%) \\
     \hline
   \end{tabular}
   \caption{Results of the evaluation with respect to performance. Number of weakening iterations, reasoner calls, and total repair time are given as sample mean, with 95\% confidence interval in brackets. The frequency of failed runs is shown as percentage of repairs by weakening that were started but not completed. In parentheses the percentage of total failed runs including those with timeout during generation of inconsistent ontologies.}
