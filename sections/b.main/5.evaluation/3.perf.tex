@@ -1,5 +1,5 @@
 
-The performance of the axiom weakening base repair algorithm shown in \cref{algo:repair-weaken} has also been evaluated. During each repair via axiom weakening, the time taken and the number of calls to the reasoner have been registered. Additionally, the number of steps taken by the repair using axiom weakening has been observed. Also, as mentioned in \cref{eval-quality}, the repair program was put under a timeout to prevent cases where the reasoning becomes unreasonably slow. The generation of inconsistent ontologies used a similar timeout and the same procedure was used for situations in which the reasoner ran out of memory. Timeout of the weakening procedure are shown separately from those latter cases in the results. The frequency of these cases is indicated as percentage of the overall runs finished vs started. The results of this evaluation are presented in \cref{table:results-perf}, \cref{fig:results-perf-calls} and \cref{fig:results-perf-time}.
+The performance of the axiom weakening based repair algorithm shown in \cref{algo:repair-weaken} has also been evaluated. During each repair via axiom weakening, the time taken and the number of calls to the reasoner have been registered. Additionally, the number of steps taken by the repair using axiom weakening has been observed. Also, as mentioned in \cref{eval-quality}, the repair program was put under a timeout to prevent cases where the reasoning becomes unreasonably slow. The generation of inconsistent ontologies used a similar timeout and the same procedure was used for situations in which the reasoner ran out of memory. Timeout of the weakening procedure are shown separately from those latter cases in the results. The frequency of these cases is indicated as percentage of the overall runs finished vs started. The results of this evaluation are presented in \cref{table:results-perf} and \cref{fig:results-perf-time}.
 
 \begin{table}[ht]
   \scriptsize
@@ -32,18 +32,11 @@ The performance of the axiom weakening base repair algorithm shown in \cref{algo
     vio & 2.7 & 9406 & 10955 & 4\% & (7\%) \\
     \hline
   \end{tabular}
-  \caption{Results of the evaluation with respect to performance. Number of weakening iterations, reasoner calls, and total repair time are given as sample mean, with 95\% confidence interval in brackets. The frequency of failed runs is shown as percentage of repairs by weakening that were started but not completed. In parentheses the percentage of total failed runs including those with timeout during generation of inconsistent ontologies.}
+  \caption{Results of the evaluation with respect to performance. Number of weakening iterations, reasoner calls, and total repair time are given as sample mean, with 95\% confidence interval in brackets. The frequency of failed runs is shown as percentage of repairs by weakening that were started but not completed. In parentheses the percentage of total failed runs including those with timeout during generation of the inconsistent ontology.}
   \label{table:results-perf}
 \end{table}
 
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=\textwidth]{resources/calls-ontology-violin.png}
-  \caption{Distribution of reasoner calls required for repairing a single ontology using axiom weakening. Attempts that failed by timeout or other errors were not considered.}
-  \label{fig:results-perf-calls}
-\end{figure}
-
-\begin{figure}[ht]
+\begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth]{resources/time-ontology-violin.png}
   \caption{Distribution of (real) execution time required for repairing a single ontology using axiom weakening. Attempts that failed by timeout or other errors were not considered.}

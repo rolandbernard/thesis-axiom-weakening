@@ -72,10 +72,10 @@ The semantics of \SROIQ is defined using \emph{interpretations} $I = \langle \De
   (\exists R.C)^I &= \{ \gamma \in \Delta^I \mid \exists \gamma' \in \Delta^I : \langle \gamma, \gamma' \rangle \in R^I \text{ and } \gamma' \in C^I \} \enspace, \\
   (\less n {R.C})^I &= \{ \gamma \in \Delta^I \mid \left| \{ \gamma' \in \Delta^I \mid \langle \gamma, \gamma' \rangle \in R^I \text{ and } \gamma' \in C^I \} \right| \leq n \} \enspace, \\
   (\more n {R.C})^I &= \{ \gamma \in \Delta^I \mid \left| \{ \gamma' \in \Delta^I \mid \langle \gamma, \gamma' \rangle \in R^I \text{ and } \gamma' \in C^I \} \right| \geq n \} \enspace, \\
-  (\exists R.\self)^I &= \{ \gamma \in \Delta^I \mid \langle \gamma, \gamma \rangle \in  \} \enspace,
+  (\exists R.\self)^I &= \{ \gamma \in \Delta^I \mid \langle \gamma, \gamma \rangle \in R^I \} \enspace,
 \end{align*}
 where $|X|$ is the cardinality of a set $X$.
-An interpretation $I$ is a \emph{model} for $\Omc$, written $I \models \Omc$, if it satisfies all the axioms in $\Omc$. Whether the interpretation $I$ satisfies the axiom $\alpha$, written $I \models \alpha$, is given by
+An interpretation $I$ is a \emph{model for} $\Omc$, written $I \models \Omc$, if it satisfies all the axioms in $\Omc$. Whether the interpretation $I$ satisfies the axiom $\alpha$, written $I \models \alpha$, is given by
 \begin{align*}
   I \models C \sqsubseteq D &\iff C^I \subseteq D^I \enspace, &
   I \models R(a, b) &\iff \langle a^I, b^I \rangle \in R^I \enspace,\\
@@ -86,7 +86,7 @@ An interpretation $I$ is a \emph{model} for $\Omc$, written $I \models \Omc$, if
   I \models a \not= b &\iff a^I \not= b^I \enspace, &
   I \models S_1 \circ \cdots \circ S_n \sqsubseteq R &\iff S_1^I \circ \cdots \circ S_n^I \subseteq R^I \enspace,
 \end{align*}
-where $\circ$ denotes the composition of relations, that is, $r \circ s = \{ \langle x, y \rangle \mid \exists z : \langle x, z \rangle \in r \text{ and } \langle z, y \rangle \in s \}$.
+where $\circ$ denotes the composition of relations, that is, $r \circ s = \{ \langle x, y \rangle \mid \exists z : \langle x, z \rangle \in r \text{ and } \langle z, y \rangle \in s \}$. We say an axiom $\alpha$ is \emph{entailed by} the ontology $\Omc$, written $\Omc \models \alpha$, if and only if every model $I \models \Omc$ of the ontology satisfies $I \models \alpha$.
 
 % describe subsumptions of concepts and roles
 Given two concepts $C$ and $D$ we say that $C$ is \emph{subsumed} by $D$ (or $D$ \emph{subsumes} $C$) with respect to the ontology $\Omc$, written $C \sqsubseteq_\Omc D$, if $C^I \subseteq D^I$ in every model $I$ of $\Omc$. Further, $C$ is \emph{strictly subsumed by} $D$, written $C \sqsubset_\Omc D$, if $C \sqsubseteq_\Omc D$ but not $D \sqsubseteq_\Omc C$. Analogously, given two roles $R$ and $S$, $R$ is subsumed by $S$ with respect to $\Omc$ ($R \sqsubseteq_\Omc S$) if $R^I \sqsubseteq S^I$ in all models $I$ of $\Omc$. Again, $R \sqsubset_\Omc S$ holds if $R \sqsubseteq_\Omc S$ but not $D \sqsubseteq_\Omc C$.
