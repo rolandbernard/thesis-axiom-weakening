@@ -144,14 +144,151 @@
   \caption{Results of the evaluation. The cardinality of the inferred class hierarchy is given as mean and 95\% confidence interval in brackets. $^a$Weakening based repair that keeps the reference ontology as static axioms that are not weakened or replaced.}
 \end{table}
 
-% TODO: add extended quality for weakening w.r.t mcs (2 figures)
-% TODO: add extended quality for weakening w.r.t remove (2 figures)
-% TODO: add extended quality for enhance w.r.t mcs (2 figures)
-% TODO: add extended quality for enhance w.r.t remove (2 figures)
-% TODO: add extended quality for enhance w.r.t weakening (2 figures)
-% TODO: add extended quality for mcs w.r.t remove (2 figures)
-% TODO: add extended complete quality table
-% TODO: add extended table with sizes of inferred set
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=\textwidth]{resources/eiic-remove-ontology-bar.png}
+  \caption{Mean IIC$^+$ of weakening based repair with respect to repair via removal per ontology. The error bars show the 95\% confidence interval.}
+\end{figure}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=\textwidth]{resources/eiic-remove-ontology-violin.png}
+  \caption{Distribution of IIC$^+$ of weakening based repair with respect to repair via removal per ontology.}
+\end{figure}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=\textwidth]{resources/eiic-mcs-ontology-bar.png}
+  \caption{Mean IIC$^+$ of weakening based repair with respect to repair via a random maximal consistent subset per ontology. The error bars show the 95\% confidence interval.}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{resources/eiic-mcs-ontology-violin.png}
+    \caption{Distribution of IIC$^+$ of weakening based repair with respect to repair via a random maximal consistent subset per ontology.}
+\end{figure}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=\textwidth]{resources/eiic-enhance-rem-ontology-bar.png}
+  \caption{Mean IIC$^+$ of weakening based repair (without weakening axioms in the reference ontology) with respect to repair via removal per ontology. The error bars show the 95\% confidence interval.}
+\end{figure}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=\textwidth]{resources/eiic-enhance-rem-ontology-violin.png}
+  \caption{Distribution of IIC$^+$ of weakening based repair (without weakening axioms in the reference ontology) with respect to repair via removal per ontology.}
+\end{figure}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=\textwidth]{resources/eiic-enhance-ontology-bar.png}
+  \caption{Mean IIC$^+$ of weakening based repair (without weakening axioms in the reference ontology) with respect to repair via a random maximal consistent subset per ontology. The error bars show the 95\% confidence interval.}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{resources/eiic-enhance-ontology-violin.png}
+    \caption{Distribution of IIC$^+$ of weakening based repair (without weakening axioms in the reference ontology) with respect to repair via a random maximal consistent subset per ontology.}
+\end{figure}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=\textwidth]{resources/eiic-enhance-weaken-ontology-bar.png}
+  \caption{Mean IIC$^+$ of weakening based repair (without weakening axioms in the reference ontology) with respect to normal repair using axiom weakening per ontology. The error bars show the 95\% confidence interval.}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{resources/eiic-enhance-weaken-ontology-violin.png}
+    \caption{Distribution of IIC$^+$ of weakening based repair (without weakening axioms in the reference ontology) with respect to normal repair using axiom weakening per ontology.}
+\end{figure}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=\textwidth]{resources/eiic-mcs-rem-ontology-bar.png}
+  \caption{Mean IIC$^+$ of repair using a random maximal consistent subset with respect to repair using removal. The error bars show the 95\% confidence interval.}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{resources/eiic-mcs-rem-ontology-violin.png}
+    \caption{Distribution of IIC$^+$ of repair using random maximal consistent subset with respect to repair using removal per ontology.}
+\end{figure}
+
+\begin{table}[ht]
+  \scriptsize
+  \begin{widepage}
+    \centering
+    \begin{tabular}{|l|cccccc|}
+      \cline{2-7}
+      \multicolumn{1}{r|}{IIC$^+$ of} & \multicolumn{3}{c}{Weakening adding to reference ontology} & \multicolumn{2}{c}{Weakening} & MCS \\
+      \multicolumn{1}{r|}{w.r.t.} & Weakening & MCS & Removal & MCS & Removal & Removal \\
+      \hline
+      admin & 0.52 [0.47, 0.58] & 0.59 [0.52, 0.64] & 0.57 [0.51, 0.62] & 0.55 [0.48, 0.61] & 0.56 [0.51, 0.60] & 0.46 [0.40, 0.52] \\
+      ahso & 0.66 [0.61, 0.71] & 0.72 [0.67, 0.77] & 0.78 [0.73, 0.83] & 0.54 [0.48, 0.59] & 0.63 [0.57, 0.68] & 0.52 [0.47, 0.57] \\
+      cdao & 0.53 [0.44, 0.61] & 0.52 [0.43, 0.61] & 0.56 [0.47, 0.65] & 0.50 [0.41, 0.59] & 0.51 [0.42, 0.60] & 0.47 [0.40, 0.55] \\
+      cdpeo & 0.55 [0.51, 0.59] & 0.47 [0.41, 0.52] & 0.56 [0.52, 0.60] & 0.40 [0.36, 0.45] & 0.51 [0.48, 0.55] & 0.59 [0.55, 0.64] \\
+      covid19-ibo & 0.56 [0.52, 0.60] & 0.73 [0.69, 0.77] & 0.81 [0.77, 0.84] & 0.64 [0.60, 0.69] & 0.75 [0.71, 0.79] & 0.55 [0.52, 0.58] \\
+      ecp & 0.61 [0.57, 0.66] & 0.62 [0.57, 0.67] & 0.83 [0.79, 0.87] & 0.54 [0.49, 0.59] & 0.80 [0.75, 0.85] & 0.58 [0.54, 0.61] \\
+      emo & 0.60 [0.55, 0.64] & 0.74 [0.69, 0.78] & 0.78 [0.74, 0.82] & 0.62 [0.57, 0.66] & 0.71 [0.66, 0.75] & 0.54 [0.51, 0.57] \\
+      evi & 0.65 [0.60, 0.70] & 0.70 [0.66, 0.75] & 0.70 [0.65, 0.75] & 0.59 [0.54, 0.63] & 0.50 [0.46, 0.55] & 0.42 [0.38, 0.46] \\
+      falls & 0.60 [0.55, 0.64] & 0.62 [0.56, 0.68] & 0.81 [0.76, 0.86] & 0.56 [0.50, 0.62] & 0.82 [0.77, 0.86] & 0.61 [0.57, 0.66] \\
+      fo & 0.44 [0.39, 0.50] & 0.68 [0.63, 0.74] & 0.49 [0.43, 0.55] & 0.70 [0.64, 0.75] & 0.54 [0.49, 0.59] & 0.33 [0.27, 0.39] \\
+      gbm & 0.61 [0.57, 0.66] & 0.68 [0.63, 0.72] & 0.73 [0.68, 0.77] & 0.53 [0.49, 0.58] & 0.62 [0.57, 0.66] & 0.54 [0.50, 0.58] \\
+      gfvo & 0.67 [0.63, 0.71] & 0.72 [0.68, 0.75] & 0.75 [0.71, 0.79] & 0.55 [0.51, 0.59] & 0.56 [0.51, 0.60] & 0.48 [0.44, 0.52] \\
+      koro & 0.63 [0.57, 0.68] & 0.58 [0.52, 0.63] & 0.70 [0.65, 0.75] & 0.43 [0.38, 0.49] & 0.59 [0.53, 0.64] & 0.59 [0.54, 0.64] \\
+      lico & 0.63 [0.58, 0.67] & 0.65 [0.61, 0.70] & 0.72 [0.67, 0.77] & 0.52 [0.48, 0.57] & 0.55 [0.51, 0.60] & 0.49 [0.45, 0.53] \\
+      mamo & 0.62 [0.57, 0.67] & 0.71 [0.67, 0.76] & 0.74 [0.69, 0.78] & 0.61 [0.56, 0.66] & 0.59 [0.54, 0.63] & 0.46 [0.42, 0.50] \\
+      mpio & 0.54 [0.49, 0.59] & 0.75 [0.70, 0.79] & 0.78 [0.74, 0.83] & 0.74 [0.70, 0.78] & 0.78 [0.73, 0.83] & 0.36 [0.33, 0.40] \\
+      pizza & 0.56 [0.49, 0.63] & 0.65 [0.59, 0.72] & 0.60 [0.53, 0.66] & 0.56 [0.50, 0.63] & 0.55 [0.49, 0.61] & 0.46 [0.40, 0.53] \\
+      provo & 0.68 [0.64, 0.72] & 0.70 [0.66, 0.73] & 0.75 [0.70, 0.79] & 0.54 [0.50, 0.58] & 0.53 [0.49, 0.57] & 0.45 [0.42, 0.49] \\
+      qudt & 0.57 [0.52, 0.62] & 0.62 [0.55, 0.69] & 0.95 [0.92, 0.98] & 0.51 [0.45, 0.58] & 0.96 [0.93, 0.99] & 0.74 [0.70, 0.78] \\
+      trans & 0.54 [0.48, 0.59] & 0.61 [0.55, 0.66] & 0.61 [0.55, 0.67] & 0.57 [0.51, 0.63] & 0.60 [0.55, 0.65] & 0.49 [0.44, 0.54] \\
+      triage & 0.63 [0.58, 0.68] & 0.64 [0.59, 0.69] & 0.70 [0.66, 0.75] & 0.50 [0.45, 0.54] & 0.54 [0.50, 0.59] & 0.50 [0.46, 0.55] \\
+      vio & 0.57 [0.50, 0.64] & 0.61 [0.53, 0.68] & 0.61 [0.54, 0.68] & 0.54 [0.47, 0.61] & 0.57 [0.50, 0.64] & 0.47 [0.40, 0.53] \\
+      \hline
+      Overall & 0.59 [0.58, 0.61] & 0.65 [0.64, 0.67] & 0.71 [0.70, 0.73] & 0.56 [0.54, 0.57] & 0.63 [0.61, 0.64] & 0.51 [0.49, 0.52] \\
+      \hline
+    \end{tabular}
+  \end{widepage}
+  \caption{Results of the evaluation. IIC$^+$ is given as mean and 95\% confidence interval in brackets.}
+\end{table}
+
+\begin{table}[ht]
+  \scriptsize
+  \centering
+  \begin{tabular}{|l|r@{ }lr@{ }lr@{ }lr@{ }l|}
+    \cline{2-9}
+    \multicolumn{1}{r|}{$|\Inf^+(\Omc)|$ of} & \multicolumn{2}{c}{Weakening$^a$} & \multicolumn{2}{c}{Weakening} & \multicolumn{2}{c}{MCS} & \multicolumn{2}{c|}{Removal} \\
+    \hline
+    admin & 14090 & [13871, 14316] & 13997 & [13800, 14209] & 14052 & [13815, 14308] & 13867 & [13679, 14069] \\
+    ahso & 21480 & [19911, 23104] & 19894 & [18449, 21376] & 20508 & [18976, 22047] & 20036 & [18630, 21451] \\
+    cdao & 49753 & [45987, 53861] & 46405 & [43664, 49283] & 47751 & [44809, 50910] & 47929 & [44768, 51439] \\
+    cdpeo & 13520 & [13473, 13583] & 13459 & [13432, 13489] & 13535 & [13484, 13594] & 13460 & [13436, 13489] \\
+    covid19-ibo & 22924 & [21923, 23936] & 22432 & [21494, 23376] & 21905 & [21020, 22821] & 21452 & [20508, 22384] \\
+    ecp & 6781 & [6616, 6942] & 6416 & [6271, 6553] & 7047 & [6875, 7215] & 6374 & [6232, 6508] \\
+    emo & 24492 & [23507, 25505] & 23559 & [22601, 24529] & 22887 & [21945, 23873] & 22617 & [21664, 23593] \\
+    evi & 11838 & [11295, 12386] & 11753 & [11176, 12327] & 11366 & [10820, 11904] & 11854 & [11293, 12416] \\
+    falls & 684 & [643, 728] & 659 & [620, 702] & 684 & [645, 725] & 641 & [604, 682] \\
+    fo & 4571 & [4278, 4874] & 4625 & [4327, 4933] & 4434 & [4144, 4736] & 4514 & [4223, 4819] \\
+    gbm & 29672 & [28862, 30465] & 28591 & [27757, 29415] & 28745 & [27974, 29501] & 28158 & [27319, 29021] \\
+    gfvo & 21577 & [21232, 21905] & 20410 & [19998, 20807] & 19909 & [19459, 20338] & 20198 & [19750, 20621] \\
+    koro & 6923 & [6656, 7223] & 6233 & [6141, 6328] & 7074 & [6783, 7395] & 6189 & [6111, 6273] \\
+    lico & 41105 & [39954, 42219] & 39492 & [38250, 40738] & 39777 & [38601, 40966] & 39678 & [38395, 40904] \\
+    mamo & 17061 & [16366, 17697] & 16789 & [16157, 17376] 
+    & 15624 & [14963, 16252] & 15928 & [15213, 16626] \\
+    mpio & 2335 & [2173, 2504] & 2363 & [2201, 2536] & 2055 & [1913, 2200] & 2306 & [2145, 2475] \\
+    pizza & 93287 & [88428, 98182] & 88938 & [83921, 93924] & 87752 & [83100, 92510] & 86790 & [81999, 91715] \\
+    provo & 28025 & [26972, 29128] & 27473 & [26431, 28590] & 27144 & [26053, 28257] & 27542 & [26450, 28687] \\
+    qudt & 13218 & [12711, 13775] & 13087 & [12612, 13624] & 13426 & [12886, 14034] & 12990 & [12537, 13505] \\
+    trans & 8179 & [8086, 8274] & 8073 & [7995, 8149] & 8231 & [8112, 8350] & 8006 & [7930, 8080] \\
+    triage & 30818 & [28930, 32803] & 30248 & [28318, 32291] & 30628 & [28759, 32641] & 30495 & [28592, 32548] \\
+    vio & 26354 & [24095, 28707] & 23936 & [21603, 26325] & 23871 & [21698, 26068] & 23958 & [21581, 26405] \\
+    \hline
+  \end{tabular}
+  \caption{The cardinality of the extended inferred class hierarchy is given as mean and 95\% confidence interval in brackets. $^a$Weakening based repair that keeps the reference ontology as static axioms that are not weakened or replaced.}
+\end{table}
 
 \begin{figure}[ht]
     \centering
