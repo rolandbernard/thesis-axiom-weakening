@@ -32,14 +32,14 @@ The performance of the axiom weakening based repair algorithm shown in \cref{alg
     vio & 2.5 & [2.1, 3.0] & 9476 & [8628, 10327] & 15199 & [10496, 20803] & 3\% & (7\%) \\
     \hline
   \end{tabular}
-  \caption{Results of the evaluation with respect to performance. Number of weakening iterations, reasoner calls, and total repair time are given as sample mean, with 95\% confidence interval in brackets. The frequency of failed runs is shown as percentage of repairs by weakening that were started but not completed. In parentheses the percentage of total failed runs including those with timeout during generation of the inconsistent ontology.}
+  \caption{Results of the evaluation with respect to performance. Number of weakening iterations, reasoner calls, and total repair time are given as sample mean, with 95\% confidence interval in brackets. The frequency of failed runs is shown as percentage of repairs by weakening that were started but not completed. In parentheses the percentage of total failed runs including those with timeout during generation of the inconsistent ontology. Attempts that failed were not considered for the other values.}
   \label{table:results-perf}
 \end{table}
 
 \begin{figure}[ht]
   \centering
   \includegraphics[width=\textwidth]{resources/time-ontology-violin.png}
-  \caption{Distribution of (real) execution time required for repairing a single ontology using axiom weakening. Attempts that failed by timeout or other errors were not considered.}
+  \caption{Distribution of (real) execution time required for repairing a single ontology using axiom weakening. The two darkest blue boxes represent (together) half of the samples, with the line in the middle indicating the median. Each lighter box represents half the samples of the boxes one step darker and all remaining outliers are marked. Attempts that failed by timeout or other errors were not considered.}
   \label{fig:results-perf-time}
 \end{figure}
 
