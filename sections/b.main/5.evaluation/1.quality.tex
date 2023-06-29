@@ -1,7 +1,7 @@
 
 In order to evaluate the proposed approach of axiom weakening, specifically for its application in the context of automatic repair of ontologies, we need a way to compare the quality of different possible repairs. As has already been discussed in \cite{troquard2018repairing}, the problem of deciding which of two possible repaired ontologies $\Omc_1$ or $\Omc_2$ is preferable is not generally well-defined. As such, this thesis will use the same measure defined for the experimental evaluation in \cite{troquard2018repairing}. The main idea is to use the size of the \emph{inferred class hierarchy} to evaluate the amount of ``information'' a repair is able to retain.
 
-\begin{definition}
+\begin{definition}\label{def:inf}
   The \emph{inferred class hierarchy} of an ontology $\Omc$ is given by
   \begin{align*}
     \Inf(\Omc) = \{ A \sqsubseteq B \mid A, B \in N_C \text{ and } A \sqsubseteq_\Omc B \} \enspace.
@@ -10,7 +10,7 @@ In order to evaluate the proposed approach of axiom weakening, specifically for 
 
 To compare the relative amount of information between two ontologies, we compare them based on their differences in the inferred class hierarchy. We use for this purpose the \emph{inferable information content} (IIC) as defined in \cite{troquard2018repairing}.
 
-\begin{definition}
+\begin{definition}\label{def:iic}
   The \emph{inferable information content} of an ontology $\Omc_1$ with respect to another ontology $\Omc_2$ is given by
   \begin{align*}
     \qual(\Omc_1, \Omc_2) = \frac{| \Inf(\Omc_1) \setminus \Inf(\Omc_2) |}{|\Inf(\Omc_1) \setminus \Inf(\Omc_2)| + |\Inf(\Omc_2) \setminus \Inf(\Omc_1)|} \enspace,
