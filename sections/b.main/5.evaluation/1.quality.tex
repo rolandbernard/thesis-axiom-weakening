@@ -25,8 +25,8 @@ The evaluation starts by first making the ontologies inconsistent. This has been
 \begin{algorithm}[ht]
   \begin{algorithmic}
     \While{$\Omc$ is inconsistent}
-    \State $\phi_\textnormal{bad} \gets \textsc{FindBadAxiom}(\Omc)$
-    \State $\Omc \gets \Omc \setminus \{\phi_\textnormal{bad}\}$
+      \State $\phi_\textnormal{bad} \gets \textsc{FindBadAxiom}(\Omc)$
+      \State $\Omc \gets \Omc \setminus \{\phi_\textnormal{bad}\}$
     \EndWhile
     \State Return $\Omc$
   \end{algorithmic}

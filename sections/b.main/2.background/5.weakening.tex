@@ -98,9 +98,9 @@ Once a reference ontology has been chosen, and as long as $\Omc$ is inconsistent
   \begin{algorithmic}
     \State $\Omcref \gets \textsc{FindConsistentSubset(\Omc)}$
     \While{$\Omc$ is inconsistent}
-    \State $\alpha_\textnormal{bad} \gets \textsc{FindBadAxiom}(\Omc)$
-    \State $\alpha_\textnormal{weaker} \gets \textsc{SelectWeakerAxiom}(g_\Omcref(\alpha_\textnormal{bad}))$
-    \State $\Omc \gets (\Omc \setminus \{\alpha_\textsc{bad}\}) \cup \{\alpha_\textnormal{weaker}\}$
+      \State $\alpha_\textnormal{bad} \gets \textsc{FindBadAxiom}(\Omc)$
+      \State $\alpha_\textnormal{weaker} \gets \textsc{SelectWeakerAxiom}(g_\Omcref(\alpha_\textnormal{bad}))$
+      \State $\Omc \gets (\Omc \setminus \{\alpha_\textsc{bad}\}) \cup \{\alpha_\textnormal{weaker}\}$
     \EndWhile
     \State Return $\Omc$
   \end{algorithmic}
