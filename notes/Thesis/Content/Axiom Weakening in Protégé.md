@@ -1,15 +1,9 @@
 # Axiom Weakening in Protégé
 
-different owl api Version
+different owl api Version / different java version
 
-different java version 
+menu items (with narrow screenshot)
 
-how a plugin is structured
+manual weakening (with narrow screenshot)
 
-menu items
-
-manual weakening
-
-automatic weakening
-
-canceling repairs
+automatic weakening (with narrow screenshot)

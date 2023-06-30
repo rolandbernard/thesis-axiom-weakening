@@ -1,23 +1,29 @@
 # Implementing $\mathcal{SROIQ}$ Axiom Weakening
 
+configurable repairs
+
+### Performance
+
 owlapi java reasoners
 
 problems with reasoners + reusing reasoners
-
-computing maximal and minimal subsets (trie for sets)
-
-computing upward and downward covers
-
-effective caching for subsumption queries
-
-finding “best” repairs
-
-mcts
 
 enabling parallelism
 
 fact++
 
-configurabile repairs
+### Computing Minimal Subsets
+
+computing maximal and minimal subsets (trie for sets)
+
+### Caching
+
+effective caching for subsumption queries
 
 testing
+
+### Finding Best Repairs
+
+finding “best” repairs
+
+mcts

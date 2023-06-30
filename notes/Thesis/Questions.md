@@ -64,3 +64,8 @@
     Monitor all execution times and number of reasoner calls. Save all the inconsistent and repaired ontologies created.
     
     Ontologies: Find them on OntoHub.
+    
+- [x]  Is there a template?
+- [x]  What should I put into the introduction?
+- [x]  How long is it allowed to get?
+- [x]  What is important?
