@@ -1,6 +1,6 @@
 \documentclass[10pt,a4paper]{report}
 \usepackage{amsthm, amsfonts, amsmath, amssymb, mathtools}
-\usepackage{sectsty, csquotes, xcolor, xspace, pdflscape}
+\usepackage{sectsty, csquotes, xcolor, xspace, pdflscape, setspace}
 \usepackage{graphicx, tabularx, changepage, multirow, subcaption}
 \usepackage[chapter]{algorithm}
 \usepackage{algpseudocode, listings}
@@ -10,6 +10,7 @@
 \usepackage[english]{babel}
 \usepackage[T1]{fontenc}
 \usepackage{libertinus}
+\usepackage[scale = 0.85]{plex-mono}
 \usepackage{censor}
 \usepackage{biblatex}
 
@@ -55,6 +56,9 @@
 \newcommand{\less}[2]{\ensuremath{\leq #1~#2}\xspace}
 \newcommand{\more}[2]{\ensuremath{\geq #1~#2}\xspace}
 \newcommand{\nominal}[1]{\ensuremath{\{#1\}}\xspace}
+
+\newcommand{\inlinecode}[1]{\lstinline[basicstyle=\ttfamily,columns=fixed]$#1$}
+\lstset{basicstyle=\setstretch{0}\small\ttfamily,breaklines=true,columns=fixed}
 
 \algnewcommand{\IIf}[1]{\State \algorithmicif\ #1\ \algorithmicthen}
 \algnewcommand{\IElse}[1]{\algorithmicelse\ #1}
@@ -144,6 +148,7 @@
 \printbibliography
 
 \appendix
+\addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
 
 \chapter{The \texorpdfstring{$\mathcal{SROIQ}$}{SROIQ} Description Logic} \label{sroiq-appendix}
 
