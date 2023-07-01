@@ -3,7 +3,7 @@ This section will cover how to install and use the Protégé plugin developed to
 
 \section{Installation}
 
-The Protégé plugin can either be compiled and packaged form source, or is available at \url{https://github.com/rolandbernard/protege-weakening/releases}. If you desire to compile the plugin from source, you will need a Java 11 JDK and the Maven tool. If you have both of these, you can execute the following command to package the plugin, and thereafter, find the bundled JAR file in \inlinecode{target/protege-weakening-X.X.X.jar}
+The Protégé plugin can either be compiled and packaged form source, or is available at \url{https://github.com/rolandbernard/protege-weakening/releases}. If you desire to compile the plugin from source, you will need a Java 11 JDK and the Maven tool. If you have both of these, you can execute the following command to package the plugin, and thereafter, find the bundled JAR file in \inlinecode{target/protege-weakening-X.X.X.jar}.
 
 \begin{lstlisting}
 git clone https://github.com/rolandbernard/protege-weakening
@@ -54,7 +54,7 @@ To start the repair, use the ``Repair'' button at the bottom of the view. Some i
   \caption{The manual axiom weakening list added to Protégé. Use the buttons next to the axioms to weaken or strengthen the axioms.}
 \end{figure}
 
-The last view implemented by the plugin, and accessible under ``Window'' > ``Views'' > ``Ontology views'' > ``Manual Axiom Weakening'', allows for manually selecting which axioms to refine. The view shows a list of all axioms in the currently active ontology. The axioms are sorted by how frequently they appear in randomly sampled minimal inconsistent subsets. The axioms appearing the most often are shown at the top of the list. This means, that the axioms that would be chosen for weakening by the automatic repair algorithms are the ones appearing first in the list. Next to each axiom are two buttons, one with an upwards and one with a downwards arrow. These can be used to, respectively  compute the axiom weakenings or axiom strengthening operator for that axiom.
+The last view implemented by the plugin, and accessible under ``Window'' > ``Views'' > ``Ontology views'' > ``Manual Axiom Weakening'', allows for manually selecting which axioms to refine. The view shows a list of all axioms in the currently active ontology. The axioms are sorted by how frequently they appear in randomly sampled minimal inconsistent subsets. The axioms appearing the most often are shown at the top of the list. This means, that the axioms that would be chosen for weakening by the automatic repair algorithms are the ones appearing first in the list. Next to each axiom are two buttons, one with an upwards and one with a downwards arrow. These can be used to, respectively compute the axiom weakenings or axiom strengthening operator for that axiom.
 
 \begin{figure}[htbp]
   \centering
