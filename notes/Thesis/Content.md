@@ -64,6 +64,6 @@
     
     [Mapping between SROIQ and OWL 2 DL](Content/Mapping%20between%20SROIQ%20and%20OWL%202%20DL.md)
     
-    [User Guide: Java Implementation](Content/User%20Guide%20Java%20Implementation.md)
+    [User Guide: Prototype Implementation](Content/User%20Guide%20Prototype%20Implementation.md)
     
     [User Guide: Protégé Plugin](Content/User%20Guide%20Prote%CC%81ge%CC%81%20Plugin.md)

@@ -72,48 +72,48 @@
 
 - [x]  Clean up the implementation of the prototype
 - [x]  Make sure to add tests that check the functionality
-- [ ]  Rewrite the background sections of the thesis
-    - [ ]  About ontology bugs
-    - [ ]  About description logics
-    - [ ]  About axiom weakening
-    - [ ]  About ontology repair
+- [x]  Rewrite the background sections of the thesis
+    - [x]  About ontology bugs
+    - [x]  About description logics
+    - [x]  About axiom weakening
+    - [x]  About ontology repair
 
 29.05.2023 – 04.06.2023
 
-- [ ]  Finish up writing the background sections of the thesis
-    - [ ]  Experiments and evaluation
-    - [ ]  Introduction about knowledge representation
-    - [ ]  About software bugs and ontology bugs
-    - [ ]  About description logics
-    - [ ]  About axiom weakening
-    - [ ]  About ontology repair
+- [x]  Finish up writing the background sections of the thesis
+    - [x]  Experiments and evaluation
+    - [x]  Introduction about knowledge representation
+    - [x]  About software bugs and ontology bugs
+    - [x]  About description logics
+    - [x]  About axiom weakening
+    - [x]  About ontology repair
 
 05.06.2023 – 11.06.2023
 
 - [x]  Do better experiments using the implementations
-- [ ]  Start writing the new sections of the thesis
+- [x]  Start writing the new sections of the thesis
     - [x]  About role hierarchy refinement
     - [x]  ~~About heuristics used during ontology repai~~r
-    - [ ]  About the implementation of the prototype
-    - [ ]  About the implementation of the protégé plugin
+    - [x]  About the implementation of the prototype
+    - [x]  About the implementation of the protégé plugin
     - [x]  Experiments and evaluation
-    - [ ]  Introduction
+    - [x]  Introduction
 
 12.06.2023 – 18.06.2023
 
 - [x]  Add features to the Protégé plugin
-- [ ]  Finish up writing the new sections of the thesis
-    - [ ]  About role hierarchy refinement
+- [x]  Finish up writing the new sections of the thesis
+    - [x]  About role hierarchy refinement
     - [x]  ~~About heuristics used during ontology repair~~
-    - [ ]  About the implementation of the prototype
-    - [ ]  About the implementation of the protégé plugin
-    - [ ]  Experiments and evaluation
+    - [x]  About the implementation of the prototype
+    - [x]  About the implementation of the protégé plugin
+    - [x]  Experiments and evaluation
 
 19.06.2023 – 25.06.2023
 
 - [x]  Clean up the implementation of the plugin
-- [ ]  Add more extensive documentation to the prototype
-- [ ]  Add more extensive documentation to the protégé plugin
+- [x]  Add more extensive documentation to the prototype
+- [x]  Add more extensive documentation to the protégé plugin
 - [ ]  Polishing the thesis
 
 26.06.2023 – 02.07.2023
