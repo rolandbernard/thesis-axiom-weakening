@@ -1,4 +1,4 @@
-Since OWL 2 DL is reducible to $\SROIQ$ it would be sufficient to perform this normalization and then apply the weakening as described to the resulting $\SROIQ$ ontology. This transformation is unproblematic in some contexts, for example if the result is only going to be used for automatic reasoning tasks. However, if the output must be further manipulated by a user of the system, the added noise introduced by the normalization may cause confusion and hinder understanding. Further, weakening OWL 2 DL ontologies directly can be seen as a heuristic, giving an indication as to which weakening might make sense from a modelling perspective.
+Since OWL 2 DL is reducible to $\SROIQ$, it would be sufficient to perform this normalization and then apply the weakening as described to the resulting $\SROIQ$ ontology. This transformation is unproblematic in some contexts, for example if the result is only going to be used for automatic reasoning tasks. However, if the output must be further manipulated by a user of the system, the added noise introduced by the normalization may cause confusion and hinder understanding. Further, weakening OWL 2 DL ontologies directly can be seen as a heuristic, giving an indication as to which weakening might make sense from a modelling perspective.
 
 \begin{example}
   OWL has an axiom $\op{DisjointClasses}(C_1, \dots, C_n)$\footnote{In the rest of this and the following section, the OWL 2 functional syntax (cf. \cite{motik2012ontology}) will be used.} that allows specifying that a set of classes all are pairwise disjoint. $C_i \sqcap C_j \sqsubseteq \bot$ for all $i \not= j = 1, \dots, n$. One reasonable approach to weakening the OWL axiom is to replace any of the classes $C_i$ with a more specific class $C_i' \in \rho_{\Omcref,\Omcfull}(C_i)$. In contrast, after normalization, there will be $n - 1$ occurrences of $C_i$. It is unlikely, increasingly so with growing $n$, that all such occurrences will be weakened to the same concept. After weakening the normalized ontology, it is thus in general not possible to reconstruct the disjointness axiom.
@@ -38,7 +38,7 @@ For OWL 2 DL we must follow the same restrictions, when it comes to regularity a
 Using these generalization and specialization operators, we then define the axiom weakening operator $g_{\Omcref,\Omcfull}$ for OWL 2 DL axioms as follows. Note that the axiom $\bot \sqsubseteq \top$ is not actually an OWL 2 axioms, but stands in for some tautological axiom that is true in every possible interpretations.
 
 \begin{definition}
-  The define the \emph{axiom weakening operator} for OWL 2 DL axioms as follows.
+  The \emph{axiom weakening operator} for OWL 2 DL axioms is defined as follows.
   \begin{widepage}
     \scriptsize
     \begin{align*}

@@ -1,5 +1,5 @@
 
-Axiom weakening, as discussed in this thesis, is based on the approach presented for weakening with \ALC ontologies in \cite{troquard2018repairing}. To provide the necessary context for the following discussion on how weakeing may be performed in \SROIQ, we provide a brief overview of axiom weakening in the case of \ALC. For further details see \cite{troquard2018repairing}.
+Axiom weakening, as discussed in this thesis, is based on the approach presented for weakening with \ALC ontologies in \cite{troquard2018repairing}. To provide the necessary context for the following discussion on how weakening may be performed in \SROIQ, we provide a brief overview of axiom weakening in the case of \ALC. For further details, see \cite{troquard2018repairing}.
 %
 We begin by giving the definition for subconcepts. We will immediately also extend the definition to \SROIQ concepts, since we will need it for later definitions of axiom weakening in \SROIQ.
 
@@ -27,7 +27,7 @@ We begin by giving the definition for subconcepts. We will immediately also exte
 \end{definition}
 
 % define upward and downward covers
-Let us now define the so-called upward and downward cover sets for concepts. The upward cover for a given concept is the set of the most specific generalizations from the (fixed) set of subconcepts, while the downward cover set contains the most general specializations from the same set of subconcepts. (It should be noted that the related open search for e.g., a least common subsumer is in general a harder problem \cite{baader2003least}.)
+Let us now define the so-called upward and downward cover sets of concepts. The upward cover for a given concept is the set of the most specific generalizations from the (fixed) set of subconcepts, while the downward cover set contains the most general specializations from the same set of subconcepts. (It should be noted that the related open search for, e.g., a least common subsumer is in general a harder problem \cite{baader2003least}.)
 
 \begin{definition} \label{def:alc-covers}
   Let $\Omc$ be an \ALC ontologies that using the vocabulary $N_C$, $N_R$, and $N_I$. The \emph{upward cover} and \emph{downward cover} for a concept $C$ are given by
@@ -50,7 +50,7 @@ To additionally capture these omissions, we define generalization and specializa
 
 \begin{definition}
   Let $\refine$ and $\corefine$ be two functions taking concept expressions as parameters and mapping them to finite sets of concepts.
-  The \emph{abstract refinement operator} is defined recursively by induction on the structure of concept expressions as follows.
+  The \emph{abstract refinement operator} is defined recursively by induction on the structure of concept expressions, as follows.
   \begin{align*}
     \zeta_{\refine,\corefine}(A) ={} & \refine(A) \quad, A \in N_C \cup \{\top, \bot\} \enspace, \\
     \zeta_{\refine,\corefine}(\lnot C) ={} & \refine(\lnot C) \cup \{ \lnot C' \mid C' \in \zeta_{\corefine,\refine}(C) \} \enspace, \\
@@ -84,15 +84,15 @@ We define now the \emph{axiom weakening operator} using these generalization and
   \end{align*}
 \end{definition}
 
-The axioms in the set $g_\Omc(\alpha)$ are indeed weaker than $\alpha$ for every axiom $\alpha$, in the sense that, given the reference ontology $\Omc$, $\alpha$ entails them and the opposite in not necessarily true. That is, for each axiom $\alpha' \in g_\Omc(\alpha)$, $\alpha \sqsubseteq_\Omc \alpha'$ holds.
+The axioms in the set $g_\Omc(\alpha)$ are indeed weaker than $\alpha$ for every axiom $\alpha$, in the sense that, given the reference ontology $\Omc$, $\alpha$ entails them and the opposite is not necessarily true. That is, for each axiom $\alpha' \in g_\Omc(\alpha)$, $\alpha \sqsubseteq_\Omc \alpha'$ holds.
 
 \begin{example}
   Let $N_C = \{ A, B, C \}$, $N_I = \{ a \}$ and $\Omc = \{ A \sqsubseteq B, A \sqsubseteq C \}$. $\sub(\Omc) = \{\top, \bot, A, B, C\}$. $\gamma_\Omc(A) = \{ A, B, C \}$ and $\rho_\Omc(B) = \{ B, A \}$. The weakenings of $B \sqsubseteq A$ with respect to $\Omc$ are therefore $g_\Omc(B \sqsubseteq A) = \{ B \sqsubseteq A, B \sqsubseteq B, B \sqsubseteq C, A \sqsubseteq A \}$. Similarly, $g_\Omc(A(a)) = \{ A(a), B(a), C(a) \}$.
 \end{example}
 
-In order to apply the weakening operator to the problem of repairing inconsistent ontologies, we follow the algorithm depicted in \cref{algo:repair-weaken-alc}. First, as mention above, the computation of a non-trivial upward and downward cover set is only possible when using a consistent ontology. We therefore need to first find a consistent subontology $\Omcref$ of $\Omc$ to serve as \emph{reference ontology}. One possibility outlined in \cite{troquard2018repairing} is to select a random maximal consistent subset of $\Omc$. Another option is to choose the intersection of some or all maximal consistent subsets of $\mathcal{O}$ (e.g., \cite{LLRRS10}). This latter option has the advantage of using only information for the weakening that is likely to be correct. On the other hand, it will lead to diminished upward and downward covers and therefore can reduce the number of possible weakening.
+In order to apply the weakening operator to the problem of repairing inconsistent ontologies, we follow the algorithm depicted in \cref{algo:repair-weaken-alc}. First, as mention above, the computation of a non-trivial upward and downward cover set is only possible when using a consistent ontology. We therefore need to first find a consistent subontology $\Omcref$ of $\Omc$ to serve as \emph{reference ontology}. One possibility outlined in \cite{troquard2018repairing} is to select a random maximal consistent subset of $\Omc$. Another option is to choose the intersection of some (or all) maximal consistent subsets of $\mathcal{O}$ (e.g., \cite{LLRRS10}). This latter option has the advantage of using only information for the weakening that is likely to be correct. On the other hand, it will lead to diminished upward and downward covers and therefore can reduce the number of possible weakenings.
 
-Once a reference ontology has been chosen, and as long as $\Omc$ is inconsistent, we continue by selecting a ``bad'' axiom $\alpha$, remove it from $\Omc$, and replace it with a weaker axiom from $g_\Omcref(\alpha)$. Like for the choice of reference ontology, there are also multiple options for the selection of bad axioms. \cite{troquard2018repairing} proposes two different implementations. One based on choosing axioms at random, and another implementation that randomly samples a number of (or all the) minimal inconsistent subsets of axioms $J_1, J_2, \dots, J_k \subseteq \Omc$ and return one axiom in $\Omc$ from the ones occurring the most often. The weaker axiom is chosen form the set of weakening by selecting one uniformly at random. While there may be better heuristics for choosing the weakening, termination of the algorithm is not generally guaranteed. It has, however, been shown in \cite{confalonieri2020towards}, that when selecting among the weakening at random using a uniform distribution, their algorithm is almost surely going to terminate. It has yet to be shown whether this holds also for the variation presented here. A similar effect of almost sure termination could also be achieved by maintaining a constant (small but positive) probability of removing the axiom at each step.
+Once a reference ontology has been chosen, and as long as $\Omc$ is inconsistent, we continue by selecting a ``bad'' axiom $\alpha$, remove it from $\Omc$, and replace it with a weaker axiom from $g_\Omcref(\alpha)$. Like for the choice of reference ontology, there are also multiple options for the selection of bad axioms. \cite{troquard2018repairing} proposes two different implementations. One based on choosing axioms at random, and another implementation that randomly samples a number of (or all the) minimal inconsistent subsets of axioms $J_1, J_2, \dots, J_k \subseteq \Omc$ and return one axiom in $\Omc$ from the ones occurring the most often. The weaker axiom is chosen from the set of weakening by selecting one uniformly at random. While there may be better heuristics for choosing the weakening, termination of the algorithm is not generally guaranteed. It has, however, been shown in \cite{confalonieri2020towards}, that when selecting among the weakening at random using a uniform distribution, their algorithm is almost surely going to terminate. It has yet to be shown whether this holds also for the variation presented in this paper. A similar effect of almost sure termination could also be achieved by maintaining a constant non-zero probability of removing the axiom at each step.
 
 \begin{algorithm}[ht]
   \begin{algorithmic}

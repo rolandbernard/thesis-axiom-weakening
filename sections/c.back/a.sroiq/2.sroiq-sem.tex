@@ -17,7 +17,7 @@ An interpretation maps the universal role $U$ to $U^I = \Delta^I \times \Delta^I
   \item $\exists R.C$ holds for all individuals that are connected by some element in the extension of $R$ to an individual in the extension of $C$, formally $(\exists R.C)^I = \{ \delta_1 \in \Delta^I \mid \exists \delta_2 \in \Delta^I \, . \; \langle \delta_1, \delta_2 \rangle \in R^I \, \land \, \delta_2 \in C^I  \}$.
   \item $\forall R.C$ refers to all domain elements for which all elements in the extension of $R$ connect them to elements in the extension of $C$, that is $(\forall R.C)^I = \{ \delta_1 \in \Delta^I \mid \forall \delta_2 \in \Delta^I \, . \; \langle \delta_1, \delta_2 \rangle \in R^I \to \delta_2 \in C^I \}$.
   \item $\exists R.\self$ indicates all individuals that the extension of $R$ connects to themselves, hence we let $(\exists R.\self)^I = \{ \delta \in \Delta^I \mid \langle \delta, \delta \rangle \in R^I\}$.
-  \item $\less n R.C$ represents those individuals that have at most $n$ other individuals they are $R$-related to in the concept extension of $C$, that is  $(\less n R.C)^I = \{ \delta_1 \in \Delta^I \mid \left| \{ \delta_2 \in \Delta^I \mid \langle \delta_1, \delta_2 \rangle \in R^I \, \land \; \delta_2 \in C^I \} \right| \less n \}$ where $|S|$ denotes the cardinality of a set $S$.
+  \item $\less n R.C$ represents those individuals that have at most $n$ other individuals they are $R$-related to in the concept extension of $C$, that is  $(\less n R.C)^I = \{ \delta_1 \in \Delta^I \mid \left| \{ \delta_2 \in \Delta^I \mid \langle \delta_1, \delta_2 \rangle \in R^I \, \land \; \delta_2 \in C^I \} \right| \less n \}$, where $|S|$ denotes the cardinality of a set $S$.
   \item $\more n R.C$ corollary to the case above indicates those domain elements that have at least $N$ such $R$-related elements, \\$(\more n R.C)^I = \{ \delta_1 \in \Delta^I \mid \left| \{ \delta_2 \in \Delta^I \mid \langle \delta_1, \delta_2 \rangle \in R^I \, \land \; \delta_2 \in C^I \} \right| \more n \}$.
 \end{itemize}
 
@@ -76,7 +76,7 @@ We say a set of axioms holds in an interpretation $I$ iff every axiom of the set
 
 \subsection{Reasoning tasks} \label{reasoning-tasks}
 
-In general, logic-based knowledge representation is useful for the ability to perform reasoning task on ontologys. There are a number of reasoning tasks that can be performed by a reasoner in DLs. In this section, we will take a look at three basic reasoning tasks, and how they can be reduced to each other. While there exists other reasoning task, this section will focus on \emph{ontology satisfiability,} \emph{axiom entailment, and concept satisfiability}.
+In general, logic-based knowledge representation is useful for the ability to perform reasoning task on ontologies. There are a number of reasoning tasks that can be performed by a reasoner in DLs. In this section, we will have a look at three basic reasoning tasks, and how they can be reduced to each other. While there exists other reasoning task, this section will focus on \emph{ontology satisfiability,} \emph{axiom entailment, and concept satisfiability}.
 
 \subsubsection{Knowledge base satisfiability} \label{knowledge-base-satisfiability}
 

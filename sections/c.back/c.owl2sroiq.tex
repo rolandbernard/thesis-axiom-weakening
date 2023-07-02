@@ -1,5 +1,5 @@
 
-Since OWL 2 DL has some features that are not present in $\SROIQ$ it is neccesary to perform some normalization in order to apply the weakening as described in \cref{def:weaken}. We define to this end a translation $\pi$ that maps OWL 2 DL class expressions, object property espressions, and axioms respectovely to \SROIQ concepts, roles, and axioms. Note that a simgle OWL 2 axiom is mapped to a set of \SROIQ axioms that together have the equivalent meaning. This is neccesary because not all OWL 2 axioms can be translated into a single \SROIQ axiom. The translation does not cover annotaions or axioms relating to data properties, as those do not map directly to \SROIQ, and were removed in the preprocessing step for the evaluation. Further, declaration axioms are not mentioned here, but they are assumed to be used for generating the vocabulary $N_C$, $N_R$, and $N_I$.
+Since OWL 2 DL has some features that are not present in $\SROIQ$ it is necessary to perform some normalization in order to apply the weakening as described in \cref{def:weaken}. We define to this end a translation $\pi$ that maps OWL 2 DL class expressions, object property expressions, and axioms respectively to \SROIQ concepts, roles, and axioms. Note that a single OWL 2 axiom is mapped to a set of \SROIQ axioms that together have the equivalent meaning. This is necessary because not all OWL 2 axioms can be translated into a single \SROIQ axiom. The translation does not cover annotations or axioms relating to data properties, as those do not map directly to \SROIQ, and were removed in the preprocessing step for the evaluation. Further, declaration axioms are not mentioned here, but they are assumed to be used for generating the vocabulary $N_C$, $N_R$, and $N_I$.
 
 \begin{definition} \label{def:owl2sroiq}
   The \emph{translation} $\pi$ from OWL 2 DL object property expressions to \SROIQ roles is give by
@@ -7,7 +7,7 @@ Since OWL 2 DL has some features that are not present in $\SROIQ$ it is neccesar
     \pi(r) &= r \quad \text{ for } r \in N_R \cup \{ U, E \} \enspace, \\
     \pi(\op{InverseObjectProperty}(R)) &= \inv(\pi(R)) \enspace.
   \end{align*}
-  The translation from OWL 2 DL class espressions to \SROIQ concepts is given by
+  The translation from OWL 2 DL class expressions to \SROIQ concepts is given by
   \begin{align*}
     \pi(A) &= A \quad \text{ for } A \in N_C \cup \{ \top, \bot \} \enspace, \\
     \pi(\op{ObjectComplementOf}(C)) &= \lnot \pi(C) \enspace, \\
