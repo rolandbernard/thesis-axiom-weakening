@@ -76,11 +76,11 @@ We say a set of axioms holds in an interpretation $I$ iff every axiom of the set
 
 \subsection{Reasoning tasks} \label{reasoning-tasks}
 
-In general, logic-based knowledge representation is useful for the ability to perform reasoning task on ontologies. There are a number of reasoning tasks that can be performed by a reasoner in DLs. In this section, we will have a look at three basic reasoning tasks, and how they can be reduced to each other. While there exists other reasoning task, this section will focus on \emph{ontology satisfiability,} \emph{axiom entailment, and concept satisfiability}.
+In general, logic-based knowledge representation is useful for the ability to perform reasoning task on ontologies. There are a number of reasoning tasks that can be performed by a reasoner in DLs. In this section, we will have a look at three basic reasoning tasks, and how they can be reduced to each other. While there exists other reasoning task, this section will focus on \emph{ontology consistency}, \emph{axiom entailment}, and \emph{concept satisfiability}.
 
-\subsubsection{Knowledge base satisfiability} \label{knowledge-base-satisfiability}
+\subsubsection{Ontology consistency} \label{knowledge-base-satisfiability}
 
-A knowledge $\Omc$ base is satisfiable iff there exists a model $I \models \Omc$ for $\Omc$. Otherwise, the ontology is called unsatisfiable, inconsistent, or contradictory. As discussed in \cref{ontology-bugs}, an inconsistent ontology can be a sign of modelling errors. An inconsistent ontology entailed every statement, and as such all information extracted from it is useless. Therefore, an unsatisfiable ontology is generally undesirable. Furthermore, both the task of deciding concept satisfiability and axiom entailment can be reduced to deciding ontology consistency.
+An ontology $\Omc$ is consistent iff there exists a model $I \models \Omc$ for $\Omc$. Otherwise, the ontology is called inconsistent. As discussed in \cref{ontology-bugs}, an inconsistent ontology can be a sign of modelling errors. An inconsistent ontology entailed every statement, and as such all information extracted from it is useless. Therefore, an inconsistent ontology is generally undesirable. Furthermore, both the task of deciding concept satisfiability and axiom entailment can be reduced to deciding ontology consistency.
 
 \subsubsection{Axiom entailment} \label{axiom-entailment}
 
