@@ -1,5 +1,5 @@
 
-The performance of the axiom weakening based repair algorithm shown in \cref{algo:repair-weaken} has also been evaluated. During each repair via axiom weakening, the required (real) time and the number of calls to the reasoner have been registered. Additionally, the number of steps taken by the repair using axiom weakening has been observed. Also, as mentioned in \cref{eval-quality}, the repair program was put under a timeout to prevent cases where the reasoning becomes unreasonably slow. The generation of inconsistent ontologies used a similar timeout, and the same procedure was used for situations in which the reasoner ran out of memory. The timeouts of the weakening procedure are shown separately from those latter cases in the results. The frequency of these cases is indicated as a percentage of the overall runs finished vs started. The results of this evaluation are presented in \cref{table:results-perf} and \cref{fig:results-perf-time}.
+The performance of the axiom weakening based repair algorithm shown in \cref{algo:repair-weaken} has also been evaluated. During each repair via axiom weakening, the required (real) time and the number of calls to the reasoner have been recorded. Additionally, the number of steps taken by the repair using axiom weakening has been observed. Also, as mentioned in \cref{eval-quality}, the repair program was put under a timeout to prevent cases where the reasoning becomes unreasonably slow. The generation of inconsistent ontologies used a similar timeout, and the same procedure was used for situations in which the reasoner ran out of memory. The timeouts of the weakening procedure are shown separately from those latter cases in the results. The frequency of these cases is indicated as the percentage of overall started runs that actually finished. The results of this evaluation are presented in \cref{table:results-perf} and \cref{fig:results-perf-time}.
 
 \begin{table}[ht]
   \scriptsize
@@ -39,7 +39,7 @@ The performance of the axiom weakening based repair algorithm shown in \cref{alg
 \begin{figure}[ht]
   \centering
   \includegraphics[width=\textwidth]{resources/time-ontology-violin.png}
-  \caption{Distribution of (real) execution time required for repairing a single ontology using axiom weakening. The two darkest blue boxes represent (together) half of the samples, with the line in the middle indicating the median. Each lighter box represents half the samples of the boxes one step darker, and all remaining outliers are marked. Attempts that failed by a timeout or other errors were not considered.}
+  \caption{Distribution of (real) execution time required for repairing a single ontology using axiom weakening. The two darkest blue boxes represent (together) half of the samples, with the line in the middle indicating the median. Each lighter boxes each represent half as many samples of the boxes one step darker, and all remaining outliers are marked. Attempts that failed by a timeout or other error were not considered.}
   \label{fig:results-perf-time}
 \end{figure}
 
