@@ -3,7 +3,7 @@ This section will explain how to use the prototype that has been implemented for
 
 \section{Building the Software}
 
-The prototype is implemented in Java, and will require at least Java version 17. The Maven tool has been used for dependency management. Both Maven and a Java 17 JDK must be installed for building this project. To download and build the project, the following code can be executed. After building, the packaged JAR files will be located in \inlinecode{target/}. There will be two different packages, one containing only the code in the project named \inlinecode{ontologyutils-X.X.X.jar}, and one containing also all required dependencies named \inlinecode{shaded-ontologyutils-X.X.X.jar}.
+The prototype is implemented in Java and will require at least Java version 17. The Maven tool has been used for dependency management. Both Maven and a Java 17 JDK must be installed for building this project. To download and build the project, the following code can be executed. After building, the packaged JAR files will be located in \inlinecode{target/}. There will be two different packages, one containing only the code in the project named \inlinecode{ontologyutils-X.X.X.jar}, and one containing also all required dependencies named \inlinecode{shaded-ontologyutils-X.X.X.jar}.
 
 \begin{lstlisting}
 git clone https://github.com/rolandbernard/ontologyutils
@@ -84,7 +84,7 @@ Options:
   --strict-simple-roles    use only simple roles in upward and downward covers
   --uncached               do not use any caches for the covers
   --basic-cache            use only a basic cache
-  --strict-owl2            do not produce intersection and union with a single operand
+  --strict-owl2            does not produce intersection and union with a single operand
   --simple-ria-weakening   do not use the more advanced RIA weakening
   --no-role-refinement     do not refine roles in any context
   --enhance-ref            keep the reference ontology as static axioms in the output

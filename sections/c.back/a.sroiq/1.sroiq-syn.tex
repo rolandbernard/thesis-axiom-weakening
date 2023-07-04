@@ -1,9 +1,9 @@
 
 The \emph{vocabulary}\footnote{There are no strict rules for how to write down different elements of the vocabulary. However, there is a convention of using PascalCase for concept names and camelCase for names referring to roles and individuals.} $N = N_I \cup N_C \cup N_R$ of a $\SROIQ$ ontology is made up of three finite disjoint sets:
 \begin{itemize}
-  \item The set of \emph{individual names} $N_I$ used to refer to single elements in the domain of discourse.
-  \item The set of \emph{concept names} $N_C$ used to refer to classes that elements of the domain may be a part of.
-  \item The set of \emph{role names} $N_R$ used to refer to binary relations that may hold between the elements of the domain.
+  \item The set of \emph{individual names} $N_I$ is used to refer to single elements in the domain of discourse.
+  \item The set of \emph{concept names} $N_C$ is used to refer to classes that elements of the domain may be a part of.
+  \item The set of \emph{role names} $N_R$ is used to refer to binary relations that may hold between the elements of the domain.
 \end{itemize}
 A $\SROIQ$ ontology $\Omc = \Amc \cup \Tmc \cup \Rmc$ is the union of an \emph{ABox} $\Amc$, a \emph{TBox} $\Tmc$, and a regular \emph{RBox} $\Rmc$. The elements of $\Omc$ are called axioms.
 
@@ -15,7 +15,7 @@ Given the set of role names $N_R$, a \emph{role} is either the \emph{universal r
 
 A \emph{role inclusion axiom} (RIA) is a statement of the form $R_1 \circ \cdots \circ R_n \sqsubseteq R$ where $R, R_1, \dots R_n \in \Lmc(N_R)$ are roles. For the case in which $n = 1$, we obtain a \emph{simple role inclusion}, which has the form $R \sqsubseteq S$ where $S$ and $R$ are role names (the case where $n > 1$ is called a \emph{complex role inclusion}). A finite set of RIAs is called a \emph{role hierarchy}, denoted $\Rmc_h$.
 
-Roles can be partitioned into two disjoint sets, simple roles and non-simple roles. Intuitively, non-simple roles are those that are implied by the composition of two or more other roles. In order to preserve decidability, $\SROIQ$ requires that in parts of expressions only simple roles are used. We define the set of \emph{non-simple roles} as the smallest set such that:
+Roles can be partitioned into two disjoint sets, simple roles and non-simple roles. Intuitively, non-simple roles are those that are implied by the composition of two or more other roles. In order to preserve decidability, $\SROIQ$ requires that in some expressions only simple roles are used. We define the set of \emph{non-simple roles} as the smallest set such that:
 \begin{itemize}
   \item the universal role $U$ is non-simple,
   \item any role $R$ that appears in a RIA of the form $S_1 \circ \cdots \circ S_n \sqsubseteq R$ where $n > 1$ is non-simple,
@@ -36,7 +36,7 @@ There is an additional restriction that is placed upon the role hierarchy in a $
   \item $S_1 \circ \cdots \circ S_n \circ R \sqsubseteq R$, or
   \item $S_1 \circ \cdots \circ S_n \sqsubseteq R$,
 \end{itemize}
-where $n > 1$ and $R$, $S$, $S_1, \cdots, S_n$ are roles such that $S \preceq R$, $S_i \preceq R$, and $R \not\preceq S_i$ for $i = 1, \dots, n$. This condition on the role hierarchy prevents cyclic definitions with RIAs that include role chains. These types of cyclic definition could otherwise lead to undecidability of the logic.
+where $n > 1$ and $R$, $S$, $S_1, \cdots, S_n$ are roles such that $S \preceq R$, $S_i \preceq R$, and $R \not\preceq S_i$ for $i = 1, \dots, n$. This condition on the role hierarchy prevents cyclic definitions with RIAs that include role chains. These types of cyclic definitions could otherwise lead to undecidability of the logic.
 
 \begin{example}
   The RBox $\Rmc = \{ r \circ s \sqsubseteq t, t \sqsubseteq v, v \sqsubseteq s \}$ is not regular. Intuitively, there exists a cyclic dependency involving a complex RIA. That is, $t$ depends on $s$ via a complex RIA, $v$ subsumes $t$, and $s$ subsumes $v$. This means, $s \preceq t$, $t \preceq v$ and $v \preceq s$ must hold. By transitivity, $t \preceq s$ must also hold. However, because the first axiom is a complex RIA, $t \not\preceq s$ must hold, causing a contradiction.
