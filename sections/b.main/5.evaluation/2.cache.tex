@@ -1,7 +1,7 @@
 
 As discussed in \cref{cache-impl}, to accelerate the computation of upward and downward covers, a cache was added to avoid repeated calls to the reasoner when the necessary information can already be inferred from previous computations. This section will discuss the experiments performed to evaluate the effectiveness of this cache.
 
-Three versions of the upward and downward cover have been considered, the uncached version that calls the reasoner for every subsumption query, a version that caches only the exact queries that were already made previously, and finally the version that additionally infers some additional information from the transitivity of subsumption as listed in \cref{algo:cached-subs}. The experiment uses some of the same ontologies as have been used for the previously discussed evaluation of the repair quality. From the logical axioms of each ontology were selected, uniformly at random, one hundred groups with a fixed number of axioms. The same axioms may be selected multiple times. Each of the groups was then tested with a separate instance of the cache. The rationale behind testing with different group sizes is that the cache will obviously have a greater impact when the same cache can be reused for more cover computations. In each test run, the axiom weakening operator was applied to each axiom and the number of reasoner calls and (real) time taken were measured. The weakening operator used the complete (after post-processing) ontology as the reference ontology. The test has further been performed using different OWL 2 DL reasoners. The final results of the evaluation can be seen in \cref{table:results-cache-calls} and are visualized in \cref{fig:results-cache-calls} and \cref{fig:results-cache-time}. Note that a logarithmic y-axis has been used for both plots.
+Three versions of the upward and downward cover have been considered, the uncached version that calls the reasoner for every subsumption query, a version that caches only the exact queries that were already made previously, and finally the version that additionally infers some additional information from the transitivity of subsumption as listed in \cref{algo:cached-subs}. The experiment uses some of the same ontologies as have been used for the previously discussed evaluation of the repair quality. From the logical axioms of each ontology were selected, uniformly at random, one hundred groups with a fixed number of axioms. The same axioms may be selected multiple times. Each of the groups was then tested with a separate instance of the cache. The rationale behind testing with different group sizes is that the cache will obviously have a greater impact when the same cache can be reused for more cover computations. In each test run, the axiom weakening operator was applied to each axiom and the number of reasoner calls and (real) time taken were measured. The weakening operator used the complete (after preprocessing) ontology as the reference ontology. The test has further been performed using different OWL 2 DL reasoners. The final results of the evaluation can be seen in \cref{table:results-cache-calls} and are visualized in \cref{fig:results-cache-calls} and \cref{fig:results-cache-time}. Note that a logarithmic y-axis has been used for both plots.
 
 \begin{table}[ht]
   \scriptsize
@@ -39,7 +39,7 @@ Three versions of the upward and downward cover have been considered, the uncach
       & 16937 & 17102 & 17263 \\
     \hline
   \end{tabular}
-  \caption{Results of the evaluation of cache effectiveness. The mean number of reasoner calls required for a single weakening is given for one, ten, and one hundred applications of the operator using the same cache.}
+  \caption{Results of the evaluation of cache effectiveness. The mean number of reasoner calls required for a single application of the axiom weakening operator on randomly selected axioms of the ontology is given for different degrees of cache reuse. The cache is reused of one, ten, or one hundred successive operator applications.}
   \label{table:results-cache-calls}
 \end{table}
 
@@ -53,7 +53,7 @@ Three versions of the upward and downward cover have been considered, the uncach
 \begin{figure}[ht]
   \centering
   \includegraphics[width=\textwidth]{resources/time-cache-bar.png}
-  \caption{Average time required per application of the axiom weakening operator with different caching strategies when executing axiom weakening of random axioms. The results are averaged over the tested ontologies and the reasoners FaCT++, JFact, Openllet, and HermiT.}
+  \caption{Average time required per application of the axiom weakening operator with different caching strategies. The results are averaged over the tested ontologies and the reasoners FaCT++, JFact, Openllet, and HermiT.}
   \label{fig:results-cache-time}
 \end{figure}
 
