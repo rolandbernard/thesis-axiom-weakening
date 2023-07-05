@@ -11,11 +11,11 @@ A $\SROIQ$ ontology $\Omc = \Amc \cup \Tmc \cup \Rmc$ is the union of an \emph{A
 
 The RBox $\Rmc$ describes the relationship between different roles in the ontology. It consists of two disjoint parts, a role hierarchy $\Rmc_h$ and a set of role assertions $\Rmc_a$.
 
-Given the set of role names $N_R$, a \emph{role} is either the \emph{universal role} $U$ or of the form $r$ or $r^-$ for some role names $r \in N_R$, where $r^-$ is called the \emph{inverse role or} $r$. For convenience in the latter definitions, and to avoid roles like $r^{--}$, which are not valid in $\SROIQ$, we define a function $\inv$ such that $\inv(U) = U$, $\inv(r) = r^-$, and $\inv(r^-) = r$. We denote the set of all roles as $\Lmc(N_R) = N_R \cup \{ U \} \cup \{ r^- \mid r \in N_R \}$.
+Given the set of role names $N_R$, a \emph{role} is either the \emph{universal role} $U$ or of the form $r$ or $r^-$ for some role name $r \in N_R$. $r^-$ is called the \emph{inverse role of} $r$. For convenience in the latter definitions, and to avoid roles like $r^{--}$, which are not valid in $\SROIQ$, we define a function $\inv$ such that $\inv(U) = U$, $\inv(r) = r^-$, and $\inv(r^-) = r$. We denote the set of all roles as $\Lmc(N_R) = N_R \cup \{ U \} \cup \{ r^- \mid r \in N_R \}$.
 
 A \emph{role inclusion axiom} (RIA) is a statement of the form $R_1 \circ \cdots \circ R_n \sqsubseteq R$ where $R, R_1, \dots R_n \in \Lmc(N_R)$ are roles. For the case in which $n = 1$, we obtain a \emph{simple role inclusion}, which has the form $R \sqsubseteq S$ where $S$ and $R$ are role names (the case where $n > 1$ is called a \emph{complex role inclusion}). A finite set of RIAs is called a \emph{role hierarchy}, denoted $\Rmc_h$.
 
-Roles can be partitioned into two disjoint sets, simple roles and non-simple roles. Intuitively, non-simple roles are those that are implied by the composition of two or more other roles. In order to preserve decidability, $\SROIQ$ requires that in some expressions only simple roles are used. We define the set of \emph{non-simple roles} as the smallest set such that:
+Roles can be partitioned into two disjoint sets, simple roles and non-simple roles. Intuitively, non-simple roles are those roles which are implied by the composition of two or more other roles. In order to preserve decidability, $\SROIQ$ requires that in some expressions only simple roles are used. We define the set of \emph{non-simple roles} as the smallest set such that:
 \begin{itemize}
   \item the universal role $U$ is non-simple,
   \item any role $R$ that appears in a RIA of the form $S_1 \circ \cdots \circ S_n \sqsubseteq R$ where $n > 1$ is non-simple,
@@ -55,9 +55,9 @@ The TBox $\Tmc$ describes the relationship between different concepts. In $\SROI
   \item sets of individual names $\{ a \}$ with $a \in N_I$ are concepts, called \emph{nominal concepts},
   \item if $C$ and $D$ are concepts, the $\lnot C$ (\emph{negation}), $C \sqcup D$ (\emph{union}), and $C \sqcap D$ (\emph{intersection}) are also concepts,
   \item if $C$ is a concept and $R \in \Lmc(N_R)$ a (possibly non-simple) role, then $\exists R.C$ (\emph{existential quantification}) and $\forall r.C$ (\emph{universal quantification}) are also concepts, and
-  \item if $C$ is a concept, $S \in \Lmc(N_R)$ a simple role and $n \in \mathbb{N}_0$ a non-negative number, then $\exists S.\self$ (\emph{\self restriction}), $\less n S.C$ (\emph{at-most restriction}), and $\more n S.C$ (\emph{at-least restriction}) are concepts, the last two may together be referred to as \emph{qualified number restrictions}.
+  \item if $C$ is a concept, $S \in \Lmc(N_R)$ a simple role and $n \in \mathbb{N}_0$ a non-negative number, then $\exists S.\self$ (\emph{\self restriction}), $\less n S.C$ (\emph{at-most restriction}), and $\more n S.C$ (\emph{at-least restriction}) are concepts, the last two may together be called \emph{qualified number restrictions}.
 \end{itemize}
-Given two concepts $C$ and $D$, a \emph{concept inclusion axiom} (GCI) is a statement of the form $C \sqsubseteq D$. The TBox $\Tmc$ is a finite set of GCIs.
+Given two concepts $C$ and $D$, a \emph{concept inclusion axiom} (GCI) is a statement of the form $C \sqsubseteq D$. The TBox $\Tmc$ is a finite set of such GCIs.
 
 \subsection{ABox} \label{abox}
 
@@ -67,4 +67,4 @@ The ABox $\Amc$ contains statements about single individuals called individual a
   \item $R(a, b)$ (\emph{role assertion}) or $\lnot R(a, b)$ (\emph{negative role assertion}) for some role $R \in \Lmc(N_R)$ and individual names $a, b \in N_I$, or
   \item $a = b$ (\emph{equality}) or $a \not = b$ (\emph{inequality}) for some individual names $a \in N_I$.
 \end{itemize}
-An ABox $\Amc$ is a finite set of individual assertions. In $\SROIQ$ due to the inclusion of nominal concepts, all ABox axioms can be rewritten into TBox axioms.
+An ABox $\Amc$ is a finite set of such individual assertions. In $\SROIQ$ due to the inclusion of nominal concepts, all ABox axioms can be rewritten into TBox axioms.

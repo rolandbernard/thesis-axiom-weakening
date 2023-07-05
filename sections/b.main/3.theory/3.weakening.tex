@@ -37,7 +37,7 @@ As has already been observed in \cref{ex:up-cover-alc}, on their own, the upward
 To also address some of these omissions, we define generalization and specialization operators that exploit the recursive structure of the concept being refined to generate more complex refinements. For convenience, we also define these operators for roles, even though their refinement operators are fully equivalent to the upward and downward cover functions.
 
 \begin{definition}
-  Let $\refine$ and $\corefine$ be two functions with domain $\Lmc(N_C, N_R, N_I) \cup \Lmc(N_C) \cup \mathbb{N}_0$. They map every concept to a finite subset of $\Lmc(N_C, N_R, N_I)$, every role to a subset of $\Lmc(N_C)$, and every non-negative integer to a finite subset of $\mathbb{N}_0$.
+  Let $\refine$ and $\corefine$ be two functions with domain $\Lmc(N_C, N_R, N_I) \cup \Lmc(N_R) \cup \mathbb{N}_0$. They map every concept to a finite subset of $\Lmc(N_C, N_R, N_I)$, every role to a subset of $\Lmc(N_R)$, and every non-negative integer to a finite subset of $\mathbb{N}_0$.
   The \emph{abstract refinement operator} is defined recursively on the structure of concepts, as follows.
   \begin{align*}
     \zeta_{\refine,\corefine}(A) ={} & \refine(A) \quad, A \in N_C \cup \{\top, \bot\} \enspace, \\
