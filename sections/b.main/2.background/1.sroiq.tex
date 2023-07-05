@@ -1,7 +1,7 @@
 % Introduce what description logics are 
 Formally, an ontology is a set of statements expressed in an appropriate logical language. The purpose of ontologies is the formal description of a specific domain of interest. While ontologies can be represented using several different formalisms, for use in automated reasoning a trade-off must be made between expressivity and practicality. For example, \emph{first-order logic} (FOL) is more expressive than propositional logic, but this added expressivity comes at the cost of decidability. In addition to decidability, scalability must also be considered in the choice and design of the used representation.
 
-\emph{Description logics} (DL) are often used for building ontologies. They include a family of related knowledge representation languages and are often fragments of FOL\footnote{While DLs are fragments of FOL in the sense that for every ontology in a given DL, there exists a FOL theory that has the same models, the syntax used by DLs is different from the syntax used in FOL, and as such a DL axiom is not a valid FOL sentence.} with equality, as is the case with the DL $\SROIQ$ which is the main focus of this work. DLs are almost always designed to be decidable and generally offer a favourable trade-off between expressivity and complexity of reasoning tasks. Different DLs have been developed for different applications and allow for varying levels of expressivity.
+\emph{Description logics} (DLs) are often used for building ontologies. They include a family of related knowledge representation languages and are often fragments of FOL\footnote{While DLs are fragments of FOL in the sense that for every ontology in a given DL, there exists a FOL theory that has the same models, the syntax used by DLs is different from the syntax used in FOL, and as such a DL axiom is not a valid FOL sentence.} with equality, as is the case with the DL $\SROIQ$ which is the main focus of this work. DLs are almost always designed to be decidable and generally offer a favourable trade-off between expressivity and complexity of reasoning tasks. Different DLs have been developed for different applications and allow for varying levels of expressivity.
 
 This section will briefly introduce the DL $\SROIQ$ \cite{horrocks2006even,rudolph2011foundations,baader_horrocks_lutz_sattler_2017}. A more detailed description, including more explanations and examples, can be found in \cref{sroiq-appendix}.
 
@@ -23,9 +23,9 @@ We next define the notions of TBox, ABox, and (regular) RBox, of complex role in
 % Describe the TBox, ABox and RBox statements
 A \emph{TBox} $\Tmc$ is a finite set of \emph{concept inclusions} (GCIs) of the form $C \sqsubseteq D$ where $C$ and $D$ are concepts. The TBox is used to store terminological knowledge concerning the relationships between concepts. 
 %
-An \emph{ABox} $\Amc$ is a finite set of statements of the form $C(a)$, $R(a,b)$, $\lnot R (a,b)$, $a = b$, and $a \not= b$, where $C$ is a concept, $R$ is a role and $a$ and $b$ are individual names. The ABox expresses knowledge regarding individuals in the domain. 
+An \emph{ABox} $\Amc$ is a finite set of statements of the form $C(a)$, $R(a,b)$, $\lnot R (a,b)$, $a = b$, or $a \not= b$, where $C$ is a concept, $R$ is a role, and $a$ and $b$ are individual names. The ABox expresses knowledge regarding individuals in the domain. 
 %
-An \emph{RBox} $\Rmc$ is a finite set of \emph{role inclusions} (RIAs) of the form $R_1 \circ \cdots \circ R_n \sqsubseteq R$, and disjoint role axioms $\disjoint(S_1, S_2)$ where $R$, $R_1$, $\dots$, $R_n$, $S_1$, and $S_2$ are roles. $S_1$ and $S_2$ are simple (defined next) in the RBox $\Rmc$. The special case of $n = 1$ is a \emph{simple role inclusion}, while we call the cases where $n > 1$ \emph{complex role inclusions}. The RBox represents knowledge about the relationships between roles.
+An \emph{RBox} $\Rmc$ is a finite set of \emph{role inclusion axioms} (RIAs) of the form $R_1 \circ \cdots \circ R_n \sqsubseteq R$, and disjoint role axioms $\disjoint(S_1, S_2)$ where $R$, $R_1$, $\dots$, $R_n$, $S_1$, and $S_2$ are roles. $S_1$ and $S_2$ are simple (defined next) in the RBox $\Rmc$. The special case of $n = 1$ is a \emph{simple role inclusion}, while we call the cases where $n > 1$ \emph{complex role inclusions}. The RBox represents knowledge about the relationships between roles.
 
 % describe simple and complex roles since it is relevant
 The set of \emph{non-simple} roles in $\Rmc$ is the smallest set such that: $U$ is non-simple; any role $R$ that appears as the super role of a complex RIA $R_1 \circ \cdots \circ R_n \sqsubseteq R$ where $n > 1$ is non-simple; any role $R$ that appears on the right-hand side of a simple RIA $S \sqsubseteq R$ where $S$ is non-simple, is also non-simple; and a role $r$ is non-simple if and only if $r^-$ is non-simple.
@@ -74,7 +74,7 @@ The semantics of \SROIQ is defined using \emph{interpretations} $I = \langle \De
   (\more n {R.C})^I &= \{ \delta \in \Delta^I \mid \left| \{ \delta' \in \Delta^I \mid \langle \delta, \delta' \rangle \in R^I \text{ and } \delta' \in C^I \} \right| \geq n \} \enspace, \\
   (\exists R.\self)^I &= \{ \delta \in \Delta^I \mid \langle \delta, \delta \rangle \in R^I \} \enspace,
 \end{align*}
-where $|X|$ denotes the cardinality of a set $X$.
+where $|X|$ denotes the cardinality of the set $X$.
 An interpretation $I$ is a \emph{model for} $\Omc$, written $I \models \Omc$, if it satisfies all the axioms in $\Omc$. Whether the interpretation $I$ satisfies the axiom $\alpha$, written $I \models \alpha$, is given by
 \begin{align*}
   I \models C \sqsubseteq D &\iff C^I \subseteq D^I \enspace, &
@@ -91,7 +91,7 @@ where $\circ$ denotes the composition of relations, that is, $r \circ s = \{ \la
 An ontology $\Omc$ is \emph{consistent} if there exists a model $I \models \Omc$ for the ontology. An ontology that is not consistent is \emph{inconsistent}. A concept $C$ is \emph{satisfiable} in an ontology $\Omc$ if there exists a model $I \models \Omc$ in which $C^I \not= \emptyset$. An ontology in which all atomic concepts $C \in N_C$ are satisfiable is called \emph{coherent}. We say an axiom $\alpha$ is \emph{entailed by} the ontology $\Omc$, written $\Omc \models \alpha$, if and only if every model $I \models \Omc$ of the ontology satisfies $I \models \alpha$. 
 
 % describe subsumptions of concepts and roles
-Given two concepts $C$ and $D$ we say that $C$ is \emph{subsumed} by $D$ (or $D$ \emph{subsumes} $C$) with respect to the ontology $\Omc$, written $C \sqsubseteq_\Omc D$, if $C^I \subseteq D^I$ in every model $I$ of $\Omc$. Further, $C$ is \emph{strictly subsumed by} $D$, written $C \sqsubset_\Omc D$, if $C \sqsubseteq_\Omc D$ but not $D \sqsubseteq_\Omc C$. Analogously, given two roles $R$ and $S$, $R$ is subsumed by $S$ with respect to $\Omc$ (written $R \sqsubseteq_\Omc S$) if $R^I \sqsubseteq S^I$ in all models $I$ of $\Omc$. Again, $R \sqsubset_\Omc S$ holds if $R \sqsubseteq_\Omc S$ but not $S \sqsubseteq_\Omc R$.
+Given two concepts $C$ and $D$ we say that $C$ is \emph{subsumed} by $D$ (or $D$ \emph{subsumes} $C$) with respect to the ontology $\Omc$, written $C \sqsubseteq_\Omc D$, if $C^I \subseteq D^I$ in every model $I$ of $\Omc$. Further, $C$ is \emph{strictly subsumed by} $D$, written $C \sqsubset_\Omc D$, if $C \sqsubseteq_\Omc D$ but not $D \sqsubseteq_\Omc C$. Analogously, given two roles $R$ and $S$, $R$ is subsumed by $S$ with respect to $\Omc$ (written $R \sqsubseteq_\Omc S$) if $R^I \subseteq S^I$ in all models $I$ of $\Omc$. Again, $R \sqsubset_\Omc S$ holds if $R \sqsubseteq_\Omc S$ but not $S \sqsubseteq_\Omc R$.
 
 \subsection{The \ALC Description Logic}
 
