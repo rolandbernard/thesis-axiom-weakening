@@ -114,12 +114,12 @@
 - [x]  Clean up the implementation of the plugin
 - [x]  Add more extensive documentation to the prototype
 - [x]  Add more extensive documentation to the protégé plugin
-- [ ]  Polishing the thesis
+- [x]  Polishing the thesis
 
 26.06.2023 – 02.07.2023
 
-- [ ]  Send draft to profs and ask them for feedback
-- [ ]  Polishing the thesis
+- [x]  Send draft to profs and ask them for feedback
+- [x]  Polishing the thesis
 
 03.07.2023 – 09.07.2023
 
@@ -127,7 +127,6 @@
 - [ ]  Finish polishing the thesis
 - [ ]  05.07.2023 – Submit the thesis
 - [ ]  06.07.2023 – Submit the better thesis
-- [ ]  Start creating slides for the presentation
 
 10.07.2023 – 16.07.2023
 
