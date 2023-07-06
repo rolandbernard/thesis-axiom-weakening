@@ -18,6 +18,8 @@ notes-tex
 *.run.xml
 *.fdb_latexmk
 *.synctex*
+*.nav
+*.snm
 
 ### Vscode ###
 .vscode/
