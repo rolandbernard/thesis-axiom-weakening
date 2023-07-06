@@ -1,6 +1,6 @@
 # $\mathcal{SROIQ}$ Syntax
 
-This section describes the syntax of the $\mathcal{SROIQ}$ description logic [The Even More Irresistible $\mathcal{SROIQ}$]().
+This section describes the syntax of the $\mathcal{SROIQ}$ description logic [The Even More Irresistible $\mathcal{SROIQ}$](../../../Reading%20List/The%20Even%20More%20Irresistible%20$%20mathcal%7BSROIQ%7D$.md).
 
 The *vocabulary* $\mathrm{N} = \mathrm{N}_I \cup \mathrm{N}_C \cup \mathrm{N}_R$ of a $\mathcal{SROIQ}$ knowledge base is made up of three disjoint sets:
 
@@ -45,9 +45,9 @@ Example:
 
 Example:
 
-To make axiom weakening simpler, this definition is slightly more general than necessary. The definition of regularity presented here is more permissive than the one in [The Even More Irresistible $\mathcal{SROIQ}$]() in that it always allows simple roles on the left-hand side. Additionally, it is more permissive than stated in [Foundations of Description Logics]() in that it allows for inverse roles on the right-hand side. 
+To make axiom weakening simpler, this definition is slightly more general than necessary. The definition of regularity presented here is more permissive than the one in [The Even More Irresistible $\mathcal{SROIQ}$](../../../Reading%20List/The%20Even%20More%20Irresistible%20$%20mathcal%7BSROIQ%7D$.md) in that it always allows simple roles on the left-hand side. Additionally, it is more permissive than stated in [Foundations of Description Logics](../../../Reading%20List/Foundations%20of%20Description%20Logics.md) in that it allows for inverse roles on the right-hand side. 
 
-The set of *role assertions* $\mathcal{R}_a$ is a finite set of statements with the form $\mathrm{Dis}(s_1, s_2)$ (*disjointness*) where $s_1$, and $s_2$ are simple roles in $\mathcal{R}_h$. In [The Even More Irresistible $\mathcal{SROIQ}$]() the authors define additionally the role assertions $\mathrm{Sym}(r)$ (*symmetry*), $\mathrm{Asy}(s)$ (*asymmetry*), $\mathrm{Tra}(r)$ (*transitivity*), $\mathrm{Ref}(r)$ (*reflexivity*), and $\mathrm{Irr}(r)$ (*irreflexivity*). These additional assertions can, however, be written using the alternative sets of axioms $\{ r^- \sqsubseteq r \}$, $\{ \mathrm{Dis}(r, r^-) \}$, $\{ r \circ r \sqsubseteq r \}$, $\{ r' \sqsubseteq r , \top \sqsubseteq \exists r'. \mathrm{Self} \}$, and $\{ \top \sqsubseteq \lnot \exists r . \mathrm{Self} \}$ respectively. Note that the asymmetry assertion requires a simple role, and that $r'$ in the case of reflexivity must be a role name not otherwise used in the ontology.
+The set of *role assertions* $\mathcal{R}_a$ is a finite set of statements with the form $\mathrm{Dis}(s_1, s_2)$ (*disjointness*) where $s_1$, and $s_2$ are simple roles in $\mathcal{R}_h$. In [The Even More Irresistible $\mathcal{SROIQ}$](../../../Reading%20List/The%20Even%20More%20Irresistible%20$%20mathcal%7BSROIQ%7D$.md) the authors define additionally the role assertions $\mathrm{Sym}(r)$ (*symmetry*), $\mathrm{Asy}(s)$ (*asymmetry*), $\mathrm{Tra}(r)$ (*transitivity*), $\mathrm{Ref}(r)$ (*reflexivity*), and $\mathrm{Irr}(r)$ (*irreflexivity*). These additional assertions can, however, be written using the alternative sets of axioms $\{ r^- \sqsubseteq r \}$, $\{ \mathrm{Dis}(r, r^-) \}$, $\{ r \circ r \sqsubseteq r \}$, $\{ r' \sqsubseteq r , \top \sqsubseteq \exists r'. \mathrm{Self} \}$, and $\{ \top \sqsubseteq \lnot \exists r . \mathrm{Self} \}$ respectively. Note that the asymmetry assertion requires a simple role, and that $r'$ in the case of reflexivity must be a role name not otherwise used in the ontology.
 
 ## TBox
 

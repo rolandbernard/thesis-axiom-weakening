@@ -75,4 +75,4 @@ The above example does not consider that $c$ must be simple.
 
 **Lemma:** The RBox $\mathcal{R}'$, obtained by replacing any RIA $s_1 \circ \cdots \circ s_i' \circ \cdots \circ s_n \sqsubseteq r$ in $\mathcal{R}$ with a RIA $s_1 \circ \cdots \circ s_i' \circ \cdots \circ s_n \sqsubseteq r$ where $s' \in \mathrm{DownCover}_\mathcal{O}(s_i)$, is regular.
 
-Proof: This is not true for the definition of regular presented here, but it holds trivially for the definition in [Foundations of Description Logics]() since all $s'$ will be simple, and simple roles are not considered in the restriction.
+Proof: This is not true for the definition of regular presented here, but it holds trivially for the definition in [Foundations of Description Logics](../../../Reading%20List/Foundations%20of%20Description%20Logics.md) since all $s'$ will be simple, and simple roles are not considered in the restriction.

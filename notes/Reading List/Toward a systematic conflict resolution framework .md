@@ -1,0 +1,7 @@
+# Toward a systematic conflict resolution
+framework for ontologies
+
+Link: https://jbiomedsem.biomedcentral.com/counter/pdf/10.1186/s13326-021-00246-0.pdf
+Status: Reading
+Tags: logic, thesis
+Type: Paper

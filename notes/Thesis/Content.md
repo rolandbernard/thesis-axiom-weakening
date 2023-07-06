@@ -54,7 +54,7 @@
 
 - Appendix
     
-    [Proofs](Content/Proofs.md)
+    [Weakening Ideas](Content/Weakening%20Ideas.md)
     
     [Weakening OWL 2 DL](Content/Weakening%20OWL%202%20DL.md)
     

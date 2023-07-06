@@ -123,15 +123,14 @@
 
 03.07.2023 – 09.07.2023
 
-- [ ]  Upload to Turnitin
-- [ ]  Finish polishing the thesis
-- [ ]  05.07.2023 – Submit the thesis
-- [ ]  06.07.2023 – Submit the better thesis
+- [x]  Upload to Turnitin
+- [x]  Finish polishing the thesis
+- [x]  05.07.2023 – Submit the thesis
 
 10.07.2023 – 16.07.2023
 
+- [x]  13.07.2023 – Make sure supervisor has accepted
 - [ ]  Create slides for the thesis defence
-- [ ]  13.07.2023 – Make sure supervisor has accepted
 - [ ]  16.07.2023 – Send slides for the presentation
 
 17.07.2023 – 21.07.2023

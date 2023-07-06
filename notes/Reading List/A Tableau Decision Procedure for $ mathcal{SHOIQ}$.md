@@ -1,0 +1,6 @@
+# A Tableau Decision Procedure for $\mathcal{SHOIQ}$
+
+Link: https://link.springer.com/content/pdf/10.1007/s10817-007-9079-9.pdf
+Status: Not started
+Tags: logic, thesis
+Type: Paper

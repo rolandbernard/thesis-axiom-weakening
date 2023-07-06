@@ -1,6 +1,6 @@
 # The Web Ontology Language
 
-Description logics are also the basis of the *Web Ontology Language* (OWL) [OWL 2 Spec](), which is a World Wide Web Consortium (W3C) recommendation and is extensively used as part of the semantic web. While the OWL 2 DL language is based on $\mathcal{SROIQ}$, OWL 2 also defines three  other so-called profiles that are fragments of the full OWL 2 language that trade-off expressive power for more efficient reasoning [OWL 2 Web Ontology Language Profiles](). The OWL 2 DL profile is the most expressive of these profiles that is still decidable.
+Description logics are also the basis of the *Web Ontology Language* (OWL) [OWL 2 Spec](../../Reading%20List/OWL%202%20Spec.md), which is a World Wide Web Consortium (W3C) recommendation and is extensively used as part of the semantic web. While the OWL 2 DL language is based on $\mathcal{SROIQ}$, OWL 2 also defines three  other so-called profiles that are fragments of the full OWL 2 language that trade-off expressive power for more efficient reasoning [OWL 2 Web Ontology Language Profiles](../../Reading%20List/OWL%202%20Web%20Ontology%20Language%20Profiles.md). The OWL 2 DL profile is the most expressive of these profiles that is still decidable.
 
 In addition to the different profiles, differnt syntax exist for OWL 2
 

@@ -4,7 +4,7 @@ As software systems evolve, it becomes harder to avoid the introduction of bugs.
 
 ## Categories of Bugs
 
-Defects, in both software systems and ontologies, can be due to a number of different reasons. In [Debugging unsatisfiable classes in OWL ontologies]() the authors identify three broad categories of defects that can be present in an ontology: *syntactic defects*, *semantic defects,* and *modelling defects*.
+Defects, in both software systems and ontologies, can be due to a number of different reasons. In [Debugging unsatisfiable classes in OWL ontologies](../../Reading%20List/Debugging%20unsatisfiable%20classes%20in%20OWL%20ontologies.md) the authors identify three broad categories of defects that can be present in an ontology: *syntactic defects*, *semantic defects,* and *modelling defects*.
 
 ### Syntactic Defects
 
@@ -18,7 +18,7 @@ Example:
 
 ### Semantic Defects
 
-For ontologies, semantic defects, as defined in [Debugging unsatisfiable classes in OWL ontologies]()  are those which can be discovered by a reasoner given an ontology free of syntactic defects. This includes for example the inconsistency of the ontology, or the unsatisfiability of a concept. The presence of such defects is generally not hard to identify, given the availability of a reasoner for the logic of the ontology. It is, however, often not trivial to understand the underlying source of the defect.
+For ontologies, semantic defects, as defined in [Debugging unsatisfiable classes in OWL ontologies](../../Reading%20List/Debugging%20unsatisfiable%20classes%20in%20OWL%20ontologies.md)  are those which can be discovered by a reasoner given an ontology free of syntactic defects. This includes for example the inconsistency of the ontology, or the unsatisfiability of a concept. The presence of such defects is generally not hard to identify, given the availability of a reasoner for the logic of the ontology. It is, however, often not trivial to understand the underlying source of the defect.
 
 Example:
 

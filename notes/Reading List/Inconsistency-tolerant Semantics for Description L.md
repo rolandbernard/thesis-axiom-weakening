@@ -1,0 +1,6 @@
+# Inconsistency-tolerant Semantics for Description Logics
+
+Link: https://d1wqtxts1xzle7.cloudfront.net/30801738/lembo-et-al-RR-2010-libre.pdf?1363404522=&response-content-disposition=inline%3B+filename%3DInconsistency_tolerant_semantics_for_des.pdf&Expires=1679570928&Signature=Bc9mRHonBCUOXlFUDZSu-JbF-F9nNaPrgovP2f3ChAKEee8mJGqQ878PirxHNwIP7kdMWpxr6lRbrpXm-4acQDXqT9A7mRxGUWyrzdaSgHlwOs1RKhfs27~keHhLgLjL~a3lVW05W~FCrc9tMiEmlNYzu~sGIL3Rqe7ea43ypJLPO0HYbAkCqhwzktaY77hnfY8LmgCNKis1LN7xxvIXhYuBULJg8l0k2PlNwqFban~dK0RNp24mq88OW~-7Es-pEjxz0dRYJWaUtBVeMR9m2FrL0oObrmiQHX6nbTQzcwzUpjjMjMNHYcOt~86g39ptYdXTBoRlXF~A14WziHoYbQ__&Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA
+Status: Not started
+Tags: logic, thesis
+Type: Paper
