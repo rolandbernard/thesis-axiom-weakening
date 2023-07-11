@@ -1,4 +1,4 @@
-\documentclass{beamer}
+\documentclass[aspectratio=169]{beamer}
 % \usetheme{Copenhagen} 
 % \usecolortheme{beaver}
 \usefonttheme{serif}
@@ -6,20 +6,40 @@
 \usepackage{graphicx}
 \usepackage[english]{babel}
 \usepackage[T1]{fontenc}
-\usepackage{pdfx, csquotes, xcolor}
+\usepackage{pdfx, csquotes, xcolor, xspace}
 \usepackage{libertinus}
 \usepackage[maxbibnames=99]{biblatex}
 
-\title{\raggedright\huge\bf\textcolor{black}{
-  Knowledge Refinement in Expressive Description Logics}
-}
+\newcommand{\ALC}{\ensuremath{\texorpdfstring{\mathcal{ALC}}{ALC}}\xspace}
+\newcommand{\SROIQ}{\ensuremath{\texorpdfstring{\mathcal{SROIQ}}{SROIQ}}\xspace}
+\newcommand{\ALCHOIQ}{\ensuremath{\texorpdfstring{\mathcal{ALCHOIQ}}{ALCHOIQ}}\xspace}
+\newcommand{\ALCH}{\ensuremath{\texorpdfstring{\mathcal{ALCH}}{ALCH}}\xspace}
+
+\title{Knowledge Refinement in\\Expressive Description Logics}
 \author{Roland Bernard}
-\institute{
-  Faculty of Engineering\\
-  Free University of Bozen-Bolzano
+\date{July 2023}
+
+\setbeamertemplate{title page}{
+  \scriptsize 
+  \begin{tabular}{ll}
+    \multicolumn{2}{r}{\includegraphics[width=0.3\linewidth]{resources/unibz-logo.png}} \\
+    \multicolumn{2}{l}{\raggedright Bachelor Thesis} \\
+    \\
+    \multicolumn{2}{p{\linewidth}}{\raggedright \huge \bf \inserttitle} \\
+    \vspace*{5mm} \\
+    Candidate   & \insertauthor \\
+    \\
+    Supervisors & Oliver Kutz \\
+                & Nicolas Troquard \\
+    \\
+    \multicolumn{2}{p{\linewidth}}{\insertdate}
+  \end{tabular}
 }
-\date{Thesis defence, July 2023}
-\logo{\includegraphics[width=0.35\linewidth]{resources/unibz-logo.png}}
+
+\setbeamertemplate{frametitle}{
+  \vspace*{6mm}
+  \Large \bf \color{black} \insertframetitle
+}
 
 \beamertemplatenavigationsymbolsempty
 \setbeamertemplate{footline}{}
@@ -27,18 +47,39 @@
 \begin{document}
 
 \frame{\titlepage}
-\logo{}
 
 \begin{frame}
-\frametitle{Something}
+\frametitle{Description Logics}
 
-In this slide, some important text will be
-\alert{highlighted} because it's important.
-Please, don't abuse it.
 
-\begin{block}{Remark}
-Sample text
-\end{block}
 \end{frame}
+
+\begin{frame}
+\frametitle{Expressive \textnormal{Description Logics}}
+
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Knowledge Refinement \textnormal{in Expressive Description Logics}}
+
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Outcomes of the Thesis}
+\begin{itemize}
+  \item Extended the axiom weakening operator to \SROIQ \\
+    {\footnotesize and showed that the weakening maintains the necessary constraints}
+  \item Evaluated the proposed approach on real-world ontologies
+  \item Developed a Protégé plugin for applying these techniques
+\end{itemize}
+\end{frame}
+
+{
+\setbeamercolor{background canvas}{bg=black}
+\begin{frame}[plain]{}
+\end{frame}
+}
 
 \end{document}
