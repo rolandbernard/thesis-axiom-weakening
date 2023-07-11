@@ -1,12 +1,10 @@
 \documentclass[aspectratio=169]{beamer}
-% \usetheme{Copenhagen} 
-% \usecolortheme{beaver}
 \usefonttheme{serif}
 
 \usepackage{graphicx}
 \usepackage[english]{babel}
 \usepackage[T1]{fontenc}
-\usepackage{pdfx, csquotes, xcolor, xspace}
+\usepackage{pdfx, csquotes, xcolor, xspace, changepage, setspace}
 \usepackage{libertinus}
 \usepackage[maxbibnames=99]{biblatex}
 
@@ -18,6 +16,12 @@
 \title{Knowledge Refinement in\\Expressive Description Logics}
 \author{Roland Bernard}
 \date{July 2023}
+
+\definecolor{unibzblue}{HTML}{0086ec}
+\definecolor{unibzblue2}{HTML}{e6f4ff}
+
+\setbeamercolor{outerbox}{fg=black,bg=unibzblue2}
+\setbeamercolor{innerbox}{fg=white,bg=unibzblue}
 
 \setbeamertemplate{title page}{
   \scriptsize 
@@ -40,6 +44,18 @@
   \vspace*{6mm}
   \Large \bf \color{black} \insertframetitle
 }
+
+\setbeamertemplate{itemize items}{\scriptsize\raisebox{0.6mm}{\color{unibzblue} $\blacktriangleright$}}
+
+\newlength{\offsetpage}
+\newenvironment{narrowpage}[1][1cm]{
+  \setlength{\offsetpage}{#1}
+  \begin{adjustwidth}{\offsetpage}{\offsetpage}
+  \addtolength{\textwidth}{-2\offsetpage}
+}{\end{adjustwidth}}
+
+\newenvironment{items}{\begin{narrowpage}\vfill}{\end{narrowpage}}
+\newenvironment{oitem}[1][\scriptsize\raisebox{0.6mm}{\color{unibzblue} $\blacktriangleright$}]{\hfill\begin{beamercolorbox}[rounded=true,colsep=2mm]{outerbox}\parbox[t]{5mm}{#1}\begin{minipage}[t]{\textwidth}}{\end{minipage}\end{beamercolorbox}\hfill\vfill}
 
 \beamertemplatenavigationsymbolsempty
 \setbeamertemplate{footline}{}
@@ -68,12 +84,18 @@
 
 \begin{frame}
 \frametitle{Outcomes of the Thesis}
-\begin{itemize}
-  \item Extended the axiom weakening operator to \SROIQ \\
+\begin{items}
+  \begin{oitem}
+    Extended the axiom weakening operator to \SROIQ \\
     {\footnotesize and showed that the weakening maintains the necessary constraints}
-  \item Evaluated the proposed approach on real-world ontologies
-  \item Developed a Protégé plugin for applying these techniques
-\end{itemize}
+  \end{oitem}
+  \begin{oitem}
+    Evaluated the proposed approach on real-world ontologies
+  \end{oitem}
+  \begin{oitem}
+    Developed a Protégé plugin for applying these techniques
+  \end{oitem}
+\end{items}
 \end{frame}
 
 {
