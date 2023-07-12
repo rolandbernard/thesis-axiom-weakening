@@ -18,7 +18,7 @@
 \date{July 2023}
 
 \definecolor{unibzblue}{HTML}{0086ec}
-\definecolor{unibzblue2}{HTML}{e6f4ff}
+\definecolor{unibzblue2}{HTML}{edf7ff}
 
 \setbeamercolor{outerbox}{fg=black,bg=unibzblue2}
 \setbeamercolor{innerbox}{fg=white,bg=unibzblue}
@@ -48,7 +48,7 @@
 \setbeamertemplate{itemize items}{\scriptsize\raisebox{0.6mm}{\color{unibzblue} $\blacktriangleright$}}
 
 \newlength{\offsetpage}
-\newenvironment{narrowpage}[1][1cm]{
+\newenvironment{narrowpage}[1][5mm]{
   \setlength{\offsetpage}{#1}
   \begin{adjustwidth}{\offsetpage}{\offsetpage}
   \addtolength{\textwidth}{-2\offsetpage}
@@ -65,72 +65,93 @@
 \frame{\titlepage}
 
 \begin{frame}
-\frametitle{Description Logics}
-
-
+  \frametitle{Description Logics}
+  \begin{items}
+    \begin{oitem}
+      Family of logics used in knowledge representation
+    \end{oitem}
+    \begin{oitem}
+      Individuals, Concepts, and Roles
+    \end{oitem}
+    \begin{oitem}
+      Axioms
+    \end{oitem}
+  \end{items}
 \end{frame}
 
 \begin{frame}
-\frametitle{Expressive \textnormal{Description Logics}}
-
-
+  \frametitle{Expressive \textnormal{Description Logics}}
+% * More types of concept expressions and axioms
+% * Need additional restrictions to remain decidable
+% * SROIQ and the Web Ontology Language
 \end{frame}
 
 \begin{frame}
-\frametitle{Knowledge Refinement \textnormal{in Expressive Description Logics}}
-
-
+  \frametitle{Knowledge Refinement \textnormal{in Expressive Description Logics}}
+% * Process of iteratively mofifying and improving knowleadge
+% * Concept refinement
+% * Axiom weakening
 \end{frame}
 
 \begin{frame}
-\frametitle{Motivation and Thesis Goals}
-
-
+  \frametitle{Motivation and Thesis Goals}
+% * Repairing ontologies
+% * Combination of conflicting knowledge
+% * Machine learning
 \end{frame}
 
 \begin{frame}
-\frametitle{Challenges in Weakening Expressive Description Logics}
-
-
+  \frametitle{Challenges in Weakening Expressive Description Logics}
+% * simple and non-simple
+% * regularity
+% * restrictions have been added to prevent problems
 \end{frame}
 
 \begin{frame}
-  \frametitle{Evaluating Axiom Weakening for Ontology Repair}
-
-\end{frame}
-
-\begin{frame}
-  \frametitle{Evaluation Results}
-
-  \includegraphics[width=\textwidth]{resources/iic-remove-ontology-bar.png}
+  \frametitle{Implementation of Axiom Weakening}
+% * implemented iin Java using the OWL API
+% * Using highly-optimized of-the-shelf reasoners
+% * extensive tests of the main functionality
 \end{frame}
 
 \begin{frame}
   \frametitle{A Protégé Plugin supporting these Techniques}
-  
-  
+% * manual axiom weakening
+% * configurable automatic remairs
 \end{frame}
 
 \begin{frame}
-\frametitle{Outcomes of the Thesis}
-\begin{items}
-  \begin{oitem}
-    Extended the axiom weakening operator to \SROIQ \\
-    {\footnotesize and showed that the weakening maintains the necessary constraints}
-  \end{oitem}
-  \begin{oitem}
-    Evaluated the proposed approach on real-world ontologies
-  \end{oitem}
-  \begin{oitem}
-    Developed a Protégé plugin for applying these techniques
-  \end{oitem}
-\end{items}
+  \frametitle{Evaluating Axiom Weakening for Ontology Repair}
+% * We want a repair to retain as many consequences as possible
+% * For comparing two repairs O1 and O2 define the IIC
 \end{frame}
 
 \begin{frame}
-\frametitle{Future Outlook}
+  \frametitle{Evaluation Results}
+  \includegraphics[width=\textwidth]{resources/iic-remove-ontology-bar.png}
+\end{frame}
 
+\begin{frame}
+  \frametitle{Outcomes of the Thesis}
+  \begin{items}
+    \begin{oitem}
+      Extended the axiom weakening operator to \SROIQ \\
+      {\footnotesize and showed that the weakening maintains the necessary constraints}
+    \end{oitem}
+    \begin{oitem}
+      Evaluated the proposed approach on real-world ontologies
+    \end{oitem}
+    \begin{oitem}
+      Developed a Protégé plugin for applying these techniques
+    \end{oitem}
+  \end{items}
+\end{frame}
 
+\begin{frame}
+  \frametitle{Future Outlook}
+% * Loosen the restrictions of the axiom weakening
+% * Better ways to guide the repairs
+% * Find better measuers to compare repair quality
 \end{frame}
 
 {
