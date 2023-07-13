@@ -83,7 +83,7 @@
 }{\end{adjustwidth}}
 
 \newenvironment{items}{\begin{narrowpage}\vfill}{\end{narrowpage}}
-\newenvironment{oitem}[2][2mm]{\hfill\begin{beamercolorbox}[rounded=true,colsep=#1]{outerbox}\parbox[t]{8mm}{#2}\begin{minipage}[t]{\textwidth}}{\end{minipage}\end{beamercolorbox}\hfill\vfill}
+\newenvironment{oitem}[2][2mm]{\hfill\begin{beamercolorbox}[rounded=true,colsep=#1]{outerbox}\parbox[t]{4mm}{\centering#2}\parbox[t]{4mm}{\ }\begin{minipage}[t]{\textwidth}}{\end{minipage}\end{beamercolorbox}\hfill\vfill}
 
 \beamertemplatenavigationsymbolsempty
 \setbeamertemplate{footline}{}
@@ -182,16 +182,40 @@
 
 \begin{frame}
   \frametitle{Challenges in Weakening Expressive Description Logics}
-% * simple and non-simple
-% * regularity
-% * restrictions have been added to prevent problems
+  \begin{items}
+    \begin{oitem}{\icon{exclamation}}
+      Simple roles can not be used in every context \\
+      \sitem {\footnotesize using a non-simple role in some places is forbidden}
+    \end{oitem}
+    \begin{oitem}{\icon{exclamation}}
+      The graph formed by the role inclusions must match constraints \\
+      \sitem {\footnotesize adding new role inclusions can violate them}
+    \end{oitem}
+    \begin{oitem}{\icon{shield-alt}}
+      These problems have been prevented by ensuring that \\
+      \sitem {\footnotesize all simple roles remain simple after refinement} \\
+      \sitem {\footnotesize only simple roles are used during the refinement}
+    \end{oitem}
+  \end{items}
 \end{frame}
 
 \begin{frame}
   \frametitle{Implementation of Axiom Weakening}
-% * implemented iin Java using the OWL API
-% * Using highly-optimized of-the-shelf reasoners
-% * extensive tests of the main functionality
+  \begin{items}
+    \begin{oitem}{\icon{java}}
+      Implemented in Java using the OWL API \\
+      \sitem {\footnotesize a library providing a uniform interface to reasoners}
+    \end{oitem}
+    \begin{oitem}{\icon{cogs}}
+      Using of-the-shelf reasoners for the Web Ontology Language \\
+      \sitem {\footnotesize requires mapping between Web Ontology Language and \SROIQ}
+    \end{oitem}
+    \begin{oitem}{\icon{check-circle}}
+      Unit tests to ensure correct behavior of the implementation \\
+      \sitem {\footnotesize manual tests of expected operator results} \\
+      \sitem {\footnotesize automatically generated tests asserting general properties and invariants}
+    \end{oitem}
+  \end{items}
 \end{frame}
 
 \begin{frame}
