@@ -6,6 +6,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{pdfx, csquotes, xcolor, xspace, changepage, setspace}
 \usepackage{libertinus}
+\usepackage{fontawesome5}
 \usepackage[maxbibnames=99]{biblatex}
 
 \title{Knowledge Refinement in\\Expressive Description Logics}
@@ -71,17 +72,18 @@
 \newcommand{\more}[2]{\ensuremath{\geq #1~#2}\xspace}
 \newcommand{\nominal}[1]{\ensuremath{\{#1\}}\xspace}
 
+\newcommand{\litem}{{\scriptsize\raisebox{0.6mm}{\color{unibzblue} $\blacktriangleright$}}}
 \newcommand{\sitem}{{\scriptsize\raisebox{0.2mm}{\color{unibzblue} $\rightarrow$}}\enspace}
+\newcommand{\icon}[1]{\textcolor{unibzblue}{\faIcon[solid]{#1}}}
 
 \newlength{\offsetpage}
 \newenvironment{narrowpage}[1][3mm]{
   \setlength{\offsetpage}{#1}
-  \begin{adjustwidth}{\offsetpage}{\offsetpage}
-  \addtolength{\textwidth}{-2\offsetpage}
+  \begin{adjustwidth}{\offsetpage}{-\offsetpage}
 }{\end{adjustwidth}}
 
 \newenvironment{items}{\begin{narrowpage}\vfill}{\end{narrowpage}}
-\newenvironment{oitem}[1][2mm]{\hfill\begin{beamercolorbox}[rounded=true,colsep=#1]{outerbox}\parbox[t]{5mm}{\scriptsize\raisebox{0.6mm}{\color{unibzblue} $\blacktriangleright$}}\begin{minipage}[t]{\textwidth}}{\end{minipage}\end{beamercolorbox}\hfill\vfill}
+\newenvironment{oitem}[2][2mm]{\hfill\begin{beamercolorbox}[rounded=true,colsep=#1]{outerbox}\parbox[t]{8mm}{#2}\begin{minipage}[t]{\textwidth}}{\end{minipage}\end{beamercolorbox}\hfill\vfill}
 
 \beamertemplatenavigationsymbolsempty
 \setbeamertemplate{footline}{}
@@ -93,25 +95,25 @@
 \begin{frame}
   \frametitle{Description Logics}
   \begin{items}
-    \begin{oitem}[1mm]
-      Family of logics used in knowledge representation \\
+    \begin{oitem}[1mm]{\icon{lightbulb}}
+      Family of logics used to represent knowledge \\
       \sitem {\footnotesize aiming for favorable trade-offs between complexity and expressivity}
     \end{oitem}
-    \begin{oitem}[1mm]
+    \begin{oitem}[1mm]{\icon{cube}}
       \begin{tabular}[t]{@{}ll}
-        {\footnotesize Individuals, e.g.,} & $\mathit{roland}$ \quad $\mathit{oliver}$ \quad $\mathit{nicolas}$ \quad $\mathit{unibz}$ \quad $\mathit{blue}$ \\
-        {\footnotesize Concepts, e.g.,} & $\mathit{Student}$ \quad $\mathit{Professor}$ \quad $\mathit{Person}$ \quad $\mathit{University}$ \quad $\mathit{Color}$ \\
-        {\footnotesize Roles, e.g.,} & $\mathit{studiesAt}$ \quad $\mathit{supervisedBy}$ \quad $\mathit{hasColor}$ \\
+        {\footnotesize Individuals,} & {\footnotesize  e.g.,} \enspace $\mathit{roland}$ \quad $\mathit{oliver}$ \quad $\mathit{nicolas}$ \quad $\mathit{unibz}$ \quad $\mathit{blue}$ \\
+        {\footnotesize Concepts,} &  {\footnotesize  e.g.,} \enspace $\mathit{Student}$ \quad $\mathit{Professor}$ \quad $\mathit{Person}$ \quad $\mathit{University}$ \quad $\mathit{Color}$ \\
+        {\footnotesize Roles,} &  {\footnotesize  e.g.,} \enspace $\mathit{studiesAt}$ \quad $\mathit{supervisedBy}$ \quad $\mathit{hasColor}$ \\
       \end{tabular}
     \end{oitem}
-    \begin{oitem}[1mm]
+    \begin{oitem}[1mm]{\icon{comment}}
       \begin{tabular}[t]{@{}ll}
-        {\footnotesize Complex concepts, e.g.,} & $\lnot \mathit{Person}$ \quad $\mathit{Person} \sqcap \mathit{Student}$ \quad $\exists studiesAt.University$
+        {\footnotesize Complex concepts,} & {\footnotesize  e.g.,} \enspace $\lnot \mathit{Person}$ \quad $\mathit{Person} \sqcap \mathit{Student}$ \quad $\exists studiesAt.University$
       \end{tabular}
     \end{oitem}
-    \begin{oitem}[1mm]
+    \begin{oitem}[1mm]{\icon{book}}
       \begin{tabular}[t]{@{}ll}
-        {\footnotesize Axioms e.g.,} & $\mathit{Student}(\mathit{roland})$ \quad $\mathit{Student} \sqsubseteq \mathit{Person}$ \quad $\mathit{studiesAt}(roland, unibz)$
+        {\footnotesize Axioms,} & {\footnotesize  e.g.,} \enspace $\mathit{Student} \sqsubseteq \mathit{Person}$ \quad $\mathit{Student}(\mathit{roland})$ \quad $\mathit{studiesAt}(roland, unibz)$
       \end{tabular}
     \end{oitem}
   \end{items}
@@ -120,19 +122,19 @@
 \begin{frame}
   \frametitle{Expressive \textnormal{Description Logics}}
   \begin{items}
-    \begin{oitem}
+    \begin{oitem}{\icon{comment-dots}}
       Additional kinds of concept expressions and axioms, e.g., \\
       \begin{tabular}[t]{@{}ll}
-        \sitem {\footnotesize role inclusions, e.g.,} & $\mathit{motherOf} \sqsubseteq \mathit{parentOf}$ \\
-        \sitem {\footnotesize cardinality constraints, e.g.,} & $\less 1 {\mathit{studiesAt}.\mathit{University}}$ \quad $\more 2 {\mathit{supervisedBy}.\top}$ \\
+        \sitem {\footnotesize role inclusions,} &  {\footnotesize  e.g.,} \enspace $\mathit{motherOf} \sqsubseteq \mathit{parentOf}$ \\
+        \sitem {\footnotesize cardinality constraints,} &  {\footnotesize  e.g.,} \enspace $\less 1 {\mathit{studiesAt}.\mathit{University}}$ \quad $\more 2 {\mathit{supervisedBy}.\top}$ \\
       \end{tabular}
     \end{oitem}
-    \begin{oitem}
+    \begin{oitem}{\icon{shield-alt}}
       Require additional rules to guarantee decidability \\
       \sitem {\footnotesize separation into simple and non-simple roles} \\
       \sitem {\footnotesize limits on the graph formed by role inclusions}
     \end{oitem}
-    \begin{oitem}
+    \begin{oitem}{\icon{bullseye}}
       Focus on \SROIQ and the Web Ontology Language
     \end{oitem}
   \end{items}
@@ -140,16 +142,42 @@
 
 \begin{frame}
   \frametitle{Knowledge Refinement \textnormal{in Expressive Description Logics}}
-% * Process of iteratively mofifying and improving knowleadge
-% * Concept refinement
-% * Axiom weakening
+  \begin{items}
+    \begin{oitem}{\icon{sync-alt}}
+      Process of iteratively modifying and improving the axioms
+    \end{oitem}
+    \begin{oitem}{\icon{exchange-alt}}
+      Using two refinement operators \\
+      \begin{tabular}[t]{@{}ll}
+        \sitem {\footnotesize specialization operator,} &  {\footnotesize  e.g.,} \enspace $\mathit{Student}$ {\footnotesize is a specialization of} $\mathit{Person}$ \\
+        \sitem {\footnotesize generalization operator,} &  {\footnotesize  e.g.,} \enspace $\mathit{Person}$ {\footnotesize is a generalization of} $\mathit{Student}$ \\
+      \end{tabular}
+    \end{oitem}
+    \begin{oitem}{\icon{level-down-alt}}
+      Using an axiom weakening operator \\
+      \sitem {\footnotesize converts axioms such that they are less restrictive} \\
+      \sitem {\footnotesize using the refinement operators}
+    \end{oitem}
+  \end{items}
 \end{frame}
 
 \begin{frame}
   \frametitle{Applications of Knowledge Refinement}
-% * Repairing ontologies
-% * Combination of conflicting knowledge
-% * Machine learning
+  \begin{items}
+    \begin{oitem}{\icon{tools}}
+      Repairing ontologies, e.g., \\
+      \sitem {\footnotesize making inconsistent ontologies consistent} \\
+      \sitem {\footnotesize removing unintended consequences}
+    \end{oitem}
+    \begin{oitem}{\icon{balance-scale}}
+      Combination of conflicting knowledge \\
+      \sitem {\footnotesize also for computational concept combination}
+    \end{oitem}
+    \begin{oitem}{\icon{robot}}
+      Machine learning \\
+      \sitem {\footnotesize learning axioms from data}
+    \end{oitem}
+  \end{items}
 \end{frame}
 
 \begin{frame}
@@ -186,15 +214,15 @@
 \begin{frame}
   \frametitle{Outcomes of the Thesis}
   \begin{items}
-    \begin{oitem}
+    \begin{oitem}{\icon{plus}}
       Extended the axiom weakening operator to \SROIQ \\
       \sitem {\footnotesize and showed that the proposed approach maintains the necessary constraints}
     \end{oitem}
-    \begin{oitem}
+    \begin{oitem}{\icon{puzzle-piece}}
       Developed a Protégé plugin for applying these techniques \\
       \sitem {\footnotesize allowing users to easily use the techniques described in the thesis}
     \end{oitem}
-    \begin{oitem}
+    \begin{oitem}{\icon{chart-bar}}
       Evaluated the proposed approach on real-world ontologies \\
       \sitem {\footnotesize showing that axiom weakening can outperform removal}
     \end{oitem}
