@@ -95,23 +95,23 @@
 \begin{frame}
   \frametitle{Description Logics}
   \begin{items}
-    \begin{oitem}[1mm]{\icon{lightbulb}}
+    \begin{oitem}[1mm]{\litem}
       Family of logics used to represent knowledge \\
       \sitem {\footnotesize aiming for favorable trade-offs between complexity and expressivity}
     \end{oitem}
-    \begin{oitem}[1mm]{\icon{cube}}
+    \begin{oitem}[1mm]{\litem}
       \begin{tabular}[t]{@{}ll}
         {\footnotesize Individuals,} & {\footnotesize  e.g.,} \enspace $\mathit{roland}$ \quad $\mathit{oliver}$ \quad $\mathit{nicolas}$ \quad $\mathit{unibz}$ \quad $\mathit{blue}$ \\
         {\footnotesize Concepts,} &  {\footnotesize  e.g.,} \enspace $\mathit{Student}$ \quad $\mathit{Professor}$ \quad $\mathit{Person}$ \quad $\mathit{University}$ \quad $\mathit{Color}$ \\
         {\footnotesize Roles,} &  {\footnotesize  e.g.,} \enspace $\mathit{studiesAt}$ \quad $\mathit{supervisedBy}$ \quad $\mathit{hasColor}$ \\
       \end{tabular}
     \end{oitem}
-    \begin{oitem}[1mm]{\icon{comment}}
+    \begin{oitem}[1mm]{\litem}
       \begin{tabular}[t]{@{}ll}
         {\footnotesize Complex concepts,} & {\footnotesize  e.g.,} \enspace $\lnot \mathit{Person}$ \quad $\mathit{Person} \sqcap \mathit{Student}$ \quad $\exists studiesAt.University$
       \end{tabular}
     \end{oitem}
-    \begin{oitem}[1mm]{\icon{book}}
+    \begin{oitem}[1mm]{\litem}
       \begin{tabular}[t]{@{}ll}
         {\footnotesize Axioms,} & {\footnotesize  e.g.,} \enspace $\mathit{Student} \sqsubseteq \mathit{Person}$ \quad $\mathit{Student}(\mathit{roland})$ \quad $\mathit{studiesAt}(roland, unibz)$
       \end{tabular}
@@ -122,14 +122,14 @@
 \begin{frame}
   \frametitle{Expressive \textnormal{Description Logics}}
   \begin{items}
-    \begin{oitem}{\icon{comment-dots}}
+    \begin{oitem}{\litem}
       Additional kinds of concept expressions and axioms, e.g., \\
       \begin{tabular}[t]{@{}ll}
         \sitem {\footnotesize role inclusions,} &  {\footnotesize  e.g.,} \enspace $\mathit{motherOf} \sqsubseteq \mathit{parentOf}$ \\
         \sitem {\footnotesize cardinality constraints,} &  {\footnotesize  e.g.,} \enspace $\less 1 {\mathit{studiesAt}.\mathit{University}}$ \quad $\more 2 {\mathit{supervisedBy}.\top}$ \\
       \end{tabular}
     \end{oitem}
-    \begin{oitem}{\icon{shield-alt}}
+    \begin{oitem}{\litem}
       Require additional rules to guarantee decidability \\
       \sitem {\footnotesize separation into simple and non-simple roles} \\
       \sitem {\footnotesize limits on the graph formed by role inclusions}
@@ -143,17 +143,17 @@
 \begin{frame}
   \frametitle{Knowledge Refinement \textnormal{in Expressive Description Logics}}
   \begin{items}
-    \begin{oitem}{\icon{sync-alt}}
+    \begin{oitem}{\litem}
       Process of iteratively modifying and improving the axioms
     \end{oitem}
-    \begin{oitem}{\icon{exchange-alt}}
+    \begin{oitem}{\litem}
       Using two refinement operators \\
       \begin{tabular}[t]{@{}ll}
         \sitem {\footnotesize specialization operator,} &  {\footnotesize  e.g.,} \enspace $\mathit{Student}$ {\footnotesize is a specialization of} $\mathit{Person}$ \\
         \sitem {\footnotesize generalization operator,} &  {\footnotesize  e.g.,} \enspace $\mathit{Person}$ {\footnotesize is a generalization of} $\mathit{Student}$ \\
       \end{tabular}
     \end{oitem}
-    \begin{oitem}{\icon{level-down-alt}}
+    \begin{oitem}{\litem}
       Using an axiom weakening operator \\
       \sitem {\footnotesize converts axioms such that they are less restrictive} \\
       \sitem {\footnotesize using the refinement operators}
@@ -206,7 +206,7 @@
       Implemented in Java using the OWL API \\
       \sitem {\footnotesize a library providing a uniform interface to reasoners}
     \end{oitem}
-    \begin{oitem}{\icon{cogs}}
+    \begin{oitem}{\litem}
       Using of-the-shelf reasoners for the Web Ontology Language \\
       \sitem {\footnotesize requires mapping between Web Ontology Language and \SROIQ}
     \end{oitem}
@@ -284,7 +284,7 @@
 \begin{frame}
   \frametitle{Future Outlook}
   \begin{items}
-    \begin{oitem}{\icon{unlock}}
+    \begin{oitem}{\icon{lock-open}}
       Study the possibility of loosening the restriction \\
       \sitem {\footnotesize refine with non-simple roles in some cases} \\
       \sitem {\footnotesize allow refinement of more role inclusions}
