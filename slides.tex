@@ -232,8 +232,23 @@
 
 \begin{frame}
   \frametitle{Evaluating Axiom Weakening for Ontology Repair}
-% * We want a repair to retain as many consequences as possible
-% * For comparing two repairs O1 and O2 define the IIC
+  \begin{items}
+    \begin{oitem}{\icon{wrench}}
+      An ontology is repaired once using axiom weakening and once using removal  \\
+      \sitem {\footnotesize compare the quality of the resulting ontologies}
+    \end{oitem}
+    \begin{oitem}{\icon{question-circle}}
+      Deciding which repair is ``better'' is not well-defined \\
+      \sitem {\footnotesize we want to retain as many consequences as possible} \\
+      \sitem {\footnotesize we focus only on inclusions between simple concepts}
+    \end{oitem}
+    \begin{oitem}{\icon{balance-scale-left}}
+      For comparing two repairs we define the IIC of $\Omc_1$ w.r.t $\Omc_2$ \\
+      \sitem {\footnotesize value close to $1$ for when $\Omc_1$ is better} \\
+      \sitem {\footnotesize $0.5$ if both repairs are equally ``good''} \\
+      \sitem {\footnotesize value close to $0$ for when $\Omc_2$ is better}
+    \end{oitem}
+  \end{items}
 \end{frame}
 
 \begin{frame}
@@ -268,9 +283,24 @@
 
 \begin{frame}
   \frametitle{Future Outlook}
-% * Loosen the restrictions of the axiom weakening
-% * Better ways to guide the repairs
-% * Find better measuers to compare repair quality
+  \begin{items}
+    \begin{oitem}{\icon{unlock}}
+      Study the possibility of loosening the restriction \\
+      \sitem {\footnotesize refine with non-simple roles in some cases} \\
+      \sitem {\footnotesize allow refinement of more role inclusions}
+    \end{oitem}
+    \begin{oitem}{\icon{bullseye}}
+      Study better ways of guiding the repair process \\
+      \sitem {\footnotesize using better heuristics, maybe domain specific} \\
+      \sitem {\footnotesize using user input to guide the repairs}
+    \end{oitem}
+    \begin{oitem}{\icon{ruler}}
+      Find better measures for comparing the quality of repairs
+    \end{oitem}
+    \begin{oitem}{\icon{lightbulb}}
+      Study other possible applications using more expressive description logics
+    \end{oitem}
+  \end{items}
 \end{frame}
 
 {
