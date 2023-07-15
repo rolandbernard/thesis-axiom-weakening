@@ -1,11 +1,13 @@
 \documentclass[aspectratio=169]{beamer}
 \usefonttheme{serif}
+\renewcommand\familydefault{\sfdefault} 
 
 \usepackage{graphicx}
 \usepackage[english]{babel}
 \usepackage[T1]{fontenc}
 \usepackage{pdfx, csquotes, xcolor, xspace, changepage, setspace}
 \usepackage{libertinus}
+\usepackage{roboto}
 \usepackage{fontawesome5}
 \usepackage[maxbibnames=99]{biblatex}
 
@@ -83,7 +85,7 @@
 }{\end{adjustwidth}}
 
 \newenvironment{items}{\begin{narrowpage}\vfill}{\end{narrowpage}}
-\newenvironment{oitem}[2][2mm]{\hfill\begin{beamercolorbox}[rounded=true,colsep=#1]{outerbox}\parbox[t]{4mm}{\centering#2}\parbox[t]{4mm}{\ }\begin{minipage}[t]{\textwidth}}{\end{minipage}\end{beamercolorbox}\hfill\vfill}
+\newenvironment{oitem}[2][3mm]{\hfill\begin{beamercolorbox}[rounded=false,colsep=#1]{outerbox}\parbox[t]{4mm}{\centering#2}\parbox[t]{4mm}{\ }\begin{minipage}[t]{\textwidth}}{\end{minipage}\end{beamercolorbox}\hfill\vfill}
 
 \beamertemplatenavigationsymbolsempty
 \setbeamertemplate{footline}{}
@@ -95,23 +97,23 @@
 \begin{frame}
   \frametitle{Description Logics}
   \begin{items}
-    \begin{oitem}[1mm]{\litem}
+    \begin{oitem}{\litem}
       Family of logics used to represent knowledge \\
       \sitem {\footnotesize aiming for favorable trade-offs between complexity and expressivity}
     \end{oitem}
-    \begin{oitem}[1mm]{\litem}
+    \begin{oitem}{\litem}
       \begin{tabular}[t]{@{}ll}
         {\footnotesize Individuals,} & {\footnotesize  e.g.,} \enspace $\mathit{roland}$ \quad $\mathit{oliver}$ \quad $\mathit{nicolas}$ \quad $\mathit{unibz}$ \quad $\mathit{blue}$ \\
         {\footnotesize Concepts,} &  {\footnotesize  e.g.,} \enspace $\mathit{Student}$ \quad $\mathit{Professor}$ \quad $\mathit{Person}$ \quad $\mathit{University}$ \quad $\mathit{Color}$ \\
         {\footnotesize Roles,} &  {\footnotesize  e.g.,} \enspace $\mathit{studiesAt}$ \quad $\mathit{supervisedBy}$ \quad $\mathit{hasColor}$ \\
       \end{tabular}
     \end{oitem}
-    \begin{oitem}[1mm]{\litem}
+    \begin{oitem}{\litem}
       \begin{tabular}[t]{@{}ll}
         {\footnotesize Complex concepts,} & {\footnotesize  e.g.,} \enspace $\lnot \mathit{Person}$ \quad $\mathit{Person} \sqcap \mathit{Student}$ \quad $\exists studiesAt.University$
       \end{tabular}
     \end{oitem}
-    \begin{oitem}[1mm]{\litem}
+    \begin{oitem}{\litem}
       \begin{tabular}[t]{@{}ll}
         {\footnotesize Axioms,} & {\footnotesize  e.g.,} \enspace $\mathit{Student} \sqsubseteq \mathit{Person}$ \quad $\mathit{Student}(\mathit{roland})$ \quad $\mathit{studiesAt}(roland, unibz)$
       \end{tabular}
@@ -204,7 +206,7 @@
   \begin{items}
     \begin{oitem}{\icon{java}}
       Implemented in Java using the OWL API \\
-      \sitem {\footnotesize a library providing a uniform interface to reasoners}
+      \sitem {\footnotesize a library providing a uniform way of interfacing with reasoners}
     \end{oitem}
     \begin{oitem}{\litem}
       Using of-the-shelf reasoners for the Web Ontology Language \\
@@ -234,8 +236,8 @@
   \frametitle{Evaluating Axiom Weakening for Ontology Repair}
   \begin{items}
     \begin{oitem}{\icon{wrench}}
-      An ontology is repaired once using axiom weakening and once using removal  \\
-      \sitem {\footnotesize compare the quality of the resulting ontologies}
+      Repaired once using axiom weakening and once using removal  \\
+      \sitem {\footnotesize the quality of the resulting ontologies is compared}
     \end{oitem}
     \begin{oitem}{\icon{question-circle}}
       Deciding which repair is ``better'' is not well-defined \\
@@ -298,7 +300,7 @@
       Find better measures for comparing the quality of repairs
     \end{oitem}
     \begin{oitem}{\icon{lightbulb}}
-      Study other possible applications using more expressive description logics
+      Study other possible applications of weakening
     \end{oitem}
   \end{items}
 \end{frame}
