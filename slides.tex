@@ -16,7 +16,7 @@
 \date{July 2023}
 
 \definecolor{unibzblue}{HTML}{0086ec}
-\definecolor{unibzblue2}{HTML}{edf7ff}
+\definecolor{unibzblue2}{HTML}{f0f8ff}
 
 \setbeamercolor{outerbox}{fg=black,bg=unibzblue2}
 \setbeamercolor{innerbox}{fg=white,bg=unibzblue}
@@ -84,8 +84,8 @@
   \begin{adjustwidth}{\offsetpage}{-\offsetpage}
 }{\end{adjustwidth}}
 
-\newenvironment{items}{\begin{narrowpage}\vfill}{\end{narrowpage}}
-\newenvironment{oitem}[2][3mm]{\hfill\begin{beamercolorbox}[rounded=false,colsep=#1]{outerbox}\parbox[t]{4mm}{\centering#2}\parbox[t]{4mm}{\ }\begin{minipage}[t]{\textwidth}}{\end{minipage}\end{beamercolorbox}\hfill\vfill}
+\newenvironment{items}{\begin{narrowpage}}{\end{narrowpage}}
+\newenvironment{oitem}[2][3mm]{\hfill\begin{beamercolorbox}[rounded=false,colsep=#1]{outerbox}\parbox[t]{4mm}{\centering#2}\parbox[t]{4mm}{\ }\begin{minipage}[t]{\textwidth}}{\end{minipage}\end{beamercolorbox}\hfill\vspace{2mm}}
 
 \beamertemplatenavigationsymbolsempty
 \setbeamertemplate{footline}{}
