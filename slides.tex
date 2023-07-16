@@ -122,28 +122,7 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{Expressive \textnormal{Description Logics}}
-  \begin{items}
-    \begin{oitem}{\litem}
-      Additional kinds of concept expressions and axioms, e.g., \\
-      \begin{tabular}[t]{@{}ll}
-        \sitem {\footnotesize role inclusions,} &  {\footnotesize  e.g.,} \enspace $\mathit{motherOf} \sqsubseteq \mathit{parentOf}$ \\
-        \sitem {\footnotesize cardinality constraints,} &  {\footnotesize  e.g.,} \enspace $\less 1 {\mathit{studiesAt}.\mathit{University}}$ \quad $\more 2 {\mathit{supervisedBy}.\top}$ \\
-      \end{tabular}
-    \end{oitem}
-    \begin{oitem}{\litem}
-      Require additional rules to guarantee decidability \\
-      \sitem {\footnotesize separation into simple and non-simple roles} \\
-      \sitem {\footnotesize limits on the graph formed by role inclusions}
-    \end{oitem}
-    \begin{oitem}{\icon{bullseye}}
-      Focus on \SROIQ and the Web Ontology Language
-    \end{oitem}
-  \end{items}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Knowledge Refinement \textnormal{in Expressive Description Logics}}
+  \frametitle{Knowledge Refinement in Description Logics}
   \begin{items}
     \begin{oitem}{\litem}
       Process of iteratively modifying and improving the axioms
@@ -183,8 +162,11 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{Challenges in Weakening Expressive Description Logics}
+  \frametitle{Weakening in Expressive Description Logics}
   \begin{items}
+    \begin{oitem}{\icon{bullseye}}
+      Extend axiom weakening to the description logic \SROIQ
+    \end{oitem}
     \begin{oitem}{\icon{exclamation}}
       Simple roles can not be used in every context \\
       \sitem {\footnotesize using a non-simple role in some places is forbidden}
