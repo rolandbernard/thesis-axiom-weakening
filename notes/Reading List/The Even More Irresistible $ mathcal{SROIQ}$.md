@@ -1,7 +1,7 @@
 # The Even More Irresistible $\mathcal{SROIQ}$
 
-Link: https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=18043d97ef80871b1e0de63368e3a0b5c53a6d03
 Status: Finished
+Link: https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=18043d97ef80871b1e0de63368e3a0b5c53a6d03
 Tags: logic, thesis
 Type: Paper
 

@@ -12,8 +12,8 @@ The general topic of the thesis is on the concept of axiom weakening and its app
 - [x]  05 July 2023 – upload a digital copy of the thesis
 - [x]  10 July 2023 – the necessary credit points must be achieved
 - [x]  13 July 2023 – make sure that the thesis supervisor approves your admission to the final exam
-- [ ]  16 July 2023 – send the presentation slides for the thesis defence to the Faculty Secretariat
-- [ ]  21 July 2023 – final exam at 10:30 in D003
+- [x]  16 July 2023 – send the presentation slides for the thesis defence to the Faculty Secretariat
+- [ ]  21 July 2023 – final exam at 09:40 in D003
 
 [Plan](Thesis/Plan.md)
 
@@ -22,6 +22,8 @@ The general topic of the thesis is on the concept of axiom weakening and its app
 [Content](Thesis/Content.md)
 
 [Paper](Thesis/Paper.md)
+
+[Presentation](Thesis/Presentation.md)
 
 [Questions](Thesis/Questions.md)
 

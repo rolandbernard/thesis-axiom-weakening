@@ -1,5 +1,5 @@
 # A Semantic Web Primer
 
-Status: Reading
+Status: Finished
 Tags: logic, thesis
 Type: Book

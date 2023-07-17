@@ -1,6 +1,6 @@
 # protege-plugin-examples
 
-Link: https://github.com/protegeproject/protege-plugin-examples/tree/master
 Status: Finished
+Link: https://github.com/protegeproject/protege-plugin-examples/tree/master
 Tags: logic, thesis
 Type: Code

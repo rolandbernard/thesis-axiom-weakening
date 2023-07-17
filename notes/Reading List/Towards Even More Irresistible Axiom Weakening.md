@@ -1,7 +1,7 @@
 # Towards Even More Irresistible Axiom Weakening
 
-Link: https://ceur-ws.org/Vol-2663/paper-8.pdf
 Status: Finished
+Link: https://ceur-ws.org/Vol-2663/paper-8.pdf
 Tags: logic, thesis
 Type: Paper
 

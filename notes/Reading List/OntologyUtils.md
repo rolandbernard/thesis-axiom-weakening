@@ -1,6 +1,6 @@
 # OntologyUtils
 
-Link: https://bitbucket.org/troquard/ontologyutils
 Status: Finished
+Link: https://bitbucket.org/troquard/ontologyutils
 Tags: logic, thesis
 Type: Code

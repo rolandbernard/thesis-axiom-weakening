@@ -1,10 +1,10 @@
 # Repairing Ontologies via Axiom Weakening
 
-Authors: Daniele Porello, Nicolas Troquard, Oliver Kutz, Pietro Galliani, Rafael Peñaloza, Roberto Confalonieri
-Link: https://arxiv.org/pdf/1711.03430.pdf
-Publication: Proceedings of the AAAI Conference on Artificial Intelligence
-Published: April 25, 2018
 Status: Finished
+Authors: Daniele Porello, Nicolas Troquard, Oliver Kutz, Pietro Galliani, Rafael Peñaloza, Roberto Confalonieri
+Published: April 25, 2018
+Publication: Proceedings of the AAAI Conference on Artificial Intelligence
+Link: https://arxiv.org/pdf/1711.03430.pdf
 Tags: logic, thesis
 Type: Paper
 

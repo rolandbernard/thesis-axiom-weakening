@@ -2,5 +2,5 @@
 
 Date Created: July 6, 2023 12:20 AM
 Description: To the faculty secretary
-Status: To Do
+Status: Done
 Tags: thesis, uni

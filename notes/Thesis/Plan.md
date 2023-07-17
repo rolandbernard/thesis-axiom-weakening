@@ -130,8 +130,8 @@
 10.07.2023 – 16.07.2023
 
 - [x]  13.07.2023 – Make sure supervisor has accepted
-- [ ]  Create slides for the thesis defence
-- [ ]  16.07.2023 – Send slides for the presentation
+- [x]  Create slides for the thesis defence
+- [x]  16.07.2023 – Send slides for the presentation
 
 17.07.2023 – 21.07.2023
 

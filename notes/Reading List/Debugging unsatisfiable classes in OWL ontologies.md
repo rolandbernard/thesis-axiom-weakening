@@ -1,8 +1,8 @@
 # Debugging unsatisfiable classes in OWL ontologies
 
-Link: https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=9eb667f08333d7eb8efe601661e081b6b1082960
-Publication: Journal of Web Semantics
 Status: Finished
+Publication: Journal of Web Semantics
+Link: https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=9eb667f08333d7eb8efe601661e081b6b1082960
 Tags: logic, thesis
 Type: Paper
 
