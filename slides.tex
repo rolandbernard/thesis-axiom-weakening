@@ -125,13 +125,13 @@
   \frametitle{Knowledge Refinement in Description Logics}
   \begin{items}
     \begin{oitem}{\litem}
-      Process of iteratively modifying and improving the axioms
+      Process of iteratively modifying and improving the ontology
     \end{oitem}
     \begin{oitem}{\litem}
       Using two refinement operators \\
       \begin{tabular}[t]{@{}ll}
-        \sitem {\footnotesize specialization operator,} &  {\footnotesize  e.g.,} \enspace $\mathit{Student}$ {\footnotesize is a specialization of} $\mathit{Person}$ \\
-        \sitem {\footnotesize generalization operator,} &  {\footnotesize  e.g.,} \enspace $\mathit{Person}$ {\footnotesize is a generalization of} $\mathit{Student}$ \\
+        \sitem {\footnotesize specialization operator,} & {\footnotesize  e.g.,} \enspace $\mathit{Student}$ {\footnotesize is a specialization of} $\mathit{Person}$ \\
+        \sitem {\footnotesize generalization operator,} & {\footnotesize  e.g.,} \enspace $\mathit{Person}$ {\footnotesize is a generalization of} $\mathit{Student}$ \\
       \end{tabular}
     \end{oitem}
     \begin{oitem}{\litem}
@@ -195,7 +195,7 @@
       \sitem {\footnotesize requires mapping between Web Ontology Language and \SROIQ}
     \end{oitem}
     \begin{oitem}{\icon{check-circle}}
-      Unit tests to ensure correct behavior of the implementation \\
+      Tests to ensure correct behavior of the implementation \\
       \sitem {\footnotesize manual tests of expected operator results} \\
       \sitem {\footnotesize automatically generated tests asserting general properties and invariants}
     \end{oitem}
@@ -219,12 +219,12 @@
   \begin{items}
     \begin{oitem}{\icon{wrench}}
       Repaired once using axiom weakening and once using removal  \\
-      \sitem {\footnotesize the quality of the resulting ontologies is compared}
+      \sitem {\footnotesize the quality of the resulting repairs is compared}
     \end{oitem}
     \begin{oitem}{\icon{question-circle}}
       Deciding which repair is ``better'' is not well-defined \\
       \sitem {\footnotesize we want to retain as many consequences as possible} \\
-      \sitem {\footnotesize we focus only on inclusions between simple concepts}
+      \sitem {\footnotesize we focus only on subsumption between simple concepts}
     \end{oitem}
     \begin{oitem}{\icon{balance-scale-left}}
       For comparing two repairs we define the IIC of $\Omc_1$ w.r.t $\Omc_2$ \\
@@ -256,7 +256,7 @@
     \end{oitem}
     \begin{oitem}{\icon{puzzle-piece}}
       Developed a Protégé plugin for applying these techniques \\
-      \sitem {\footnotesize allowing users to easily use the techniques described in the thesis}
+      \sitem {\footnotesize allowing users to easily repair ontologies and weaken axioms}
     \end{oitem}
     \begin{oitem}{\icon{chart-bar}}
       Evaluated the proposed approach on real-world ontologies \\
@@ -271,7 +271,7 @@
     \begin{oitem}{\icon{lock-open}}
       Study the possibility of loosening the restriction \\
       \sitem {\footnotesize refine with non-simple roles in some cases} \\
-      \sitem {\footnotesize allow refinement of more role inclusions}
+      \sitem {\footnotesize more permissive weakening of role inclusions}
     \end{oitem}
     \begin{oitem}{\icon{bullseye}}
       Study better ways of guiding the repair process \\
@@ -282,7 +282,7 @@
       Find better measures for comparing the quality of repairs
     \end{oitem}
     \begin{oitem}{\icon{lightbulb}}
-      Study other possible applications of weakening
+      Study other possible applications of axiom weakening
     \end{oitem}
   \end{items}
 \end{frame}
