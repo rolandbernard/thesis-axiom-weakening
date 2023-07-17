@@ -104,8 +104,8 @@
     \begin{oitem}{\litem}
       \begin{tabular}[t]{@{}ll}
         {\footnotesize Individuals,} & {\footnotesize  e.g.,} \enspace $\mathit{roland}$ \quad $\mathit{oliver}$ \quad $\mathit{nicolas}$ \quad $\mathit{unibz}$ \quad $\mathit{blue}$ \\
-        {\footnotesize Concepts,} &  {\footnotesize  e.g.,} \enspace $\mathit{Student}$ \quad $\mathit{Professor}$ \quad $\mathit{Person}$ \quad $\mathit{University}$ \quad $\mathit{Color}$ \\
-        {\footnotesize Roles,} &  {\footnotesize  e.g.,} \enspace $\mathit{studiesAt}$ \quad $\mathit{supervisedBy}$ \quad $\mathit{hasColor}$ \\
+        {\footnotesize Concepts,} & {\footnotesize  e.g.,} \enspace $\mathit{Student}$ \quad $\mathit{Professor}$ \quad $\mathit{Person}$ \quad $\mathit{University}$ \quad $\mathit{Color}$ \\
+        {\footnotesize Roles,} & {\footnotesize  e.g.,} \enspace $\mathit{studiesAt}$ \quad $\mathit{supervisedBy}$ \quad $\mathit{hasColor}$ \\
       \end{tabular}
     \end{oitem}
     \begin{oitem}{\litem}
@@ -136,8 +136,8 @@
     \end{oitem}
     \begin{oitem}{\litem}
       Using an axiom weakening operator \\
-      \sitem {\footnotesize converts axioms such that they are less restrictive} \\
-      \sitem {\footnotesize using the refinement operators}
+      \sitem {\footnotesize uses the two refinement operators} \\
+      \sitem {\footnotesize generates axioms that are less restrictive}
     \end{oitem}
   \end{items}
 \end{frame}
@@ -168,12 +168,12 @@
       Extend axiom weakening to the description logic \SROIQ
     \end{oitem}
     \begin{oitem}{\icon{exclamation}}
-      Simple roles can not be used in every context \\
+      Only simple roles can be used in every context \\
       \sitem {\footnotesize using a non-simple role in some places is forbidden}
     \end{oitem}
     \begin{oitem}{\icon{exclamation}}
-      The graph formed by the role inclusions must match constraints \\
-      \sitem {\footnotesize adding new role inclusions can violate them}
+      The graph formed by role inclusions must match some conditions \\
+      \sitem {\footnotesize adding new role inclusions can cause violations}
     \end{oitem}
     \begin{oitem}{\icon{shield-alt}}
       These problems have been prevented by ensuring that \\
@@ -184,7 +184,7 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{A Protégé Plugin supporting these Techniques}
+  \frametitle{A Protégé Plugin supporting Axiom Weakening}
   \begin{items}
     \begin{oitem}{\icon{puzzle-piece}}
       Protégé plugin for axiom weakening \\
@@ -246,6 +246,52 @@
   \end{items}
 \end{frame}
 
+{
+\setbeamercolor{background canvas}{bg=black}
+\begin{frame}[plain]{}
+\end{frame}
+}
+
+\begin{frame}
+  \frametitle{Expressive \textnormal{Description Logics}}
+  \begin{items}
+    \begin{oitem}{\litem}
+      Additional kinds of concept expressions and axioms, e.g., \\
+      \begin{tabular}[t]{@{}ll}
+        \sitem {\footnotesize role inclusions,} &  {\footnotesize  e.g.,} \enspace $\mathit{motherOf} \sqsubseteq \mathit{parentOf}$ \\
+        \sitem {\footnotesize cardinality constraints,} &  {\footnotesize  e.g.,} \enspace $\less 1 {\mathit{studiesAt}.\mathit{University}}$ \quad $\more 2 {\mathit{supervisedBy}.\top}$ \\
+      \end{tabular}
+    \end{oitem}
+    \begin{oitem}{\litem}
+      Require additional rules to guarantee decidability \\
+      \sitem {\footnotesize separation into simple and non-simple roles} \\
+      \sitem {\footnotesize limits on the graph formed by role inclusions}
+    \end{oitem}
+    \begin{oitem}{\icon{bullseye}}
+      Focus on \SROIQ and the Web Ontology Language
+    \end{oitem}
+  \end{items}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Implementation of Axiom Weakening}
+  \begin{items}
+    \begin{oitem}{\icon{java}}
+      Implemented in Java using the OWL API \\
+      \sitem {\footnotesize a library providing a uniform way of interfacing with reasoners}
+    \end{oitem}
+    \begin{oitem}{\litem}
+      Using of-the-shelf reasoners for the Web Ontology Language \\
+      \sitem {\footnotesize requires mapping between Web Ontology Language and \SROIQ}
+    \end{oitem}
+    \begin{oitem}{\icon{check-circle}}
+      Tests to ensure correct behavior of the implementation \\
+      \sitem {\footnotesize manual tests of expected operator results} \\
+      \sitem {\footnotesize automatically generated tests asserting general properties and invariants}
+    \end{oitem}
+  \end{items}
+\end{frame}
+
 \begin{frame}
   \frametitle{Future Outlook}
   \begin{items}
@@ -267,11 +313,5 @@
     \end{oitem}
   \end{items}
 \end{frame}
-
-{
-\setbeamercolor{background canvas}{bg=black}
-\begin{frame}[plain]{}
-\end{frame}
-}
 
 \end{document}
