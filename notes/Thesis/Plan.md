@@ -135,4 +135,4 @@
 
 17.07.2023 – 21.07.2023
 
-- [ ]  Practice thesis defence
+- [x]  Practice thesis defence

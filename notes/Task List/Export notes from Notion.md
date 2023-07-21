@@ -2,7 +2,7 @@
 
 Date Created: April 29, 2023 4:49 PM
 Description: Include the databases
-Status: Doing
+Status: Done
 Tags: thesis, uni
 
 The plan is to do this once a week.
@@ -20,4 +20,4 @@ The plan is to do this once a week.
 - [x]  02.07.2023
 - [x]  09.07.2023
 - [x]  16.07.2023
-- [ ]  21.07.2023
+- [x]  21.07.2023
